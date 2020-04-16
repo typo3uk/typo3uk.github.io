@@ -20,8 +20,8 @@ author:
 #      path: "/assets/images"
 #    values:
 #      image: true
-#plugins:
-#  - jekyll-feed
-#  - jekyll-sitemap
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 exclude:
   - README.md
