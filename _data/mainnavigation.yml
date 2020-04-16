@@ -1,0 +1,6 @@
+- name: Головна
+  link: /
+- name: Новини
+  link: /news.html
+- name: Про сайт
+  link: /about.html
