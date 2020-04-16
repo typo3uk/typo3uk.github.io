@@ -1,21 +1,9 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
+<html dir="ltr" lang="uk-UA">
+  {%- include head.html -%}
   <body>
-    <nav>
-      <a href="/">Головна</a>
-      <a href="/blog/">Блог</a>
-    </nav>
-    <h1>{{ page.title }}</h1>
-    <section>
-      {{ content }}
-    </section>
-    <footer>
-      &copy; Василь Мосійчук
-    </footer>
+    {%- include header.html -%}
+    {{- content -}}
+    {%- include footer.html -%}
   </body>
 </html>
