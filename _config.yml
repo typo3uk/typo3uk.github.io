@@ -1,6 +1,7 @@
 name: TYPO3 CMS Інтегратор в Україні
 title: TYPO3 CMS Integrator in Ukraine
 description: Description about TYPO3 CMS Integrator in Ukraine
+encoding: UTF-8
 baseurl: ""
 url: "https://typo3.pp.ua"
 timezone: Europe/Ukraine
