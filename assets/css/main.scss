@@ -2,6 +2,16 @@
 ---
 
 //
-// Import _scss/_base.scss
+// Import from _scss/_base.scss
 //
 @import "base";
+
+//
+// Import from _scss/_layout.scss
+//
+@import "layout";
+
+//
+// Import from _scss/_navbar.scss
+//
+@import "navbar";
