@@ -12,6 +12,11 @@ author:
   website: http://www.vasyl.net
 sass:
   style: compact
+defaults:
+  - scope:
+      path: "images"
+    values:
+      image: true
 plugins:
   - jekyll-feed
   - jekyll-sitemap
