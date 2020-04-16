@@ -10,5 +10,6 @@ logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
   email: typo3@ukr.net
-plugins:  - jekyll-feed
+plugins:
+  - jekyll-feed
   - jekyll-sitemap
