@@ -1,5 +1,10 @@
 ---
 ---
-@import "main";
+
 @import "base";
 @import "layout";
+
+.content {
+  width: 45rem;
+  margin: 0 auto;
+}
