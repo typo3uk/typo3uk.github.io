@@ -5,7 +5,7 @@ description: Description about TYPO3 CMS Integrator in Ukraine
 encoding: UTF-8
 baseurl: ""
 url: "https://typo3.pp.ua"
-timezone: Europe/Ukraine
+timezone: Europe/Kyiv
 logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
