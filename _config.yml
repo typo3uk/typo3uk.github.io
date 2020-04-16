@@ -10,6 +10,8 @@ logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
   website: http://www.vasyl.net
+sass:
+  style: compact
 plugins:
   - jekyll-feed
   - jekyll-sitemap
