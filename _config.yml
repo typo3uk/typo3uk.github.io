@@ -1,11 +1,11 @@
-name: TYPO3 CMS Інтегратор в Україні
-brand: pp.ua
+url: "https://typo3.pp.ua"
+baseurl: ""
+encoding: UTF-8
+timezone: Europe/Kyiv
 title: TYPO3 CMS Integrator in Ukraine
 description: Description about TYPO3 CMS Integrator in Ukraine
-encoding: UTF-8
-baseurl: ""
-url: "https://typo3.pp.ua"
-timezone: Europe/Kyiv
+name: TYPO3 CMS Інтегратор в Україні
+brand: pp.ua
 logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
