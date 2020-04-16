@@ -1,3 +1,14 @@
 ---
-# navba
 ---
+
+//
+// Navigation Style
+//
+.navbar-default {
+    @extend .navbar-light;
+    @extend .bg-white;
+}
+.navbar-inverse {
+    @extend .navbar-dark;
+    @extend .bg-dark;
+}
