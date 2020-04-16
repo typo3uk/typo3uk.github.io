@@ -13,15 +13,15 @@ author:
   name: Василь Мосійчук
   website: http://www.vasyl.net
 # Build settings
-sass:
-  style: compact
-defaults:
-  - scope:
-      path: "/assets/images"
-    values:
-      image: true
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+#sass:
+#  style: compact
+#defaults:
+#  - scope:
+#      path: "/assets/images"
+#    values:
+#      image: true
+#plugins:
+#  - jekyll-feed
+#  - jekyll-sitemap
 exclude:
   - README.md
