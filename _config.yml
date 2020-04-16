@@ -7,7 +7,7 @@ timezone: Europe/Kyiv
 title: Site Title
 description: Site Description
 name: Site Name
-brand: Site Brand
+brand: .pp.ua
 logo: "/assets/images/logo.svg"
 author:
   name: Василь Мосійчук
