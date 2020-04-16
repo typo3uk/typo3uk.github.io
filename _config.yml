@@ -2,14 +2,14 @@ url: "https://typo3.pp.ua"
 baseurl: ""
 encoding: UTF-8
 timezone: Europe/Kyiv
-title: TYPO3 CMS Integrator in Ukraine - 0
-description: Description about TYPO3 CMS Integrator in Ukraine - 0
-name: TYPO3 CMS Інтегратор в Україні - 0
-brand: pp.ua - 0
-logo: "/images/logo.svg" - 0
+title: Site Title
+description: Site Description
+name: Site Name
+brand: Site Brand
+logo: "/images/logo.svg"
 author:
-  name: Василь Мосійчук - 0
-  email: typo3@ukr.net - 0
+  name: Василь Мосійчук
+  email: typo3@ukr.net
 plugins:
   - jekyll-feed
   - jekyll-sitemap
