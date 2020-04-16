@@ -1,8 +1,9 @@
 title: TYPO3 CMS Integrator in Ukraine
+description: Description about TYPO3 CMS Integrator in Ukraine
 baseurl: ""
-url: https://typo3.pp.ua
+url: "https://typo3.pp.ua"
 timezone: Eastern European Time/Ukraine
-logo: "/img/logo.png"
+logo: "/images/logo.png"
 author:
   name: Василь Мосійчук
   email: typo3@ukr.net
