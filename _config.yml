@@ -1,6 +1,8 @@
+# Site settings
 url: "https://typo3.pp.ua"
 baseurl: ""
 encoding: UTF-8
+lang: uk_UA
 timezone: Europe/Kyiv
 title: Site Title
 description: Site Description
@@ -10,6 +12,7 @@ logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
   website: http://www.vasyl.net
+# Build settings
 sass:
   style: compact
 defaults:
@@ -20,3 +23,5 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+exclude:
+  - README.md
