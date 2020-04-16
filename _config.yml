@@ -9,7 +9,7 @@ brand: Site Brand
 logo: "/images/logo.svg"
 author:
   name: Василь Мосійчук
-  email: typo3@ukr.net
+  website: http://www.vasyl.net
 plugins:
   - jekyll-feed
   - jekyll-sitemap
