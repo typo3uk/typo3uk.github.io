@@ -30,12 +30,5 @@ js:
         crossorigin: anonymous
   local:
 
-# Build settings
-defaults:
-  -
-    scope:
-      path: "/assets/images"
-    values:
-      image: true
 exclude:
   - README.md

@@ -1,4 +1,20 @@
 
+{% for js in site.js %}
+
+  {% if js.external %}
+    {% for external in js.external %}
+
+      {% if external %}
+        {% for cdn in external.cdn %}
+         {{cdn}}<br>
+        {% endfor %}
+      {% endif %}
+
+    {% endfor %}
+  {% endif %}
+
+{% endfor %}
+
 <script src="{{ site.js.external.cdn.jquery.src }}" integrity="{{ site.js.external.cdn.jquery.integrity }}" crossorigin="{{ site.js.external.cdn.jquery.crossorigin }}"></script>
 <script src="{{ site.js.external.cdn.popper.src }}" integrity="{{ site.js.external.cdn.popper.integrity }}" crossorigin="{{ site.js.external.cdn.popper.crossorigin }}"></script>
 <script src="{{ site.js.external.cdn.bootstrap.src }}" integrity="{{ site.js.external.cdn.bootstrap.integrity }}" crossorigin="{{ site.js.external.cdn.bootstrap.crossorigin }}"></script>
