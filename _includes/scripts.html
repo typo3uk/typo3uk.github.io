@@ -1,7 +1,8 @@
 
 {% for cdn in site.js.external.cdn %}
-{{cdn}}<br>
-{{cdn.jquery}}<br>
+  {% for js in cdn %}
+    {{js}}<br>
+  {% endfor %}
 {% endfor %}
 
 <script src="{{ site.js.external.cdn.jquery.src }}" integrity="{{ site.js.external.cdn.jquery.integrity }}" crossorigin="{{ site.js.external.cdn.jquery.crossorigin }}"></script>
