@@ -1,11 +1,19 @@
-{% for js in site.js.external.cdn %}
-
-{{ js.jquery }}<br><hr>
-
-  {% if without %}
-    <script src="{{ js.jquery.src }}" integrity="{{ js.jquery.integrity }}" crossorigin="{{ js.jquery.crossorigin }}"></script>
+{% for jquery in site.js.external.cdn.jquery %}
+  {% if jquery %}
+    <script src="{{ jquery.src }}" integrity="{{ jquery.integrity }}" crossorigin="{{ jquery.crossorigin }}"></script>
   {% endif %}
+{% endfor %}
 
+{% for popper in site.js.external.cdn.popper %}
+  {% if popper %}
+    <script src="{{ popper.src }}" integrity="{{ popper.integrity }}" crossorigin="{{ popper.crossorigin }}"></script>
+  {% endif %}
+{% endfor %}
+
+{% for bootstrap in site.js.external.cdn.bootstrap %}
+  {% if bootstrap %}
+    <script src="{{ bootstrap.src }}" integrity="{{ bootstrap.integrity }}" crossorigin="{{ bootstrap.crossorigin }}"></script>
+  {% endif %}
 {% endfor %}
 
 

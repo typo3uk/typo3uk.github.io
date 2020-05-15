@@ -32,7 +32,8 @@ js:
 
 # Build settings
 defaults:
-  - scope:
+  -
+    scope:
       path: "/assets/images"
     values:
       image: true
