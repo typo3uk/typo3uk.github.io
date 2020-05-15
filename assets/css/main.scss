@@ -4,3 +4,10 @@
 // Import from _scss/_base.scss
 //
 @import "t3ppua/base";
+
+
+.vertical-alignment {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
