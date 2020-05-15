@@ -1,16 +1,8 @@
 
-{% for external in site.js.external.cdn %}
+{% for jquery in site.js.external.cdn.jquery %}
 
-  {% if external.jquery %}
-    {{external.jquery.src}}
-  {% endif %}
-
-  {% if external.popper %}
-    {{external.popper.src}}
-  {% endif %}
-
-  {% if external.bootstrap %}
-    {{external.bootstrap.src}}
+  {% if jquery %}
+    {{jquery.src}}
   {% endif %}
 
 {% endfor %}
