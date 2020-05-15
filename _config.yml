@@ -3,7 +3,7 @@ url: "https://www.typo3.pp.ua"
 baseurl: ""
 encoding: UTF-8
 lang: uk_UA
-timezone: Europe/Kyiv
+timezone: Europe/Kiev
 title: Site Title
 description: Site Description
 name: Site Name
@@ -12,6 +12,7 @@ logo: "/assets/images/logo.svg"
 author:
   name: Василь Мосійчук
   website: http://www.vasyl.net
+
 # Build settings
 sass:
   style: compact
