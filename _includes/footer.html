@@ -1,5 +1,22 @@
-<footer class="bd-footer text-muted">
+<footer class="text-muted">
   <div class="container-fluid p-3 p-md-5">
+
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Link 0 - Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link 3 - Disabled</a>
+      </li>
+    </ul>
+
+    {% comment %}
     <ul class="bd-footer-links">
       <li><a href="{{ site.github_org }}">GitHub</a></li>
       <li><a href="https://twitter.com/{{ site.twitter }}">Twitter</a></li>
@@ -8,5 +25,7 @@
     </ul>
     <p>Designed and built with all the love in the world by the <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/about/team/">Bootstrap team</a> with the help of <a href="{{ site.repo }}/graphs/contributors">our contributors</a>.</p>
     <p>Currently v{{ site.current_version }}. Code licensed <a href="{{ site.repo }}/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.</p>
+    {% endcomment %}
+
   </div>
 </footer>
