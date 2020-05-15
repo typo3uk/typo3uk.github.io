@@ -1,2 +1,2 @@
-# TYPO3 CMS in Ukraine
-Website of Private Person about TYPO3 CMS
+# T3 in Ukraine
+Website of Private Person
