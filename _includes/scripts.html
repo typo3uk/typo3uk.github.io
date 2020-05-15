@@ -1,20 +1,9 @@
-{% for jquery in site.js.external.cdn.jquery %}
-  {% if jquery %}
-    <script src="{{ jquery.src }}" integrity="{{ jquery.integrity }}" crossorigin="{{ jquery.crossorigin }}"></script>
-  {% endif %}
-{% endfor %}
 
-{% for popper in site.js.external.cdn.popper %}
-  {% if popper %}
-    <script src="{{ popper.src }}" integrity="{{ popper.integrity }}" crossorigin="{{ popper.crossorigin }}"></script>
-  {% endif %}
-{% endfor %}
+{% assign external = "site.js.external.cdn." %}
 
-{% for bootstrap in site.js.external.cdn.bootstrap %}
-  {% if bootstrap %}
-    <script src="{{ bootstrap.src }}" integrity="{{ bootstrap.integrity }}" crossorigin="{{ bootstrap.crossorigin }}"></script>
-  {% endif %}
-{% endfor %}
+<script src="{{ [external]jquery.src }}" integrity="{{ [external]jquery.integrity }}" crossorigin="{{ [external]jquery.crossorigin }}"></script>
+<script src="{{ site.js.external.cdn.popper.src }}" integrity="{{ site.js.external.cdn.popper.integrity }}" crossorigin="{{ site.js.external.cdn.popper.crossorigin }}"></script>
+<script src="{{ site.js.external.cdn.bootstrap.src }}" integrity="{{ site.js.external.cdn.bootstrap.integrity }}" crossorigin="{{ site.js.external.cdn.bootstrap.crossorigin }}"></script>
 
 
 {% comment %}
