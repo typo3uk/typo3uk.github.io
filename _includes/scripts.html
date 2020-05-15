@@ -1,6 +1,7 @@
 
 {% for jquery in site.js.external.cdn.jquery %}
 {{jquery}}<br>
+{{jquery.src}}<br>
   {% if jquery %}
     {{jquery.src}}
   {% endif %}
