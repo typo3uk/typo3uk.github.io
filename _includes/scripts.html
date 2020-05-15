@@ -1,12 +1,6 @@
 
 {% for cdn in site.js.external.cdn %}
-  cdn: {{cdn}}<br>
-  {% if cdn %}
-    {% for js in cdn %}
-      js: {{js}}<br>
-      js.jquery.src: {{js.jquery.src}}<br>
-    {% endfor %}
-  {% endif %}
+  cdn: {{cdn.jquery.src}}<br>
 {% endfor %}
 
 <script src="{{ site.js.external.cdn.jquery.src }}" integrity="{{ site.js.external.cdn.jquery.integrity }}" crossorigin="{{ site.js.external.cdn.jquery.crossorigin }}"></script>
