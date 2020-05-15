@@ -1,12 +1,4 @@
 
-{% for cdn in site.js.external.cdn %}
-  {% if cdn %}
-    {% for js in cdn %}
-      js: {{js}}<br>
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-
 <script src="{{ site.js.external.cdn.jquery.src }}" integrity="{{ site.js.external.cdn.jquery.integrity }}" crossorigin="{{ site.js.external.cdn.jquery.crossorigin }}"></script>
 <script src="{{ site.js.external.cdn.popper.src }}" integrity="{{ site.js.external.cdn.popper.integrity }}" crossorigin="{{ site.js.external.cdn.popper.crossorigin }}"></script>
 <script src="{{ site.js.external.cdn.bootstrap.src }}" integrity="{{ site.js.external.cdn.bootstrap.integrity }}" crossorigin="{{ site.js.external.cdn.bootstrap.crossorigin }}"></script>
