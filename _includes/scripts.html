@@ -1,8 +1,8 @@
 {% for js in site.js.external.cdn %}
 
-{{js}}<br><hr>
+{{ js.jquery }}<br><hr>
 
-  {% if js %}
+  {% if without %}
     <script src="{{ js.jquery.src }}" integrity="{{ js.jquery.integrity }}" crossorigin="{{ js.jquery.crossorigin }}"></script>
   {% endif %}
 
