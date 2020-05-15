@@ -1,9 +1,10 @@
 
 {% for cdn in site.js.external.cdn %}
+  cdn: {{cdn}}<br>
   {% if cdn %}
     {% for js in cdn %}
-      {{js}}<br>
-      {{js.jquery}}<br>
+      js: {{js}}<br>
+      js.jquery.src: {{js.jquery.src}}<br>
     {% endfor %}
   {% endif %}
 {% endfor %}
