@@ -1,17 +1,7 @@
 
-{% for js in site.js %}
-  JS: {{js}}br
-  {% if js %}
-    {% for external in js.external %}
-      External: {{external}}<br>
-      {% if external %}
-        {% for cdn in external.cdn %}
-         {{cdn}}<br>
-        {% endfor %}
-      {% endif %}
+{% for external in site.js.external.cdn %}
 
-    {% endfor %}
-  {% endif %}
+  external: {{external}}<br>
 
 {% endfor %}
 
