@@ -1,7 +1,17 @@
 
 {% for external in site.js.external.cdn %}
 
-  external: {{external}}<br>
+  {% if external.jquery %}
+    {{external.jquery.src}}
+  {% endif %}
+
+  {% if external.popper %}
+    {{external.popper.src}}
+  {% endif %}
+
+  {% if external.bootstrap %}
+    {{external.bootstrap.src}}
+  {% endif %}
 
 {% endfor %}
 
