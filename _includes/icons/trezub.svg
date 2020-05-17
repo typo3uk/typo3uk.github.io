@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %} x="0px" y="0px" viewBox="0 0 330 460" style="enable-background:new 0 0 330 460;" xml:space="preserve">
-<style type="text/css">.st0{fill:#FFD500;}</style><path id="path7306" class="st0" d="M165,30c-9.3,10.6-15,24.4-15,39.6c0.6,33.4,4.6,66.7,5,100c0.7,31.1-8.6,60.3-19.9,88.8
+<style type="text/css">.trezub{fill:#FFD500;}</style><path id="path7306" class="trezub" d="M165,30c-9.3,10.6-15,24.4-15,39.6c0.6,33.4,4.6,66.7,5,100c0.7,31.1-8.6,60.3-19.9,88.8
 	c-3.8,7.9-7.9,15.6-12,23.3l-12-2.4c-10.8-2.2-17.9-12.7-15.7-23.5c1.9-9.5,10.2-16.1,19.5-16.1l4.4,0.5l-9.8-81.6
 	c-3.2-36.3-21.9-68.2-49.5-88.9c-4.7-3.6-9.8-6.8-15-9.7v289.7h66.9c5,27.1,19.9,50.8,40.9,67c5,3.4,9.2,8,12.2,13.3
 	c3-5.3,7.2-9.8,12.2-13.3c21-16.2,35.9-39.9,40.9-67H285V59.9c-5.2,2.9-10.3,6.1-15,9.7c-27.6,20.7-46.3,52.6-49.5,88.9l-9.8,81.6
