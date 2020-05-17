@@ -1,35 +1,159 @@
+@media screen and (max-width: 1170px) {
+  .modal.gov:before {
+    display: none;
+  }
+}
+.modal.gov .modal-dialog {
+  vertical-align: top;
+  margin: 75px 0 0 0;
+  width: 1170px;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .modal.gov .modal-dialog {
+    width: 100%;
+  }
+}
 .modal.gov .gov-ua {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #31486c;
-    padding-top: 35px;
-    padding-left: 65px;
-    padding-bottom: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #31486c;
+  padding-top: 35px;
+  padding-left: 65px;
+  padding-bottom: 45px;
+}
+@media screen and (max-width: 1170px) {
+  .modal.gov .gov-ua {
+    left: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .modal.gov .gov-ua {
+    width: 100%;
+    position: static;
+    height: inherit;
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .modal.gov .gov-ua {
+    padding: 20px;
+  }
 }
 .modal.gov .gov-ua .icon-close {
-    background-image: url(../../assets/images/icons/close-icon.png);
-    background-repeat: no-repeat;
-    top: 20px;
-    right: 20px;
-    height: 10px;
-    position: absolute;
-    width: 10px;
-    cursor: pointer;
+  background-image: url("../../assets/images/icons/close-icon.png");
+  background-repeat: no-repeat;
+  top: 20px;
+  right: 20px;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  cursor: pointer;
 }
-.modal.gov .gov-ua .outer-links {
-    float: left;
-    color: #ffffff;
-    line-height: 30px;
-    margin-right: 65px;
+@media screen and (max-width: 768px) {
+  .modal.gov .gov-ua .icon-close {
+    top: 35px;
+    right: 35px;
+  }
 }
 .modal.gov .gov-ua .bottom-link {
-    display: block;
-    margin-top: 135px;
-    color: #ffffff;
-    //font-family: "ProbaProSemiCorrect";
+  display: block;
+  margin-top: 135px;
+  color: #ffffff;
+  font-family: "ProbaProSemiCorrect";
 }
-.modal-body {
-    position: relative;
-    padding: 15px;
+.modal.gov .gov-ua .bottom-link span {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border-bottom: 1px solid transparent;
 }
+.modal.gov .gov-ua .bottom-link span:hover {
+  border-bottom: 1px solid #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .modal.gov .gov-ua .bottom-link {
+    margin-top: 5px;
+  }
+}
+.modal.gov .gov-ua .outer-links {
+  float: left;
+  color: #ffffff;
+  line-height: 30px;
+  margin-right: 65px;
+}
+.modal.gov .gov-ua .outer-links li {
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .modal.gov .gov-ua .outer-links {
+    margin-right: 0;
+    float: none;
+    width: 100%;
+  }
+}
+.modal.gov .gov-ua .outer-links:after {
+  content: '';
+  float: none;
+  clear: both;
+  display: block;
+  height: 1px;
+  width: 1px;
+}
+.modal.gov .gov-ua .outer-links a {
+  color: #ffffff;
+  font-family: "ProbaProSemiCorrect";
+}
+.modal.gov .gov-ua .outer-links a span {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+.modal.gov .gov-ua .outer-links a span:hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+
+
+// .modal.gov .gov-ua {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background-color: #31486c;
+//     padding-top: 35px;
+//     padding-left: 65px;
+//     padding-bottom: 45px;
+// }
+// .modal.gov .gov-ua .icon-close {
+//     background-image: url(../../assets/images/icons/close-icon.png);
+//     background-repeat: no-repeat;
+//     top: 20px;
+//     right: 20px;
+//     height: 10px;
+//     position: absolute;
+//     width: 10px;
+//     cursor: pointer;
+// }
+// .modal.gov .gov-ua .outer-links {
+//     float: left;
+//     color: #ffffff;
+//     line-height: 30px;
+//     margin-right: 65px;
+// }
+// .modal.gov .gov-ua .bottom-link {
+//     display: block;
+//     margin-top: 135px;
+//     color: #ffffff;
+//     //font-family: "ProbaProSemiCorrect";
+// }
+// .modal-body {
+//     position: relative;
+//     padding: 15px;
+// }
