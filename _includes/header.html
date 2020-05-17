@@ -6,7 +6,7 @@
         <p>Mobile Menu</p>
       </div>
       <div class="col-md-3 hidden-xs hidden-sm">
-        <a class="main-logo" data-toggle="modal" data-target="#govModal" href="javascript:void(0);" aria-haspopup="true" aria-expanded="false">
+        <a class="main-logo" data-toggle="modal" data-target="#govModal" href="#govModal" aria-haspopup="true" aria-expanded="false">
           <div class="icon"></div>
           <div class="main-logo_text">
             <span>gov.ua</span>
@@ -46,47 +46,49 @@
     <div class="row">
       <div class="col-md-12">
 
-          <div class="modal fade gov" id="govModal" tabindex="-1" role="dialog">
+          <div class="modal fade gov" id="govModal" tabindex="-1" role="dialog" aria-labelledby="govModal" aria-hidden="true">
               <div class="modal-dialog" role="document">
-                  <div class="modal-body gov-ua">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <ul class="outer-links">
-                          <li>
-                              <a href="http://www.president.gov.ua/" target="_blank" rel="nofollow">
-                                  <span>
-                                      Президент України
-                                  </span>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="http://rada.gov.ua/" target="_blank" rel="nofollow">
-                                  <span>Верховна Рада України</span>
-                              </a>
-                          </li>
-                      </ul>
-                      <ul class="outer-links">
-                          <li>
-                              <a href="http://www.ccu.gov.ua/" target="_blank" rel="nofollow">
-                                  <span>
-                                      Конституційний Суд України
-                                  </span>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="http://www.rnbo.gov.ua/" target="_blank" rel="nofollow">
-                                  <span>
-                                      Рада національної безпеки і оборони України
-                                  </span>
-                              </a>
-                          </li>
-                      </ul>
-                      <a class="bottom-link" href="/catalog">
-                          <span>
-                              Інші органи виконавчої влади
-                          </span>
-                      </a>
+                <div class="modal-content">
+                    <div class="modal-body gov-ua">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <ul class="outer-links">
+                            <li>
+                                <a href="http://www.president.gov.ua/" target="_blank" rel="nofollow">
+                                    <span>
+                                        Президент України
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://rada.gov.ua/" target="_blank" rel="nofollow">
+                                    <span>Верховна Рада України</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="outer-links">
+                            <li>
+                                <a href="http://www.ccu.gov.ua/" target="_blank" rel="nofollow">
+                                    <span>
+                                        Конституційний Суд України
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.rnbo.gov.ua/" target="_blank" rel="nofollow">
+                                    <span>
+                                        Рада національної безпеки і оборони України
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="bottom-link" href="/catalog">
+                            <span>
+                                Інші органи виконавчої влади
+                            </span>
+                        </a>
+                    </div>
                   </div>
               </div>
           </div>
