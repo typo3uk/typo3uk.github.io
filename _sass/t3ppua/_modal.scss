@@ -1,0 +1,35 @@
+.modal.gov .gov-ua {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #31486c;
+    padding-top: 35px;
+    padding-left: 65px;
+    padding-bottom: 45px;
+}
+.modal.gov .gov-ua .icon-close {
+    background-image: url(../themes/kmu/assets/images/icons/close-icon.png);
+    background-repeat: no-repeat;
+    top: 20px;
+    right: 20px;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    cursor: pointer;
+}
+.modal.gov .gov-ua .outer-links {
+    float: left;
+    color: #ffffff;
+    line-height: 30px;
+    margin-right: 65px;
+}
+.modal.gov .gov-ua .bottom-link {
+    display: block;
+    margin-top: 135px;
+    color: #ffffff;
+    //font-family: "ProbaProSemiCorrect";
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
