@@ -1,7 +1,7 @@
 // .gov .modal-content {
 //   border-radius: 0;
 // }
-.modal.gov .modal-content {
+.modal.gov .gov-ua {
     // position: absolute;
     // top: 0;
     // left: 0;
@@ -14,4 +14,11 @@
 
 .modal.gov .close {
   color: #ffffff;
+}
+
+.modal.gov .gov-ua .outer-links {
+    float: left;
+    color: #ffffff;
+    line-height: 30px;
+    margin-right: 65px;
 }
