@@ -1,3 +1,16 @@
-.gov .modal-content {
-  border-radius: 0;
+// .gov .modal-content {
+//   border-radius: 0;
+// }
+.modal.gov .modal-content {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    background-color: #31486c;
+    // padding-top: 35px;
+    // padding-left: 65px;
+    // padding-bottom: 45px;
+}
+
+.modal.gov .close {
+  color: #ffffff;
 }
