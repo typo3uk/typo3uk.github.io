@@ -2,7 +2,7 @@
 @import "main-logo";
 @import "modal";
 
-header .menu-container .menu ul li a {
+header .navbar .navbar-nav ul li a {
   display: block;
   width: 100%;
   color: #ffffff;
@@ -19,11 +19,11 @@ header .menu-container .menu ul li a {
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-header .menu-container .menu ul li a:hover {
+header .navbar .navbar-nav ul li a:hover {
   color: #ffe358;
 }
 
-header .menu-container .menu .dropdown-toggle::after {
+header .navbar .navbar-nav .dropdown-toggle::after {
     display: inline-block;
     margin: 0;
     vertical-align: 0;
