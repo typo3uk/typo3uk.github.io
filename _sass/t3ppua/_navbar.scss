@@ -4,7 +4,7 @@ $colDefault     : #ffffff;
 $colHighlight   : #ffe358;
 $dropDown       : true;
 .navbar {
-  background-color: $bgDefault;
+  // background-color: $bgDefault;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
