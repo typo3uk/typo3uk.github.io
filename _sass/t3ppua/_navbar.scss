@@ -121,18 +121,22 @@ $dropDown       : true;
 .navbar .navbar-nav .nav-link {
   color: #fff;
   border-radius: unset;
-  margin: unset;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  padding-right: 12px;
+  padding-left: 12px;
 }
 .dropdown-menu {
+  border-top: 1px solid #273043;
   border-radius: unset;
 }
-// .dropdown-toggle::after {
-//   display: inline-block;
-//   margin-left: unset;
-//   vertical-align: unset;
-//   content: unset;
-//   border-top: unset;
-//   border-right: unset;
-//   border-bottom: unset;
-//   border-left: unset;
-// }
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: unset;
+  vertical-align: unset;
+  content: unset;
+  border-top: unset;
+  border-right: unset;
+  border-bottom: unset;
+  border-left: unset;
+}
