@@ -23,8 +23,9 @@ $dropDown       : true;
   .navbar-nav {
     .nav-link {
       color: $colDefault;
-      // border-radius: .25rem;
+      border-radius: 0;
       margin: 0 0.25em;
+      padding: 19px 12px;
       &:not(.disabled) {
         &:hover, &:focus {
           color: $colHighlight;
@@ -118,14 +119,6 @@ $dropDown       : true;
     background-color: $bgHighlight; }}
 
 
-.navbar .navbar-nav .nav-link {
-  color: #fff;
-  border-radius: unset;
-  padding-top: 19px;
-  padding-bottom: 19px;
-  padding-right: 12px;
-  padding-left: 12px;
-}
 .dropdown-menu {
   border-top: 1px solid #273043;
   border-radius: unset;
