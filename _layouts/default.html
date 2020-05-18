@@ -7,8 +7,32 @@
   </head>
   <body>
     {% include header.html %}
-    <main id="content" role="main">
-      {{ content }}
+    <main id="content" class="content" role="main">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-breadcrumbs">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#"><span>Головна</span></a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#">Діяльність</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#">Проведення конкурсів</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Конкурс з формування Громадської ради
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{ content }}
+        </div>
+      </div>
     </main>
     {% include footer.html %}
     {% include scripts.html %}
