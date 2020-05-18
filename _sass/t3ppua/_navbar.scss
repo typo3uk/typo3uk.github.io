@@ -115,3 +115,13 @@ $dropDown       : true;
   .dropdown-item.active {
     color: $colHighlight;
     background-color: $bgHighlight; }}
+
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  border-radius: unset;
+  margin: unset;
+}
+.dropdown-menu {
+  border-radius: unset;
+}
