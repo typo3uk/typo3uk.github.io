@@ -8,21 +8,29 @@ $dropDown       : true;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {
-      color: $colHighlight; }}
+      color: $colHighlight;
+    }
+  }
   .navbar-text {
     color: $colDefault;
     a {
       color: $colHighlight;
       &:hover, &:focus {
-        color: $colHighlight; }}}
+        color: $colHighlight;
+      }
+    }
+  }
   .navbar-nav {
     .nav-link {
-      color: $colDefault;
-      border-radius: .25rem;
-      margin: 0 0.25em;
-      &:not(.disabled) {
-        &:hover, &:focus {
-          color: $colHighlight; }}}
+    color: $colDefault;
+    border-radius: .25rem;
+    margin: 0 0.25em;
+    &:not(.disabled) {
+      &:hover, &:focus {
+        color: $colHighlight;
+      }
+    }
+  }
     @if ($dropDown) {
       .dropdown-menu {
         background-color: $bgDefault;
