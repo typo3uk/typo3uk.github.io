@@ -13,6 +13,16 @@
 //     padding-bottom: 0;
 //   }
 // }
+.main-breadcrumbs .breadcrumb>li.active{
+  // font-size: 90%;
+  // color: #a7a9af;
+  max-width: 750px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  // position: relative;
+  // top: 4px;
+}
 .main-breadcrumbs .breadcrumb {
   // padding: 0;
   // margin-bottom: 0;
@@ -73,10 +83,10 @@
 .main-breadcrumbs .breadcrumb>li.active{
   // font-size: 90%;
   // color: #a7a9af;
-  max-width: 750px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  // max-width: 750px;
+  // text-overflow: ellipsis;
+  // white-space: nowrap;
+  // overflow: hidden;
   // position: relative;
   // top: 4px;
 }
