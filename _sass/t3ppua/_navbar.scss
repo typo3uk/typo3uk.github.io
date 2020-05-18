@@ -45,6 +45,7 @@ $dropDown       : true;
         .dropdown-item {
           color: $colDefault;
           font-weight: 600;
+          padding: 1.1875rem 0.75rem;
           &:hover, &:focus, &.active {
             color: $colHighlight;
             background-color: $bgHighlight;
