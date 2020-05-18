@@ -39,7 +39,7 @@
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2):before{
     font-size: 87%;
     display: inline-block;
-    content: "\f2ea";
+    content: "\2190";
     color: #2669e3;
     padding-left: 0;
     padding-right: 10px;
@@ -70,16 +70,16 @@
 //     padding-right: 10px;
 //   }
 // }
-// .main-breadcrumbs .breadcrumb>li.active{
-//   font-size: 90%;
-//   color: #a7a9af;
-//   max-width: 750px;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   position: relative;
-//   top: 4px;
-// }
+.main-breadcrumbs .breadcrumb>li.active{
+  // font-size: 90%;
+  // color: #a7a9af;
+  max-width: 750px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  // top: 4px;
+}
 // .main-breadcrumbs .breadcrumb>li.active sup {
 //   font-size: 90%;
 // }
