@@ -13,16 +13,6 @@
 //     padding-bottom: 0;
 //   }
 // }
-.main-breadcrumbs .breadcrumb>li.active{
-  // font-size: 90%;
-  // color: #a7a9af;
-  max-width: 750px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  // position: relative;
-  // top: 4px;
-}
 .main-breadcrumbs .breadcrumb {
   // padding: 0;
   // margin-bottom: 0;
@@ -34,14 +24,14 @@
   // padding-top: 10px;
   // border-radius: 0;
 }
-// .main-breadcrumbs .breadcrumb>li {
-//   display: inline-block;
-// }
-@media screen and (max-width:768px) {
-  .main-breadcrumbs .breadcrumb>li {
-    display: none;
-  }
+.main-breadcrumbs .breadcrumb>li {
+  display: inline-block;
 }
+// @media screen and (max-width:768px) {
+//   .main-breadcrumbs .breadcrumb>li {
+//     display: none;
+//   }
+// }
 @media screen and (max-width:768px) {
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2){
     display: block;
@@ -83,10 +73,10 @@
 .main-breadcrumbs .breadcrumb>li.active{
   // font-size: 90%;
   // color: #a7a9af;
-  // max-width: 750px;
-  // text-overflow: ellipsis;
-  // white-space: nowrap;
-  // overflow: hidden;
+  max-width: 750px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   // position: relative;
   // top: 4px;
 }
