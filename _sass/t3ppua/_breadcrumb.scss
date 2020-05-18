@@ -27,16 +27,16 @@
 // .main-breadcrumbs .breadcrumb>li {
 //   display: inline-block;
 // }
-// @media screen and (max-width:768px) {
-//   .main-breadcrumbs .breadcrumb>li {
-//     display: none;
-//   }
-// }
 @media screen and (max-width:768px) {
-  .main-breadcrumbs .breadcrumb>li:nth-last-child(2) {
+  .main-breadcrumbs .breadcrumb>li {
+    display: none;
+  }
+}
+@media screen and (max-width:768px) {
+  .main-breadcrumbs .breadcrumb>li:nth-last-child(2){
     display: block;
   }
-  .main-breadcrumbs .breadcrumb>li:nth-last-child(2):before {
+  .main-breadcrumbs .breadcrumb>li:nth-last-child(2):before{
     font-size: 87%;
     display: inline-block;
     content: "\2190";
