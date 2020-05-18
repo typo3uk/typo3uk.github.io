@@ -23,6 +23,7 @@ $dropDown       : true;
   .navbar-nav {
     .nav-link {
       color: $colDefault;
+      font-weight: 600;
       border-radius: 0;
       margin: 0 0.25em;
       padding: 19px 12px;
@@ -41,6 +42,7 @@ $dropDown       : true;
         // border-color: $bgHighlight;
         .dropdown-item {
           color: $colDefault;
+          font-weight: 600;
           &:hover, &:focus, &.active {
             color: $colHighlight;
             background-color: $bgHighlight;
