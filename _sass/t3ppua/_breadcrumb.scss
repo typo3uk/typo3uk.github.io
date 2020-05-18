@@ -13,17 +13,17 @@
     padding-bottom: 0;
   }
 }
-// .main-breadcrumbs .breadcrumb {
-//   padding: 0;
-//   margin-bottom: 0;
-//   background-color: transparent;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   padding-bottom: 5px;
-//   padding-top: 10px;
-//   border-radius: 0;
-// }
+.main-breadcrumbs .breadcrumb {
+  // padding: 0;
+  // margin-bottom: 0;
+  // background-color: transparent;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  // overflow: hidden;
+  // padding-bottom: 5px;
+  // padding-top: 10px;
+  // border-radius: 0;
+}
 // .main-breadcrumbs .breadcrumb>li {
 //   display: inline-block;
 // }
@@ -76,8 +76,8 @@
   max-width: 750px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
-  position: relative;
+  // overflow: hidden;
+  // position: relative;
   // top: 4px;
 }
 // .main-breadcrumbs .breadcrumb>li.active sup {
