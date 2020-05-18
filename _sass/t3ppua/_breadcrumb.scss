@@ -27,11 +27,11 @@
 // .main-breadcrumbs .breadcrumb>li {
 //   display: inline-block;
 // }
-// @media screen and (max-width:768px) {
-//   .main-breadcrumbs .breadcrumb>li {
-//     display: none;
-//   }
-// }
+@media screen and (max-width:768px) {
+  .main-breadcrumbs .breadcrumb>li {
+    display: none;
+  }
+}
 @media screen and (max-width:768px) {
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2){
     display: block;
