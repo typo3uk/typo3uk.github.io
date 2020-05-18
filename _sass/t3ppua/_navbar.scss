@@ -58,6 +58,9 @@ $dropDown       : true;
         }
       }
     }
+    .nav-item {
+      margin-right: 20px;
+    }
     .nav-item.active, .nav-item.show {
       .nav-link, .nav-link:hover, .nav-link:focus {
         color: $colHighlight;
