@@ -35,9 +35,10 @@ $dropDown       : true;
     }
     @if ($dropDown) {
       .dropdown-menu {
-        // $bgHighlight
+        //border-top: 1px solid #273043;
+        border-radius: 0;
         // background-color: $bgDefault;
-        // border-color: $bgHighlight;
+        border-color: $bgHighlight;
         background-color: $bgHighlight;
         // border-color: $bgHighlight;
         .dropdown-item {
@@ -121,10 +122,10 @@ $dropDown       : true;
     background-color: $bgHighlight; }}
 
 
-.dropdown-menu {
-  border-top: 1px solid #273043;
-  border-radius: unset;
-}
+// .dropdown-menu {
+//   border-top: 1px solid #273043;
+//   border-radius: unset;
+// }
 .dropdown-toggle::after {
   display: inline-block;
   margin-left: unset;
