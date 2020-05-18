@@ -83,3 +83,21 @@
 // .main-breadcrumbs .breadcrumb>li.active sup {
 //   font-size: 90%;
 // }
+ol.breadcrumb li:first-child:nth-last-child(1) {
+  max-width: 100%;
+}
+
+ol.breadcrumb li:first-child:nth-last-child(2),
+ol.breadcrumb li:first-child:nth-last-child(2) ~ li {
+    max-width: 50%;
+}
+
+ol.breadcrumb li:first-child:nth-last-child(3),
+ol.breadcrumb li:first-child:nth-last-child(3) ~ li {
+    max-width: 33.3333%;
+}
+
+ol.breadcrumb li:first-child:nth-last-child(4),
+ol.breadcrumb li:first-child:nth-last-child(4) ~ li {
+    max-width: 25%;
+}
