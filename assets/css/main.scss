@@ -4,23 +4,3 @@
 // Import from _scss/_base.scss
 //
 @import "t3ppua/base";
-
-
-.navbar .navbar-nav .nav-link {
-  color: #fff;
-  border-radius: unset;
-  margin: unset;
-}
-.dropdown-menu {
-  border-radius: unset;
-}
-.dropdown-toggle::after {
-  display: inline-block;
-  margin-left: unset;
-  vertical-align: unset;
-  content: unset;
-  border-top: unset;
-  border-right: unset;
-  border-bottom: unset;
-  border-left: unset;
-}
