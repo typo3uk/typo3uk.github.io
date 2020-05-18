@@ -66,7 +66,7 @@ $dropDown       : true;
       color: $colDefault; }}
   .navbar-collapse,
   .navbar-form {
-    // border-color: $colDefault; 
+    // border-color: $colDefault;
   }
   .navbar-link {
     color: $colDefault;
@@ -116,3 +116,23 @@ $dropDown       : true;
   .dropdown-item.active {
     color: $colHighlight;
     background-color: $bgHighlight; }}
+
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+  border-radius: unset;
+  margin: unset;
+}
+.dropdown-menu {
+  border-radius: unset;
+}
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: unset;
+  vertical-align: unset;
+  content: unset;
+  border-top: unset;
+  border-right: unset;
+  border-bottom: unset;
+  border-left: unset;
+}
