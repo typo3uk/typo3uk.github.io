@@ -45,27 +45,29 @@
           <div class="container">
 
             <div class="row w-100">
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                {% assign entries = site.pages | sort: "path" %}
-                {% for entry in entries %}
-                  {% capture slug %}{{ entry.url | split: "/" | last }}{% endcapture %}
-                  {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
-                  {% assign wrap = forloop.index | modulo:5 %}
-                  {% if forloop.first %}### First ###{% endif %}
-                  {% if '/district/' == current %}
+              {% assign secondlevel = site.pages | sort: "path" %}
+              {% for second in secondlevel %}
+                {% capture slug %}{{ second.url | split: "/" | last }}{% endcapture %}
+                {% capture current %}{{ second.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+                {% assign wrap = forloop.index | modulo:5 %}
+                {% if forloop.first %}
+                <div class="col-md-4">
+                  <ul class="list-unstyled pl-0">
+                {% endif %}
+                {% if '/district/' == current %}
 
 
-                      <li>
-                        <a href="{{ entry.url }}" class="dropdown-item{% if page.url == entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
-                      </li>
+                    <li>
+                      <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }}</a>
+                    </li>
 
 
-                  {% endif %}
-                  {% if forloop.last %}### last ###{% endif %}
-                {% endfor %}
-                </ul>
-              </div>
+                {% endif %}
+                {% if forloop.last %}
+                  </ul>
+                </div>
+                {% endif %}
+              {% endfor %}
             </div>
 
             {% comment %}
