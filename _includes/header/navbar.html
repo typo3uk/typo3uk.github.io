@@ -51,10 +51,10 @@
                 {% for entry in entries %}
                   {% capture slug %}{{ entry.url | split: "/" | last }}{% endcapture %}
                   {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
-                  {% assign remainder = forloop.index | modulo:2 %}
+                  {% assign remainder = forloop.index | modulo:5 %}
                   {% if '/district/' == current %}
 
-{                   % if forloop.first == true %}### First ###{% endif %}
+                    {% if forloop.first == true %}### First ###{% endif %}
 
                       <li>
                         <a href="{{ entry.url }}" class="dropdown-item{% if page.url == entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
