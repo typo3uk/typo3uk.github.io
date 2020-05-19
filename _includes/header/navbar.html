@@ -14,31 +14,26 @@
         {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
         {%- if "/" == current -%}
 
-          {%- if one.url == "/region/" -%}
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
+          {% include header/dropdown.html current = one.url %}
+        </li>
 
-          <li class="nav-item dropdown position-static">
-            <a class="nav-link" href="{{ one.url }}">{{ one.title }}</a>
-            {% include header/dropdown.html current = one.url %}
-          </li>
+          {%- if one.url -%}
 
-          {%- else -%}
-
-            <li class="nav-item dropdown position-static">
-              <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
-              {% include header/dropdown.html current = one.url %}
-            </li>
             {%- assign twos = site.pages -%}
             {%- for two in twos %}
               {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
               {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
               {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
+
               <li class="nav-item dropdown position-static">
                 <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
                 {% include header/dropdown.html current = two.url %}
               </li>
+
               {%- endif -%}
             {%- endfor -%}
-
           {%- endif -%}
 
         {%- endif -%}
