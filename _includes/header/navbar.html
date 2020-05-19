@@ -44,6 +44,25 @@
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
           <div class="container">
 
+            {% assign url_parts = "/district/" | split: '/' %}
+            {% assign url_parts_size = url_parts | size %}
+            {% assign rm = url_parts | last %}
+            {% assign base_url = page.url | replace: rm %}
+
+            <ul>
+            {% for node in site.pages %}
+              {% if node.url contains base_url %}
+                {% assign node_url_parts = node.url | split: '/' %}
+                {% assign node_url_parts_size = node_url_parts | size %}
+                {% assign filename = node_url_parts | last %}
+                {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+                  <li><a href='{{node.url}}'>{{node.title}}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </ul>
+
+            {% comment %}
             {% assign pages = site.pages | sort: 'order' %}
             {% assign parts = "/district/" | split: '/' %}
             {% assign depth = parts | size %}
@@ -62,7 +81,7 @@
                   <ul class="list-unstyled pl-0">
                     {% for node in pages %}
                       {% if node.url contains page.url %}
-                        {% assign node_parts = "/district/" | split: '/' %}
+                        {% assign node_parts = node.url | split: '/' %}
                         {% assign node_depth = node_parts | size %}
                         {% if node_depth == depth %}
                           <li>
@@ -76,7 +95,6 @@
               </div>
             {% endif %}
 
-            {% comment %}
             <div class="row w-100">
               <div class="col-md-4">
                 <ul class="list-unstyled pl-0">
