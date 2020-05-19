@@ -1,18 +1,24 @@
-{%- assign firstlevel = site.pages -%}
-{%- for first in firstlevel %}
-  {%- capture slug -%}{{ first.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ first.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+{%- assign ones = site.pages -%}
+{%- for one in ones %}
+  {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
   {%- if "/" == current -%}
 
-    {{ first.url }} - {{ first.title }}<br>
+  <li class="nav-item dropdown position-static">
+    <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
+  </li>
 
-    {%- if first.url -%}
-      {%- assign secondlevel = site.pages -%}
-      {%- for second in secondlevel %}
-        {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-        {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-        {%- if first.url == current and second.url contains "city" or second.url contains "town" -%}
-          {{ second.url }} - {{ second.title }}<br>
+    {%- if one.url -%}
+      {%- assign twos = site.pages -%}
+      {%- for two in twos %}
+        {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
+        {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+        {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
+
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
+        </li>
+
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
@@ -66,9 +72,7 @@
 
       <li class="nav-item dropdown position-static">
         <a class="nav-link dropdown-toggle" href="/district/" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Районні ради</a>
-        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov">
-          {% include header/dropdown.html current = "/district/" %}
-        </div>
+        {% include header/dropdown.html current = "/district/" %}
       </li>
 
       <li class="nav-item dropdown position-static">
