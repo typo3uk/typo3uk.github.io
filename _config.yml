@@ -7,7 +7,7 @@ timezone: Europe/Kiev
 title: Default Site Title
 description: Default Site Description
 name: Site Name
-brand: .pp.ua
+brand:
 logo: "/assets/images/logo.svg"
 author:
   name: Default Author Name
