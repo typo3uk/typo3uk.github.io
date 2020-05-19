@@ -49,7 +49,7 @@
                 {% capture slug %}{{ second.url | split: "/" | last }}{% endcapture %}
                 {% capture current %}{{ second.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
                 {% if '/district/' == current %}
-                <div class="col-md-4">
+                <div class="col-md">
                   <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }}</a>
                 </div>
                 {% endif %}
