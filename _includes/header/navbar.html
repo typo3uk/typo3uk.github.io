@@ -44,9 +44,10 @@
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
           <div class="container">
 
-            {% assign url_parts = "/district/" | split: '/' %}
+            {% assign url_parts = page.url | split: '/' %}
             {% assign url_parts_size = url_parts | size %}
-            {% assign base_url = page.url %}
+            {% assign rm = url_parts | last %}
+            {% assign base_url = page.url | replace: rm %}
 
             <ul>
             {% for node in site.pages %}
