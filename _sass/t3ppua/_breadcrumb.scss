@@ -39,7 +39,7 @@
     display:block
   }
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2):before{
-    font-size:87%;
+    // font-size:87%;
     display:inline-block;
     content: "\2190";
     color:#2669e3;
@@ -49,7 +49,8 @@
 }
 .main-breadcrumbs .breadcrumb>li>a{
   // color:#2d5ca6;
-  font-size:90%;
+  // font-size:90%;
+  font-weight: 600;
   text-decoration: none;
   border-bottom:1px solid transparent;
   transition:.4s ease-in-out
@@ -75,7 +76,7 @@
   }
 }
 .main-breadcrumbs .breadcrumb>li.active {
-  font-size:90%;
+  // font-size:90%;
   // color:#a7a9af;
   max-width:750px;
   text-overflow:ellipsis;
