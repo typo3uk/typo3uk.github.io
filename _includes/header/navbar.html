@@ -50,7 +50,7 @@
                 {% capture slug %}{{ second.url | split: "/" | last }}{% endcapture %}
                 {% capture current %}{{ second.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
                 {% assign wrap = forloop.index | modulo:5 %}
-                {% if forloop.first == true %}
+                {% if forloop.first == true or wrap == 5 %}
                 <div class="col-md-4">
                   <ul class="list-unstyled pl-0">
                 {% endif %}
