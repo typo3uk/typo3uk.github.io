@@ -47,6 +47,7 @@
             {% assign pages = site.pages | sort: 'order' %}
             {% assign parts = "/district/" | split: '/' %}
             {% assign depth = parts | size %}
+            {% assign depth = depth | plus:1 %}
 
             {% assign has_children = false %}
             {% for node in pages %}
