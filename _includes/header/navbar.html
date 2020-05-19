@@ -44,6 +44,23 @@
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
           <div class="container">
 
+            <ul class="list-group row w-100">
+              {% assign secondlevel = site.pages | sort: "path" %}
+              {% for second in secondlevel %}
+                {% capture slug %}{{ second.url | split: "/" | last }}{% endcapture %}
+                {% capture current %}{{ second.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+                {% if '/district/' == current %}
+
+                <li class="list-group-item col-md-4">
+                  <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }} - {{wrap}}</a>
+                </li>
+
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+            {% comment %}
+
             <div class="row w-100">
               {% assign secondlevel = site.pages | sort: "path" %}
               {% for second in secondlevel %}
@@ -68,7 +85,7 @@
               {% endfor %}
             </div>
 
-            {% comment %}
+
             {% assign pages = site.pages | sort: 'order' %}
             {% assign parts = "/district/" | split: '/' %}
             {% assign depth = parts | size %}
