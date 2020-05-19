@@ -1,13 +1,26 @@
-{%- assign secondlevel = site.pages | sort: "path" -%}
-{%- for second in secondlevel %}
-  {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+{%- assign firstlevel = site.pages | sort: "path" -%}
+{%- for first in firstlevel %}
+  {%- capture slug -%}{{ first.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ first.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
   {%- if "/" == current -%}
-  <div class="col-sm-6 col-md-4">
-    <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
-  </div>
+
+    {{ first.url }} - {{ first.title }}<br>
+
+    {%- if first.url -%}
+      {%- assign secondlevel = site.pages | sort: "path" -%}
+      {%- for second in secondlevel %}
+        {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+        {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+        {%- if first.url == current -%}
+          {{ second.url }} - {{ second.title }}<br>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
   {%- endif -%}
 {%- endfor -%}
+
+
 
 
 <nav class="navbar navbar-expand-lg justify-content-between">
