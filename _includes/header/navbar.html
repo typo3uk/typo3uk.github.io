@@ -60,13 +60,6 @@
                       <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }} - {{wrap}}</a>
                     </li>
 
-                  {% if wrap == 5 %}
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <ul class="list-unstyled pl-0">
-                  {% endif %}
-
                   {% if forloop.last == true %}
                     </ul>
                   </div>
