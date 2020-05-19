@@ -57,25 +57,29 @@
             {% endfor %}
 
             {% if has_children == true %}
-              <ul>
-              {% for node in pages %}
-                {% if node.url contains page.url %}
-                  {% assign node_parts = node.url | split: '/' %}
-                  {% assign node_depth = node_parts | size %}
-                  {% if node_depth == depth %}
-                    <li>
-                      <a href="{{ node.url }}">
-                        {% if node.link %}
-                          {{ node.link }}
-                        {% else %}
-                          {{ node.title }}
+              <div class="row w-100">
+                <ul class="list-unstyled pl-0">
+                  <ul class="list-unstyled pl-0">
+                    {% for node in pages %}
+                      {% if node.url contains page.url %}
+                        {% assign node_parts = node.url | split: '/' %}
+                        {% assign node_depth = node_parts | size %}
+                        {% if node_depth == depth %}
+                          <li>
+                            <a href="{{ node.url }}">
+                              {% if node.link %}
+                                {{ node.link }}
+                              {% else %}
+                                {{ node.title }}
+                              {% endif %}
+                            </a>
+                          </li>
                         {% endif %}
-                      </a>
-                    </li>
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-              </ul>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
             {% endif %}
 
             {% comment %}
