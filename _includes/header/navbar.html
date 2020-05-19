@@ -53,7 +53,7 @@
                 {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
                 {%- if '/district/' == current -%}
                 <div class="col-sm-6 col-md-4">
-                  <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }}</a>
+                  <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
                 </div>
                 {%- endif -%}
               {%- endfor -%}
