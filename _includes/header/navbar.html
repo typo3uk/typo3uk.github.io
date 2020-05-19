@@ -53,7 +53,7 @@
                   {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
                   {% if '/district/' == current %}
                   <li>
-                    <a href="{{ entry.url }}" class="dropdown-item{% if page.url == entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }} - {{page.url}}</a>
+                    <a href="{{ entry.url }}" class="dropdown-item{% if page.url == entry.url %} active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
                   </li>
                   {% endif %}
                 {% endfor %}
