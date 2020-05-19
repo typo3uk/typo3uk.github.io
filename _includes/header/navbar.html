@@ -1,17 +1,3 @@
-
-{%- assign secondlevel = site.pages | sort: "path" -%}
-{%- for second in secondlevel %}
-  {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if "/" == current -%}
-  <div class="col-sm-6 col-md-4">
-    <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
-  </div>
-  {%- endif -%}
-{%- endfor -%}
-
-<hr>
-
 <nav class="navbar navbar-expand-lg justify-content-between">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navGov" aria-controls="navGov" aria-expanded="false" aria-label="Toggle navigation">
