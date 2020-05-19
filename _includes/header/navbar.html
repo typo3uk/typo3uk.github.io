@@ -62,7 +62,7 @@
                   <ul class="list-unstyled pl-0">
                     {% for node in pages %}
                       {% if node.url contains page.url %}
-                        {% assign node_parts = node.url | split: '/' %}
+                        {% assign node_parts = "/district/" | split: '/' %}
                         {% assign node_depth = node_parts | size %}
                         {% if node_depth == depth %}
                           <li>
