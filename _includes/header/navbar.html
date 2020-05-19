@@ -16,7 +16,7 @@
 
         <li class="nav-item dropdown position-static">
           <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
-          {% include header/dropdown.html current = "{{ one.url }}" %}
+          {% include header/dropdown.html current = one.url %}
         </li>
 
           {%- if one.url -%}
@@ -28,7 +28,7 @@
 
               <li class="nav-item dropdown position-static">
                 <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
-                {% include header/dropdown.html current = "{{ two.url }}" %}
+                {% include header/dropdown.html current = two.url %}
               </li>
 
               {%- endif -%}
