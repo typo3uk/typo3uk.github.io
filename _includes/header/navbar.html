@@ -49,9 +49,9 @@
               {% capture slug %}{{ entry.url | split: "/" | last                       }}{% endcapture %}
               {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
 
-              {% if '/' == current %}
+              {% if '/district/' == current %}
               <a class="page-link {% if page.url == entry.url %}active{% endif %}"
-              href="{{ site.baseurl }}{{ entry.url }}">;{{ entry.title }}</a>
+              href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
               {% endif %}
             {% endfor %}
 
