@@ -1,54 +1,101 @@
-<header class="navbar navbar-expand flex-column flex-md-row bd-navbar">
-  <a class="navbar-brand mr-0 mr-md-2" href="#" aria-label="B">
-    {%- include icons/bootstrap.svg width="36" height="36" class="d-block" -%}
-  </a>
+<nav class="navbar navbar-expand-lg justify-content-between">
 
-  <div class="navbar-nav-scroll">
-    <ul class="navbar-nav bd-navbar-nav flex-row">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navGov" aria-controls="navGov" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navGov">
+    <ul class="navbar-nav">
+
       <li class="nav-item">
-        <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
+        <a class="nav-link active" href="#">Обласна рада</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');" target="_blank" rel="noopener">Blog</a>
+
+      <li class="nav-item dropdown position-static">
+        <a class="nav-link dropdown-toggle" href="#" id="navDroзGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Міста обласного значення</a>
+        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
+          <div class="container">
+            <div class="row w-100">
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item active" href="#">Mісто Один</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Два</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто Три</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Чотири</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто П'ять</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Шість</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </li>
+
+      <li class="nav-item dropdown position-static">
+        <a class="nav-link dropdown-toggle" href="/district/" id="navDroзGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Районні ради</a>
+        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
+          <div class="container">
+            <div class="row w-100">
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item active" href="#">Mісто Один</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Два</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто Три</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Чотири</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто П'ять</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Шість</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown position-static">
+        <a class="nav-link dropdown-toggle" href="#" id="navDroзGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Міста районного значення</a>
+        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
+          <div class="container">
+            <div class="row w-100">
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item active" href="#">Mісто Один</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Два</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто Три</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Чотири</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                  <li><a class="dropdown-item" href="#">Mісто П'ять</a></li>
+                  <li><a class="dropdown-item" href="#">Mісто Шість</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
     </ul>
   </div>
 
-  <ul class="navbar-nav ml-md-auto">
-    <li class="nav-item dropdown">
-      <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Version
-      </a>
-      <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="#">Latest</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">3</a>
-        <a class="dropdown-item" href="#">2</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">All versions</a>
-      </div>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link pl-2 pr-1 mx-1 py-3 my-n2" href="#" target="_blank" rel="noopener" aria-label="GitHub">
-        {%- include icons/github.svg class="navbar-nav-svg" -%}
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link px-1 mx-1 py-3 my-n2" href="#" target="_blank" rel="noopener" aria-label="Twitter">
-        {%- include icons/twitter.svg class="navbar-nav-svg" -%}
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link px-1 mx-1 py-3 my-n2" href="#" target="_blank" rel="noopener" aria-label="Slack">
-        {%- include icons/slack.svg class="navbar-nav-svg" -%}
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link px-1 mx-1 py-3 my-n2" href="#" target="_blank" rel="noopener" aria-label="Open Collective">
-        {%- include icons/opencollective.svg class="navbar-nav-svg" -%}
-      </a>
-    </li>
-  </ul>
-
-</header>
+</nav>
