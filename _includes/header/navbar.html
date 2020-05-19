@@ -11,7 +11,7 @@
       {%- for second in secondlevel %}
         {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
         {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-        {%- if first.url == current -%}
+        {%- if first.url == current and second.url contains "city" or second.url contains "town" -%}
           {{ second.url }} - {{ second.title }}<br>
         {%- endif -%}
       {%- endfor -%}
