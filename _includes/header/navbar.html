@@ -1,33 +1,3 @@
-{%- assign ones = site.pages -%}
-{%- for one in ones %}
-  {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if "/" == current -%}
-
-  <li class="nav-item dropdown position-static">
-    <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
-  </li>
-
-    {%- if one.url -%}
-      {%- assign twos = site.pages -%}
-      {%- for two in twos %}
-        {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
-        {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-        {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
-
-        <li class="nav-item dropdown position-static">
-          <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
-        </li>
-
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-
-  {%- endif -%}
-{%- endfor -%}
-
-
-
 
 <nav class="navbar navbar-expand-lg justify-content-between">
 
@@ -38,70 +8,35 @@
   <div class="collapse navbar-collapse" id="navGov">
     <ul class="navbar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Обласна рада</a>
-      </li>
+      {%- assign ones = site.pages -%}
+      {%- for one in ones %}
+        {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+        {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+        {%- if "/" == current -%}
 
-      <li class="nav-item dropdown position-static">
-        <a class="nav-link dropdown-toggle" href="#" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Міста обласного значення</a>
-        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov">
-          <div class="container">
-            <div class="row w-100">
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item active" href="#">Mісто Один</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Два</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item" href="#">Mісто Три</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Чотири</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item" href="#">Mісто П'ять</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Шість</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
+          {% include header/dropdown.html current = "{{ one.url }}" %}
+        </li>
 
-      <li class="nav-item dropdown position-static">
-        <a class="nav-link dropdown-toggle" href="/district/" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Районні ради</a>
-        {% include header/dropdown.html current = "/district/" %}
-      </li>
+          {%- if one.url -%}
+            {%- assign twos = site.pages -%}
+            {%- for two in twos %}
+              {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
+              {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+              {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
 
-      <li class="nav-item dropdown position-static">
-        <a class="nav-link dropdown-toggle" href="#" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Міста районного значення</a>
-        <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov">
-          <div class="container">
-            <div class="row w-100">
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item active" href="#">Mісто Один</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Два</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item" href="#">Mісто Три</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Чотири</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled pl-0">
-                  <li><a class="dropdown-item" href="#">Mісто П'ять</a></li>
-                  <li><a class="dropdown-item" href="#">Mісто Шість</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
+              <li class="nav-item dropdown position-static">
+                <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
+                {% include header/dropdown.html current = "{{ two.url }}" %}
+              </li>
+
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+
+        {%- endif -%}
+      {%- endfor -%}
 
     </ul>
   </div>
