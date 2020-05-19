@@ -1,5 +1,25 @@
 
+{% assign pages = site.pages | sort: 'order' %}
 
+<ul>
+{% for node in pages %}
+  {% assign node_parts = node.url | split: '/' %}
+  {% assign node_depth = node_parts | size %}
+  {% if node.order %}
+    {% if node_depth == 2 %}
+      <li{% if page.url contains node.url %} class="active"{% endif %}>
+        <a href="{{ node.url }}">
+          {% if node.link %}
+            {{ node.link }}
+          {% else %}
+            {{ node.title }}
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
 
 <nav class="navbar navbar-expand-lg justify-content-between">
 
