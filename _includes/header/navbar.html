@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navGov">
     <ul class="navbar-nav">
 
-      {%- assign ones = site.pages -%}
+      {%- assign ones = site.pages reversed -%}
       {%- for one in ones %}
         {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
         {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
