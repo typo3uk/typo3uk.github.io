@@ -43,6 +43,42 @@
         <a class="nav-link dropdown-toggle" href="/district/" id="navDroзGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Районні ради</a>
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
           <div class="container">
+
+            {% assign pages = site.pages | sort: 'order' %}
+            {% assign parts = "/district/" | split: '/' %}
+            {% assign depth = parts | size %}
+            {% assign depth = depth | plus:1 %}
+
+            {% assign has_children = false %}
+            {% for node in pages %}
+              {% if node.url contains page.url and node.url != page.url %}
+                {% assign has_children = true %}
+              {% endif %}
+            {% endfor %}
+
+            {% if has_children == true %}
+              <ul>
+              {% for node in pages %}
+                {% if node.url contains page.url %}
+                  {% assign node_parts = node.url | split: '/' %}
+                  {% assign node_depth = node_parts | size %}
+                  {% if node_depth == depth %}
+                    <li>
+                      <a href="{{ node.url }}">
+                        {% if node.link %}
+                          {{ node.link }}
+                        {% else %}
+                          {{ node.title }}
+                        {% endif %}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% comment %}
             <div class="row w-100">
               <div class="col-md-4">
                 <ul class="list-unstyled pl-0">
@@ -63,6 +99,7 @@
                 </ul>
               </div>
             </div>
+            {% endcomment %}
           </div>
         </div>
       </li>
