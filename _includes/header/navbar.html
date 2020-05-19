@@ -51,7 +51,7 @@
                 {% capture current %}{{ second.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
                 {% assign wrap = forloop.index | modulo:5 %}
                 {% if '/district/' == current %}
-                  {% if forloop.first == true %}
+                  {% if forloop.first == true adn forloop.index == 1 %}
                   <div class="col-md-4">
                     <ul class="list-unstyled pl-0">
                   {% endif %}
@@ -59,6 +59,13 @@
                     <li>
                       <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}" href="{{ second.url }}">{{ second.title }} - {{wrap}}</a>
                     </li>
+
+                  {% if wrap == 5 %}
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <ul class="list-unstyled pl-0">
+                  {% endif %}
 
                   {% if forloop.last == true %}
                     </ul>
