@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row w-100">
+  {%- assign secondlevel = site.pages | sort: "path" -%}
+  {%- for second in secondlevel %}
+    {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if include.current == current -%}
+    <div class="col-sm-6 col-md-4">
+      <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
+    </div>
+    {%- endif -%}
+  {%- endfor -%}
+  </div>
+</div>

@@ -45,20 +45,7 @@
       <li class="nav-item dropdown position-static">
         <a class="nav-link dropdown-toggle" href="/district/" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Районні ради</a>
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov">
-          <div class="container">
-            <div class="row w-100">
-              {%- assign secondlevel = site.pages | sort: "path" -%}
-              {%- for second in secondlevel %}
-                {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-                {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-                {%- if '/district/' == current -%}
-                <div class="col-sm-6 col-md-4">
-                  <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
-                </div>
-                {%- endif -%}
-              {%- endfor -%}
-            </div>
-          </div>
+          {% include header/navbar.html current = "/district/" %}
         </div>
       </li>
 
