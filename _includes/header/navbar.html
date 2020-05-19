@@ -1,4 +1,4 @@
-{%- assign firstlevel = site.pages | sort: "path" -%}
+{%- assign firstlevel = site.pages -%}
 {%- for first in firstlevel %}
   {%- capture slug -%}{{ first.url | split: "/" | last }}{%- endcapture -%}
   {%- capture current -%}{{ first.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
@@ -7,7 +7,7 @@
     {{ first.url }} - {{ first.title }}<br>
 
     {%- if first.url -%}
-      {%- assign secondlevel = site.pages | sort: "path" -%}
+      {%- assign secondlevel = site.pages -%}
       {%- for second in secondlevel %}
         {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
         {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
