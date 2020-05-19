@@ -44,16 +44,22 @@
         <div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDroзGov">
           <div class="container">
 
-            {% assign entries = site.pages | sort: "path" %}
-            {% for entry in entries %}
-              {% capture slug %}{{ entry.url | split: "/" | last                       }}{% endcapture %}
-              {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
-
-              {% if '/district/' == current %}
-              <a class="page-link {% if page.url == entry.url %}active{% endif %}"
-              href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
-              {% endif %}
-            {% endfor %}
+            <div class="row w-100">
+              <div class="col-md-4">
+                <ul class="list-unstyled pl-0">
+                {% assign entries = site.pages | sort: "path" %}
+                {% for entry in entries %}
+                  {% capture slug %}{{ entry.url | split: "/" | last }}{% endcapture %}
+                  {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+                  {% if '/district/' == current %}
+                  <li>
+                    <a href="{{ entry.url }}" class="dropdown-item{% if page.url == entry.url %}active{% endif %}" href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+                  </li>
+                  {% endif %}
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
 
             {% comment %}
             {% assign pages = site.pages | sort: 'order' %}
