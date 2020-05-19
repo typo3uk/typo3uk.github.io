@@ -47,7 +47,6 @@
             {% assign pages = site.pages | sort: 'order' %}
             {% assign parts = "/district/" | split: '/' %}
             {% assign depth = parts | size %}
-            {% assign depth = depth | plus:1 %}
 
             {% assign has_children = false %}
             {% for node in pages %}
@@ -66,13 +65,7 @@
                         {% assign node_depth = node_parts | size %}
                         {% if node_depth == depth %}
                           <li>
-                            <a href="{{ node.url }}" class="dropdown-item">
-                              {% if node.link %}
-                                {{ node.link }}
-                              {% else %}
-                                {{ node.title }}
-                              {% endif %}
-                            </a>
+                            <a href="{{ node.url }}" class="dropdown-item">{{ node.title }}</a>
                           </li>
                         {% endif %}
                       {% endif %}
