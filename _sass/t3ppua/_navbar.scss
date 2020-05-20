@@ -7,6 +7,16 @@ $dropDown       : true;
   margin-right: -1px;
   margin-left: -1px;
   .navbar-nav {
+    .dropdown-toggle::after {
+      display: inline-block;
+      margin-left: unset;
+      vertical-align: unset;
+      content: unset;
+      border-top: unset;
+      border-right: unset;
+      border-bottom: unset;
+      border-left: unset;
+    }
     .nav-link {
       color: $colDefault;
       font-weight: 600;
@@ -122,18 +132,6 @@ $dropDown       : true;
     color: $colHighlight;
     background-color: $bgHighlight;
   }
-}
-
-
-.dropdown-toggle::after {
-  display: inline-block;
-  margin-left: unset;
-  vertical-align: unset;
-  content: unset;
-  border-top: unset;
-  border-right: unset;
-  border-bottom: unset;
-  border-left: unset;
 }
 
 //
