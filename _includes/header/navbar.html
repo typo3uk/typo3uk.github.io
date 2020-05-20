@@ -1,24 +1,21 @@
 
 <nav class="navbar navbar-expand-lg justify-content-between">
-
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navGov" aria-controls="navGov" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navGov">
     <ul class="navbar-nav">
-
       {%- assign ones = site.pages  | sort: 'path' | reverse -%}
       {%- for one in ones %}
         {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
         {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
         {%- if "/" == current -%}
-
           <li class="nav-item dropdown position-static">
-            <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ one.title }}</a>
+            <a class="nav-link dropdown-toggle" href="{{ one.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {% if one.navtitle %}{{ one.navtitle }}{% else %}{{ one.title }}{% endif %}
+            </a>
             {% include header/dropdown.html current = one.url %}
           </li>
-
           {%- if one.url -%}
             {%- assign twos = site.pages -%}
             {%- for two in twos %}
@@ -26,17 +23,16 @@
               {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
               {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
               <li class="nav-item dropdown position-static">
-                <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ two.title }}</a>
+                <a class="nav-link dropdown-toggle" href="{{ two.url }}" id="navDropGov" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {% if two.navtitle %}{{ two.navtitle }}{% else %}{{ two.title }}{% endif %}
+                </a>
                 {% include header/dropdown.html current = two.url %}
               </li>
               {%- endif -%}
             {%- endfor -%}
           {%- endif -%}
-
         {%- endif -%}
       {%- endfor -%}
-
     </ul>
   </div>
-
 </nav>
