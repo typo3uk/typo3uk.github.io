@@ -60,12 +60,14 @@ $dropDown       : true;
       }
     }
   }
-
   .navbar-toggle {
     &:hover, &:focus {
-      background-color: $bgHighlight; }
+      background-color: $bgHighlight;
+    }
     .navbar-toggler-icon {
-      color: $colDefault; }}
+      color: $colDefault;
+    }
+  }
   .navbar-collapse,
   .navbar-form {
     // border-color: $colDefault;
@@ -73,51 +75,78 @@ $dropDown       : true;
   .navbar-link {
     color: $colDefault;
     &:hover {
-      color: $colHighlight; }}}
+      color: $colHighlight;
+    }
+  }
+}
 @media (max-width: 575px) {
   .navbar-expend-sm .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight;
+      }
+    }
     .dropdown-item.active {
       color: $colHighlight;
-      background-color: $bgHighlight; }}}
+      background-color: $bgHighlight;
+    }
+  }
+}
 @media (max-width: 767px) {
   .navbar-expend-md .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight;
+      }
+    }
     .dropdown-item.active {
       color: $colHighlight;
-      background-color: $bgHighlight; }}}
+      background-color: $bgHighlight;
+    }
+  }
+}
 @media (max-width: 991px) {
   .navbar-expend-lg .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight;
+      }
+    }
     .dropdown-item.active {
       color: $colHighlight;
-      background-color: $bgHighlight; }}}
+      background-color: $bgHighlight;
+    }
+  }
+}
 @media (max-width: 1199px) {
   .navbar-expend-xl .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight;
+      }
+    }
     .dropdown-item.active {
       color: $colHighlight;
-      background-color: $bgHighlight; }}}
+      background-color: $bgHighlight;
+    }
+  }
+}
 .navbar-expend .navbar-nav .show .dropdown-menu {
   .dropdown-item {
     color: $colDefault;
     &:hover, &:focus {
-      color: $colHighlight; }}
+      color: $colHighlight;
+    }
+  }
   .dropdown-item.active {
     color: $colHighlight;
-    background-color: $bgHighlight; }}
+    background-color: $bgHighlight;
+  }
+}
 
 
 .dropdown-toggle::after {
@@ -156,7 +185,7 @@ $dropDown       : true;
     display: inline-block;
     width: 22px;
     height: 2px;
-    background-color: currentColor;
+    background-color: $colDefault;
     transition: all .3s ease-in;
 }
 .navbar-toggler-icon {
