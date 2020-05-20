@@ -5,7 +5,6 @@
     {%- for second in secondlevel %}
       {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {% if second.url contains "/city/" or second.url contains "/town/" %}{% assign isCityTown = true %}{% else %}{% assign isCityTown = false %}{% endif %}
       {%- if include.current == current and second.navhide != 1 -%}
       <div class="col-sm-6 col-md-4">
         <a href="{{ second.url }}" class="dropdown-item{% if page.url == second.url %} active{% endif %}">{{ second.title }}</a>
