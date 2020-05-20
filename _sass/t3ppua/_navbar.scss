@@ -79,7 +79,7 @@ $dropDown       : true;
     }
   }
 }
-@media media-breakpoint-up(sm) {
+@include media-breakpoint-up(sm) {
   .navbar-expend-sm .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
@@ -93,7 +93,7 @@ $dropDown       : true;
     }
   }
 }
-@media media-breakpoint-up(md) {
+@include media-breakpoint-up(md) {
   .navbar-expend-md .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
@@ -107,7 +107,7 @@ $dropDown       : true;
     }
   }
 }
-@media media-breakpoint-up(lg) {
+@include media-breakpoint-up(lg) {
   .navbar-expend-lg .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
@@ -121,7 +121,7 @@ $dropDown       : true;
     }
   }
 }
-@media media-breakpoint-up(xl) {
+@include media-breakpoint-up(xl) {
   .navbar-expend-xl .navbar-nav .show .dropdown-menu {
     .dropdown-item {
       color: $colDefault;
