@@ -148,6 +148,16 @@ $dropDown       : true;
   }
 }
 
+@include media-breakpoint-up(sm) {
+  .navbar {
+    .navbar-nav {
+      .nav-link {
+        padding: 0.6rem 0.5rem;
+      }
+    }
+  }
+}
+
 
 .dropdown-toggle::after {
   display: inline-block;
