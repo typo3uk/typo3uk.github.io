@@ -7,13 +7,9 @@
   </head>
   <body>
     {% include header.html %}
+    {% include breadcrumb.html %}
     <main id="content" class="my-4" role="main">
-      {% include breadcrumb.html %}
-      <div class="row">
-        <div class="col-md-12">
-          {{ content }}
-        </div>
-      </div>
+      {{ content }}
     </main>
     {% include footer.html %}
     {% include scripts.html %}
