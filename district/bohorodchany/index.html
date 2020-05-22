@@ -31,19 +31,47 @@ breadcrumb:
   </div>
   <div class="row">
     <div class="col-12">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul class="nav nav-tabs" id="districtTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Новини</a>
+          <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">Про район</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Рішення</a>
+          <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">Районна рада</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Депутати</a>
+          <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">Адміністративний устрій</a>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane py-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-content" id="districtContent">
+        <div class="tab-pane py-3 fade show active" id="district" role="tabpanel" aria-labelledby="district-tab">
+          <h3 class="my-2">....</h3>
+
+        </div>
+        <div class="tab-pane py-3 fade" id="rada" role="tabpanel" aria-labelledby="rada-tab">
+          <h3 class="my-2">...</h3>
+
+        </div>
+        <div class="tab-pane py-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
+          <h3 class="my-2">...</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs" id="radaTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">Новини</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">Рішення</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">Депутати</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="radaContent">
+        <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
           <h3 class="my-2">Новини Богородча́нської райо́нної ради</h3>
           <div class="list-group">
             <div class="list-group-item px-0 border-0">
@@ -75,7 +103,7 @@ breadcrumb:
             </div>
           </div>
         </div>
-        <div class="tab-pane py-3 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
           <h3 class="my-2">Рішення Богородча́нської райо́нної ради</h3>
           <div class="list-group">
             <div class="list-group-item px-0 border-0">
@@ -107,7 +135,7 @@ breadcrumb:
             </div>
           </div>
         </div>
-        <div class="tab-pane py-3 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
           <h3 class="my-2">Депутити Богородча́нської райо́нної ради всіх скликань</h3>
         </div>
       </div>
