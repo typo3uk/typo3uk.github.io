@@ -1,11 +1,13 @@
 .nav-tabs .nav-item {
-    margin-bottom: none;
+  margin-bottom: 0;
+  margin-right: 30px;
 }
 
 .nav-tabs .nav-link {
     color: #000000;
     border: none;
     background: transparent;
+    padding: .5rem 0rem;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
