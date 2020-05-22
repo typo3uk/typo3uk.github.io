@@ -1,0 +1,16 @@
+.nav-tabs .nav-item {
+    margin-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    color: #000000;
+    border: none;
+    background: transparent;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #000000;
+    border: none;
+    background: transparent;
+    border-bottom: 4px solid #2d5ca6;
+}
