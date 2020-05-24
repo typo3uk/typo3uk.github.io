@@ -35,7 +35,7 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">Орган державної влади</h5>
             <p class="text-muted">
-              00000, м. Місто, вул. Вулиця, 1
+              {{ page.legal.address }}
             </p>
           </div>
         </div>
@@ -45,11 +45,11 @@
           <div class="col">
             <h6>Телефони</h6>
             <p class="mb-0">
-              <a href="#">(000) 000 00 00</a>
+              <a href="#">{{ page.legal.phone.main }}</a>
             </p>
             <p>
               <a href="#">
-                  <span>факс.</span> (000) 000 00 00
+                  <span>факс.</span> {{ page.legal.phone.fax }}
               </a>
             </p>
           </div>
@@ -61,7 +61,7 @@
             <h6>Гаряча лінія</h6>
             <p>
               <a href="#">
-                  (000) 000 00 00
+                  {{ page.legal.phone.hot }}
               </a>
             </p>
           </div>
@@ -73,7 +73,7 @@
             <h6>Електронна пошта</h6>
             <p>
               <a href="#">
-                  office@email.email.ua
+                {{ page.legal.email}}
               </a>
             </p>
           </div>
