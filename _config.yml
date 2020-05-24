@@ -13,6 +13,16 @@ author:
   name: Default Author Name
   website: http://www.vasyl.net
 
+legal:
+  name: Веб-портал представни́цьких органів влади
+  address: 76018, м. Івано-Франківськ, вул. С. Стрільців, 56
+  phone:
+    main: (067) 433 00 66
+    hot:  (000) 000 00 00
+    fax:  (000) 000 00 00
+  email: info@rada.if.ua
+  www: http://www.rada.if.ua/
+
 js:
   external:
     cdn:
