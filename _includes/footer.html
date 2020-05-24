@@ -33,9 +33,11 @@
             {%- include icons/trezub.svg width="27" height="45" -%}
           </div>
           <div class="col-10 pl-sm-0">
-            <h5 class="mb-1">Орган державної влади</h5>
+            <h5 class="mb-1">
+              {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.name }}{%- endif -%}
+            </h5>
             <p class="text-muted">
-              {%- if page.legal.address -%}page.legal.address{%- else -%}site.legal.address{%- endif -%}
+              {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
             </p>
           </div>
         </div>
