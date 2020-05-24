@@ -72,9 +72,7 @@ layout: default
               <h3 class="my-2">
                 {% assign title = page.council.title %}
                 {% assign size = title | size | minus: 1 %}
-                {{ title | slice: 0, size }}
-                <br>
-                Новини {{ page.council.title | remove: "а" }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
+                Новини {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
               </h3>
               <div class="list-group">
                 <div class="list-group-item px-0 border-0">
@@ -108,7 +106,7 @@ layout: default
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
               <h3 class="my-2">
-                  Рішення {{ page.council.title | remove: "а" }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
+                  Рішення {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
               </h3>
               <div class="list-group">
                 <div class="list-group-item px-0 border-0">
