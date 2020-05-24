@@ -47,7 +47,7 @@
           <div class="col">
             <h6>Телефони</h6>
             {%- if page.legal.phone.main -%}
-              <p class="mb-0"><a href="tel:+38{{ page.legal.phone.main | strip | remove: " " }}">{{ page.legal.phone.main }}</a></p>
+              <p class="mb-0"><a href="tel:+38{{ page.legal.phone.main | strip | remove: "(" | remove: ")" | remove: " " }}">{{ page.legal.phone.main }}</a></p>
             {%- else -%}
               <p class="mb-0"><a href="tel:+38{{ site.legal.phone.main | strip | remove: " " }}">{{ site.legal.phone.main }}</a></p>
             {%- endif -%}
