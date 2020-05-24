@@ -47,14 +47,14 @@
           <div class="col">
             <h6>Телефони</h6>
             {%- if page.legal.phone.main -%}
-              <p class="mb-0"><a href="tel:+38{{ page.legal.phone.main | strip }}">{{ page.legal.phone.main }}</a></p>
+              <p class="mb-0"><a href="tel:+38{{- page.legal.phone.main -}}">{{ page.legal.phone.main }}</a></p>
             {%- else -%}
-              <p class="mb-0"><a href="tel:+38{{ site.legal.phone.main | strip }}">{{ site.legal.phone.main }}</a></p>
+              <p class="mb-0"><a href="tel:+38{{- site.legal.phone.main -}}">{{ site.legal.phone.main }}</a></p>
             {%- endif -%}
             {%- if page.legal.phone.fax -%}
-              <p><a href="tel:+38{{ page.legal.phone.fax | strip }}"><span>Факс: </span>{{ page.legal.phone.fax }}</a></p>
+              <p><a href="tel:+38{{- page.legal.phone.fax -}}"><span>Факс: </span>{{ page.legal.phone.fax }}</a></p>
             {%- else -%}
-              <p><a href="tel:+38{{ site.legal.phone.fax | strip }}">{{ site.legal.phone.fax }}</a></p>
+              <p><a href="tel:+38{{- site.legal.phone.fax -}}">{{ site.legal.phone.fax }}</a></p>
             {%- endif -%}
           </div>
         </div>
@@ -64,9 +64,9 @@
           <div class="col">
             <h6>Гаряча лінія</h6>
             {%- if page.legal.phone.hot -%}
-              <p><a href="tel:+38{{ page.legal.phone.hot | strip }}">{{ page.legal.phone.hot }}</a></p>
+              <p><a href="tel:+38{{- page.legal.phone.hot -}}">{{ page.legal.phone.hot }}</a></p>
             {%- else -%}
-              <p><a href="tel:+38{{ site.legal.phone.hot | strip }}">{{ site.legal.phone.hot }}</a></p>
+              <p><a href="tel:+38{{- site.legal.phone.hot -}}">{{ site.legal.phone.hot }}</a></p>
             {%- endif -%}
           </div>
         </div>
