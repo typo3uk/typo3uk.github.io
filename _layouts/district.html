@@ -139,7 +139,9 @@ layout: default
               </div>
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
-              <h3 class="my-2">Депутити Богородча́нської райо́нної ради всіх скликань</h3>
+              <h3 class="my-2">
+                Депутити {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради всіх скликань
+              </h3>
             </div>
           </div>
         </div>
