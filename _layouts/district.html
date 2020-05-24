@@ -10,7 +10,7 @@ layout: default
           <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">Райо́н</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">Райо́нна рада</a>
+          <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">Райо́нна рада - {{page.url}}</a>
         </li>
         <li class="nav-item" role="presentation">
           <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">Райо́нний устрій</a>
@@ -25,12 +25,16 @@ layout: default
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h2 class="card-title">Богородча́нський райо́н</h2>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h2 class="card-title">{{title}}</h2>
+                  <p class="card-text">{{teaser}}</p>
                 </div>
               </div>
             </div>
           </div>
+
+          page.url: {{page.url}}<br>
+          page.path: {{page.path}}<br>
+          page.dir: {{page.dir}}<br>
 
           {{content}}
 
