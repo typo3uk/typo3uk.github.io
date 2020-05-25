@@ -35,11 +35,19 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-              {page.url}<br>
+              {{ page.url }}<br>
 
               {% if isCityTown == true %}
                 {%- if page.council.title -%}
                   {{ page.council.title }} міська рада
+                {%- elsif page.legal.name -%}
+                  {{ page.legal.name }}
+                {%- else -%}
+                  {{ site.legal.name }}
+                {%- endif -%}
+              {% elsif page.url contains "/region/ivano-frankivsk/" %}
+                {%- if page.council.title -%}
+                  {{ page.council.title }} обласна рада
                 {%- elsif page.legal.name -%}
                   {{ page.legal.name }}
                 {%- else -%}
