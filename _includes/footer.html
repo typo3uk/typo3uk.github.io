@@ -36,7 +36,13 @@
             <h5 class="mb-1">
 
               {% if page.url contains "city" or page.url contains "town" %}
-                {{ page.council.title }} міська рада
+                {%- if page.council.title -%}
+                  {{ page.council.title }} міська рада
+                {%- elsif page.legal.name -%}
+                  {{ page.legal.name }}
+                {%- else -%}
+                  {{ site.legal.name }}
+                {%- endif -%}
               {% else %}
                 {%- if page.council.title -%}
                   {{ page.council.title }} райо́нна рада
