@@ -36,12 +36,11 @@
             <h5 class="mb-1">
               {% if page.legal.name %}
                 {{ page.legal.name }}
+              {% endif %}
+              {% if page.url contains "city" or page.url contains "town" %}
+                {{ page.council.title }} міська рада
               {% else %}
-                {% if page.url contains "city" or page.url contains "town" %}
-                  {{ page.council.title }} міська рада
-                {% else %}
-                  {{ page.council.title }} райо́нна рада
-                {% endif %}
+                {{ page.council.title }} райо́нна рада
               {% endif %}
             </h5>
             <p class="text-muted">

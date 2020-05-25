@@ -41,8 +41,11 @@ js:
   local:
 
 defaults:
-  -
-    scope:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+  - scope:
       path: ""
       type: "pages"
     values:
