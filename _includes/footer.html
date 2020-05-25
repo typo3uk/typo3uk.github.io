@@ -35,6 +35,8 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
+              {page.url}<br>
+
               {% if isCityTown == true %}
                 {%- if page.council.title -%}
                   {{ page.council.title }} міська рада
@@ -65,7 +67,7 @@
           <div class="col">
             <h6>Телефони</h6>
             <p class="mb-0">{%- include phone.html type="main" -%}</p>
-            <p>Факс: {%- include phone.html type="fax" -%}</p>
+            <p>Факс:&nbsp;{%- include phone.html type="fax" -%}</p>
           </div>
         </div>
       </div>
