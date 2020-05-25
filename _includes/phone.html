@@ -1,4 +1,4 @@
-{% capture type %}site.legal.phone.{{ include.type }}{% endcapture %}
+{% capture type %}{{ include.type }}{% endcapture %}
 {%- if page.legal.phone.{{type}} -%}
   <p><a href="tel:+38{{ page.legal.phone.[type] | strip | remove: "(" | remove: ")" | remove: " " }}">{{ page.legal.phone.[type] }}</a> #0</p>
 {%- else -%}
