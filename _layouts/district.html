@@ -44,7 +44,7 @@ layout: default
                 <div class="card-body">
                   <h2 class="card-title">
 
-                    {% if page.url contains "city" or page.url contains "town" %}
+                    {% if isCityTown == true %}
                       {{ page.council.title }} міська рада
                     {% else %}
                       {{ page.council.title }} райо́нна рада
