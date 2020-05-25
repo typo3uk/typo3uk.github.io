@@ -1,6 +1,7 @@
 ---
 ---
-{% if page.url contains "city" or page.url contains "town" %}{% assign isCityTown = true %}{% else %}{% assign isCityTown = false %}{% endif %}
+{%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTownUrl = true -%}{%- else -%}{%- assign isCityTownUrl = false -%}{%- endif -%}
+{%- if page.dir contains "city" or page.dir contains "town" -%}{%- assign isCityTownDir = true -%}{%- else -%}{%- assign isCityTownDir = false -%}{%- endif -%}
 <!doctype html>
 <html dir="ltr" lang="uk-UA">
   <head>
