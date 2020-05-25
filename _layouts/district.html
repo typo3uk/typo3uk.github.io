@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-{% comment %}
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
-{% endcomment %}
 <div class="container">
   <div class="row">
     <div class="col-12 px-md-4">
@@ -34,8 +32,6 @@ layout: default
         <div class="tab-pane py-3 fade show active" id="district" role="tabpanel" aria-labelledby="district-tab">
 
           {{content}}
-
-          ### {{ isCityTown }} ### | ### {{ include.isCityTown }} ###
 
         </div>
         <div class="tab-pane py-3 fade" id="rada" role="tabpanel" aria-labelledby="rada-tab">
