@@ -1,5 +1,6 @@
 ---
 ---
+{% if page.url contains "city" or page.url contains "town" %}{% assign isCityTown = true %}{% else %}{% assign isCityTown = false %}{% endif %}
 <!doctype html>
 <html dir="ltr" lang="uk-UA">
   <head>
