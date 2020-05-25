@@ -14,17 +14,17 @@ layout: default
       <ul class="nav nav-tabs" id="districtTab" role="tablist">
         <li class="nav-item d-none" role="presentation">
           <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">
-            {%- if isCityTown == true -%}Місто{%- else -%}Райо́н{%- endif -%}
+            {%- if page.dir contains "city" or page.dir contains "town" -%}Місто{%- else -%}Райо́н{%- endif -%}
           </a>
         </li>
         <li class="nav-item" role="presentation">
           <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-            {% if isCityTown == true %}Міська{% else %}Райо́нна{% endif %} рада
+            {% if page.dir contains "city" or page.dir contains "town" %}Міська{% else %}Райо́нна{% endif %} рада
           </a>
         </li>
         <li class="nav-item" role="presentation">
           <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-            {% if isCityTown == true %}Міський{% else %}Райо́нний{% endif %} устрій
+            {% if page.dir contains "city" or page.dir contains "town" %}Міський{% else %}Райо́нний{% endif %} устрій
           </a>
         </li>
       </ul>
@@ -44,7 +44,7 @@ layout: default
                 <div class="card-body">
                   <h2 class="card-title">
 
-                    {% if isCityTown == true %}
+                    {% if page.dir contains "city" or page.dir contains "town" %}
                       {{ page.council.title }} міська рада
                     {% else %}
                       {{ page.council.title }} райо́нна рада
@@ -72,7 +72,7 @@ layout: default
               <h3 class="my-2">
                 {% assign title = page.council.title %}
                 {% assign size = title | size | minus: 1 %}
-                Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
+                Новини {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
               </h3>
               <div class="list-group">
                 <div class="list-group-item px-0 border-0">
@@ -106,7 +106,7 @@ layout: default
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
               <h3 class="my-2">
-                  Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
+                  Рішення {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради
               </h3>
               <div class="list-group">
                 <div class="list-group-item px-0 border-0">
@@ -140,7 +140,7 @@ layout: default
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="my-2">
-                Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань
+                Депутити {{ title | slice: 0, size }}ої{% if page.dir contains "city" or page.dir contains "town" %} міської {% else %} райо́нної {% endif %}ради всіх скликань
               </h3>
             </div>
           </div>
