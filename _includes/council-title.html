@@ -1,0 +1,25 @@
+{% if isCityTown == true %}
+  {%- if page.council.title -%}
+    {{ page.council.title }} міська рада
+  {%- elsif page.legal.name -%}
+    {{ page.legal.name }}
+  {%- else -%}
+    {{ site.legal.name }}
+  {%- endif -%}
+{% elsif page.url contains "/region/ivano-frankivsk/" %}
+  {%- if page.council.title -%}
+    {{ page.council.title }} обласна рада
+  {%- elsif page.legal.name -%}
+    {{ page.legal.name }}
+  {%- else -%}
+    {{ site.legal.name }}
+  {%- endif -%}
+{% else %}
+  {%- if page.council.title -%}
+    {{ page.council.title }} райо́нна рада
+  {%- elsif page.legal.name -%}
+    {{ page.legal.name }}
+  {%- else -%}
+    {{ site.legal.name }}
+  {%- endif -%}
+{% endif %}
