@@ -1,9 +1,5 @@
 {%- if page.legal.phone.[include.type] -%}
-  <p{% if page.legal.phone.fax %} class="mb-0"{% endif %}>{% if page.legal.phone.fax %}Факс: {% endif %}<a href="tel:+38{{ page.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal.phone.[include.type] }}</a></p>
+  <p><a href="tel:+38{{ page.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal.phone.[include.type] }}</a></p>
 {%- else -%}
   <p><a href="tel:+38{{ site.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.legal.phone.[include.type] }}</a></p>
 {%- endif -%}
-
-
-
-{% if page.legal.phone.fax %}Факс: {% endif %}

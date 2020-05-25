@@ -43,10 +43,10 @@
                 {% endif %}
               {% endcapture %}
 
-              {%- if page.legal.name -%}
-                {{ page.legal.name }}
-              {%- elsif page.legal.name == '' -%}
+              {%- if radaname -%}
                 {{ radaname }}
+              {%- elsif page.legal.name -%}
+                {{ page.legal.name }}
               {%- else -%}
                 {{ site.legal.name }}
               {%- endif -%}
