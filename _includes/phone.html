@@ -1,7 +1,7 @@
-{% capture site %}site.legal.phone.{{include.type}}{% endcapture %}
-{% capture page %}page.legal.phone.{{include.type}}{% endcapture %}
-{%- if page -%}
-  <p><a href="tel:+38{{ page | strip | remove: "(" | remove: ")" | remove: " " }}">{{ page }}</a>#0</p>
+{% capture sitephone %}site.legal.phone.{{ include.type }}{% endcapture %}
+{% capture pagephone %}page.legal.phone.{{ include.type }}{% endcapture %}
+{%- if pagephone -%}
+  <p><a href="tel:+38{{ pagephone | strip | remove: "(" | remove: ")" | remove: " " }}">{{ pagephone }}</a> #0</p>
 {%- else -%}
-  <p><a href="tel:+38{{ site | strip | remove: "(" | remove: ")" | remove: " " }}">{{ site }}</a>#1</p>
+  <p><a href="tel:+38{{ sitephone | strip | remove: "(" | remove: ")" | remove: " " }}">{{ sitephone }}</a> #1</p>
 {%- endif -%}
