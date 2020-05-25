@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
+{% comment %}
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
+{% endcomment %}
 <div class="container">
   <div class="row">
     <div class="col-12 px-md-4">
