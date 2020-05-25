@@ -10,7 +10,7 @@
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %} role="main">
-      {{ content }}
+      {{ content isCityTown=isCityTown}}
     </main>
     {%- include footer.html -%}
     {%- include scripts.html -%}
