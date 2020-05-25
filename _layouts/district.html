@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
 <div class="container">
   <div class="row">
     <div class="col-12 px-md-4">
@@ -140,7 +140,7 @@ layout: default
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="my-2">
-                Депутити {{ title | slice: 0, size }}ої{% if isCityTownDir == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань
+                Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань
               </h3>
             </div>
           </div>
