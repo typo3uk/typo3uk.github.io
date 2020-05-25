@@ -29,13 +29,12 @@
     <div class="row justify-content-md-center mt-4">
       <div class="col-md-6 col-lg-5">
         <div class="row">
-          <div class="col-2 text-md-right">
-            {%- include icons/trezub.svg width="27" height="45" -%}
-          </div>
+          <div class="col-2 text-md-right">{%- include icons/trezub.svg width="27" height="45" -%}</div>
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-              {% if page.url contains "city" or page.url contains "town" %}
+              {% if page.url contains "city" or page.url contains "town" %}{% assign isCityTown = true %}{% else %}{% assign isCityTown = false %}{% endif %}
+              {% if isCityTown = true %}
                 {%- if page.council.title -%}
                   {{ page.council.title }} міська рада
                 {%- elsif page.legal.name -%}
@@ -145,7 +144,6 @@
 
             {% comment %}
             {% endcomment %}
-
 
           </div>
       </div>
