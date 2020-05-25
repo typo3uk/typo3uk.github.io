@@ -34,14 +34,20 @@
           </div>
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
-              {% if page.legal.name %}
-                {{ page.legal.name }}
-              {% endif %}
+              {%- if site.legal.name -%}
+
+              {{ site.legal.name }}
+
+              {%- else -%}
+
               {% if page.url contains "city" or page.url contains "town" %}
                 {{ page.council.title }} міська рада
               {% else %}
                 {{ page.council.title }} райо́нна рада
               {% endif %}
+
+              {%- endif -%}
+
             </h5>
             <p class="text-muted">
               {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
