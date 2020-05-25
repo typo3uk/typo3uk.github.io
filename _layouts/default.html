@@ -4,15 +4,15 @@
 <!doctype html>
 <html dir="ltr" lang="uk-UA">
   <head>
-    {% include head.html %}
+    {%- include head.html -%}
   </head>
   <body>
-    {% include header.html %}
+    {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %} role="main">
       {{ content }}
     </main>
-    {% include footer.html isCityTown=isCityTown %}
+    {%- include footer.html -%}
     {%- include scripts.html -%}
   </body>
 </html>
