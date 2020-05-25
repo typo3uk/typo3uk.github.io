@@ -35,21 +35,18 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-              {% capture radaname %}
-                {% if page.url contains "city" or page.url contains "town" %}
-                  {{ page.council.title }} міська рада
-                {% else %}
+              {% if page.url contains "city" or page.url contains "town" %}
+                {{ page.council.title }} міська рада
+              {% else %}
+                {%- if page.council.title -%}
                   {{ page.council.title }} райо́нна рада
-                {% endif %}
-              {% endcapture %}
+                {%- elsif page.legal.name -%}
+                  {{ page.legal.name }}
+                {%- else -%}
+                  {{ site.legal.name }}
+                {%- endif -%}
+              {% endif %}
 
-              {%- if radaname -%}
-                {{ radaname }}
-              {%- elsif page.legal.name -%}
-                {{ page.legal.name }}
-              {%- else -%}
-                {{ site.legal.name }}
-              {%- endif -%}
             </h5>
             <p class="text-muted">
               {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
@@ -61,7 +58,7 @@
         <div class="row">
           <div class="col">
             <h6>Телефони</h6>
-            <p>{% include phone.html type="main" %}</p>
+            <p class="mb-0">{% include phone.html type="main" %}</p>
             <p>Факс: {% include phone.html type="fax" %}</p>
           </div>
         </div>
