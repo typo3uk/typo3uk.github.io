@@ -36,17 +36,17 @@
             <h5 class="mb-1">
 
               {% capture radaname %}
-              {% if page.url contains "city" or page.url contains "town" %}
-                {{ page.council.title }} міська рада
-              {% else %}
-                {{ page.council.title }} райо́нна рада
-              {% endif %}
+                {% if page.url contains "city" or page.url contains "town" %}
+                  {{ page.council.title }} міська рада
+                {% else %}
+                  {{ page.council.title }} райо́нна рада
+                {% endif %}
               {% endcapture %}
 
-              {%- if page.legal.name == '' -%}
-                {{ radaname }}
-              {%- elsif page.legal.name -%}
+              {%- if page.legal.name -%}
                 {{ page.legal.name }}
+              {%- elsif page.legal.name == '' -%}
+                {{ radaname }}
               {%- else -%}
                 {{ site.legal.name }}
               {%- endif -%}
