@@ -61,8 +61,8 @@
         <div class="row">
           <div class="col">
             <h6>Телефони</h6>
-            {% include phone.html type="main" %}
-            {% include phone.html type="fax" %}
+            <p>{% include phone.html type="main" %}</p>
+            <p>Факс: {% include phone.html type="fax" %}</p>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
         <div class="row">
           <div class="col">
             <h6>Гаряча лінія</h6>
-            {% include phone.html type="hot" %}
+            <p>{% include phone.html type="hot" %}</p>
           </div>
         </div>
       </div>
