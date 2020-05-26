@@ -1,4 +1,4 @@
-$(function() {
+
 	$('a[data-gallery]').click(function(e){
 		e.preventDefault();
 		var index = $(this).attr("data-index");
@@ -28,4 +28,3 @@ $(function() {
 	    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 	    gallery.init();
 	};
-});
