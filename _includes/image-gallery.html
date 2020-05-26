@@ -1,4 +1,4 @@
-<div class="row row-cols-1 row-cols-md-{{ include.cols }} mt-1">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-{{ include.cols }} mt-1">
 {%- for file in site.static_files -%}
   {%- if file.path contains include.folder -%}
     {%- if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' -%}
