@@ -7,6 +7,7 @@
 // Import needed Bootstrap Files
 //
 @import "../bootstrap/bootstrap";
+@import "../photoswipe/main";
 
 //
 // Components
@@ -18,4 +19,5 @@
 @import "nav-tabs";
 @import "text";
 @import "lightbox";
-@import "photoswipe";
+@import "../photoswipe/default-skin/default-skin"
+// @import "photoswipe";
