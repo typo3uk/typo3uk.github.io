@@ -2,15 +2,12 @@
 {%- for file in site.static_files -%}
   {%- if file.path contains include.folder -%}
     {%- if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' -%}
-      {% comment %}
-      {%- assign filenameparts = file.path | split: "/" -%}
-      {% endcomment %}
       {%- assign sizename = file.basename | size -%}
       {%- assign filename = file.basename | slice: 2, sizename | replace: '-', ' ' | capitalize -%}
       <div class="col mb-4">
         <div class="card">
-          <a href="{{ file.path | url_decode | relative_url }}" title="{{ filename }}" class="lightbox" data-lightbox-caption="{{ filename }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
-            <img class="card-img-top" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=300&h=300&output=jpg&q=50&t=square" alt="{{ filename }}" title="{{ filename }}" intrinsicsize="1100x800" />
+          <a href="{{ file.path | url_decode | relative_url }}" class="lightbox" data-lightbox-caption="{{ filename }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
+            <img class="card-img-top" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=300&h=300&output=jpg&q=50&t=square" alt="{{ filename }}" intrinsicsize="1100x800" />
           </a>
         </div>
       </div>
