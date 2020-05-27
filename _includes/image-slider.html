@@ -1,12 +1,13 @@
 <div id="carousel{{include.group}}" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
   {%- for file in site.static_files -%}
+    {%- assign first = file.first -%}
     {%- if file.path contains include.folder -%}
       {%- if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' -%}
         {%- assign sizename = file.basename | size -%}
         {%- assign alt = file.basename | slice: 2, sizename -%}
         {%- assign title = alt | replace: '-', ' ' | capitalize -%}
-        <div class="carousel-item {% if forloop.first %}active{% endif %} {% if forloop.index0 == 0 %}active{% endif %}">
+        <div class="carousel-item {% if first %}active{% endif %} {% if forloop.first %}active{% endif %} {% if forloop.index0 == 0 %}active{% endif %}">
           <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&h=200&output=jpg&q=50&t=square" alt="image-{{ alt }}" />
         </div>
       {%- endif -%}
