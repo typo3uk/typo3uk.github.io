@@ -1,6 +1,6 @@
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-{% for article in site.categories.bohorodchany %}
+{% for article in site.categories[include.cat] limit:include.num %}
 <div class="col mb-4">
   <div class="card h-100">
     {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
