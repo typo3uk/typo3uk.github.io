@@ -31,7 +31,7 @@
           {%- endfor -%}
           <li class="breadcrumb-item{% if i == j %} active" aria-current="page{% endif %}">
             <span>
-              {{ page.title }}
+              {{ page.title }} - {{ page.url }} - {{ page.dir }}
             </span>
           </li>
         </ol>
