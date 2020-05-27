@@ -13,5 +13,6 @@ breadcrumb: Новини
 
 {{page.dir}} <br><br>
 
-{%- assign cat = page.dir | split: '/' | last -%}
+{%- assign cat = page.dir | remove: "news/" | split: '/' | last -%}
+{{cat}}<br>
 {% include news-list.html cat=cat %}
