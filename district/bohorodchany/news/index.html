@@ -11,4 +11,7 @@ pagination:
 breadcrumb: Новини
 ---
 
-{% include news-list.html %}
+{{page.dir}} <br><br>
+
+{%- assign cat = page.dir | split: '/' | last -%}
+{% include news-list.html cat=cat %}
