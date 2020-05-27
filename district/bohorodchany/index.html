@@ -21,6 +21,6 @@ legal:
 {%- assign district = page.dir | split: '/' | last -%}
 {{ district }}
 
-{%- include image-gallery.html folder="/district/[district]/images/gallery/home" cols="4" group="home" -%}
+{%- include image-gallery.html folder="/district/{{district}}/images/gallery/home" cols="4" group="home" -%}
 
 <h2>Hello World!</h2>
