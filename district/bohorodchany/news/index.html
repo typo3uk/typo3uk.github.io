@@ -6,12 +6,13 @@ subtitle:
 description:
 pagination:
   enabled: true
-  category: {{page.dir | remove: "news/" | split: '/' | last}}
+  category: {{ page.dir | remove: "news/" | split: '/' | last }}
   sort_field: 'date'
 breadcrumb: Новини
 ---
-{{page.pagination.category}}<br>
-{{cat}}<br>
-{{page.dir | remove: "news/" | split: '/' | last}}<br>
+page.pagination.category: {{ page.pagination.category }}<br>
+cat: {{ cat }}<br>
+page.dir: {{ page.dir | remove: "news/" | split: '/' | last }}<br>
+<br><br>
 {%- assign cat = page.dir | remove: "news/" | split: '/' | last -%}
 {% include news-list.html cat=cat %}
