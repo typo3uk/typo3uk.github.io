@@ -6,7 +6,7 @@
   overflow: hidden;
   @include transition(all .3s ease-in-out);
   z-index: $zindex-sticky;
-  background-color: $gray-700;
+  background-color: $gray-600;
   color: #ffffff;
   bottom: ($grid-gutter-width / 2);
   right: ($grid-gutter-width / 2);
