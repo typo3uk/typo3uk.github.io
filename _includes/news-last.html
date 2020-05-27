@@ -17,20 +17,18 @@
   </div>
   <hr>
   <div class="row justify-content-between">
-    <div class="col-md-3 col-5 text-left"><p>&nbsp;</p></div>
-    <div class="col-md-3 col-5 text-right text-nowrap"><p><a href="{{page.dir}}news/" class="btn btn-primary">Всі новини</a></p></div>
+    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p></div>
+    <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
   </div>
   {% endif %}
 {% else %}
-
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <div class="alert alert-info" role="alert">
-      Новин поки що немає :(
+      {{ site.label.news.no }}
     </div>
   </div>
 </div>
-
 {%- endfor -%}
 
 

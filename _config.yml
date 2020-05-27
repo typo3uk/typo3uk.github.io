@@ -54,6 +54,17 @@ defaults:
     values:
       layout: "default"
 
+label:
+  pages:
+  news:
+    all: Всі новини
+    no: Новин поки що немає :(
+  decisions:
+    all: Всі рішення
+    no: Рішень поки що немає :(
+  deputies:
+    all:
+    no:
 
 exclude:
   - README.md
