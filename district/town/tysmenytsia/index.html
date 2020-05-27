@@ -1,13 +1,13 @@
 ---
 layout: district
-title: Тисмениця місто {{ site.name }}
+title: Тисмениця місто
 navtitle:
 subtitle:
 breadcrumb:
 description: Description Місто Тисмениця - CEO
 teaser: Короткий опис про раду
 council:
-  title: Тисменицька
+  title: Тисменицька {{ site.name }}
   description: Description...
 legal:
   address: 77401, м. Тисмениця, вул.&nbsp;Галицька,&nbsp;32
@@ -19,6 +19,6 @@ legal:
   www: http://www.rada.if.ua/
 ---
 
-<h1>{{page.title | flatify }}</h1>
+<h1>{{page.council.title | flatify }}</h1>
 
 <h2>Вас вітає, {{page.council.title}} міська рада!</h2>
