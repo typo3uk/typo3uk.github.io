@@ -25,6 +25,9 @@
                     {%- if breadcrumb_page.breadcrumb -%}{{breadcrumb_page.breadcrumb}}{%- elsif breadcrumb_page.navtitle -%}{{breadcrumb_page.navtitle}}{%- else -%}{{breadcrumb_page.title}}{%- endif -%}
                   </a>
                 </li>
+                <li class="breadcrumb-item">
+                  <span>{{ post.title }}</span>
+                </li>
                 {%- endif -%}
               {%- endif -%}
             {%- endfor -%}
