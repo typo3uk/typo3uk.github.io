@@ -74,6 +74,7 @@ layout: default
                 {% assign size = title | size | minus: 1 %}
                 Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
               </h3>
+              {{page.title}} - {{page.id}} - {{page.name}}<br>
               {% include news-last.html cat="bohorodchany" num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
