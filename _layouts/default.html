@@ -8,7 +8,7 @@
   </head>
   <body>
     {%- include header.html -%}
-    {% include breadcrumbs.html omit_home=true omit_date=true %}
+    {% include breadcrumbs.html page=another_page %}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %} role="main">
       {{ content isCityTown=isCityTown}}
