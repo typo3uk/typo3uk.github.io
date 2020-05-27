@@ -1,26 +1,34 @@
-
-<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-{% for article in site.categories[include.cat] limit:include.num %}
-<div class="col mb-4">
-  <div class="card h-100">
-    {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
-    <div class="card-body">
-      <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
-      <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-      <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
-      {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
+{%- assign articles in site.categories[include.cat] limit:include.num -%}
+{%- if articles > 0 -%}
+  <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+  {%- for article in articles -%}
+  <div class="col mb-4">
+    <div class="card h-100">
+      {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
+        <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+        <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
+        {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
+      </div>
     </div>
   </div>
-</div>
-{% endfor %}
-</div>
-
-<hr>
-
-<div class="row justify-content-between">
-  <div class="col-md-3 col-5 text-left"><p>&nbsp;</p></div>
-  <div class="col-md-3 col-5 text-right text-nowrap"><p><a href="{{page.dir}}news/" class="btn btn-primary">Всі новини</a></p></div>
-</div>
+  {%- endfor -%}
+  </div>
+  <hr>
+  <div class="row justify-content-between">
+    <div class="col-md-3 col-5 text-left"><p>&nbsp;</p></div>
+    <div class="col-md-3 col-5 text-right text-nowrap"><p><a href="{{page.dir}}news/" class="btn btn-primary">Всі новини</a></p></div>
+  </div>
+{%- else -%}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="alert alert-info" role="alert">
+        Новин поки немає :(
+      </div>
+    </div>
+  </div>
+{%- endif -%}
 
 {% comment %}
 <div class="list-group">
