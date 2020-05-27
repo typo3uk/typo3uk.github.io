@@ -29,11 +29,13 @@
               {%- endif -%}
             {%- endfor -%}
           {%- endfor -%}
-          <li class="breadcrumb-item{% if i == j %} active" aria-current="page{% endif %}">
-            <span>
-              {{ page.title }} - {{ page.url }} - {{ page.dir }}
-            </span>
-          </li>
+          {% if page.title == nil %}
+            <li class="breadcrumb-item{% if i == j %} active" aria-current="page{% endif %}">
+              <span>
+                {{ page.title }} - {{ page.url }} - {{ page.dir }}
+              </span>
+            </li>
+          {%- endif -%}
         </ol>
       </div>
     </div>

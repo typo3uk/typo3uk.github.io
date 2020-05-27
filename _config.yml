@@ -42,6 +42,11 @@ js:
 
 defaults:
   - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "news"
+  - scope:
       path: "assets/images"
     values:
       image: true
