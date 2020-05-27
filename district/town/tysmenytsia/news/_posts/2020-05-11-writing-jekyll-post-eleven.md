@@ -1,9 +1,7 @@
 ---
-title: Writing jekyll post eleven district tysmenytsia rada
+title: Тисменицька міська рада оголосила конкурс
 date: 2020-05-11
 ---
-
-## Тисменицька міська рада оголосила конкурс
 
 ### Де собі взяти трохи?
 
