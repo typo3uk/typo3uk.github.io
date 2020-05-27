@@ -1,0 +1,40 @@
+<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+{% for article in paginator.posts %}
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/images/deputies.png" class="card-img-top" alt="image-news">
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
+        <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+        <p class="card-text">{{ article.excerpt | truncate: 110 }}</p>
+        <p class="card-text"><small class="text-muted">{{ article.category }}</small></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<hr>
+
+{% if paginator.total_pages > 1 %}
+<div class="row justify-content-between">
+    {% if paginator.previous_page %}
+    <div class="col-md-3 col-5 text-left text-nowrap">
+      <p>&larr; <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Новіші новини</a></p>
+    </div>
+    {% else %}
+    <div class="col-md-3 col-5 text-left text-nowrap">
+      <p>&larr; <span>Новіші новини</span></p>
+    </div>
+    {% endif %}
+    {% if paginator.next_page %}
+    <div class="col-md-3 col-5 text-right text-nowrap">
+      <p><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Старіші новини</a> &rarr;</p>
+    </div>
+    {% else %}
+    <div class="col-md-3 col-4 text-right text-nowrap">
+      <p><span>Старіші новини</span> &rarr;</p>
+    </div>
+    {% endif %}
+</div>
+{% endif %}

@@ -69,7 +69,7 @@ layout: default
           </ul>
           <div class="tab-content" id="radaContent">
             <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
-              <h3 class="my-2">
+              <h3 class="mt-2 mb-4">
                 {% assign title = page.council.title %}
                 {% assign size = title | size | minus: 1 %}
                 Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
