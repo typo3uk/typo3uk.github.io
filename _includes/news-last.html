@@ -7,7 +7,7 @@
     <div class="card-body">
       <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
       <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-      <p class="card-text">{{ article.excerpt | truncate: 110 }}</p>
+      <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
       {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
     </div>
   </div>
