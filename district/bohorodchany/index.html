@@ -18,8 +18,8 @@ legal:
   email: rairada@ukrpost.ua
   www: http://www.rada.if.ua/
 ---
-{%- assign rayon = page.dir | split: '/' | last -%}
-{{ rayon }}
+{%- assign district = page.dir | split: '/' | last -%}
+{{ district }}
 
 {%- include image-gallery.html folder="/district/bohorodchany/images/gallery/home" cols="4" group="home" -%}
 
