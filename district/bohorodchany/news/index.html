@@ -12,8 +12,6 @@ breadcrumb: Новини
 ---
 
 page.pagination.category: {{ page.pagination.category }}<br>
-pagination.category: {{ pagination.category }}<br>
-cat: {{ cat }}<br>
 page.dir: {{ page.dir | remove: "news/" | split: '/' | last }}<br>
 <br><br>
 {%- assign cat = page.dir | remove: "news/" | split: '/' | last -%}
