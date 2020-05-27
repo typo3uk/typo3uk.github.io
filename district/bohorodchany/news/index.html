@@ -10,6 +10,7 @@ pagination:
   sort_field: 'date'
 breadcrumb: Новини
 ---
-{{cat}}
+{{page.pagination.category}}<br>
+{{cat}}<br>
 {%- assign cat = page.dir | remove: "news/" | split: '/' | last -%}
 {% include news-list.html cat=cat %}
