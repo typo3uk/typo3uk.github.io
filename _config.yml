@@ -4,10 +4,10 @@ baseurl: ""
 encoding: UTF-8
 lang: uk_UA
 timezone: Europe/Kiev
-title: Default Site Title
-description: Default Site Description
-name: Site Name
-brand:
+title: Ради в Івано-Франківській області
+description: Представни́цькі органи влади Івано-Франківської області
+name: Місцеві ради
+brand: Рада
 logo: "/assets/images/logo.svg"
 author:
   name: Vasyl&nbsp;Mosiychuk
