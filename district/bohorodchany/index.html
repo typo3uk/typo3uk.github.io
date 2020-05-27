@@ -18,7 +18,9 @@ legal:
   email: rairada@ukrpost.ua
   www: http://www.rada.if.ua/
 ---
+{%- assign district = page.dir | split: '/' | last  -%}
+{{ district }}
 
-{%- include image-gallery.html folder="/district/bohorodchany/images/gallery/home" cols="4" group="home" -%}
+{%- include image-gallery.html folder="/district/{{ district }}/images/gallery/home" cols="4" group="home" -%}
 
 <h2>Hello World!</h2>
