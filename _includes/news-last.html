@@ -1,0 +1,55 @@
+
+<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+{% for article in site.categories[include.cat] limit:include.num %}
+<div class="col mb-4">
+  <div class="card h-100">
+    {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
+    <div class="card-body">
+      <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
+      <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+      <p class="card-text">{{ article.excerpt | truncate: 110 }}</p>
+      {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<hr>
+
+<div class="row justify-content-between">
+  <div class="col-md-3 col-5 text-left"><p>&nbsp;</p></div>
+  <div class="col-md-3 col-5 text-right text-nowrap"><p><a href="{{page.dir}}news/" class="btn btn-primary">Всі новини</a></p></div>
+</div>
+
+{% comment %}
+<div class="list-group">
+  <div class="list-group-item px-0 border-0">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">
+        <a href="#">List group item heading</a>
+      </h5>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small>3 days ago</small>
+  </div>
+  <div class="list-group-item px-0 border-0">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">
+        <a href="#">List group item heading</a>
+      </h5>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small class="text-muted">3 days ago</small>
+  </div>
+  <div class="list-group-item px-0 border-0">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">
+        <a href="#">List group item heading</a>
+      </h5>
+    </div>
+    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small class="text-muted">3 days ago</small>
+  </div>
+</div>
+{% endcomment %}
