@@ -6,11 +6,12 @@ subtitle:
 description:
 pagination:
   enabled: true
-  category: bohorodchany
+  category: {{page.dir | remove: "news/" | split: '/' | last}}
   sort_field: 'date'
 breadcrumb: Новини
 ---
 {{page.pagination.category}}<br>
 {{cat}}<br>
+{{page.dir | remove: "news/" | split: '/' | last}}<br>
 {%- assign cat = page.dir | remove: "news/" | split: '/' | last -%}
 {% include news-list.html cat=cat %}
