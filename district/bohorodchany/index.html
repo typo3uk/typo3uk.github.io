@@ -19,8 +19,7 @@ legal:
   www: http://www.rada.if.ua/
 ---
 
-{%- capture district -%}{{page.dir}}images/gallery/home}{%- endcapture -%}
-{{ district }}
+{%- capture district -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
 
 {%- include image-gallery.html folder=district cols="4" group="home" -%}
 
