@@ -1,6 +1,6 @@
 ---
 layout: district
-title: Тисмениця місто
+title: Тисмениця місто {{ site.name }}
 navtitle:
 subtitle:
 breadcrumb:
@@ -18,5 +18,7 @@ legal:
   email: tismenicja@gmail.com
   www: http://www.rada.if.ua/
 ---
+
+<h1>{{page.title | flatify }}</h1>
 
 <h2>Вас вітає, {{page.council.title}} міська рада!</h2>
