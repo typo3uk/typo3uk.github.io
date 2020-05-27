@@ -7,7 +7,7 @@
         {%- assign sizename = file.basename | size -%}
         {%- assign alt = file.basename | slice: 2, sizename -%}
         {%- assign title = alt | replace: '-', ' ' | capitalize -%}
-        <div class="carousel-item {%- if first -%}active{%- endif -%}">
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&h=200&output=jpg&q=50&t=square" alt="image-{{ alt }}" />
         </div>
       {%- endif -%}
