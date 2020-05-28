@@ -11,14 +11,15 @@ pagination:
 breadcrumb: Новини
 ---
 
+{% include news-list.html cat=page.pagination.category %}
+
+{% comment %}
+
 {%- for news in site.categories.bohorodchany %}
   {% unless news.url contains "decisions" %}
     {{ news.title }}<br><br>
   {% endunless %}
 {%- endfor -%}
-
-
-{% comment %}
 
 {% include news-list.html cat=page.pagination.category %}
 

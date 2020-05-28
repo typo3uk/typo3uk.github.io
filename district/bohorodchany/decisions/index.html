@@ -11,15 +11,16 @@ pagination:
 breadcrumb: Рішення
 ---
 
+{% include decisions-list.html cat=page.pagination.category %}
+
+
+{% comment %}
+
 {%- for decisions in site.categories.bohorodchany %}
   {% unless decisions.url contains "news" %}
     {{ decisions.title }}<br><br>
   {% endunless %}
 {%- endfor -%}
-
-
-
-{% comment %}
 
 {% include decisions-list.html cat=page.pagination.category %}
 
