@@ -10,4 +10,11 @@ pagination:
   sort_field: 'date'
 breadcrumb: Новини
 ---
+
+{%- for decision in site.categories.news %}
+  {{ decision.title }}<br><br>
+{%- endfor -%}
+
+<hr>
+
 {% include news-list.html cat=page.pagination.category %}
