@@ -3,13 +3,14 @@
 {% assign posts = site.categories[include.cat] | where: "dir", "news" %}
 {% assign posts = site.categories[include.cat] | where_exp: "item", "item.dir contains 'news'" %}
 {% assign posts = site.categories[include.cat] | where_exp: "item", "item.dir contains 'news'" %}
+    {% assign onlynews = onlynews | push:post %}
 {% endcomment %}
 
 
 {% assign onlynews = '' | split:'' %}
 {% for post in site.categories[include.cat] %}
   {% unless post.dir contains "decisions" %}
-    {% assign onlynews = onlynews | push:post %}
+    {% assign onlynews = onlynews %}
   {% endunless %}
 {% endfor %}
 
