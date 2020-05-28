@@ -13,7 +13,7 @@ breadcrumb: Новини
 
 {%- for news in site.categories.tysmenytsia %}
   {% unless news.url contains "decisions" %}
-    {{ news.title }}<br><br>
+    {{ news.title }}<br>
   {% endunless %}
 {%- endfor -%}
 

@@ -1,0 +1,26 @@
+---
+layout: decisions
+title: Офіційні рішення Тисменицької міської ради
+navtitle:
+subtitle:
+description:
+pagination:
+  enabled: true
+  category: tysmenytsia
+  sort_field: 'date'
+breadcrumb: Рішення
+---
+
+{%- for decisions in site.categories.tysmenytsia %}
+  {% unless decisions.url contains "news" %}
+    {{ decisions.title }}<br>
+  {% endunless %}
+{%- endfor -%}
+
+
+
+{% comment %}
+
+{% include decisions-list.html cat=page.pagination.category %}
+
+{% endcomment %}
