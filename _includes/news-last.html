@@ -23,8 +23,9 @@
 
 <br>
 
-{%- for article in site.categories[include.cat] limit:include.num -%}
 
+{%- for article in site.categories[include.cat] limit:include.num -%}
+  {%- unless article.url contains "decisions" -%}
     {%- if forloop.first -%}
     <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
     {%- endif -%}
@@ -47,7 +48,7 @@
       <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
     </div>
     {%- endif -%}
-
+  {%- endunless -%}
 {% else %}
 <div class="row">
   <div class="col-md-6 offset-md-3">
