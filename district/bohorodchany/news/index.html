@@ -11,7 +11,7 @@ pagination:
 breadcrumb: Новини
 ---
 
-{%- for decision in site.categories.news limit:3 -%}
+{%- for decision in site.categories.news %}
   {{ decision.title }}<br><br>
 {%- endfor -%}
 
