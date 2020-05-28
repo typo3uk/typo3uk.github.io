@@ -7,33 +7,36 @@ title: Івано-Франківська область
   <div class="row">
     <div class="cal-12">
 
-      {%- for item in site.categories -%}
-        {%- if forloop.first -%}
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-        {%- endif -%}
-          <div class="col mb-4">
-            <div class="card h-100">
-              {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
-              <div class="card-body">
-                <p class="card-text"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
-                <h5 class="card-title"><a href="{{ decision.url }}">{{ item.title }}</a></h5>
-                <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
-                {% comment %}<p class="card-text"><small class="text-muted">{{ item.category }}</small></p>{% endcomment %}
-              </div>
-            </div>
-          </div>
-        {%- if forloop.last -%}
-        </div>
-        {%- endif -%}
-      {%- else -%}
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <div class="alert alert-info" role="alert">
-              {{ site.label.decisions.no }}
-            </div>
-          </div>
-        </div>
-      {%- endfor -%}
+      <h2>Categories</h2>
+      <ul>
+      {% assign categories_list = site.categories %}
+        {% if categories_list.first[0] == null %}
+          {% for category in categories_list %}
+            <li><a href="#{{ category }}">{{ category | capitalize }} ({{ site.tags[category].size }})</a></li>
+          {% endfor %}
+        {% else %}
+          {% for category in categories_list %}
+            <li><a href="#{{ tag[0] }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a></li>
+          {% endfor %}
+        {% endif %}
+      {% assign categories_list = nil %}
+      </ul>
+
+      {% for tag in site.categories %}
+        <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
+        <ul>
+          {% assign pages_list = tag[1] %}
+          {% for post in pages_list %}
+            {% if post.title != null %}
+            {% if group == null or group == post.group %}
+            <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
+            {% endif %}
+            {% endif %}
+          {% endfor %}
+          {% assign pages_list = nil %}
+          {% assign group = nil %}
+        </ul>
+      {% endfor %}
 
 
     </div>
