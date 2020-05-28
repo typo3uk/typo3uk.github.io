@@ -41,7 +41,6 @@ defaults:
       path: /*/news/
       type: "news"
     values:
-      item: "news"
       layout: "news"
   -
     scope:
