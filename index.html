@@ -7,22 +7,34 @@ title: Івано-Франківська область
   <div class="row">
     <div class="cal-12">
 
-      {% assign category_list = site.categories | sort %}
-      <!-- level 0 -->
-      <ol>
-      {% for category0 in category_list %} <!-- change level here -->
-          {% assign printed0 = false %} <!-- change level here -->
-          {% for post in site.posts %}
-              {% if post.categories[0] == category0[0] and printed0 == false %} <!-- change level here -->
-                  <li><a href="{{ site.category_dir | prepend: site.baseurl}}/{{ category0[0] | slugify }}">{{ category0[0] }}</a></li> <!-- change level here -->
-                  {% assign printed0 = true %} <!-- change level here -->
-      <!-- level 1 -->
-      <!-- end of level 1 -->
-              {% endif %}
-          {% endfor %}
-      {% endfor %}
-      </ol>
-      <!-- end of level 0 -->
+      {%- for item in site.post -%}
+        {%- if forloop.first -%}
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        {%- endif -%}
+          <div class="col mb-4">
+            <div class="card h-100">
+              {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
+              <div class="card-body">
+                <p class="card-text"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
+                <h5 class="card-title"><a href="{{ decision.url }}">{{ item.title }}</a></h5>
+                <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
+                {% comment %}<p class="card-text"><small class="text-muted">{{ item.category }}</small></p>{% endcomment %}
+              </div>
+            </div>
+          </div>
+        {%- if forloop.last -%}
+        </div>
+        {%- endif -%}
+      {%- else -%}
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="alert alert-info" role="alert">
+              {{ site.label.decisions.no }}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+
 
     </div>
     <div class="col-12">
