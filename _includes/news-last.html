@@ -1,5 +1,4 @@
-
-{%- assign news = '' | split:'' -%}{%- for item in site.categories[include.cat] -%}{%- unless item.url contains "decisions" -%}{%- assign news = news | push:item -%}{%- endunless -%}{%- endfor -%}
+{%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
 
 {%- for article in news limit:include.num -%}
   {%- if forloop.first -%}

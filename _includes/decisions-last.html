@@ -1,37 +1,36 @@
+{%- assign decisions = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
 
-{%- for decision in site.categories[include.cat] limit:include.num -%}
-  {%- unless decision.url contains "news" -%}
-    {%- if forloop.first -%}
-    <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-    {%- endif -%}
-    <div class="col mb-4">
-      <div class="card h-100">
-        {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
-        <div class="card-body">
-          <p class="card-text"><small class="text-muted">{{ decision.date | date: '%-d %B %Y' }}</small></p>
-          <h5 class="card-title"><a href="{{ decision.url }}">{{ decision.title }}</a></h5>
-          <p class="card-text">{{ decision.excerpt | strip_html | truncate: 110 }}</p>
-          {% comment %}<p class="card-text"><small class="text-muted">{{ decision.category }}</small></p>{% endcomment %}
-        </div>
+{%- for decision in decisions limit:include.num -%}
+  {%- if forloop.first -%}
+  <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+  {%- endif -%}
+  <div class="col mb-4">
+    <div class="card h-100">
+      {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted">{{ decision.date | date: '%-d %B %Y' }}</small></p>
+        <h5 class="card-title"><a href="{{ decision.url }}">{{ decision.title }}</a></h5>
+        <p class="card-text">{{ decision.excerpt | strip_html | truncate: 110 }}</p>
+        {% comment %}<p class="card-text"><small class="text-muted">{{ decision.category }}</small></p>{% endcomment %}
       </div>
     </div>
-    {%- if forloop.last -%}
-    </div>
-    <hr>
-    <div class="row justify-content-between">
-      <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p></div>
-      <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}decisions/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
-    </div>
-    {%- endif -%}
-  {%- endunless -%}
+  </div>
+  {%- if forloop.last -%}
+  </div>
+  <hr>
+  <div class="row justify-content-between">
+    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p></div>
+    <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}decisions/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
+  </div>
+  {%- endif -%}
 {% else %}
-<div class="row">
-  <div class="col-md-6 offset-md-3">
-    <div class="alert alert-info" role="alert">
-      {{ site.label.decision.no }}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="alert alert-info" role="alert">
+        {{ site.label.decision.no }}
+      </div>
     </div>
   </div>
-</div>
 {%- endfor -%}
 
 
