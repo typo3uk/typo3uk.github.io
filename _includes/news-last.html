@@ -8,7 +8,7 @@
 
 {% assign onlynews = '' | split:'' %}
 {% for post in site.categories[include.cat] %}
-  {% unless post.dir == "decisions" %}
+  {% unless post.dir contains "decisions" %}
     {% assign onlynews = onlynews | push:post %}
   {% endunless %}
 {% endfor %}
