@@ -1,5 +1,5 @@
 
-{% assign posts = site.categories[include.cat] | where: 'news', page.url %}
+{% assign posts = site.categories[include.cat] | where: 'type', 'news' %}
 
 {%- for article in posts limit:include.num -%}
 
