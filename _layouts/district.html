@@ -81,35 +81,7 @@ layout: default
               <h3 class="my-2">
                   Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
               </h3>
-              <div class="list-group">
-                <div class="list-group-item px-0 border-0">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">
-                      <a href="#">List group item heading</a>
-                    </h5>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                  <small>3 days ago</small>
-                </div>
-                <div class="list-group-item px-0 border-0">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">
-                      <a href="#">List group item heading</a>
-                    </h5>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <div class="list-group-item px-0 border-0">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">
-                      <a href="#">List group item heading</a>
-                    </h5>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-              </div>
+              {% include decisions-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="my-2">
