@@ -1,23 +1,22 @@
-{%- for article in site.categories[include.cat] -%}
-  {%- unless article.url contains "decisions" -%}
-    {%- if forloop.first -%}
-    <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-    {%- endif -%}
-      <div class="col mb-4">
-        <div class="card h-100">
-          {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
-          <div class="card-body">
-            <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
-            <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-            <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
-            {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
-          </div>
+{%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
+{%- for article in news -%}
+  {%- if forloop.first -%}
+  <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+  {%- endif -%}
+    <div class="col mb-4">
+      <div class="card h-100">
+        {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
+        <div class="card-body">
+          <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
+          <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+          <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
+          {% comment %}<p class="card-text"><small class="text-muted">{{ article.category }}</small></p>{% endcomment %}
         </div>
       </div>
-    {%- if forloop.last -%}
     </div>
-    {%- endif -%}
-  {%- endunless -%}
+  {%- if forloop.last -%}
+  </div>
+  {%- endif -%}
 {%- else -%}
   <div class="row">
     <div class="col-md-6 offset-md-3">
