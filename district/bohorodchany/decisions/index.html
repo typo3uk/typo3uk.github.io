@@ -1,0 +1,17 @@
+
+---
+layout: decisions
+title: Офіційні новини Богородчанської районної ради
+navtitle:
+subtitle:
+description:
+pagination:
+  enabled: true
+  category: bohorodchany
+  sort_field: 'date'
+breadcrumb: Новини
+---
+
+{%- for decision in site.categories.bohorodchany.decisions limit:3 -%}
+  {{ decision.title }}<br><br>
+{%- endfor -%}
