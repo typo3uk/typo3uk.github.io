@@ -4,9 +4,7 @@
 {% assign posts = site.categories[include.cat] | where_exp: "item", "item.dir contains 'news'" %}
 {% endcomment %}
 
-{% assign posts0 = site.categories[include.cat] | where_exp: "item", "item.dir contains 'news'" %}
-
-{% assign posts = site.categories[include.cat] | where_exp: "item", "unless item.dir contains 'news'" %}
+{% assign posts = site.categories[include.cat] | where_exp: "item", "item.dir contains 'news'" %}
 
 {{posts}}
 
