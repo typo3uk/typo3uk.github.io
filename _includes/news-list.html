@@ -1,5 +1,5 @@
 {%- for article in site.categories[include.cat] -%}
-  {%- unless news.url contains "decisions" -%}
+  {%- unless article.url contains "decisions" -%}
     {%- if forloop.first -%}
     <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
     {%- endif -%}
