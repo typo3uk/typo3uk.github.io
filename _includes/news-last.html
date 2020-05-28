@@ -1,4 +1,4 @@
-{%- for article in site.categories.news[include.cat] limit:include.num -%}
+{%- for article in site.categories[include.cat] limit:include.num -%}
   {% if forloop.first %}
   <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
   {% endif %}
