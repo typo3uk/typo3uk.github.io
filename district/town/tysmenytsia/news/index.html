@@ -11,10 +11,21 @@ pagination:
 breadcrumb: Новини
 ---
 
-{%- for decision in site.categories.news %}
-  {{ decision.title }}<br><br>
+{%- for news in site.categories.tysmenytsia %}
+  {% unless news.url contains "decisions" %}
+    {{ news.title }}<br><br>
+  {% endunless %}
 {%- endfor -%}
 
-<hr>
+
+{% comment %}
 
 {% include news-list.html cat=page.pagination.category %}
+
+{%- for news in site.categories.news %}
+  {% if news.url contains "bohorodchany" %}
+    {{ news.title }}<br><br>
+  {% endif %}
+{%- endfor -%}
+
+{% endcomment %}
