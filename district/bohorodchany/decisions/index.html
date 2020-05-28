@@ -11,9 +11,9 @@ pagination:
 breadcrumb: Рішення
 ---
 
-{%- for decisions in site.categories.bohorodchany %}
-  {% unless decisions.url contains "bohorodchany" %}
-    {{ decisions.title }}<br><br>
+{%- for decision in site.categories.decisions %}
+  {% unless decision.url contains "bohorodchany" %}
+    {{ decision.title }}<br><br>
   {% endunless %}
 {%- endfor -%}
 

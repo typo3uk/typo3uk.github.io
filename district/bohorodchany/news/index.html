@@ -12,9 +12,9 @@ breadcrumb: Новини
 ---
 
 {%- for news in site.categories.news %}
-  {% unless news.url contains "bohorodchany" %}
+  {% if news.url contains "bohorodchany" %}
     {{ news.title }}<br><br>
-  {% endunless %}
+  {% endif %}
 {%- endfor -%}
 
 <hr>
