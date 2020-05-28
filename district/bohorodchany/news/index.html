@@ -6,13 +6,23 @@ subtitle:
 description:
 pagination:
   enabled: true
-  category: news
+  category: bohorodchany
   sort_field: 'date'
 breadcrumb: Новини
 ---
 
-{%- for decision in site.categories.news %}
-  {{ decision.title }}<br><br>
+{%- for news in site.categories.news %}
+  {% unless news.url contains "bohorodchany" %}
+    {{ news.title }}<br><br>
+  {% endunless %}
+{%- endfor -%}
+
+<hr>
+
+{%- for news in site.categories.bohorodchany %}
+  {% unless news.url contains "decisions" %}
+    {{ news.title }}<br><br>
+  {% endunless %}
 {%- endfor -%}
 
 <hr>
