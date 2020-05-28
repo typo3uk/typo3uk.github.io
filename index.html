@@ -8,7 +8,18 @@ title: Івано-Франківська область
     <div class="cal-12">
 
 
-      {% assign alldocs = site.documents | <additional standard filtering and sorting> %}
+      {% for category in site.categories %}
+        <h2>{{ category[0] }}</h2>
+        <ul>
+          {% for post in category[1] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+
+<br>
+
+      {% assign alldocs = site.documents %}
       {% assign grouptag =  alldocs | map: 'tags' | join: ','  | split: ','  | group_by: tag %}
       {%- for tag in grouptag -%}
           <h1>{{- tag.name -}} - {{tag.size}}</h1>
