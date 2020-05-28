@@ -1,7 +1,7 @@
 
 {% assign all_categories = site.pages | map: "category" %}
 
-{% assign all_news = site.categories[include.cat] | where: "url", "news" %}
+{% assign all_news = site.categories.bohorodchany | where: "url", "news" %}
 
 {%- for article in all_news limit:include.num -%}
 
