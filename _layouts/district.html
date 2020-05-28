@@ -30,9 +30,7 @@ layout: default
       </ul>
       <div class="tab-content" id="districtContent">
         <div class="tab-pane py-3 fade show active" id="district" role="tabpanel" aria-labelledby="district-tab">
-
           {{content}}
-
         </div>
         <div class="tab-pane py-3 fade" id="rada" role="tabpanel" aria-labelledby="rada-tab">
           <div class="card border-0 mb-3">
@@ -78,13 +76,13 @@ layout: default
               {% include news-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
-              <h3 class="my-2">
+              <h3 class="mt-2 mb-4">
                   Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради
               </h3>
               {% include decisions-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
-              <h3 class="my-2">
+              <h3 class="mt-2 mb-4">
                 Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань
               </h3>
             </div>
