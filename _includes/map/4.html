@@ -1,4 +1,10 @@
 {%- assign sixlevel = site.pages | sort: "path" -%}
+{% for six in sixlevel %}
+  {% if six.url contains include.current and six.url != include.current %}
+    {% assign isChildren = true %}
+  {% endif %}
+{% endfor %}
+### {{isChildren }} ###
 {%- for six in sixlevel -%}
   {%- if six -%}
     {%- if forloop.first -%}<ul>{%- endif -%}
