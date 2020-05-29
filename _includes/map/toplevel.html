@@ -8,7 +8,7 @@
         <a href="{{ one.url }}">
           {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
         </a>
-        {%- include sublevel.html current=one.url -%}
+        {%- include map/sublevel.html current=one.url -%}
       </li>
       {%- if one.url -%}
         {%- assign twos = site.pages -%}
@@ -20,7 +20,7 @@
             <a href="{{ two.url }}">
               {%- if two.navtitle -%}{{ two.navtitle }}{%- else -%}{{ two.title }}{%- endif -%}
             </a>
-            {%- include sublevel.html current=two.url -%}
+            {%- include map/sublevel.html current=two.url -%}
           </li>
           {%- endif -%}
         {%- endfor -%}
