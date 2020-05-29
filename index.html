@@ -8,7 +8,7 @@ title: Івано-Франківська область
     <div class="col-12">
 
       {% for tag in site.categories %}
-        {% if tag.dir contains "bohorodchany" %}
+        {% if tag contains "bohorodchany" %}
           <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }} - {{tag.dir}}</h3>
           <ul>
             {% assign pages_list = tag[1] %}
