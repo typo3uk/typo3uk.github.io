@@ -7,31 +7,9 @@ title: Івано-Франківська область
   <div class="row">
     <div class="col-12">
 
-{% include news-last.html cat='bohorodchany' num="6" %}
 
-<hr>
-      <br><br>
-
-      {%- assign news = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
-      {%- assign decisions = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
-
-      {% for region in news %}
-        {% if region contains "bohorodchany" %}
-          <h3 id="{{ region[0] }}">{{ region[0] | capitalize }}</h3>
-          <ul>
-            {% assign list = region[1] %}
-            {% for post in list limit:6 %}
-              {% if post.title != null %}
-                {% if group == null or group == post.group %}
-                  <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-            {% assign list = nil %}
-            {% assign group = nil %}
-          </ul>
-        {% endif %}
-      {% endfor %}
+{% include home/news-last.html cat='bohorodchany' num="6" %}
+{% include home/decisions-last.html cat='bohorodchany' num="6" %}
 
 
     </div>
