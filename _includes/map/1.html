@@ -16,7 +16,7 @@
     {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
-    <li>
+    <li class="mb-2">
       <a href="{{ second.url }}">
         {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
       </a>
