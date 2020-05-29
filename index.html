@@ -10,7 +10,7 @@ title: Івано-Франківська область
       {%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
       {%- assign decisions = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
 
-      {% for region in site.categories.bohorodchany %}
+      {% for region in site.categories %}
         {% if region contains "bohorodchany" %}
           <h3 id="{{ tag[0] }}">{{ region[0] | capitalize }}</h3>
           <ul>
@@ -22,7 +22,7 @@ title: Івано-Франківська область
                 {% endif %}
               {% endif %}
             {% endfor %}
-            {% assign pages_list = nil %}
+            {% assign list = nil %}
             {% assign group = nil %}
           </ul>
         {% endif %}
