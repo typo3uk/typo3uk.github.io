@@ -19,6 +19,9 @@ legal:
   www: http://www.tsmrada.if.ua/
 ---
 
+{%- capture district -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
+{%- include image-gallery.html folder=district cols="4" group="home" -%}
+
 {% comment %}
 {%- capture district -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
 {%- include image-gallery.html folder=district cols="4" group="home" -%}
