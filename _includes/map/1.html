@@ -1,15 +1,15 @@
-<ul class="list-unstyled">
 {%- assign secondlevel = site.pages | sort: "path" -%}
 {%- for second in secondlevel -%}
-  {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if include.current == current and second.navhide != 1 -%}
-  <li>
-    <a href="{{ second.url }}">
-      {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
-      {%- include map/2.html current=second.url -%}
-    </a>
-  </li>
-  {%- endif -%}
+  {%- if forloop.first -%}<ul class="list-unstyled">{%- endif -%}
+    {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if include.current == current and second.navhide != 1 -%}
+    <li>
+      <a href="{{ second.url }}">
+        {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+        {%- include map/2.html current=second.url -%}
+      </a>
+    </li>
+    {%- endif -%}
+  {%- if forloop.last -%}</ul>{%- endif -%}
 {%- endfor -%}
-</ul>
