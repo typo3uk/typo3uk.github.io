@@ -10,18 +10,18 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- for six in sixlevel -%}
-
-    {%- if forloop.first -%}<ul>{%- endif -%}
-      {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
-      {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if include.current == current and six.navhide != 1 and six.title != '' -%}
-      <li>
-        <a href="{{ six.url }}">
-          {%- if six.navtitle -%}{{ six.navtitle }}{%- else -%}{{ six.title }}{%- endif -%}
-        </a>
-      </li>
-      {%- endif -%}
-    {%- if forloop.last -%}</ul>{%- endif -%}
-
-{%- endfor -%}
+{%- if isChildren == true -%}
+<ul>
+  {%- for six in sixlevel -%}
+    {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if include.current == current and six.navhide != 1 and six.title != '' -%}
+    <li>
+      <a href="{{ six.url }}">
+        {%- if six.navtitle -%}{{ six.navtitle }}{%- else -%}{{ six.title }}{%- endif -%}
+      </a>
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+{%- endif -%}

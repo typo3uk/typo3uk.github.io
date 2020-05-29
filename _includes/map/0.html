@@ -4,7 +4,7 @@
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if "/" == current -%}
-      <div class="col-3">
+      <div class="col-sm-6 col-md-3">
         <h6>
           <a href="{{ one.url }}">
             {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
