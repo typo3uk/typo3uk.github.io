@@ -20,7 +20,7 @@
             {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
             {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
             {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
-            <div class="col-3">
+            <div class="col-sm-6 col-md-3">
               <h6>
                 <a href="{{ two.url }}">
                   {%- if two.navtitle -%}{{ two.navtitle }}{%- else -%}{{ two.title }}{%- endif -%}
