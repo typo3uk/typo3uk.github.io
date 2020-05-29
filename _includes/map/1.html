@@ -17,7 +17,7 @@
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
     <li class="mb-2">
-      <a href="{{ second.url }}">
+      <a href="{{ second.url }}" class="mb-2">
         {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
       </a>
       {%- include map/2.html current=second.url -%}
