@@ -10,10 +10,8 @@
   {% endif %}
 {% endfor %}
 
-### {{isChildren}} ###
-
 {%- for four in fourlevel -%}
-  {%- if four -%}
+  {%- if isChildren == true -%}
     {%- if forloop.first -%}<ul>{%- endif -%}
       {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
