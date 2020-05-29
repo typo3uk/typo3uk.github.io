@@ -4,8 +4,8 @@
 {%- assign depth = parts | size -%}
 {%- assign depth = depth | plus:1 -%}
 {%- assign isChildren = false -%}
-{%- for i in secondlevel -%}
-  {%- if i.url contains include.current and i.url != include.current -%}
+{%- for four in secondlevel -%}
+  {%- if four.url contains include.current and four.url != include.current -%}
     {%- assign isChildren = true -%}
   {%- endif -%}
 {%- endfor -%}
