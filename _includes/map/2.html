@@ -1,15 +1,15 @@
 {%- assign fourlevel = site.pages | sort: "path" -%}
 {%- for four in fourlevel -%}
   {%- if forloop.first -%}<ul>{%- endif -%}
-  {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if include.current == current and four.navhide != 1 -%}
-  <li>
-    <a href="{{ four.url }}">
-      {%- if four.navtitle -%}{{ four.navtitle }}{%- else -%}{{ four.title }}{%- endif -%}
-      {%- include map/3.html current=four.url -%}
-    </a>
-  </li>
-  {%- endif -%}
+    {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if include.current == current and four.navhide != 1 -%}
+    <li>
+      <a href="{{ four.url }}">
+        {%- if four.navtitle -%}{{ four.navtitle }}{%- else -%}{{ four.title }}{%- endif -%}
+        {%- include map/3.html current=four.url -%}
+      </a>
+    </li>
+    {%- endif -%}
   {%- if forloop.last -%}</ul>{%- endif -%}
 {%- endfor -%}
