@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs" id="radaTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">Новини</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">Рішення</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">Депутати</a>
+  </li>
+</ul>
+<div class="tab-content" id="radaContent">
+  <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
+    <h3 class="mt-2 mb-4">Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
+    {{include.region}}
+  </div>
+  <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
+    <h3 class="mt-2 mb-4">Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
+    {{include.region}}
+  </div>
+  <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
+    <h3 class="mt-2 mb-4">Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань</h3>
+    {{include.region}}
+  </div>
+</div>
