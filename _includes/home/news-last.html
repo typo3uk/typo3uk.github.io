@@ -17,16 +17,15 @@
   {%- if forloop.last -%}
   </div>
   <div class="row justify-content-between">
-    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p></div>
-    <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
+    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p>{{news.dir}}</div>
+    <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{% include label/news/list-all.md  %}</a></p></div>
   </div>
   {%- endif -%}
 {%- else -%}
   <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-8 offset-md-2">
       <div class="alert alert-info" role="alert">
-        {{ site.label.news.no }}
-        {% include label/news-none.html %}
+        {% include label/news/list-empty.md  %}
       </div>
     </div>
   </div>
