@@ -1,4 +1,13 @@
 {%- assign secondlevel = site.pages | sort: "path" -%}
+
+{% for i in secondlevel %}
+  {% if i.url contains include.current and i.url != include.current %}
+    {% assign isChildren = true %}
+  {% endif %}
+{% endfor %}
+
+### {{isChildren }} ###
+
 {%- for second in secondlevel -%}
   {%- if second -%}
     {%- if forloop.first -%}<ul class="list-unstyled">{%- endif -%}
