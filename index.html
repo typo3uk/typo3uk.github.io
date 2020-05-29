@@ -23,7 +23,7 @@ title: Івано-Франківська область
                 {%- for second in secondlevel -%}
                   {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
                   {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-                  {%- if include.current == current and second.navhide != 1 -%}
+                  {%- if one.url == current and second.navhide != 1 -%}
                   <li>
                     <a href="{{ second.url }}">
                       {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
@@ -48,7 +48,7 @@ title: Івано-Франківська область
                     {%- for second in secondlevel -%}
                       {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
                       {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-                      {%- if include.current == current and second.navhide != 1 -%}
+                      {%- if two.url == current and second.navhide != 1 -%}
                       <li>
                         <a href="{{ second.url }}">
                           {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
