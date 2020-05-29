@@ -1,0 +1,14 @@
+<ul>
+{%- assign sixlevel = site.pages | sort: "path" -%}
+{%- for six in sixlevel -%}
+  {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+  {%- if include.current == current and six.navhide != 1 -%}
+  <li>
+    <a href="{{ six.url }}">
+      {%- if six.navtitle -%}{{ six.navtitle }}{%- else -%}{{ six.title }}{%- endif -%}
+    </a>
+  </li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
