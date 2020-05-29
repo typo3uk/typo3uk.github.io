@@ -1,15 +1,17 @@
 {%- assign fivelevel = site.pages | sort: "path" -%}
 
-{% for i in fivelevel %}
-  {% if i.url contains include.current and i.url != include.current %}
-    {% assign isChildren = true %}
-  {% endif %}
-{% endfor %}
-
-### {{isChildren }} - {{include.current}}###
+{%- assign parts = include.current | split: '/' -%}
+{%- assign depth = parts | size -%}
+{%- assign depth = depth | plus:1 -%}
+{%- assign isChildren = false -%}
+{%- for i in fivelevel -%}
+  {%- if i.url contains include.current and i.url != include.current -%}
+    {%- assign isChildren = true -%}
+  {%- endif -%}
+{%- endfor -%}
 
 {%- for five in fivelevel -%}
-  {%- if five -%}
+  {%- if isChildren == true -%}
     {%- if forloop.first -%}<ul>{%- endif -%}
       {%- capture slug -%}{{ five.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ five.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
