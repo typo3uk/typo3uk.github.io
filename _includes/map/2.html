@@ -11,7 +11,7 @@
 {%- endfor -%}
 
 {%- if isChildren == true -%}
-<ul>
+<ul class="list-unstyled border-left-2 border-primary">
   {%- for four in fourlevel -%}
     {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}

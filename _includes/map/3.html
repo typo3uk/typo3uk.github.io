@@ -11,7 +11,7 @@
 {%- endfor -%}
 
 {%- if isChildren == true -%}
-<ul>
+<ul class="list-unstyled border-left-2 border-primary">
   {%- for five in fivelevel -%}
     {%- capture slug -%}{{ five.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ five.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
