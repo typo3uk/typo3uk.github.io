@@ -16,17 +16,17 @@
   </div>
   {%- if forloop.last -%}
   </div>
-  <hr>
   <div class="row justify-content-between">
     <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p></div>
     <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{{ site.label.news.all }}</a></p></div>
   </div>
   {%- endif -%}
-{% else %}
+{%- else -%}
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="alert alert-info" role="alert">
-        {{ site.label.news.no }}
+        {{ site.label.news.no }}<br>
+        ### {{ site.label.news.no }} ###
       </div>
     </div>
   </div>
