@@ -19,8 +19,9 @@ legal:
   www: http://www.tsmrada.if.ua/
 ---
 
+{% comment %}
 {%- capture district -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
-
 {%- include image-gallery.html folder=district cols="4" group="home" -%}
+{% endcomment %}
 
 <h2>Hello World, Тисменицький райо́н!</h2>
