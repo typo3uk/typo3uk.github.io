@@ -1,4 +1,4 @@
-<ul>
+<ul class="list-unstyled">
 {%- assign secondlevel = site.pages | sort: "path" -%}
 {%- for second in secondlevel -%}
   {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
