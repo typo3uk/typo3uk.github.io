@@ -4,14 +4,14 @@
 {%- assign depth = parts | size -%}
 {%- assign depth = depth | plus:1 -%}
 {%- assign isChildren = false -%}
-{%- for i in sixlevel -%}
-  {%- if i.url contains include.current and i.url != include.current -%}
+{%- for six in sixlevel -%}
+  {%- if six.url contains include.current and six.url != include.current -%}
     {%- assign isChildren = true -%}
   {%- endif -%}
 {%- endfor -%}
 
 {%- for six in sixlevel -%}
-  {%- if isChildren == true -%}
+
     {%- if forloop.first -%}<ul>{%- endif -%}
       {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
@@ -23,5 +23,5 @@
       </li>
       {%- endif -%}
     {%- if forloop.last -%}</ul>{%- endif -%}
-  {%- endif -%}
+
 {%- endfor -%}
