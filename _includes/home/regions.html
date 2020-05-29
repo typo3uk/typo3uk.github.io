@@ -13,8 +13,10 @@
           </a>
         </h3>
       </div>
-      <div class="row row-cols-1 row-cols-md-2">
-        {%- include region.html current=one.url -%}
+      <div class="col-12">
+        <div class="row row-cols-1 row-cols-md-2">
+          {%- include region.html current=one.url -%}
+        </div>
       </div>
       {%- if one.url -%}
         {%- assign twos = site.pages -%}
@@ -30,8 +32,10 @@
                 </a>
               </h3>
             </div>
-            <div class="row row-cols-1 row-cols-md-2">
-              {%- include region.html current=two.url -%}
+            <div class="col-12">
+              <div class="row row-cols-1 row-cols-md-2">
+                {%- include region.html current=two.url -%}
+              </div>
             </div>
             {%- endif -%}
           {%- endif -%}
