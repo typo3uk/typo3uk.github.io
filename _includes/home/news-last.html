@@ -17,7 +17,7 @@
   {%- if forloop.last -%}
   </div>
   <div class="row justify-content-between">
-    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p>### {{ article.url | split: "/" | slice: 0, 4 }} ###</div>
+    <div class="col-md-3 col-5 text-left"><p class="m-0">&nbsp;</p>### {{ article.url | split: "/" | last }} ### == {{include.url}}</div>
     <div class="col-md-3 col-5 text-right text-nowrap"><p class="m-0"><a href="{{page.dir}}news/" class="btn btn-primary">{% include label/news/list-all.md %}</a></p></div>
   </div>
   {%- endif -%}
