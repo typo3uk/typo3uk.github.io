@@ -1,4 +1,13 @@
 {%- assign fourlevel = site.pages | sort: "path" -%}
+
+{% for i in fourlevel %}
+  {% if i.url contains include.current and i.url != include.current %}
+    {% assign isChildren = true %}
+  {% endif %}
+{% endfor %}
+
+### {{isChildren }} - {{include.current}}###
+
 {%- for four in fourlevel -%}
   {%- if four -%}
     {%- if forloop.first -%}<ul>{%- endif -%}

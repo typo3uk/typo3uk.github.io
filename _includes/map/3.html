@@ -1,4 +1,13 @@
 {%- assign fivelevel = site.pages | sort: "path" -%}
+
+{% for i in fivelevel %}
+  {% if i.url contains include.current and i.url != include.current %}
+    {% assign isChildren = true %}
+  {% endif %}
+{% endfor %}
+
+### {{isChildren }} - {{include.current}}###
+
 {%- for five in fivelevel -%}
   {%- if five -%}
     {%- if forloop.first -%}<ul>{%- endif -%}
