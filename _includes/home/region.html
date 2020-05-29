@@ -11,17 +11,23 @@
 {%- endfor -%}
 
 {%- if isChildren == true -%}
-<ul class="list-unstyled">
+<div class="row row-cols-1 row-cols-md-2">
   {%- for second in secondlevel -%}
     {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
-    <li class="mb-2">
-      <a href="{{ second.url }}">
-        {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
-      </a>
-    </li>
+    <div class="col mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{{ second.url }}">
+                {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+              </a>
+            </h5>
+          </div>
+        </div>
+    </div>
     {%- endif -%}
   {%- endfor -%}
-</ul>
+</div>
 {%- endif -%}
