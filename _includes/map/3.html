@@ -1,0 +1,14 @@
+<ul>
+{%- assign fivelevel = site.pages | sort: "path" -%}
+{%- for five in fivelevel -%}
+  {%- capture slug -%}{{ five.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ five.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+  {%- if include.current == current and five.navhide != 1 -%}
+  <li>
+    <a href="{{ five.url }}">
+      {%- if five.navtitle -%}{{ five.navtitle }}{%- else -%}{{ five.title }}{%- endif -%}
+    </a>
+  </li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
