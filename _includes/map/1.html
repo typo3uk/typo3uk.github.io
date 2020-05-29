@@ -10,8 +10,10 @@
   {%- endif -%}
 {%- endfor -%}
 
+### {{isChildren}} ###
+
 {%- for second in secondlevel -%}
-  {%- if isChildren == true -%}
+
     {%- if forloop.first -%}<ul class="list-unstyled">{%- endif -%}
       {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
@@ -24,5 +26,5 @@
       </li>
       {%- endif -%}
     {%- if forloop.last -%}</ul>{%- endif -%}
-  {%- endif -%}
+
 {%- endfor -%}
