@@ -11,7 +11,7 @@
 {%- endfor -%}
 
 {%- if isChildren == true -%}
-<ul class="list-unstyled border-left border-primary ml-1 pl-2">
+<ul class="list-unstyled border-left border-primary mt-1 ml-1 pl-2">
   {%- for six in sixlevel -%}
     {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
