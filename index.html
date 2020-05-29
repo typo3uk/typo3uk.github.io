@@ -8,6 +8,67 @@ title: Івано-Франківська область
     <div class="cal-12">
 
 
+      <ul>
+        {%- assign ones = site.pages  | sort: 'path' | reverse -%}
+        {%- for one in ones -%}
+          {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+          {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+          {%- if "/" == current -%}
+            <li>
+              <a href="{{ one.url }}">
+                {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+              </a>
+              <ul>
+                {%- assign secondlevel = site.pages | sort: "path" -%}
+                {%- for second in secondlevel -%}
+                  {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+                  {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+                  {%- if include.current == current and second.navhide != 1 -%}
+                  <li>
+                    <a href="{{ second.url }}">
+                      {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+                    </a>
+                  </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </li>
+            {%- if one.url -%}
+              {%- assign twos = site.pages -%}
+              {%- for two in twos -%}
+                {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
+                {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+                {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
+                <li>
+                  <a href="{{ two.url }}">
+                    {%- if two.navtitle -%}{{ two.navtitle }}{%- else -%}{{ two.title }}{%- endif -%}
+                  </a>
+                  <ul>
+                    {%- assign secondlevel = site.pages | sort: "path" -%}
+                    {%- for second in secondlevel -%}
+                      {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+                      {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+                      {%- if include.current == current and second.navhide != 1 -%}
+                      <li>
+                        <a href="{{ second.url }}">
+                          {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+                        </a>
+                      </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </li>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+
+      <hr>
+
+
       {% for category in site.categories %}
         <h2>{{ category[0] }}</h2>
         <ul>
