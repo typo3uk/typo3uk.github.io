@@ -1,7 +1,7 @@
 {%- assign decisions = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
 {%- for decision in decisions limit:include.num -%}
   {%- if forloop.first -%}
-  <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+  <div class="row row-cols-1">
   {%- endif -%}
   <div class="col mb-4">
     <div class="card h-100">
