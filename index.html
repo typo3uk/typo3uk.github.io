@@ -8,11 +8,11 @@ title: Івано-Франківська область
     <div class="col-12">
 
       {% for tag in site.categories %}
-        {% if tag.url contains "/bohorodchany/" %}
-          <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
+        {% if tag.dir contains "/bohorodchany/" %}
+          <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }} - {{tag.dir}}</h3>
           <ul>
-            {% assign pages_list = tag[1] limit:6 %}
-            {% for post in pages_list %}
+            {% assign pages_list = tag[1] %}
+            {% for post in pages_list limit:6 %}
               {% if post.title != null and site.url contains "/bohorodchany/" %}
                 {% if group == null or group == post.group %}
                   <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
