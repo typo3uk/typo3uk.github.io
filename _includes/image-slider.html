@@ -1,4 +1,4 @@
-<div id="carousel{{include.group}}" class="carousel slide carousel-fade" data-interval="5000" data-wrap="true" data-ride="carousel">
+<div id="carousel{{include.group}}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
   <div class="carousel-inner">
   {%- for file in site.static_files -%}
     {%- if file.path contains include.folder -%}
