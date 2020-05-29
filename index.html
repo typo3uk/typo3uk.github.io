@@ -10,7 +10,7 @@ title: Івано-Франківська область
       {% for tag in site.categories %}
         <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
         <ul>
-          {% assign pages_list = tag[1] %}
+          {% assign pages_list = tag[1] limit:6 %}
           {% for post in pages_list %}
             {% if post.title != null %}
               {% if group == null or group == post.group %}
