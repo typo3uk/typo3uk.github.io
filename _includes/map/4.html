@@ -3,7 +3,7 @@
   {%- if forloop.first -%}<ul>{%- endif -%}
     {%- capture slug -%}{{ six.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ six.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if include.current == current and six.navhide != 1 -%}
+    {%- if include.current == current and six.navhide != 1 and six.title != '' -%}
     <li>
       <a href="{{ six.url }}">
         {%- if six.navtitle -%}{{ six.navtitle }}{%- else -%}{{ six.title }}{%- endif -%}
