@@ -1,16 +1,16 @@
-{%- assign secondlevel = site.pages | sort: "path" -%}
+{%- assign pages = site.pages | sort: "path" -%}
 
 {% assign parts = include.current | split: '/' %}
 {% assign depth = parts | size %}
 {% assign depth = depth | plus:1 %}
 {% assign isChildren = false %}
-{% for i in secondlevel %}
+{% for i in pages %}
   {% if i.url contains include.current and i.url != include.current %}
     {% assign isChildren = true %}
   {% endif %}
 {% endfor %}
 
-{%- for second in secondlevel -%}
+{%- for second in pages -%}
   {%- if isChildren == true -%}
     {%- if forloop.first -%}<ul class="list-unstyled">{%- endif -%}
       {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
