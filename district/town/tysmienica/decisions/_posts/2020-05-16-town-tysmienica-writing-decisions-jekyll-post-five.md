@@ -1,5 +1,5 @@
 ---
-title: Writing decisions jekyll post five district tysmenytsia rada
+title: Writing decisions jekyll post five town tysmienica rada
 date: 2020-05-16
 ---
 
