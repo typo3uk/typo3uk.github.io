@@ -11,12 +11,12 @@
 {%- endfor -%}
 
 {%- if isChildren == true -%}
-<ul class="list-unstyled border-left-2 border-primary">
+<ul class="list-unstyled border-left border-primary ml-1 pl-2">
   {%- for four in fourlevel -%}
     {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and four.navhide != 1 and four.title != '' -%}
-    <li>
+    <li class="mb-2">
       <a href="{{ four.url }}">
         {%- if four.navtitle -%}{{ four.navtitle }}{%- else -%}{{ four.title }}{%- endif -%}
       </a>
