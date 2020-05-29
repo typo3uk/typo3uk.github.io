@@ -1,4 +1,3 @@
-
 <ul>
 {%- assign secondlevel = site.pages | sort: "path" -%}
 {%- for second in secondlevel -%}
@@ -8,7 +7,7 @@
   <li>
     <a href="{{ second.url }}">
       {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
-      {%- include map/subsublevel.html current=second.url -%}
+      {%- include map/2.html current=second.url -%}
     </a>
   </li>
   {%- endif -%}
