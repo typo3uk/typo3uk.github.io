@@ -24,47 +24,30 @@ legal:
   www: http://www.rada.if.ua/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "news"
-  -
-    scope:
+  - scope:
       path: /*/decisions/
       type: "decisions"
     values:
       layout: "decisions"
-  -
-    scope:
+  - scope:
       path: /*/news/
       type: "news"
     values:
       layout: "news"
-  -
-    scope:
+  - scope:
       path: "assets/images"
     values:
       image: true
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
-
-label:
-  pages:
-  news:
-    all: Всі новини
-    no: Новин поки що немає :(
-  decisions:
-    all: Всі рішення
-    no: Рішень поки що немає :(
-  deputies:
-    all:
-    no:
 
 exclude:
   - README.md
