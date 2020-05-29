@@ -11,7 +11,6 @@
         {%- include map/sublevel.html current=one.url -%}
       </li>
 
-
       {%- if one.url -%}
         {%- assign twos = site.pages -%}
         {%- for two in twos -%}
@@ -23,23 +22,6 @@
               {%- if two.navtitle -%}{{ two.navtitle }}{%- else -%}{{ two.title }}{%- endif -%}
             </a>
             {%- include map/sublevel.html current=two.url -%}
-
-            {%- if two.url -%}
-              {%- assign threes = site.pages -%}
-              {%- for three in threes -%}
-                {%- capture slug -%}{{ three.url | split: "/" | last }}{%- endcapture -%}
-                {%- capture current -%}{{ three.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-                {%- if tow.url == current and three.url contains "city" or three.url contains "town" -%}
-                <li>
-                  <a href="{{ three.url }}">
-                    {%- if three.navtitle -%}{{ three.navtitle }}{%- else -%}{{ three.title }}{%- endif -%}
-                  </a>
-                  {%- include map/sublevel.html current=three.url -%}
-                </li>
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endif -%}
-
           </li>
           {%- endif -%}
         {%- endfor -%}

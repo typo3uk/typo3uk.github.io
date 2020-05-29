@@ -8,6 +8,7 @@
   <li>
     <a href="{{ second.url }}">
       {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+      {%- include map/subsublevel.html current=second.url -%}
     </a>
   </li>
   {%- endif -%}

@@ -1,0 +1,14 @@
+<ul>
+{%- assign fourlevel = site.pages | sort: "path" -%}
+{%- for four in fourlevel -%}
+  {%- capture slug -%}{{ four.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ four.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+  {%- if include.current == current and four.navhide != 1 -%}
+  <li>
+    <a href="{{ four.url }}">
+      {%- if four.navtitle -%}{{ four.navtitle }}{%- else -%}{{ four.title }}{%- endif -%}
+    </a>
+  </li>
+  {%- endif -%}
+{%- endfor -%}
+</ul>
