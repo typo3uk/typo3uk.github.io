@@ -6,7 +6,7 @@
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if "/" == current -%}
       <div class="col-12">
-        <h3>
+        <h3 class="mb-4">
           <a href="{{ one.url }}">
             {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
           </a>
