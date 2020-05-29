@@ -11,15 +11,12 @@
 </ul>
 <div class="tab-content" id="{{ include.region }}-rada-content">
   <div class="tab-pane py-3 fade show active" id="{{ include.region }}-news" role="tabpanel" aria-labelledby="{{ include.region }}-news-tab">
-    <h3 class="mt-2 mb-4">Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
-    {{ include.region }}
+    {% include home/news-last.html cat=include.region num="3" %}
   </div>
   <div class="tab-pane py-3 fade" id="{{ include.region }}-decisions" role="tabpanel" aria-labelledby="{{ include.region }}-decisions-tab">
-    <h3 class="mt-2 mb-4">Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
-    {{ include.region }}
+    {% include home/decisions-last.html cat=include.region num="3" %}
   </div>
   <div class="tab-pane py-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
-    <h3 class="mt-2 mb-4">Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань</h3>
     {{include.region}}
   </div>
 </div>
