@@ -1,12 +1,16 @@
 {%- assign fourlevel = site.pages | sort: "path" -%}
 
-{% for i in fourlevel %}
+{% assign parts = include.current | split: '/' %}
+{% assign depth = parts | size %}
+{% assign depth = depth | plus:1 %}
+{% assign isChildren = false %}
+{% for i in secondlevel %}
   {% if i.url contains include.current and i.url != include.current %}
     {% assign isChildren = true %}
   {% endif %}
 {% endfor %}
 
-### {{isChildren }} - {{include.current}}###
+### {{isChildren}} ###
 
 {%- for four in fourlevel -%}
   {%- if four -%}
