@@ -7,8 +7,8 @@
     <li>
       <a href="{{ second.url }}">
         {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
-        {%- include map/2.html current=second.url -%}
       </a>
+      {%- include map/2.html current=second.url -%}
     </li>
     {%- endif -%}
   {%- if forloop.last -%}</ul>{%- endif -%}
