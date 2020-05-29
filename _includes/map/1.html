@@ -10,21 +10,19 @@
   {%- endif -%}
 {%- endfor -%}
 
-### {{isChildren}} ###
-
-{%- for second in secondlevel -%}
-
-    {%- if forloop.first -%}<ul class="list-unstyled">{%- endif -%}
-      {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
-      {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
-      <li>
-        <a href="{{ second.url }}">
-          {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
-        </a>
-        {%- include map/2.html current=second.url -%}
-      </li>
-      {%- endif -%}
-    {%- if forloop.last -%}</ul>{%- endif -%}
-
-{%- endfor -%}
+{%- if isChildren == true -%}
+<ul class="list-unstyled">
+  {%- for second in secondlevel -%}
+    {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
+    <li>
+      <a href="{{ second.url }}">
+        {%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}
+      </a>
+      {%- include map/2.html current=second.url -%}
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+{%- endif -%}
