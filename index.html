@@ -7,6 +7,11 @@ title: Івано-Франківська область
   <div class="row">
     <div class="col-12">
 
+{% include news-last.html cat='bohorodchany' num="6" %}
+
+<hr>
+      <br><br>
+
       {%- assign news = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
       {%- assign decisions = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
 
