@@ -7,7 +7,7 @@ breadcrumb: Депутати
 ---
 
 <hr>
-<div class="row mt-3">
+<ul>
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
 
@@ -18,14 +18,12 @@ breadcrumb: Депутати
       {%- endif -%}
     {% endcomment %}
 
-      <div class="col-sm-6 col-md-3">
-        <h6>
+      <li>
           <a href="{{ list.url }}">
             {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
           </a>
-        </h6>
-      </div>
+      </li>
 
   {%- endfor -%}
-</div>
+</ul>
 <hr>
