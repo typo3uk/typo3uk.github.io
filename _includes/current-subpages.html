@@ -34,7 +34,7 @@
 
 {%- elsif include.dir != page.dir -%}
 
-{{include.dir}} - 2<br>
+{{ include.dir }} - 2<br>
 
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
