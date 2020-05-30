@@ -9,21 +9,8 @@ layout: default
 
 <hr>
 ### {{page.url}} ###<br>
-### {{page.dir}} ###<br>
-### {{page.post_url}} ###
 <hr>
 
-{% assign back = page.url | split: "/" %}
-{% assign size = back | size | minus: 2 %}
-{{ back | slice: 0, size }} = back/2
-
-<hr>
-
-{% assign back1 = page.url %}
-{% assign size1 = back1 | size | minus: 2 %}
-{{ back1 | slice: 0, size1 }} = back1/2
-
-<hr>
 
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 4 %}
@@ -32,6 +19,9 @@ layout: default
 ### {{ back | slice: 0, size }} ### = back/4
 <br>
 
+{% for item in back %}
+- {{ item }}
+{% endfor %}
 
     </div>
   </div>
