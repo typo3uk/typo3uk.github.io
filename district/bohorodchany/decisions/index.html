@@ -11,9 +11,14 @@ pagination:
 breadcrumb: Рішення
 ---
 
+{% assign mypage = site.pages | where: "slug", "bohorodchany" | last %}
+### {{mypage.title}} - 02 ###
+
+<br><br>
+
 
 {% assign subpage = site.pages | where: 'layout', 'decisions' %}
-### {{ subpage[0].title }} ###
+### {{ subpage[0].title }} - 01 ###
 
 <br><br>
 
