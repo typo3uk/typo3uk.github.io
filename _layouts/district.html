@@ -71,7 +71,8 @@ layout: default
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="mt-2 mb-4">Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань</h3>
-              {%- include current-subpages.html content=cat dir="{{ page.dir | append: "{{cat}}/" }}" -%}
+              {%- assign dir = page.dir | append: "deputies/" -%}
+              {%- include current-subpages.html content=cat dir=dir -%}
               <br>
               ### {{ page.dir | append: "deputies/" }} ###
             </div>
