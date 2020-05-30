@@ -28,7 +28,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "news"
+      layout: "post"
   - scope:
       path: /*/decisions/
       type: "decisions"
