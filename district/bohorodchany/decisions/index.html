@@ -11,7 +11,7 @@ pagination:
 breadcrumb: Рішення
 ---
 
-{% assign mypage = site.pages | where: page.url, "bohorodchany" | last %}
+{% assign mypage = site.pages | where: 'url', 'bohorodchany' | last %}
 ### {{mypage.title}} - 02 ###
 
 <br><br>
