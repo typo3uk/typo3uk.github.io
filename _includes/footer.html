@@ -19,23 +19,8 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
             <p class="text-muted">
-
-              {% assign mypage = site.pages | where: 'url', 'bohorodchany' | last %}
-              ### {{mypage.title}} - 02 ###
-
-              <br><br>
-
               {% assign subpage = site.pages | where: 'layout', 'district' %}
-              ### {{ subpage[0].legal.address }} - 01 ###
-
-              <br><br>
-
-              {% assign subpage = site.pages | where: 'layout', 'district' %}
-              ### {{ subpage[1].title }} - 00 ###
-
-              <br><br>
-
-              {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
+              {%- if page.legal.address -%}{{ page.legal.address }}{%- elsif subpage[0].legal.address -%}{{ subpage[0].legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
             </p>
           </div>
         </div>
