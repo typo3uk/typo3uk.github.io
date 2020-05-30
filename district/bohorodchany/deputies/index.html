@@ -17,10 +17,10 @@ breadcrumb: Депутати
         {%- assign lists = site.pages | sort: 'path' | reverse -%}
         {%- for list in lists -%}
           {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
-          ### {{slug}} ###<br>
+          ### {{slug}} ### - 1<br>
           {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-          ### {{current}} ###<br>
-          {%- if "/deputies/" == current -%}
+          ### {{current}} ### -2<br>
+          {%- if "deputies" == current -%}
 
             <li>
                 <a href="{{ list.url }}">
