@@ -1,9 +1,16 @@
+
+
+
+{%- if include.content and page.dir contains include.content -%}
+
+{%- else -%}
+
 <ul>
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if page.dir == current -%}
+    {%- if page.dir == current and page.navhide != 1 -%}
       <li>
           <a href="{{ list.url }}">
             {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
@@ -12,3 +19,5 @@
     {%- endif -%}
   {%- endfor -%}
 </ul>
+
+{%- endif -%}
