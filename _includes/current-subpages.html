@@ -32,6 +32,8 @@
 
 {%- elsif include.content and include.dir contains include.content -%}
 
+{{include.dir}} - 2<br>
+
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
@@ -39,7 +41,7 @@
     {%- endif -%}
       {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if page.dir == current and page.navhide != 1 -%}
+      {%- if include.dir == current and page.navhide != 1 -%}
         <div class="col mb-4">
           <div class="card h-100">
             <div class="card-body">
