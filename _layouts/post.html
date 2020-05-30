@@ -7,21 +7,11 @@ layout: default
       <h1 class="mb-4">{{ page.title }}</h1>
       {{content}}
 
-<hr>
-### {{page.url}} ###<br>
-<hr>
 
-
+<hr>
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 4 %}
-### {{ size | slice: 0, size }} ### = size/4
-<br>
-### {{ back | slice: 0, size | join: "/" }} ### = back/4
-<br>
-
-{% for item in back %}
-- {{ item }}
-{% endfor %}
+<a href="{{ back | slice: 0, size | join: "/" }}">Повернутися до спсику</a>
 
     </div>
   </div>
