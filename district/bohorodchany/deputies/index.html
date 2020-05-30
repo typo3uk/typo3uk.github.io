@@ -6,24 +6,47 @@ description:
 breadcrumb: Депутати
 ---
 
-<hr>
-<ul>
-  {%- assign lists = site.pages | sort: 'path' | reverse -%}
-  {%- for list in lists -%}
+[link-site]
 
-    {% comment %}
-      {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
-      {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if "/deputies" == current -%}
-      {%- endif -%}
-    {% endcomment %}
+<div class="container">
 
-      <li>
-          <a href="{{ list.url }}">
-            {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
-          </a>
-      </li>
+  <div class="row">
 
-  {%- endfor -%}
-</ul>
-<hr>
+    <div class="col-12">
+
+      <hr>
+      <ul>
+        {%- assign lists = site.pages | sort: 'path' | reverse -%}
+        {%- for list in lists -%}
+          {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
+          {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+          {%- if "/deputies/" == current -%}
+
+            <li>
+                <a href="{{ list.url }}">
+                  {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
+                </a>
+            </li>
+
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      <hr>
+
+
+      [jekyll-docs]: https://jekyllrb.com/docs/home
+
+    </div>
+
+  </div>
+
+</div>
+
+[link-site]: https://www.typo3.org.ua/
+
+{% comment %}
+  {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
+  {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+  {%- if "/deputies" == current -%}
+  {%- endif -%}
+{% endcomment %}
