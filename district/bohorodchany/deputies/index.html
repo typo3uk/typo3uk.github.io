@@ -51,7 +51,7 @@ breadcrumb: Депутати
         {%- assign lists = site.pages | sort: 'path' | reverse -%}
         {%- for list in lists -%}
           {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
-          {%- capture current -%}{{ list.url | remove: slug | remove: "/" | append: "/" }}{%- endcapture -%}
+          {%- capture current -%}{{ list.url | remove: slug | remove: "/" }}{%- endcapture -%}
           {%- if "/deputies/" == current -%}
 
             <li>
