@@ -15,7 +15,7 @@ layout: default
 {% assign size = back | size | minus: 4 %}
 ### {{ size | slice: 0, size }} ###
 <br>
-### {{ page.url | slice: 0, size }} ###
+### {{ page.url | slice: size, size }} ###
 <br>
 ### {{size}} ###
 
