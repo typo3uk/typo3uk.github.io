@@ -12,20 +12,7 @@ breadcrumb: Депутати
 
     <div class="col-12">
 
-      <ul>
-        {%- assign lists = site.pages | sort: 'path' | reverse -%}
-        {%- for list in lists -%}
-          {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
-          {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-          {%- if page.dir == current -%}
-            <li>
-                <a href="{{ list.url }}">
-                  {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
-                </a>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
+      {% include current-subpages.html %}
 
     </div>
 
