@@ -11,6 +11,12 @@ pagination:
 breadcrumb: Рішення
 ---
 
+
+{% assign subpage = site.pages | where: 'layout', 'decisions' %}
+{{ subpage[0].title }}
+
+<br><br>
+
 {% include decisions-list.html cat=page.pagination.category %}
 
 

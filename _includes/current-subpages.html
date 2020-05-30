@@ -32,7 +32,7 @@
     [...nothing...]
   {%- endfor -%}
 
-{%- elsif include.dir contains include.content -%}
+{%- elsif include.dir != page.dir -%}
 
 {{include.dir}} - 2<br>
 
