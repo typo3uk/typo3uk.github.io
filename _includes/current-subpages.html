@@ -32,7 +32,7 @@
     [...nothing...]
   {%- endfor -%}
 
-{%- elsif include.dir != page.dir -%}
+{%- elsif include.dir != page.dir and page.dir contains include.content -%}
 
 {{ include.dir }} - 2<br>
 
@@ -43,7 +43,7 @@
     {%- endif -%}
       {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if include.dir == current and page.navhide != 1 -%}
+      {%- if include.dir == current and list.navhide != 1 -%}
         <div class="col mb-4">
           <div class="card h-100">
             <div class="card-body">
