@@ -17,8 +17,13 @@ breadcrumb: Рішення
 <br><br>
 
 
+{% assign subpage = site.pages | where: 'legal', 'address' %}
+### {{ subpage[0].legal.address }} - 01 ###
+
+<br><br>
+
 {% assign subpage = site.pages | where: 'layout', 'decisions' %}
-### {{ subpage[0].title }} - 01 ###
+### {{ subpage[0].title }} - 00 ###
 
 <br><br>
 
