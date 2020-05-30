@@ -19,6 +19,10 @@ layout: default
 
 <hr>
 
+{% assign back1 = page.url %}
+{% assign size1 = back1 | size | minus: 2 %}
+{{ back1 | slice: 0, size1 }} = back1/2
+
 <hr>
 
 {% assign back = page.url | split: "/" %}
