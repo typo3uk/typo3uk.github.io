@@ -11,28 +11,21 @@ breadcrumb: Депутати
   <div class="row">
 
     <div class="col-12">
-### {{page.dir}} ### - page.dir<br>
 
-      <hr>
       <ul>
         {%- assign lists = site.pages | sort: 'path' | reverse -%}
         {%- for list in lists -%}
           {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
-          ### {{slug}} ### - 1<br>
           {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-          ### {{current}} ### -2<br>
           {%- if page.dir == current -%}
-
             <li>
                 <a href="{{ list.url }}">
                   {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
                 </a>
             </li>
-
           {%- endif -%}
         {%- endfor -%}
       </ul>
-      <hr>
 
     </div>
 
