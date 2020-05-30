@@ -13,9 +13,10 @@ layout: default
 <hr>
 
 {% assign back = page.url | split: "/" %}
-{% assign size = back | size | minus: 2 %}
-{{ back | slice: 0, size }}
-
+{% assign size = back | size | minus: 4 %}
+<br>
+### {{ page.url | slice: 0, size }} ###
+<br>
 ### {{size}} ###
 
     </div>
