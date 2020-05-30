@@ -5,3 +5,22 @@ subtitle:
 description:
 breadcrumb: Депутати
 ---
+
+<hr>
+<div class="row mt-3">
+  {%- assign lists = site.pages | sort: 'path' | reverse -%}
+  {%- for list in lists -%}
+    {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if "/" == current -%}
+      <div class="col-sm-6 col-md-3">
+        <h6>
+          <a href="{{ list.url }}">
+            {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
+          </a>
+        </h6>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+<hr>

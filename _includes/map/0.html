@@ -1,6 +1,6 @@
 <hr>
 <div class="row mt-3">
-  {%- assign ones = site.pages  | sort: 'path' | reverse -%}
+  {%- assign ones = site.pages | sort: 'path' | reverse -%}
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
