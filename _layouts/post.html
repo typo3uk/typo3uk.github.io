@@ -9,12 +9,11 @@ layout: default
 
 <hr>
 ### {{page.url}} ###<br>
-### {{page.dir}} ###
 <hr>
 
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 4 %}
-{{ size | slice: 0, size }} ###
+### {{ size | slice: 0, size }} ###
 <br>
 ### {{ page.url | split: "/" | slice: 0, size }} ###
 <br>
