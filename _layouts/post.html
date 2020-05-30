@@ -11,7 +11,13 @@ layout: default
 <hr>
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 4 %}
-<a href="{{ back | slice: 0, size | join: "/" }}">Повернутися до спсику</a>
+<a href="{{ back | slice: 0, size | join: "/" }}/">
+  {%- if back contains "news" -%}
+    Повернутися до спсику новин
+  {%- else -%}
+    Повернутися до спсику рішень
+  {%- endif -%}
+</a>
 
     </div>
   </div>
