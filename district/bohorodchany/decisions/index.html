@@ -11,24 +11,7 @@ pagination:
 breadcrumb: Рішення
 ---
 
-{% assign mypage = site.pages | where: 'url', 'bohorodchany' | last %}
-### {{mypage.title}} - 02 ###
-
-<br><br>
-
-
-{% assign subpage = site.pages | where: 'layout', 'district' %}
-### {{ subpage[0].legal.address }} - 01 ###
-
-<br><br>
-
-{% assign subpage = site.pages | where: 'layout', 'district' %}
-### {{ subpage[1].title }} - 00 ###
-
-<br><br>
-
 {% include decisions-list.html cat=page.pagination.category %}
-
 
 {% comment %}
 
