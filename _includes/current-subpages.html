@@ -1,5 +1,7 @@
 {%- if include.content and page.dir contains include.content -%}
 
+{{include.dir}} - 0-2 <br>
+
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
