@@ -16,7 +16,11 @@
                   {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
                 </a>
               </h5>
-              <p class="card-text">[...]</p>
+              <p class="card-text">
+                {{ slug | split: "-" | last }}
+                <br>
+                Перелік депутатів обраних на місцевих виборах у році
+              </p>
             </div>
           </div>
         </div>
