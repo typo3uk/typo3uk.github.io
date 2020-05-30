@@ -15,7 +15,7 @@ layout: default
 
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 2 %}
-{{ back | slice: 0, size }}
+{{ back | slice: 0, size }} = back/2
 
 <hr>
 
@@ -23,13 +23,11 @@ layout: default
 
 {% assign back = page.url | split: "/" %}
 {% assign size = back | size | minus: 4 %}
-### {{ size | slice: 0, size }} ###
+### {{ size | slice: 0, size }} ### = size/4
 <br>
-### {{ page.url | slice: size, size }} ###
+### {{ back | slice: 0, size }} ### = back/4
 <br>
-### {{size}} ###
-<br>
-### {{post_url}} ###
+
 
     </div>
   </div>
