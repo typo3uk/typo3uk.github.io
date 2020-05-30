@@ -11,6 +11,7 @@ breadcrumb: Депутати
   <div class="row">
 
     <div class="col-12">
+### {{page.dir}} ### - page.dir<br>
 
       <hr>
       <ul>
@@ -20,7 +21,7 @@ breadcrumb: Депутати
           ### {{slug}} ### - 1<br>
           {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
           ### {{current}} ### -2<br>
-          {%- if "deputies" == current -%}
+          {%- if page.dir == current -%}
 
             <li>
                 <a href="{{ list.url }}">
