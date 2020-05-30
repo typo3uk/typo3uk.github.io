@@ -31,20 +31,21 @@
 }
 @media screen and (max-width:768px){
   .main-breadcrumbs .breadcrumb>li{
-    display:none
+    display: none
   }
 }
 @media screen and (max-width:768px){
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2){
-    display:block
+    display: block;
+    padding-left: unset
   }
   .main-breadcrumbs .breadcrumb>li:nth-last-child(2):before{
     // font-size:87%;
-    display:inline-block;
+    display: inline-block;
     content: "\2190";
-    color:#2669e3;
-    padding-left:0;
-    padding-right:10px
+    color: #2669e3;
+    padding-left: 0;
+    padding-right: 10px
   }
 }
 .main-breadcrumbs .breadcrumb>li>a{
@@ -52,37 +53,37 @@
   // font-size:90%;
   font-weight: 600;
   text-decoration: none;
-  border-bottom:1px solid transparent;
-  transition:.4s ease-in-out
+  border-bottom: 1px solid transparent;
+  transition: .4s ease-in-out
 }
 .main-breadcrumbs .breadcrumb>li>a:hover {
   text-decoration: none;
-  transition:.4s ease-in-out;
-  border-bottom:1px solid #2d5ca6
+  transition: .4s ease-in-out;
+  border-bottom: 1px solid #2d5ca6
 }
 .main-breadcrumbs .breadcrumb>li+li:before {
   //padding:0 10px;
-  color:#a7a9af
+  color: #a7a9af
 }
 @media screen and (max-width:768px){
   .main-breadcrumbs .breadcrumb>li+li:before {
-    display:none
+    display: none
   }
 }
 @media screen and (max-width:480px){
   .main-breadcrumbs .breadcrumb>li+li:before {
-    padding:0;
-    padding-right:10px
+    padding: 0;
+    padding-right: 10px
   }
 }
 .main-breadcrumbs .breadcrumb>li.active {
   // font-size:90%;
   // color:#a7a9af;
-  max-width:750px;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  overflow:hidden;
-  position:relative;
+  max-width: 750px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
   // top:4px
 }
 // .main-breadcrumbs .breadcrumb>li.active sup{font-size:90%}
