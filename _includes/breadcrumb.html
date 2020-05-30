@@ -29,12 +29,9 @@
               {%- endif -%}
             {%- endfor -%}
           {%- endfor -%}
-          {% assign news = site.posts | where: 'news', nil %}
-          {% if page.layout  == "post" %}
-            <li class="breadcrumb-item{% if i == j %} active" aria-current="page{% endif %}">
-              <span>
+          {% if page.layout == "post" %}
+            <li class="breadcrumb-item active" aria-current="page">
                 {{ page.title }}
-              </span>
             </li>
           {%- endif -%}
         </ol>
