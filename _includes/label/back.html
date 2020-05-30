@@ -1,0 +1,10 @@
+<hr>
+{%- assign back = page.url | split: "/" -%}
+{%- assign size = back | size | minus: 4 -%}
+<a href="{{ back | slice: 0, size | join: "/" }}/">
+  {%- if back contains "news" -%}
+    {%- include label/news/back-list.html -%}
+  {%- else -%}
+    {%- include label/decisions/back-list.html -%}
+  {%- endif -%}
+</a>

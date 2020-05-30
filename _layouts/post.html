@@ -6,19 +6,7 @@ layout: default
     <div class="col-12">
       <h1 class="mb-4">{{ page.title }}</h1>
       {{content}}
-
-
-<hr>
-{% assign back = page.url | split: "/" %}
-{% assign size = back | size | minus: 4 %}
-<a href="{{ back | slice: 0, size | join: "/" }}/">
-  {%- if back contains "news" -%}
-    Повернутися до спсику новин
-  {%- else -%}
-    Повернутися до спсику рішень
-  {%- endif -%}
-</a>
-
+      {%- include label/back.html -%}
     </div>
   </div>
 </div>
