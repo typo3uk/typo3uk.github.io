@@ -12,7 +12,7 @@ breadcrumb: Депутати
   {%- for list in lists -%}
     {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/" == current -%}
+    {%- if "/deputies" == current -%}
       <div class="col-sm-6 col-md-3">
         <h6>
           <a href="{{ list.url }}">
