@@ -64,7 +64,7 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 19 ### <br>
+### 20 ### <br>
 
 {% assign page_url = '/district/bohorodchany/deputies/' %}
 {% assign pages = site.pages | sort: 'path' | reverse %}
@@ -80,7 +80,7 @@
 {% endfor %}
 
 {%- assign deputies = '' | split:'' -%}
-{%- for i in site.site.pages -%}
+{%- for i in site.pages -%}
   {%- if i.url contains "deputies" -%}
     {%- assign deputies = deputies | push:i -%}
   {%- endif -%}
