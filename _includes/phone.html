@@ -1,8 +1,5 @@
-{%- assign subpage = site.pages | where: 'layout', 'district' -%}
 {%- if page.legal.phone.[include.type] -%}
 <a href="tel:+38{{ page.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal.phone.[include.type] | replace: " ", "&nbsp;" }}</a>
-{%- elsif subpage[0].legal.phone.[include.type] -%}
-<a href="tel:+38{{ subpage[0].legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ subpage[0].legal.phone.[include.type] | replace: " ", "&nbsp;" }}</a>
 {%- else -%}
 <a href="tel:+38{{ site.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.legal.phone.[include.type] | replace: " ", "&nbsp;" }}</a>
 {%- endif -%}
