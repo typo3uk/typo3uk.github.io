@@ -86,7 +86,7 @@
         {% assign node_parts = node.url | split: '/' %}
         {% assign node_depth = node_parts | size %}
 
-        {% if node_depth == 3 %}
+
           <li>
             <a href="{{ node.url }}">
               {% if node.link %}
@@ -122,7 +122,8 @@
               </ul>
             {% endif %}
           </li>
-        {% endif %}
+
+
       {% endif %}
     {% endfor %}
   </ul>
