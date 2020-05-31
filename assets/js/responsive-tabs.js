@@ -23,8 +23,8 @@ var fakewaffle = ( function ($, fakewaffle) {
         }
 
         $.each(collapseDisplayed, function () {
-            hidden += 'd-none  d-' + this + '-flex';
-            visible += ' d-' + upSizes[this] + '-none';
+            hidden += ' hidden-' + this + '-down';
+            visible += ' hidden-' + upSizes[this] + '-up';
         });
 
         $.each(tabGroups, function (index) {
