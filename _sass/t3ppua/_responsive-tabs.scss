@@ -1,23 +1,59 @@
-@mixin d-none { display: none !important; }
-@mixin d-block { display: block !important; }
-@mixin d-flex { display: flex !important; }
-.panel-group {
-  &.responsive {
-    &.hidden-xs.hidden-sm {
-      @include media-breakpoint-down(sm) {
-        @include d-none;
-      }
-      @include media-breakpoint-up(md) {
-        @include d-block;
-      }
+
+.tab-content {
+  padding: 0;
+}
+
+.card {
+  border-radius: 0 0 .25rem .25rem;
+  border-top: 0;
+}
+
+.nav-tabs {
+  height: 42px;
+  padding: 0;
+  position: relative;
+
+  .nav-item {
+    margin-left: 0;
+
+    a {
+      color: black;
+      display: block;
+      padding: 8px 25px;
     }
-    &.visible-xs.visible-sm {
-      @include media-breakpoint-down(sm) {
-        @include d-block;
+
+
+    &.overflow-tab {
+      background-color: white;
+      display: none;
+      position: absolute;
+      right: 0;
+      width: 150px;
+      z-index: 1;
+
+      a {
+        border: 1px solid lightgray;
+        border-radius: 0;
+        padding: 6px 10px;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: lightgray;
+        }
       }
-      @include media-breakpoint-up(md) {
-        @include d-none;
+
+      &:last-child {
+        border-radius: 0 0 0 4px;
       }
+
+    }
+
+    &.overflow-tab-action {
+      position: absolute;
+      right: 0;
     }
   }
+
 }
