@@ -30,7 +30,9 @@
     [...nothing...]
   {%- endfor -%}
 
-{%- elsif include.dir != page.dir and include.dir contains page.dir -%}
+{%- elsif include.page == "district" and include.dir != page.dir and include.dir contains page.dir -%}
+
+### {{include.page}} - 00 ###
 
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
@@ -62,7 +64,9 @@
     [...nothing...]
   {%- endfor -%}
 
-{%- elsif include.page == 'home' and include.dir != page.dir and include.dir contains page.dir -%}
+{%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
+
+### {{include.page}} - 01 ###
 
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists limit:3 -%}
