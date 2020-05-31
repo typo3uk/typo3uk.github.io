@@ -1,3 +1,1 @@
-(function($) {
-    fakewaffle.responsiveTabs(['xs', 'sm']);
-})(jQuery);
+$('.nav-tabs').responsiveTabs();
