@@ -64,19 +64,26 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 10 ### <br>
+### 11 ### <br>
 
 {% assign pages = site.pages | sort: 'order' %}
-{% assign parts = '/district/bohorodchany/' | split: '/' %}
+{% assign parts = page.url | split: '/' %}
 {% assign depth = parts | size %}
-{% assign depth = depth | plus: 1 %}
+{% assign depth = depth | plus:1 %}
 
-<ul>
+{% assign has_children = false %}
 {% for node in pages %}
-  {% if node.url contains page.url %}
-    {% assign node_parts = node.url | split: '/' %}
-    {% assign node_depth = node_parts | size %}
-    {% if node.order %}
+  {% if node.url contains page.url and node.url != page.url %}
+    {% assign has_children = true %}
+  {% endif %}
+{% endfor %}
+
+{% if has_children == true %}
+  <ul>
+  {% for node in pages %}
+    {% if node.url contains page.url %}
+      {% assign node_parts = node.url | split: '/' %}
+      {% assign node_depth = node_parts | size %}
       {% if node_depth == depth %}
         <li>
           <a href="{{ node.url }}">
@@ -89,9 +96,9 @@
         </li>
       {% endif %}
     {% endif %}
-  {% endif %}
-{% endfor %}
-</ul>
+  {% endfor %}
+  </ul>
+{% endif %}
 
 
 
