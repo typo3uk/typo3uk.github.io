@@ -64,7 +64,25 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 20 ### <br>
+### 21 ### <br>
+
+{%- assign deputies = '' | split:'' -%}
+{%- for i in site.pages -%}
+  {%- if i.url contains include.dir -%}
+    {%- assign deputies = deputies | push:i -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<ul>
+{% for item in deputies %}
+  <li>{{item.title}}</li>
+{%- endfor -%}
+</ul>
+
+
+
+
+{% comment %}
 
 {% assign page_url = '/district/bohorodchany/deputies/' %}
 {% assign pages = site.pages | sort: 'path' | reverse %}
@@ -78,15 +96,6 @@
     {% assign has_children = true %}
   {% endif %}
 {% endfor %}
-
-{%- assign deputies = '' | split:'' -%}
-{%- for i in site.pages -%}
-  {%- if i.url contains "deputies" -%}
-    {%- assign deputies = deputies | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{{deputies}}<br>
 
 {% if has_children == true %}
   <ul>
@@ -112,7 +121,9 @@
 
 
 
-{% comment %}
+#####
+
+
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
