@@ -66,6 +66,16 @@
 
 ### {{include.page}} - 01 ###
 
+{%- assign deputies = '' | split:'' -%}
+{%- for i in site.pages -%}
+  {%- unless i.url contains "deputies" -%}
+    {%- assign deputies = deputies | push:i -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{{deputies}}<br>
+<hr>
+
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
@@ -73,7 +83,7 @@
     {%- endif -%}
       {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if include.dir == current and list.navhide != 1 and list == 4 -%}
+      {%- if include.dir == current and list.navhide != 1 -%}
         <div class="col">
           <div class="card h-100 border-0">
             <div class="card-body px-0 pt-0">
@@ -89,7 +99,6 @@
           </div>
         </div>
       {% else %}
-        {% break %}
       {%- endif -%}
     {%- if forloop.last -%}
     </div>
