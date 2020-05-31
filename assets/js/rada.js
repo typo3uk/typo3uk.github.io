@@ -1,1 +1,3 @@
-$('.nav-tabs').responsiveTabs();
+$(function() {
+    $('.nav-tabs').responsiveTabs();
+});
