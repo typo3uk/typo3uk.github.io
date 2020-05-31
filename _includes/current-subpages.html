@@ -64,10 +64,10 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 09 ### <br>
+### 10 ### <br>
 
 {% assign pages = site.pages | sort: 'order' %}
-{% assign parts = page.url | split: '/' %}
+{% assign parts = '/district/bohorodchany/' | split: '/' %}
 {% assign depth = parts | size %}
 {% assign depth = depth | plus: 1 %}
 
