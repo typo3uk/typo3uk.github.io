@@ -64,9 +64,11 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
+### 1 ### <br>
+
 {% assign pages = site.pages | sort: 'order' %}
 
-{% assign parts = "/district/bohorodchany/" | split: '/' %}
+{% assign parts = "/district/" | split: '/' %}
 {% assign root = include.dir | append: parts[1] | append: '/' %}
 {% assign has_children = false %}
 {% for node in pages %}
