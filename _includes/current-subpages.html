@@ -64,7 +64,7 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 0.6 ### <br>
+### 0.7 ### <br>
 
 {% assign pages = site.pages | sort: 'order' %}
 {% for node in pages %}
@@ -86,7 +86,7 @@
           {% assign node_parts = subnode.url | split: '/' %}
           {% assign node_depth = node_parts | size %}
 
-          {% if node_depth == 3 %}
+          {% if node_depth == 2 %}
             <li{% if page.url contains subnode.url %} class="active"{% endif %}>
               <a href="{{ subnode.url }}">
                 {% if subnode.link %}
