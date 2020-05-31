@@ -32,8 +32,6 @@
 
 {%- elsif include.page == "district" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### {{include.page}} - 00 ###
-
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
@@ -90,6 +88,7 @@
             </div>
           </div>
         </div>
+      {% else %}
       {%- endif -%}
     {%- if forloop.last -%}
     </div>
