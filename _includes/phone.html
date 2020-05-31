@@ -1,4 +1,4 @@
-{% assign subpage = site.pages | where: 'layout', 'district' %}
+{%- assign subpage = site.pages | where: 'layout', 'district' -%}
 {%- if page.legal.phone.[include.type] -%}
 <a href="tel:+38{{ page.legal.phone.[include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal.phone.[include.type] | replace: " ", "&nbsp;" }}</a>
 {%- elsif subpage[0].legal.phone.[include.type] -%}
