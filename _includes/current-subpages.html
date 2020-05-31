@@ -64,18 +64,6 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### {{include.page}} - 01 ###
-
-{%- assign deputies = '' | split:'' -%}
-{%- for i in site.pages -%}
-  {%- unless i.url contains "deputies" -%}
-    {%- assign deputies = deputies | push:i -%}
-  {%- endunless -%}
-{%- endfor -%}
-
-{{deputies}}<br>
-<hr>
-
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
