@@ -64,12 +64,20 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 22 ### <br>
+### 23 ### <br>
 
 {%- assign deputies = '' | split:'' -%}
-{%- assign pages = site.pages | sort: 'path' | reverse -%}
+
+{% assign page_dir = include.dir %}
+{% assign pages = site.pages | sort: 'path' | reverse %}
+{% assign parts = page_dir | split: '/' %}
+{% assign depth = parts | size %}
+{% assign depth = depth | plus:1 %}
+
+{{depth}} - depth<br>
+
 {%- for i in pages -%}
-  {%- if i.dir contains include.dir -%}
+  {%- if i.dir contains depth -%}
     {%- assign deputies = deputies | push:i -%}
   {%- endif -%}
 {%- endfor -%}
