@@ -64,7 +64,7 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 24 ### <br>
+### 25 ### <br>
 
 {%- assign deputies = '' | split:'' -%}
 {%- assign pages = site.pages | sort: 'path' | reverse -%}
@@ -73,13 +73,27 @@
     {%- assign deputies = deputies | push:i -%}
   {%- endif -%}
 {%- endfor -%}
-
-<ul>
-{%- for convocation in deputies offset:1 limit:3 -%}
-  <li>{{convocation.title}} - {{convocation.dir}}</li>
-{%- endfor -%}
-</ul>
-
+{%- if deputies -%}
+  <div class="row row-cols-1">
+  {%- for convocation in deputies offset:1 limit:3 -%}
+    <div class="col">
+      <div class="card h-100 border-0">
+        <div class="card-body px-0 pt-0">
+          <h5 class="card-title mb-1">
+            <a href="{{ convocation.url }}">
+              {%- if convocation.navtitle -%}{{ convocation.navtitle }}{%- else -%}{{ convocation.title }}{%- endif -%}
+            </a>
+          </h5>
+          <p class="card-text mb-1">
+            {% assign slug = convocation.url | split: '/' | last %}
+            Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+          </p>
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+  </div>
+{%- endif -%}
 
 
 
