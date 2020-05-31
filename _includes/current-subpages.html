@@ -64,12 +64,12 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 0.3 ### <br>
+### 0.4 ### <br>
 
 {% assign pages = site.pages | sort: 'order' %}
 
 {% assign parts = page.url | split: '/' %}
-{% assign root = '/district/' | append: parts[1] | append: '/' %}
+{% assign root = '/' | append: parts[1] | append: '/' %}
 {% assign has_children = false %}
 {% for node in pages %}
   {% if node.url contains root and node.url != root %}
@@ -78,7 +78,8 @@
 {% endfor %}
 
 {% if has_children == true %}
-<nav>
+<nav class="sidebar-item sidebar-item-menu">
+  <h2>Menu</h2>
 
   <ul>
     {% for node in pages %}
@@ -87,8 +88,8 @@
         {% assign node_parts = node.url | split: '/' %}
         {% assign node_depth = node_parts | size %}
 
-
-          <li>
+        {% if node_depth == 3 %}
+          <li{% if page.url contains node.url %} class="active"{% endif %}>
             <a href="{{ node.url }}">
               {% if node.link %}
                 {{ node.link }}
@@ -109,7 +110,7 @@
               <ul>
                 {% for subnode in pages %}
                   {% if subnode.url contains node_root and subnode.url != node_root %}
-                    <li>
+                    <li{% if page.url contains subnode.url %} class="active"{% endif %}>
                       <a href="{{ subnode.url }}">
                         {% if subnode.link %}
                           {{ subnode.link }}
@@ -122,10 +123,8 @@
                 {% endfor %}
               </ul>
             {% endif %}
-
           </li>
-
-
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
