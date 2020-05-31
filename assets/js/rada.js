@@ -101,5 +101,5 @@ var tabsActions = function (element) {
   };
 };
 
-var tabsAction = new tabsActions('.layout--tabs .nav-tabs-wrapper .nav-tabs');
+var tabsAction = new tabsActions('.responsive-tabs .nav-tabs');
 tabsAction.setup();
