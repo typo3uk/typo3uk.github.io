@@ -73,7 +73,9 @@
     {%- endif -%}
       {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-      {%- if include.dir == current and list.navhide != 1 -%}
+      {%- if include.dir == current and list.navhide != 1 and list == 4 -%}
+        {% break %}
+      {% else %}
         <div class="col">
           <div class="card h-100 border-0">
             <div class="card-body px-0 pt-0">
@@ -88,7 +90,6 @@
             </div>
           </div>
         </div>
-      {% else %}
       {%- endif -%}
     {%- if forloop.last -%}
     </div>
