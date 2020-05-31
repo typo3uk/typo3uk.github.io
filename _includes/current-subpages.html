@@ -67,27 +67,29 @@
 ### {{include.page}} - 01 ###
 
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
-  {%- for list in lists limit:3 -%}
+  {%- for list in lists -%}
     {%- if forloop.first -%}
     <div class="row row-cols-1">
     {%- endif -%}
       {%- capture slug -%}{{ list.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
       {%- if include.dir == current and list.navhide != 1 -%}
-        <div class="col mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="{{ list.url }}">
-                  {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
-                </a>
-              </h5>
-              <p class="card-text">
-                Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
-              </p>
+        {%- for item in list limit:3 -%}
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="{{ list.url }}">
+                    {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
+                  </a>
+                </h5>
+                <p class="card-text">
+                  Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        {%- endfor -%}
       {% else %}
       {%- endif -%}
     {%- if forloop.last -%}
