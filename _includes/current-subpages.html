@@ -64,8 +64,6 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### {{include.page}} - 01 ###
-
   {%- assign lists = site.pages | sort: 'path' | reverse -%}
   {%- for list in lists -%}
     {%- if forloop.first -%}
