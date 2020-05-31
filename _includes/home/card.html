@@ -18,7 +18,6 @@
   </div>
   <div class="tab-pane pt-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
     {%- assign dir = include.url | append: 'deputies' | append: '/' -%}
-    {{ dir }} - 01 <br>
-    {%- include current-subpages.html dir=dir -%}
+    {%- include current-subpages.html dir=dir page="home" -%}
   </div>
 </div>
