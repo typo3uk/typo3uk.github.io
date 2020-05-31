@@ -75,14 +75,14 @@
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
       {%- if include.dir == current and list.navhide != 1 -%}
         <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">
+          <div class="card h-100 border-0">
+            <div class="card-body px-0 pt-0">
+              <h5 class="card-title mb-1">
                 <a href="{{ list.url }}">
                   {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
                 </a>
               </h5>
-              <p class="card-text">
+              <p class="card-text mb-1">
                 Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
               </p>
             </div>
