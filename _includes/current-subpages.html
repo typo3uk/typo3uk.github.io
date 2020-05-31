@@ -64,12 +64,12 @@
 
 {%- elsif include.page == "home" and include.dir != page.dir and include.dir contains page.dir -%}
 
-### 1 ### <br>
+### 0.1 ### <br>
 
 {% assign pages = site.pages | sort: 'order' %}
 
-{% assign parts = "/district/" | split: '/' %}
-{% assign root = include.dir | append: parts[1] | append: '/' %}
+{% assign parts = page.url | split: '/' %}
+{% assign root = '/district/bohorodchany/' | append: parts[1] | append: '/' %}
 {% assign has_children = false %}
 {% for node in pages %}
   {% if node.url contains root and node.url != root %}
@@ -79,6 +79,7 @@
 
 {% if has_children == true %}
 <nav>
+
   <ul>
     {% for node in pages %}
       {% if node.url contains root %}
@@ -86,7 +87,7 @@
         {% assign node_parts = node.url | split: '/' %}
         {% assign node_depth = node_parts | size %}
 
-
+        {% if node_depth == 3 %}
           <li>
             <a href="{{ node.url }}">
               {% if node.link %}
@@ -121,9 +122,9 @@
                 {% endfor %}
               </ul>
             {% endif %}
+            
           </li>
-
-
+        {% endif %}
       {% endif %}
     {% endfor %}
   </ul>
