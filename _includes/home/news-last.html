@@ -16,9 +16,10 @@
     </div>
   {%- if forloop.last -%}
   </div>
-  <div class="row justify-content-between">
-    <div class="col-md-5 col-5 text-left"><p class="m-0">&nbsp;</p></div>
-    <div class="col-md-5 col-5 text-right text-nowrap"><p class="m-0"><a href="{{include.url}}news/" class="btn btn-primary">{% include label/news/list-all.md %}</a></p></div>
+  <div class="row">
+    <div class="col-auto ml-auto">
+      <a href="{{include.url}}news/" class="btn btn-primary">{% include label/news/list-all.md %}</a>
+    </div>
   </div>
   {%- endif -%}
 {%- else -%}
