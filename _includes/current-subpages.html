@@ -93,9 +93,12 @@
       [...nothing...]
     {%- endfor -%}
     </div>
-    <div class="row justify-content-between">
-      <div class="col-md-5 col-5 text-left"><p class="m-0">&nbsp;</p></div>
-      <div class="col-md-5 col-5 text-right text-nowrap"><p class="m-0"><a href="{{include.dir}}" class="btn btn-primary">Усі скликання</a></p></div>
+    <div class="row">
+      <div class="col-auto ml-auto">
+        <a class="btn btn-primary" href="{{include.dir}}">
+          Усі скликання
+        </a>
+      </div>
     </div>
   {%- endif -%}
 
