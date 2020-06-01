@@ -72,34 +72,36 @@
     {%- endif -%}
   {%- endfor -%}
   {%- if deputies -%}
-    <div class="row row-cols-1">
     {%- for convocation in deputies offset:1 limit:3 -%}
-      <div class="col">
-        <div class="card h-100 border-0">
-          <div class="card-body px-0 pt-0">
-            <h5 class="card-title mb-1">
-              <a href="{{ convocation.url }}">
-                {%- if convocation.navtitle -%}{{ convocation.navtitle }}{%- else -%}{{ convocation.title }}{%- endif -%}
-              </a>
-            </h5>
-            <p class="card-text mb-1">
-              {%- assign slug = convocation.url | split: '/' | last -%}
-              Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
-            </p>
+      {%- if forloop.first -%}
+      <div class="row row-cols-1">
+      {%- endif -%}
+        <div class="col">
+          <div class="card h-100 border-0">
+            <div class="card-body px-0 pt-0">
+              <h5 class="card-title mb-1">
+                <a href="{{ convocation.url }}">
+                  {%- if convocation.navtitle -%}{{ convocation.navtitle }}{%- else -%}{{ convocation.title }}{%- endif -%}
+                </a>
+              </h5>
+              <p class="card-text mb-1">
+                {%- assign slug = convocation.url | split: '/' | last -%}
+                Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+              </p>
+            </div>
           </div>
         </div>
+      {%- if forloop.last -%}
       </div>
+      <div class="row">
+        <div class="col-auto ml-auto">
+          <a class="btn btn-primary" href="{{include.dir}}">Усі скликання</a>
+        </div>
+      </div>
+      {%- endif -%}
     {%- else -%}
       [...nothing...]
     {%- endfor -%}
-    </div>
-    <div class="row">
-      <div class="col-auto ml-auto">
-        <a class="btn btn-primary" href="{{include.dir}}">
-          Усі скликання
-        </a>
-      </div>
-    </div>
   {%- endif -%}
 
 {%- else -%}
