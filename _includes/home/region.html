@@ -18,7 +18,10 @@
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
     <div class="col mb-4">
       <div class="card">
-        <img src="assets/images/main.jpg" class="card-img-top" alt="...">
+        {%- assign image = 'assets/images/district-{{slug}}.jpg' -%}
+        {%- if image -%}
+        <img src="{{image}}" class="card-img-top" alt="District {{slug}}">
+        {%- endif -%}
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
