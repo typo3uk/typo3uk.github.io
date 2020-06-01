@@ -5,12 +5,10 @@
   {%- endif -%}
     <div class="col">
       <div class="card h-100 border-0">
-        {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
         <div class="card-body px-0 pt-0">
           <p class="card-text mb-1"><small class="text-muted">{{ decision.date | date: '%-d %B %Y' }}</small></p>
           <h5 class="card-title mb-1"><a href="{{ decision.url }}">{{ decision.title }}</a></h5>
           <p class="card-text">{{ decision.excerpt | strip_html | truncate: 110 }}</p>
-          {% comment %}<p class="card-text"><small class="text-muted">{{ decision.category }}</small></p>{% endcomment %}
         </div>
       </div>
     </div>
