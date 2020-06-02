@@ -18,10 +18,12 @@
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
     <div class="col mb-4">
       <div class="card">
+        {% comment %}
         {%- capture image -%}assets/images/district-{{slug}}.jpg{%- endcapture -%}
         {%- if image -%}
         <img src="{{ image }}" class="card-img-top" alt="District {{slug}}">
         {%- endif -%}
+        {% endcomment %}
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
