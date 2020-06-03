@@ -21,7 +21,7 @@
         {%- assign dir = second.dir | append: 'images/' -%}
         {%- assign path = slug | prepend: dir | append: '.jpg' -%}
         {%- assign file = site.static_files | where: "path", path | first -%}
-        {%- if file -%}<img src="{{ file.path }}" class="card-img-top" alt="{{slug}}">{%- endif -%}
+        {%- if file -%}<img src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=538&h=220&fit=cover&a=attention&output=jpg&q=50&t=square" class="card-img-top" alt="{{slug}}">{%- endif -%}
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
