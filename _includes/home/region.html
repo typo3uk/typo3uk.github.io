@@ -19,8 +19,10 @@
     <div class="col mb-4">
       <div class="card">
 
-        {% assign path = second.url | append: 'images/' | replace: '.html','.jpg' %}
-        path: {{path}} <br>
+        {% assign dir = second.url | append: 'images/' %}
+        dir: {{dir} <br>
+        {% assign path = slug | prepend: dir | append: '.jpg' %}
+        path: {{path} <br>
         {% assign file = site.static_files | where: "path", path | first %}
         file: {{file}} <br>
         {% if file %}
