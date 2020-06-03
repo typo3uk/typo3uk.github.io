@@ -18,6 +18,10 @@
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
     <div class="col mb-4">
       <div class="card">
+        {% assign file = site.static_files | where: "path", jpg_path | first %}
+        file: {{file}}<br>
+        {% if file %}<img src="{{ jpg_path }}" class="card-img-top" alt="{{slug}}">{% endif %}
+
         {%- comment -%}
           {%- capture image -%}assets/images/district-{{slug}}.jpg{%- endcapture -%}
           {%- if image -%}
