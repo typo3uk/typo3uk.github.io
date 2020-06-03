@@ -20,9 +20,9 @@
       <div class="card">
 
         {% assign dir = second.dir | append: 'images/' %}
-        dir: {{dir} <br>
+        dir: {{dir}} <br>
         {% assign path = slug | prepend: dir | append: '.jpg' %}
-        path: {{path} <br>
+        path: {{path}} <br>
         {% assign file = site.static_files | where: "path", path | first %}
         file: {{file}} <br>
         {% if file %}
