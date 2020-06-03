@@ -18,22 +18,16 @@
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
     <div class="col mb-4">
       <div class="card">
-
-        {% assign dir = second.dir | append: 'images/' %}
-        {% assign path = slug | prepend: dir | append: '.jpg' %}
-        {% assign file = site.static_files | where: "path", path | first %}
-        {% if file %}
-          <img src="{{ file.path }}" class="card-img-top" alt="District {{slug}}">
-        {% else %}
-        {% endif %}
-
-
+        {%- assign dir = second.dir | append: 'images/' -%}
+        {%- assign path = slug | prepend: dir | append: '.jpg' -%}
+        {%- assign file = site.static_files | where: "path", path | first -%}
+        {%- if file -%}<img src="{{ file.path }}" class="card-img-top" alt="{{slug}}">{%- endif -%}
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
           </h5>
           <div class="card-text">
-            {% include home/card.html region=slug url=second.url %}
+            {%- include home/card.html region=slug url=second.url -%}
           </div>
         </div>
       </div>
@@ -44,23 +38,4 @@
 {%- endif -%}
 
 {%- comment -%}
-  {% assign path = person.url | prepend: '/images' | replace: '.html','.jpg' %}
-  {% assign file = site.static_files | where: "path", path | first %}
-  {% if file %}
-  <img class="person-img-small img-circle" src="{{ file.path }}" alt="Photo of {{ person.firstname }} {{ person.lastname }}" />
-  {% else %}
-  <div class="person-img-small fa-stack fa-5x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-user fa-stack-1x fa-inverse"></i></div>
-  {% endif %}
-{%- endcomment -%}
-
-{%- comment -%}
-
-{% assign file = site.static_files | where: "path", jpg_path | first %}
-file: {{file}}<br>
-{% if file %}<img src="{{ jpg_path }}" class="card-img-top" alt="{{slug}}">{% endif %}
-
-  {%- capture image -%}assets/images/district-{{slug}}.jpg{%- endcapture -%}
-  {%- if image -%}
-  <img src="{{ image }}" class="card-img-top" alt="District {{slug}}">
-  {%- endif -%}
 {%- endcomment -%}
