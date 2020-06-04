@@ -6,7 +6,7 @@
     ### {{slug}} ### - slug <br>
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     ### {{current}} ### - current <br>
-    {%- if "/district/" == current -%}
+    {%- if "/" == current -%}
       <div class="col-12">
         <h3 class="mb-4">
           <a href="{{ one.url }}">
