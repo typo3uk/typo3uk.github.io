@@ -1,16 +1,25 @@
+#
+# Site
+#
 skippy_text: Перейти до основного вмісту
 back_list: Повернутися до спсику
-
+#
+# News
+#
 news: Новини
 news_all: Усі новини
 news_back_list: Повернутися до спсику новин
 news_list_empty: Новин поки що немає :(
-
+#
+# Decisions
+#
 decisions: Рішення
 decisions_all: Усі рішення
 decisions_back_list: Повернутися до спсику рішень
 decisions_list_empty: Рішень поки що немає :(
-
+#
+# Deputies
+#
 deputies: Депутати
 deputies_number: №
 deputies_name: Прізвище ім'я по батькові
