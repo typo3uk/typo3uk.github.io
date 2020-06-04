@@ -19,12 +19,13 @@
 //     }
 // }
 
-
+//
 // Responsive Weight
-
+//
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-    .font#{$infix}-weight-bold  { font-weight: 700!important; }
+    //.font#{$infix}-weight-bold  { font-weight: 700!important; }
+    .font-sm-weight-bold  { font-weight: 700!important; }
   }
 }
