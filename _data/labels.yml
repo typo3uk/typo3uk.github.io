@@ -1,5 +1,13 @@
+all_news: All news
+back_list_news: Link Back
+list_news_empty: Empty
+
 news:
-  -
-    all: All news
+  - all: All news
+    back: Link Back
+    empty: Empty
+
+decisions:
+  - all: All news
     back: Link Back
     empty: Empty
