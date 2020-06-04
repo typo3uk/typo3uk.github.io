@@ -5,13 +5,9 @@
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if "/" == current and one.url contains include.current -%}
       <div class="col-12">
-        <h3 class="mb-4">
-          {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
-        </h3>
+        <h3 class="mb-4">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</h3>
       </div>
-      <div class="col-12">
-        {%- include home/region.html current=one.url -%}
-      </div>
+      <div class="col-12">{%- include home/region.html current=one.url -%}</div>
       {%- if one.url -%}
         {%- assign twos = site.pages -%}
         {%- for two in twos -%}
@@ -26,9 +22,7 @@
                 </a>
               </h3>
             </div>
-            <div class="col-12">
-              {%- include home/region.html current=two.url -%}
-            </div>
+            <div class="col-12">{%- include home/region.html current=two.url -%}</div>
             {%- endif -%}
           {%- endif -%}
         {%- endfor -%}
