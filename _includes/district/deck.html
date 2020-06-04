@@ -6,7 +6,7 @@
     ### {{slug}} ### - slug <br>
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     ### {{current}} ### - current <br>
-    {%- if "/" == current -%}
+    {%- if "/" == current and one.url contains "/district/" -%}
       <div class="col-12">
         <h3 class="mb-4">
           <a href="{{ one.url }}">
@@ -19,6 +19,7 @@
         {%- include home/region.html current=one.url -%}
       </div>
       {% endcomment %}
+    {%- else -%}
     {%- endif -%}
   {%- endfor -%}
 
