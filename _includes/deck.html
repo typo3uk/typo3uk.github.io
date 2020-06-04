@@ -1,0 +1,40 @@
+<div class="row">
+  {%- assign ones = site.pages | sort: 'path' | reverse -%}
+  {%- for one in ones -%}
+    {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+    {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+    {%- if "/" == current and one.url contains include.current -%}
+      <div class="col-12">
+        <h3 class="mb-4">
+          <a href="{{ one.url }}">
+            {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+          </a>
+        </h3>
+      </div>
+      <div class="col-12">
+        {%- include home/region.html current=one.url -%}
+      </div>
+      {%- if one.url -%}
+        {%- assign twos = site.pages -%}
+        {%- for two in twos -%}
+          {%- if two -%}
+            {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
+            {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+            {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
+            <div class="col-12">
+              <h3 class="mb-4">
+                <a href="{{ two.url }}">
+                  {%- if two.navtitle -%}{{ two.navtitle }}{%- else -%}{{ two.title }}{%- endif -%}
+                </a>
+              </h3>
+            </div>
+            <div class="col-12">
+              {%- include home/region.html current=two.url -%}
+            </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>
