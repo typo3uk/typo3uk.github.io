@@ -3,9 +3,7 @@
   {%- assign ones = site.pages | sort: 'path' | reverse -%}
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
-    ### {{slug}} ### - slug <br>
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    ### {{current}} ### - current <br>
     {%- if "/" == current and one.url contains "/district/" -%}
       <div class="col-12">
         <h3 class="mb-4">
