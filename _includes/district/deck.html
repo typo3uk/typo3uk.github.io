@@ -4,7 +4,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/" == current and one.url contains "/district/" -%}
+    {%- if "/" == current and current contains "/district/" -%}
       <div class="col-12">
         <h3 class="mb-4">
           <a href="{{ one.url }}">
@@ -15,8 +15,7 @@
       <div class="col-12">
         {%- include home/region.html current=one.url -%}
       </div>
-    <!-- {%- elsif "/district/" == current and one.url contains "/district/town/" -%} -->
-      {%- if one.url and one.url contains "/district/town/" -%}
+      {%- if one.url -%}
         {%- assign twos = site.pages -%}
         {%- for two in twos -%}
           {%- if two -%}
