@@ -6,9 +6,7 @@
     {%- if "/" == current and one.url contains include.current -%}
       <div class="col-12">
         <h3 class="mb-4">
-          <a href="{{ one.url }}">
-            {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
-          </a>
+          {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
         </h3>
       </div>
       <div class="col-12">
