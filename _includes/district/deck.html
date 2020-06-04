@@ -15,6 +15,17 @@
       <div class="col-12">
         {%- include home/region.html current=one.url -%}
       </div>
+    {%- elsif "/district/" == current and one.url contains "/district/town/" -%}
+      <div class="col-12">
+        <h3 class="mb-4">
+          <a href="{{ one.url }}">
+            {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+          </a>
+        </h3>
+      </div>
+      <div class="col-12">
+        {%- include home/region.html current=one.url -%}
+      </div>
     {%- else -%}
     {%- endif -%}
   {%- endfor -%}
