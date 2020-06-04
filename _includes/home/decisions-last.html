@@ -16,16 +16,14 @@
   </div>
   <div class="row">
     <div class="col-auto ml-auto">
-      <a href="{{include.url}}decisions/" class="btn btn-primary">{% include label/decisions/list-all.md %}</a>
+      <a href="{{include.url}}decisions/" class="btn btn-primary">{{ site.data.labels.decisions_all }}</a>
     </div>
   </div>
   {%- endif -%}
 {%- else -%}
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <div class="alert alert-info" role="alert">
-        {% include label/decisions/list-empty.md %}
-      </div>
+      <div class="alert alert-info" role="alert">{{ site.data.labels.decisions_list_empty }}</div>
     </div>
   </div>
 {%- endfor -%}

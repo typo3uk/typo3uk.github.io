@@ -17,7 +17,7 @@
                 </a>
               </h5>
               <p class="card-text">
-                Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
               </p>
             </div>
           </div>
@@ -27,7 +27,13 @@
     </div>
     {%- endif -%}
   {%- else -%}
-    [...nothing...]
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="alert alert-info" role="alert">
+          {{ site.data.labels.deputies_list_empty }}
+        </div>
+      </div>
+    </div>
   {%- endfor -%}
 
 {%- elsif include.page == "district" and include.dir != page.dir and include.dir contains page.dir -%}
@@ -54,7 +60,7 @@
               </h5>
               <p class="card-text mb-1">
                 {%- assign slug = convocation.url | split: '/' | last -%}
-                Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
               </p>
             </div>
           </div>
@@ -63,7 +69,7 @@
       </div>
       <div class="row">
         <div class="col-auto ml-auto">
-          <a class="btn btn-primary" href="{{include.dir}}">Усі скликання</a>
+          <a class="btn btn-primary" href="{{include.dir}}">{{ site.data.labels.deputies_all }}</a>
         </div>
       </div>
       {%- endif -%}
@@ -71,7 +77,7 @@
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="alert alert-info" role="alert">
-            Списків поки що немає :(
+            {{ site.data.labels.deputies_list_empty }}
           </div>
         </div>
       </div>
@@ -102,7 +108,8 @@
               </h5>
               <p class="card-text mb-1">
                 {%- assign slug = convocation.url | split: '/' | last -%}
-                Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у {{ slug | split: "-" | first }} році
+                {{ site.data.labels.deputies_list_empty }}
+                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
               </p>
             </div>
           </div>
@@ -111,7 +118,7 @@
       </div>
       <div class="row">
         <div class="col-auto ml-auto">
-          <a class="btn btn-primary" href="{{include.dir}}">Усі скликання</a>
+          <a class="btn btn-primary" href="{{include.dir}}">{{ site.data.labels.deputies_all }}</a>
         </div>
       </div>
       {%- endif -%}
@@ -119,7 +126,7 @@
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="alert alert-info" role="alert">
-            Списків поки що немає :(
+            {{ site.data.labels.deputies_list_empty }}
           </div>
         </div>
       </div>

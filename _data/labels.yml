@@ -1,13 +1,17 @@
-all_news: All news
-back_list_news: Link Back
-list_news_empty: Empty
+skippy_text: Перейти до основного вмісту
 
-news:
-  - all: All news
-    back: Link Back
-    empty: Empty
+news: Новини
+news_all: Усі новини
+news_back_list: Повернутися до спсику новин
+news_list_empty: Новин поки що немає :(
 
-decisions:
-  - all: All news
-    back: Link Back
-    empty: Empty
+decisions: Рішення
+decisions_all: Усі рішення
+decisions_back_list: Повернутися до спсику рішень
+decisions_list_empty: Рішень поки що немає :(
+
+deputies: Депутати
+deputies_all: Усі скликання
+deputies_list_description: Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у
+deputies_list_description_year: році
+deputies_list_empty: Списків поки що немає :(
