@@ -25,7 +25,9 @@
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-    //.font#{$infix}-weight-bold  { font-weight: 700!important; }
-    .font-sm-weight-bold  { font-weight: 700!important; }
+    .font#{$infix}-sm-weight-bold  { font-weight: 700!important; }
+    .font#{$infix}-md-weight-bold  { font-weight: 700!important; }
+    .font#{$infix}-lg-weight-bold  { font-weight: 700!important; }
+    .font#{$infix}-xl-weight-bold  { font-weight: 700!important; }
   }
 }
