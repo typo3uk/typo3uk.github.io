@@ -1,3 +1,12 @@
+{%- assign news = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
+<ul>
+  {%- for article in news[1] -%}
+  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+  {%- endfor -%}
+</ul>
+
+<hr>
+
 {% for tag in site.categories %}
   <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
   <ul>
@@ -14,13 +23,8 @@
   </ul>
 {% endfor %}
 
-{% comment %}
 
-{%- assign news = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
-<ul>
-  {%- for article in news -%}
-  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-  {%- endfor -%}
-</ul>
+
+{% comment %}
 
 {% endcomment %}
