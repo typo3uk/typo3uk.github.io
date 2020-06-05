@@ -22,8 +22,12 @@
 
               {% assign subpage = site.pages | where: 'layout', 'district' %}
               ### {{ subpage[0].legal.address }} - 01 ###
-
-              <br><br>
+              <br>
+              ### {{ subpage[1].legal.address }} - 02 ###
+              <br>
+              <br>
+              ### {{ subpage[2].legal.address }} - 03 ###
+              <br>
 
               {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
             </p>
