@@ -1,7 +1,7 @@
 {% assign dir = include.dir | default: page.dir %}
 <div class="container">
 {% assign mypages = site.pages | where:"dir", dir | where_exp: "item", "item.name != page.name" %}
-{% if mypages.length > 0 %}
+
   <ul>
   {% for item in mypages | sort: "title" %}
     {% assign mytitle = item.title | default: item.url %}
@@ -17,7 +17,5 @@
     </li>
   {% endfor %}
   </ul>
-{% else %}
-  <p>No pages found in folder <code>{{ dir }}</code>.</p>
-{% endif %}
+
 </div>
