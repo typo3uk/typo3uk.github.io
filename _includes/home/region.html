@@ -16,6 +16,15 @@
     {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
+      {%- if forloop.first and second.url contains "ivano-frankivsk" -%}
+      <div class="col mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Нещодавно додано</h5>
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
       <div class="col mb-4">
         <div class="card">
           {%- assign dir = second.dir | append: 'images/' -%}
@@ -32,9 +41,6 @@
           </div>
         </div>
       </div>
-      {%- if second.url contains "ivano-frankivsk" -%}
-      <div class="col mb-4">### First record ### plus ### ivano-frankivsk ###</div>
-      {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
 </div>
