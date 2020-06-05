@@ -20,7 +20,7 @@
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
             <p class="text-muted">
 
-              {% assign subpage = site.pages | where: 'layout', 'district' %}
+              {% assign subpage = site.pages | where: 'dir', 'district' %}
               ### {{ subpage[0].legal.address }} - 01 ###
               <br>
               ### {{ subpage[1].legal.address }} - 02 ###
