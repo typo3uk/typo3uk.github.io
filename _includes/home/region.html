@@ -32,8 +32,9 @@
         </div>
       </div>
     </div>
-    {% elsif forloop.first and econd.url contains "ivano-frankivsk" %}
+    {% elsif forloop.first and second.url contains "ivano-frankivsk" %}
       <div class="col mb-4">### First record ### plus ### ivano-frankivsk ###</div>
+    {%- else -%}
     {%- endif -%}
   {%- endfor -%}
 </div>
