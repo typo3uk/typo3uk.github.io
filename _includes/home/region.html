@@ -16,7 +16,7 @@
     {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
-      {%- if forloop.first and second.url contains "ivano-frankivsk" -%}
+      {%- if second.url contains "ivano-frankivsk" -%}
       <div class="col mb-4">
         <div class="card">
           <div class="card-body">
