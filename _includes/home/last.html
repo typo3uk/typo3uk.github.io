@@ -39,20 +39,6 @@
 
 <hr><br><br>
 
-{% assign mypage = site.categories | where: "name", "tysmenytsia" | first %}
-{{mypage.title}}
-
-<hr><br><br>
-
-{% assign mypage = site.pages | where: "dir", "tysmenytsia" | first %}
-{{mypage.title}}
-
-<hr><br><br>
-
-{% assign this-unit = "my-first-unit" %}
-{% for unit in site.categories.units %}{% if unit.unit-id == this-unit %}{{ unit.whatever-YAML-variable }}{% break %}{% endif %}{% endfor %}
-
-<hr><br><br>
 <ul>
   {% for category in site.categories reversed %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
