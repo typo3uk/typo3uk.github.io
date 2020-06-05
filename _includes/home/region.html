@@ -16,25 +16,25 @@
     {%- capture slug -%}{{ second.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ second.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
     {%- if include.current == current and second.navhide != 1 and second.title != '' -%}
-    <div class="col mb-4">
-      <div class="card">
-        {%- assign dir = second.dir | append: 'images/' -%}
-        {%- assign path = slug | prepend: dir | append: '.jpg' -%}
-        {%- assign file = site.static_files | where: "path", path | first -%}
-        {%- if file -%}<img src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=538&h=220&fit=cover&a=attention&output=jpg&q=50&t=square" class="card-img-top" alt="{{slug}}">{%- endif -%}
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
-          </h5>
-          <div class="card-text">
-            {%- include home/card.html region=slug url=second.url -%}
+      <div class="col mb-4">
+        <div class="card">
+          {%- assign dir = second.dir | append: 'images/' -%}
+          {%- assign path = slug | prepend: dir | append: '.jpg' -%}
+          {%- assign file = site.static_files | where: "path", path | first -%}
+          {%- if file -%}<img src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=538&h=220&fit=cover&a=attention&output=jpg&q=50&t=square" class="card-img-top" alt="{{slug}}">{%- endif -%}
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
+            </h5>
+            <div class="card-text">
+              {%- include home/card.html region=slug url=second.url -%}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {%- elsif include.current == current and second.navhide != 1 and second.title != '' and forloop.first and second.url contains "ivano-frankivsk" -%}
+      {%- if include.current == current and second.navhide != 1 and second.title != '' and forloop.first and second.url contains "ivano-frankivsk" -%}
       <div class="col mb-4">### First record ### plus ### ivano-frankivsk ###</div>
-    {%- else -%}
+      {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
 </div>
