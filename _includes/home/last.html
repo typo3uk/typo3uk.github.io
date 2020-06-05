@@ -1,6 +1,6 @@
 {%- for category in site.categories -%}
   {%- if category.first == include.section -%}
-    {%- for item in category.last limit:3 -%}
+    {%- for item in category.last limit:include.limit -%}
       {%- if forloop.first -%}
       <div class="row row-cols-1">
       {%- endif -%}
