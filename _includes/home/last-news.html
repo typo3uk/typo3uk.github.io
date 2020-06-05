@@ -1,53 +1,15 @@
-{%- assign news = '' | split: '' -%}{%- for i in site.categories -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
 <ul>
-  {%- for article in news[1] -%}
-  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-  {%- endfor -%}
-</ul>
-
-<br><br>
-<br>
-
-<ul>
-{% for category in site.categories %}
-  {% if category.first == "news" %}
-    {% for news in category.last %}
+{%- for category in site.categories -%}
+  {%- if category.first == "news" -%}
+    {%- for news in category.last limit:3 -%}
       <li><a href="{{ news.url }}">{{ news.title }}</a></li>
-    {% endfor %}
-  {% endif %}
-{% endfor %}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
 </ul>
+
+
 
 {% comment %}
-<ul>
-{% for category in site.categories %}
-  <li><a name="{{ category | first }}">{{ category | first }}</a>
-    <ul>
-    {% for post in category.last %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-  </li>
-{% endfor %}
-</ul>
 
-
-<br><br>
-<br>
-
-{% for tag in site.categories %}
-  <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
-  <ul>
-    {% assign pages_list = tag[1] %}
-    {% for post in pages_list %}
-      {% if post.title != null %}
-        {% if group == null or group == post.group %}
-        <li>post.group = {{post.group}} | group: = {{group}}<a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-    {% assign pages_list = nil %}
-    {% assign group = nil %}
-  </ul>
-{% endfor %}
 {% endcomment %}
