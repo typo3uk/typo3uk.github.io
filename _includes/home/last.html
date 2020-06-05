@@ -4,29 +4,34 @@
       {%- if forloop.first -%}
       <div class="row row-cols-1">
       {%- endif -%}
-      <div class="col">
-        <div class="card h-100 border-0">
-          <div class="card-body px-0 pt-0">
-            <p class="card-text mb-1"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
-            <h5 class="card-title mb-1"><a href="{{ article.url }}">{{ item.title }}</a></h5>
-            <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
+        <div class="col">
+          <div class="card h-100 border-0">
+            <div class="card-body px-0 pt-0">
+              <p class="card-text mb-1"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
+              <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
+              <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }} = {{ site.data.labels.[include.section]_list_empty }}</p>
+            </div>
           </div>
         </div>
-      </div>
       {%- if forloop.last -%}
       </div>
       {%- endif -%}
     {%- else -%}
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <div class="alert alert-info" role="alert">{{ site.data.labels.news_list_empty }}</div>
+          <div class="alert alert-info" role="alert">
+            {%- if include.section == "news" -%}
+              {{ site.data.labels.news_list_empty }}
+            {%- elsif include.section == "decisions" -%}
+              {{ site.data.labels.decisions_list_empty }}
+            {%- else -%}
+            {%- endif -%}
+          </div>
         </div>
       </div>
     {%- endfor -%}
   {%- endif -%}
 {%- endfor -%}
 
-
 {% comment %}
-
 {% endcomment %}
