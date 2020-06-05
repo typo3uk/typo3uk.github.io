@@ -10,7 +10,8 @@
               <p class="card-text mb-1"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
               <p class="card-text">
-                {{ page[3].title }} | {{page.categories}}
+                page[3].title: {{ page[3].title }} | page.categories: {{page.categories}}<br>
+                page[tysmenytsia].title: {{ page[tysmenytsia].title }}
                 <br>
                 {{ item.excerpt | strip_html | truncate: 110 }}
               </p>
@@ -36,6 +37,16 @@
     {%- endfor -%}
   {%- endif -%}
 {%- endfor -%}
+
+<hr><br><br>
+
+{% for category in site.categories reversed %}
+  {% capture category_name %}{{ category | first }}{% endcapture %}
+  {{ category_name }}
+  {% for post in site.categories[category_name] %}
+    {{post.title}}
+  {% endfor %}
+{% endfor %}
 
 {% comment %}
 {% endcomment %}
