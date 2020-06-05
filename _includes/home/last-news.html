@@ -8,6 +8,33 @@
 <br><br>
 <br>
 
+<ul>
+{% for category in site.categories %}
+  {% if category.first == "news" %}
+    {% for news in category.last %}
+      <li><a href="{{ news.url }}">{{ news.title }}</a></li>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+</ul>
+
+{% comment %}
+<ul>
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+    <ul>
+    {% for post in category.last %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+
+
+<br><br>
+<br>
+
 {% for tag in site.categories %}
   <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
   <ul>
@@ -23,20 +50,4 @@
     {% assign group = nil %}
   </ul>
 {% endfor %}
-
-<br><br>
-<br>
-
-<ul>
-{% for category in site.categories %}
-  {% if category == "news" and category != null %}
-    {% for news in category.last %}
-      <li><a href="{{ news.url }}">{{ news.title }}</a></li>
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-</ul>
-
-{% comment %}
-
 {% endcomment %}
