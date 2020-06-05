@@ -3,7 +3,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/region/city/" == current and one.url contains include.current -%}
+    {%- if "/region/" == current and one.url contains include.current -%}
       <div class="col-12">
         <h3 class="mb-4">
           <a href="{{ one.url }}">
