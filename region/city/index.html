@@ -7,6 +7,14 @@ breadcrumb:
 description:
 ---
 
+<div class="container">
+  <div class="row">
+    <div class="col-12">{% include deck.html current=page.dir %}</div>
+  </div>
+</div>
+
+
+{% comment %}
 <div id="carousel-home" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
   <div class="carousel-inner">
     <div class="item active carousel-item carousel-item-type bg-primary" data-itemno="0">
@@ -73,3 +81,4 @@ description:
     <span class="sr-only">Next</span>
   </a>
 </div>
+{% endcomment %}
