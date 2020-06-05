@@ -53,14 +53,19 @@
 {% for unit in site.categories.units %}{% if unit.unit-id == this-unit %}{{ unit.whatever-YAML-variable }}{% break %}{% endif %}{% endfor %}
 
 <hr><br><br>
-
-{% for category in site.categories reversed %}
-  {% capture category_name %}{{ category | first }}{% endcapture %}
-  {{ category_name }}
-  {% for post in site.categories[category_name] %}
-    {{post.title}}
+<ul>
+  {% for category in site.categories reversed %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <li>
+      {{ category_name }}
+      <ul>
+        {% for post in site.categories[category_name] %}
+          <li>{{post.dir}} | {{post.title}}</li>
+        {% endfor %}
+      </ul>
+    </li>
   {% endfor %}
-{% endfor %}
+</ul>
 
 {% comment %}
 {% endcomment %}
