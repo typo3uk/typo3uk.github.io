@@ -9,7 +9,7 @@
             <div class="card-body px-0 pt-0">
               <p class="card-text mb-1"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
-              <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }} = {{ site.data.labels.[include.section]_list_empty }}</p>
+              <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }} = {{ site.data.labels.{{include.section}}_list_empty }}</p>
             </div>
           </div>
         </div>
