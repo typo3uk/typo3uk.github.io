@@ -5,7 +5,8 @@
   {%- endfor -%}
 </ul>
 
-<hr>
+<br><br>
+<br>
 
 {% for tag in site.categories %}
   <h3 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h3>
@@ -23,7 +24,20 @@
   </ul>
 {% endfor %}
 
+<br><br>
+<br>
 
+<ul>
+{% for category in site.categories %}
+  <li><a name="{{ category | first }}">{{ category | first }}</a>
+    <ul>
+    {% for post in category.last %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
 
 {% comment %}
 
