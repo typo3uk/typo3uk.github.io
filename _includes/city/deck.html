@@ -3,7 +3,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/district/town/" == current and one.url contains include.current -%}
+    {%- if "/district/" == current -%}
       <div class="col-12">
         <h3 class="mb-4">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</h3>
       </div>
