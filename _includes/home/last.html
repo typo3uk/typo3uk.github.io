@@ -46,7 +46,7 @@
       {{ category_name }}
       <ul>
         {% for post in site.categories[category_name] %}
-          <li>{{post.dir}} | {{post.title}}</li>
+          <li>{{post.url}} | {{post.title}}</li>
         {% endfor %}
       </ul>
     </li>
