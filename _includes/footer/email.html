@@ -1,0 +1,5 @@
+{%- if page.legal.email -%}
+  <a href="mailto:{{ page.legal.email }}">{{ page.legal.email }}</a>
+{%- else -%}
+  <a href="mailto:{{ site.legal.email }}">{{ site.legal.email }}</a>
+{%- endif -%}

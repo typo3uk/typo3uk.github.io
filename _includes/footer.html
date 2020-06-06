@@ -50,11 +50,7 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">Електронна пошта</h6>
-            {%- if page.legal.email -%}
-              <p><a href="mailto:{{ page.legal.email }}">{{ page.legal.email }}</a></p>
-            {%- else -%}
-              <p><a href="mailto:{{ site.legal.email }}">{{ site.legal.email }}</a></p>
-            {%- endif -%}
+            <p>{%- include footer/email.html -%}</p>
           </div>
         </div>
       </div>
