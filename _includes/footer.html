@@ -23,15 +23,15 @@
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
             <p class="text-muted">
               {%- if size == 3 -%}
-                {%- include footer/address.html dir=dir -%}
+                {%- include footer/address.html dir=dir legal="address" -%}
               {%- elsif size == 4 -%}
                 {%- assign size = url | size | minus: 2 -%}
                 {%- assign dir = url | slice: 0, size | join: "/" -%}
-                {%- include footer/address.html dir=dir -%}
+                {%- include footer/address.html dir=dir legal="address" -%}
               {%- elsif size == 7 -%}
                 {%- assign size = url | size | minus: 5 -%}
                 {%- assign dir = url | slice: 0, size | join: "/" -%}
-                {%- include footer/address.html dir=dir -%}
+                {%- include footer/address.html dir=dir legal="address" -%}
               {%- elsif size <= 2 -%}
                 {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
               {%- else -%}
