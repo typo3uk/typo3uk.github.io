@@ -11,8 +11,11 @@
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
               <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               <p>
+                {%- assign back = item.url | split: "/" -%}
+                {%- assign size = back | size | minus:4 -%}
+                {%- assign back = back | slice: 0, size | join: "/" -%}
                 {%- for page in site.pages -%}
-                  {%- if page.url contains '/district/tysmenytsia/news/' -%}
+                  {%- if page.url contains back -%}
                   - {{ page.title }}<br>
                   {%- endif -%}
                 {%- endfor -%}
