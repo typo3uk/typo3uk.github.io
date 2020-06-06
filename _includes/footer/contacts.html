@@ -12,6 +12,6 @@
   {%- assign dir = url | slice: 0, size | join: "/" -%}
   {%- include footer/legal.html dir=dir legal=include.legal -%}
 {%- elsif size <= 2 -%}
-  {%- if page.legal.[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
+  {%- if page.legal[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
 {%- else -%}
 {%- endif -%}
