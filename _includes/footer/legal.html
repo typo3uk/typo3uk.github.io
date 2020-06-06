@@ -1,11 +1,11 @@
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
-    {%- if include.legal == "phone" and include.type == "main" -%}
+    {%- if include.legal == "phone" -%}
       <a href="tel:+38{{ page.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
     {%- elsif include.legal == "email" -%}
       [...email...]
     {%- else -%}
-      {{ page.legal[include.legal] }} - address
+      {{ page.legal[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
