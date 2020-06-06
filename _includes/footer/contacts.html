@@ -15,7 +15,7 @@
   {%- if include.legal == "phone" -%}
     {%- include footer/phone.html legal=include.legal type=include.type -%}
   {%- elsif include.legal == "email" -%}
-    [...]
+    {%- include footer/email.html legal=include.legal -%}
   {%- else -%}
     {%- if page.legal[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
   {%- endif -%}

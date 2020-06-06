@@ -3,24 +3,9 @@
     {%- if include.legal == "phone" -%}
       <a href="tel:+38{{ page.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
     {%- elsif include.legal == "email" -%}
-      [...email...]
+      <a href="mailto:{{ page.legal[include.legal] }}">{{ page.legal[include.legal] }}</a>
     {%- else -%}
       {{ page.legal[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
-
-
-{% comment %}
-{%- for page in site.pages -%}
-  {%- if page.url contains include.dir -%}
-    {%- if include.legal == "phone" -%}
-      {%- include footer/phone.html legal=include.legal type=include.type -%}
-    {%- elsif include.legal == "email" -%}
-      [...]
-    {%- else -%}
-      {{ page.legal[include.legal] }}
-    {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
-{% endcomment %}
