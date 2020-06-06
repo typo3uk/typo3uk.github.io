@@ -10,6 +10,13 @@
               <p class="card-text mb-1"><small class="text-muted">{{ item.date | date: '%-d %B %Y' }}</small></p>
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
               <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
+              <p>
+                {% for page in site.pages %}
+                  {% unless page.url contains '/district/tysmenytsia/news/' %}
+                    {{ page.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
             </div>
           </div>
         </div>

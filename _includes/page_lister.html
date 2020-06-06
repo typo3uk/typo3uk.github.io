@@ -3,7 +3,7 @@
     assign sortedPages = site.pages
     | sort: "path"
     | reverse
-    | where_exp: "item", "item.url contains 'bohorodchany'"
+    | where_exp: "item", "item.url contains '/bohorodchany/news/'"
 %}
 
 sortedPages = {{sortedPages}}
