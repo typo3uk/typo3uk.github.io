@@ -6,16 +6,6 @@ description:
 breadcrumb:
 ---
 
-{% comment %}
-{%- assign guides = site.pages | where_exp: "item", "item.dir contains '/bohorodchany/news/' or item.url contains '/bohorodchany/news/'" -%}
-
-{% for i in guides | sort: "path" %}
-- {{ i.title }}<br/>
-{% endfor %}
-{% endcomment %}
-
-<br/><br/><hr>
-
 {%- assign pages = site.pages | sort: "path" | reverse | where_exp: "item", "item.url contains '/bohorodchany/news/'" -%}
 
 {% for item in pages | sort: "path" %}
