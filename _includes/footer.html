@@ -26,13 +26,19 @@
               size: {{size}}<br>
 
               {%- if size == 3 -%}
-
                 {%- for page in site.pages -%}
                   {%- if page.url contains dir -%}
                     {{ page.legal.address }}
                   {%- endif -%}
                 {%- endfor -%}
-
+              {%- elsif size == 7 -%}
+                {%- assign size = url | size | minus: 4 -%}
+                {%- assign dir = url | slice: 0, size | join: "/" -%}
+                {%- for page in site.pages -%}
+                  {%- if page.url contains dir -%}
+                    {{ page.legal.address }}
+                  {%- endif -%}
+                {%- endfor -%}
               {%- elsif size <= 2 -%}
                 {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
               {%- else -%}
