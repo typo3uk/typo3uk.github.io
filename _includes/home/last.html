@@ -11,11 +11,11 @@
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
               <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               <p>
-                {% for page in site.pages %}
-                  {% unless page.url contains '/district/tysmenytsia/news/' %}
+                {%- for page in site.pages -%}
+                  {%- if page.url contains '/district/tysmenytsia/news/' -%}
                   - {{ page.title }}<br>
-                  {% endunless %}
-                {% endfor %}
+                  {%- endif -%}
+                {%- endfor -%}
               </p>
             </div>
           </div>
