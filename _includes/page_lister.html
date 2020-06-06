@@ -1,9 +1,9 @@
 
 {%
     assign sortedPages = site.pages
-    | sort:"path"
+    | sort: "path"
     | reverse
-    | where_exp: "item", "item.categories contains 'bohorodchany'"
+    | where_exp: "item", "item.url contains 'bohorodchany'"
 %}
 
 sortedPages = {{sortedPages}}
