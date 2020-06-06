@@ -1,6 +1,20 @@
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
     {%- if include.legal == "phone" -%}
+      {%- include footer/phone.html legal=include.legal type=include.type -%}<br>
+    {%- elsif include.legal == "email" -%}
+      [...email...]
+    {%- else -%}
+      {{ page.legal[include.legal] }} - address
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+{% comment %}
+{%- for page in site.pages -%}
+  {%- if page.url contains include.dir -%}
+    {%- if include.legal == "phone" -%}
       {%- include footer/phone.html legal=include.legal type=include.type -%}
     {%- elsif include.legal == "email" -%}
       [...]
@@ -9,3 +23,4 @@
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
+{% endcomment %}
