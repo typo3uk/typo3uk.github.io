@@ -1,20 +1,20 @@
 
-{% assign guides = site.pages
-    | where_exp: "item" , "item.dir  contains '/bohorodchany/news/' or item.url  contains '/bohorodchany/news/'"
- %}
+{%- assign guides = site.pages
+  | where_exp: "item" , "item.dir  contains '/bohorodchany/news/' or item.url  contains '/bohorodchany/news/'"
+ -%}
 
- {% for item in guides | sort: "path" %}
- - {{ item.title }}<br/>
+ {% for i in guides | sort: "path" %}
+ - {{ i.title }}<br/>
  {% endfor %}
 
 <br/><br/><hr>
 
-{%
-    assign pages = site.pages
+{%-
+  assign pages = site.pages
     | sort: "path"
     | reverse
     | where_exp: "item", "item.url contains '/bohorodchany/news/'"
-%}
+-%}
 
 {% for item in pages | sort: "path" %}
 - {{ item.title }}<br/>
