@@ -1,4 +1,14 @@
 
+{% assign guides = site.pages
+    | where_exp: "item" , "item.dir  contains '/bohorodchany/news/' or item.url  contains '/bohorodchany/news/'"
+ %}
+
+ {% for item in guides | sort: "path" %}
+ - {{ item.title }}<br>
+ {% endfor %}
+
+<br><br><hr>
+
 {%
     assign pages = site.pages
     | sort: "path"
@@ -6,10 +16,8 @@
     | where_exp: "item", "item.url contains '/bohorodchany/news/'"
 %}
 
-sortedPages = {{sortedPages}}
-
 {% for item in pages | sort: "path" %}
-- {{ item }}<br>
+- {{ item.title }}<br>
 {% endfor %}
 
 <br><br><hr>
