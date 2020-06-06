@@ -58,8 +58,7 @@
                 {%- include icons/gerb-circle.svg width="50" height="50" -%}
               </div>
               <div class="col-10 pl-0 text-muted">
-                  Класичний текст, використовуваний з XVI сторіччя, наведено нижче для всіх зацікавлених.
-                  Також точно за оригіналом наведено розділи 1.10.32 та 1.10.33 цицеронівського "de Finibus Bonorum et Malorum" разом із перекладом англійською, виконаним 1914 року Х.Рекемом.
+                {{ site.data.labels.footer_text_description }}
               </div>
             </div>
           </div>
@@ -71,9 +70,8 @@
                 {%- include icons/beta.svg width="50" height="25" -%}
               </div>
               <div class="col-10 pl-0 ext-muted">
-                  Вебсайт працює в тестовому режимі.
-                  Якщо ви маєте зауваження або пропозиції, будь ласка, напишіть нам:
-                  <a href="#">email@email.email.ua</a>
+                  {{ site.data.labels.footer_text_trial }}
+                  <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
               </div>
             </div>
           </div>
