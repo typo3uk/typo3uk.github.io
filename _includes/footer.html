@@ -3,11 +3,9 @@
     <div class="row">
       <div class="col-12">
         <a class="ml-lg-3" data-toggle="collapse" href="#multiCollapseMap" role="button" aria-expanded="false" aria-controls="multiCollapseMap" data-target=".multi-collapse">
-          <strong>Мапа вебсайту</strong>
+          <strong>{{ site.data.labels.map_site }}</strong>
         </a>
-        <div class="container collapse multi-collapse" id="multiCollapseMap">
-          {%- include map/0.html -%}
-        </div>
+        <div class="container collapse multi-collapse" id="multiCollapseMap">{%- include map/0.html -%}</div>
       </div>
     </div>
     <div class="row justify-content-md-center mt-4">
@@ -18,26 +16,23 @@
           </div>
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
-            <p class="text-muted">
-              {%- include footer/contacts.html url=page.url legal="address" -%}
-            </p>
+            <p class="text-muted">{%- include footer/contacts.html url=page.url legal="address" -%}</p>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="row">
           <div class="col">
-            <h6 class="mt-1">Телефони</h6>
+            <h6 class="mt-1">{{ site.data.labels.phone_main }}</h6>
             <p class="mb-0">{%- include footer/contacts.html url=page.url legal="phone" type="main" -%}</p>
-            <hr>
-            <p>Факс:&nbsp;{%- include footer/contacts.html url=page.url legal="phone" type="fax" -%}</p>
+            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contacts.html url=page.url legal="phone" type="fax" -%}</p>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-2">
         <div class="row">
           <div class="col">
-            <h6 class="mt-1">Гаряча лінія</h6>
+            <h6 class="mt-1">{{ site.data.labels.phone_hot }}</h6>
             <p>{%- include footer/contacts.html url=page.url legal="phone" type="hot" -%}</p>
           </div>
         </div>
@@ -45,7 +40,7 @@
       <div class="col-md-6 col-lg-2">
         <div class="row">
           <div class="col">
-            <h6 class="mt-1">Електронна пошта</h6>
+            <h6 class="mt-1">{{ site.data.labels.email }}</h6>
             <p>{%- include footer/contacts.html url=page.url legal="email" -%}</p>
           </div>
         </div>
