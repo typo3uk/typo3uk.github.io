@@ -25,7 +25,7 @@
 {% assign dir = include.dir | default: page.dir %}
 dir = {{dir}}<br/>
 <div class="container">
-{% assign mypages = site.pages | where: "dir", dir | where_exp: "item", "item.dir != page.dir" %}
+{% assign mypages = site.pages | where: "dir", dir | where_exp: "item", "item.dir == page.dir" %}
 mypages = {{mypages}}<br>
 {% if mypages.length > 0 %}
   <ul>
