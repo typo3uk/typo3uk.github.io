@@ -1,6 +1,8 @@
 {% assign dir = include.dir | default: page.dir %}
+dir = {{dir}}<br>
 <div class="container">
-{% assign mypages = site.pages | where:"dir", dir | where_exp: "item", "item.name != page.name" %}
+{% assign mypages = site.pages | where: "dir", dir | where_exp: "item", "item.name != page.name" %}
+mypages = {{mypages}}<br>
 {% if mypages.length > 0 %}
   <ul>
   {% for item in mypages | sort: "title" %}
