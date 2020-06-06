@@ -1,3 +1,4 @@
+{%- capture legal -%}page.legal.{{ include.legal }}{%- endcapture -%}
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
     {{ page.legal.address }}
