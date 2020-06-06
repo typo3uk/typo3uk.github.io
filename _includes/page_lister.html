@@ -4,10 +4,10 @@
  %}
 
  {% for item in guides | sort: "path" %}
- - {{ item.title }}<br>
+ - {{ item.title }}<br/>
  {% endfor %}
 
-<br><br><hr>
+<br/><br/><hr>
 
 {%
     assign pages = site.pages
@@ -17,13 +17,13 @@
 %}
 
 {% for item in pages | sort: "path" %}
-- {{ item.title }}<br>
+- {{ item.title }}<br/>
 {% endfor %}
 
-<br><br><hr>
+<br/><br/><hr>
 
 {% assign dir = include.dir | default: page.dir %}
-dir = {{dir}}<br>
+dir = {{dir}}<br/>
 <div class="container">
 {% assign mypages = site.pages | where: "dir", dir | where_exp: "item", "item.dir != page.dir" %}
 mypages = {{mypages}}<br>
