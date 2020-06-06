@@ -6,4 +6,9 @@ description:
 breadcrumb:
 ---
 
-{% include page_lister.html dir="/district/" %}
+
+{%- assign guides = site.pages | where_exp: "item", "item.dir contains '/bohorodchany/news/' or item.url contains '/bohorodchany/news/'" -%}
+
+{% for i in guides | sort: "path" %}
+- {{ i.title }}<br/>
+{% endfor %}
