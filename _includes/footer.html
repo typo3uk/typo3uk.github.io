@@ -31,8 +31,8 @@
                     {{ page.legal.address }}
                   {%- endif -%}
                 {%- endfor -%}
-              {%- elsif size == 7 -%}
-                {%- assign size = url | size | minus: 4 -%}
+              {%- elsif size == 4 -%}
+                {%- assign size = url | size | minus: 2 -%}
                 {%- assign dir = url | slice: 0, size | join: "/" -%}
                 {%- for page in site.pages -%}
                   {%- if page.url contains dir -%}
