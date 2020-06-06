@@ -22,18 +22,22 @@
 
               {%- assign url = page.url | split: "/" -%}
               {%- assign size = url | size | minus: 1 -%}
+              {%- assign dir = url | slice: 0, size | join: "/" -%}
               size: {{size}}<br>
-              
-              {%- if size -%}
+
+              {%- if size == 3 -%}
+
+                {%- for page in site.pages -%}
+                  {%- if page.url contains dir -%}
+                    {{ page.legal.address }}
+                  {%- endif -%}
+                {%- endfor -%}
+
+              {%- elsif size <= 2 -%}
+                {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
+              {%- else -%}
 
               {%- endif -%}
-
-              {%- assign dir = url | slice: 0, size | join: "/" -%}
-              {%- for page in site.pages -%}
-                {%- if page.url contains dir -%}
-                  {{ page.legal.address }}
-                {%- endif -%}
-              {%- endfor -%}
 
             </p>
             <p class="text-muted">
