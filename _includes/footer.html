@@ -1,6 +1,3 @@
-{%- assign url = page.url | split: "/" -%}
-{%- assign size = url | size | minus: 1 -%}
-{%- assign dir = url | slice: 0, size | join: "/" -%}
 <footer>
   <div class="container pt-4" style="border-top: 4px solid #2D5CA6;">
     <div class="row">
@@ -22,20 +19,7 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
             <p class="text-muted">
-              {%- if size == 3 -%}
-                {%- include footer/legal.html dir=dir legal="address" -%}
-              {%- elsif size == 4 -%}
-                {%- assign size = url | size | minus: 2 -%}
-                {%- assign dir = url | slice: 0, size | join: "/" -%}
-                {%- include footer/legal.html dir=dir legal="address" -%}
-              {%- elsif size == 7 -%}
-                {%- assign size = url | size | minus: 5 -%}
-                {%- assign dir = url | slice: 0, size | join: "/" -%}
-                {%- include footer/legal.html dir=dir legal="address" -%}
-              {%- elsif size <= 2 -%}
-                {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
-              {%- else -%}
-              {%- endif -%}
+              {%- include footer/contacts.html url=url legal="address" -%}
             </p>
           </div>
         </div>

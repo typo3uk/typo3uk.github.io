@@ -1,0 +1,17 @@
+{%- assign url = include.url | split: "/" -%}
+{%- assign size = url | size | minus: 1 -%}
+{%- assign dir = url | slice: 0, size | join: "/" -%}
+{%- if size == 3 -%}
+  {%- include footer/legal.html dir=dir legal=include.legal -%}
+{%- elsif size == 4 -%}
+  {%- assign size = url | size | minus: 2 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal -%}
+{%- elsif size == 7 -%}
+  {%- assign size = url | size | minus: 5 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal -%}
+{%- elsif size <= 2 -%}
+  {%- if page.legal.[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
+{%- else -%}
+{%- endif -%}
