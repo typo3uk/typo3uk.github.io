@@ -13,7 +13,7 @@
               <p>
                 {% for page in site.pages %}
                   {% unless page.url contains '/district/tysmenytsia/news/' %}
-                    {{ page.title }}
+                  - {{ page.title }}<br>
                   {% endunless %}
                 {% endfor %}
               </p>

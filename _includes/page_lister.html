@@ -1,12 +1,16 @@
 
 {%
-    assign sortedPages = site.pages
+    assign pages = site.pages
     | sort: "path"
     | reverse
     | where_exp: "item", "item.url contains '/bohorodchany/news/'"
 %}
 
 sortedPages = {{sortedPages}}
+
+{% for item in pages | sort: "path" %}
+- {{ item }}<br>
+{% endfor %}
 
 <br><br><hr>
 
