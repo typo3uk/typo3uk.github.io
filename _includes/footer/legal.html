@@ -1,7 +1,7 @@
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
     {%- if include.legal == "phone" -%}
-      {%- include footer/phone.html type=include.type -%}
+      {%- include footer/phone.html legal=include.legal type=include.type -%}
     {%- elsif include.legal == "email" -%}
       [...]
     {%- else -%}
