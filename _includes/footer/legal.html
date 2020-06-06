@@ -1,4 +1,4 @@
-{%- for page in site.pages -%}
+{%- for page in site.pages limit:1 -%}
   {%- if page.url contains include.dir -%}
     {%- if include.legal == "phone" -%}
       {%- include footer/phone.html legal=include.legal type=include.type -%}<br>
