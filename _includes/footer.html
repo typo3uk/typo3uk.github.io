@@ -19,6 +19,18 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">{%- include council-title.html -%}</h5>
             <p class="text-muted">
+
+              {%- assign url = item.url | split: "/" -%}
+              {%- assign size = url | size | minus: 1 -%}
+              {%- assign dir = url | slice: 0, size | join: "/" -%}
+              {%- for page in site.pages -%}
+                {%- if page.url contains dir -%}
+                  {{ page.legal.address }}
+                {%- endif -%}
+              {%- endfor -%}
+              
+            </p>
+            <p class="text-muted">
               {%- if page.legal.address -%}{{ page.legal.address }}{%- else -%}{{ site.legal.address }}{%- endif -%}
             </p>
           </div>
