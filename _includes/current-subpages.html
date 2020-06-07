@@ -36,6 +36,53 @@
     </div>
   {%- endfor -%}
 
+{%- elsif include.page == "village" and include.dir != page.dir and include.dir contains page.dir -%}
+
+  {%- assign villages = '' | split:'' -%}
+  {%- assign pages = site.pages | sort: 'path' | reverse -%}
+  {%- for i in pages -%}
+    {%- if i.dir contains include.dir -%}
+      {%- assign villages = villages | push:i -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if villages -%}
+    {%- for convocation in villages offset:1 limit:6 -%}
+      {%- if forloop.first -%}
+      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+      {%- endif -%}
+        <div class="col mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{{ convocation.url }}">
+                  {%- if convocation.navtitle -%}{{ convocation.navtitle }}{%- else -%}{{ convocation.title }}{%- endif -%}
+                </a>
+              </h5>
+              <p class="card-text mb-1">
+                [...]
+              </p>
+            </div>
+          </div>
+        </div>
+      {%- if forloop.last -%}
+      </div>
+      <div class="row">
+        <div class="col-auto ml-auto">
+          <a class="btn btn-primary" href="{{include.dir}}">{{ site.data.labels.villages_all }}</a>
+        </div>
+      </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="alert alert-info" role="alert">
+            {{ site.data.labels.villages_list_empty }}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  {%- endif -%}
+
 {%- elsif include.page == "district" and include.dir != page.dir and include.dir contains page.dir -%}
 
   {%- assign deputies = '' | split:'' -%}
