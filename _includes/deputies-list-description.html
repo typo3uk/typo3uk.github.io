@@ -1,0 +1,6 @@
+%- if include.slug -%}
+  {{ site.data.labels.deputies_list_description }} {{ include.slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
+{%- else -%}
+  {%- assign slug = include.url | split: '/' | last -%}
+  {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
+{%- endif -%}

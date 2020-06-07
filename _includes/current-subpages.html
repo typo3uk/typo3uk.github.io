@@ -17,7 +17,7 @@
                 </a>
               </h5>
               <p class="card-text">
-                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
+                {%- include deputies-list-description.html slug=slug -%}
               </p>
             </div>
           </div>
@@ -59,8 +59,7 @@
                 </a>
               </h5>
               <p class="card-text mb-1">
-                {%- assign slug = convocation.url | split: '/' | last -%}
-                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
+                {%- include deputies-list-description.html url=convocation.url -%}
               </p>
             </div>
           </div>
@@ -107,9 +106,7 @@
                 </a>
               </h5>
               <p class="card-text mb-1">
-                {%- assign slug = convocation.url | split: '/' | last -%}
-                {{ site.data.labels.deputies_list_empty }}
-                {{ site.data.labels.deputies_list_description }} {{ slug | split: "-" | first }} {{ site.data.labels.deputies_list_description_year }}
+                {%- include deputies-list-description.html url=convocation.url -%}
               </p>
             </div>
           </div>
@@ -142,9 +139,9 @@
       {%- capture current -%}{{ list.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
       {%- if page.dir == current and page.navhide != 1 -%}
         <li class="list-group-item">
-            <a href="{{ list.url }}">
-              {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
-            </a>
+          <a href="{{ list.url }}">
+            {%- if list.navtitle -%}{{ list.navtitle }}{%- else -%}{{ list.title }}{%- endif -%}
+          </a>
         </li>
       {%- endif -%}
     {%- else -%}

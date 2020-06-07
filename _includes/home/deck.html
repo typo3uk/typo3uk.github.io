@@ -1,5 +1,4 @@
 <div class="row">
-
   {%- assign ones = site.pages | sort: 'path' | reverse -%}
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
@@ -38,5 +37,4 @@
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
-
 </div>

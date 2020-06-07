@@ -9,8 +9,8 @@ breadcrumb: Сьомого скликання
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>Депутати Богородча́нської райо́нної ради {{ page.breadcrumb | downcase }}</h1>
-      <p class="lead">...</p>
+      <h1>{{ page.breadcrumb }}</h1>
+      <p class="lead">{%- include deputies-list-description.html url=page.url -%}</p>
       {%- include deputies.html -%}
     </div>
   </div>
