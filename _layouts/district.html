@@ -78,8 +78,13 @@ layout: default
         </div>
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="my-2">...</h3>
-          {%- assign dir = page.dir | append: 'village' | append: '/' -%}
-          {%- include current-subpages.html dir=dir page="village" -%}
+
+          {% include deck.html current=page.dir %}
+
+          {% comment %}
+            {%- assign dir = page.dir | append: 'village' | append: '/' -%}
+            {%- include current-subpages.html dir=dir page="village" -%}
+          {% endcomment %}
         </div>
       </div>
     </div>
