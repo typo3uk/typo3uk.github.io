@@ -1,18 +1,8 @@
 ---
+layout: deputies
 title: Список депутатів 7-го скликання
 navtitle:
 subtitle:
 description:
 breadcrumb: Сьомого скликання
 ---
-
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="text-center">{%- include rada/title.html -%}</h1>
-      <h2>Депутати {{ page.breadcrumb | downcase }}</h2>
-      <p class="lead">{%- include deputies-list-description.html url=page.url -%}</p>
-      {%- include deputies.html -%}
-    </div>
-  </div>
-</div>
