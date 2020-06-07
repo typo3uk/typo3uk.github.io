@@ -43,12 +43,14 @@
   {%- for i in pages -%}
     {% assign parts = i.url | split: '/' %}
     {% assign depth = parts | size %}
-    {%- if i.dir contains include.dir depth == 5 -%}
+    {%- if i.dir contains include.dir depth == 3 -%}
       {%- assign villages = villages | push:i -%}
     {%- endif -%}
   {%- endfor -%}
   {%- if villages -%}
     {%- for convocation in villages offset:1 limit:6 -%}
+      {% assign i_parts = convocation.url | split: '/' %}
+      {% assign i_depth = i_parts | size %}
       {%- if forloop.first -%}
       <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
       {%- endif -%}
@@ -61,7 +63,7 @@
                 </a>
               </h5>
               <p class="card-text mb-1">
-                [...] = depth: {{depth}}
+                [...] = depth: {{depth}} | i_depth: {{i_depth}}
               </p>
             </div>
           </div>
