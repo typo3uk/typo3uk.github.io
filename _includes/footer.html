@@ -1,3 +1,6 @@
+{%- assign url = page.url | split: "/" -%}
+{%- assign size = url | size | minus: 1 -%}
+{%- assign dir = url | slice: 0, size | join: "/" -%}
 <footer>
   <div class="container pt-4" style="border-top: 4px solid #2D5CA6;">
     <div class="row">
