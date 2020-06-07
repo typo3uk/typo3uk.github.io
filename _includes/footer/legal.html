@@ -1,6 +1,8 @@
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
-    {%- if include.legal == "phone" -%}
+    {%- if include.legal == "name" -%}
+      {%- include footer/name.html legal=include.legal -%}
+    {%- elsif include.legal == "phone" -%}
       <a href="tel:+38{{ page.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
     {%- elsif include.legal == "email" -%}
       <a href="mailto:{{ page.legal[include.legal] }}">{{ page.legal[include.legal] }}</a>

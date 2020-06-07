@@ -15,8 +15,12 @@
             {%- include icons/trezub.svg width="27" height="45" -%}
           </div>
           <div class="col-10 pl-sm-0">
-            <h5 class="mb-1">{%- include council-title.html -%}</h5>
-            <p class="text-muted">{%- include footer/contacts.html url=page.url legal="address" -%}</p>
+            <h5 class="mb-1">
+              {%- include council-title.html -%}
+              <br>
+              {%- include footer/contacts.html legal="name" -%}
+            </h5>
+            <p class="text-muted">{%- include footer/contacts.html legal="address" -%}</p>
           </div>
         </div>
       </div>
@@ -24,8 +28,8 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.phone_main }}</h6>
-            <p class="mb-0">{%- include footer/contacts.html url=page.url legal="phone" type="main" -%}</p>
-            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contacts.html url=page.url legal="phone" type="fax" -%}</p>
+            <p class="mb-0">{%- include footer/contacts.html legal="phone" type="main" -%}</p>
+            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contacts.html legal="phone" type="fax" -%}</p>
           </div>
         </div>
       </div>
@@ -33,7 +37,7 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.phone_hot }}</h6>
-            <p>{%- include footer/contacts.html url=page.url legal="phone" type="hot" -%}</p>
+            <p>{%- include footer/contacts.html legal="phone" type="hot" -%}</p>
           </div>
         </div>
       </div>
@@ -41,7 +45,7 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.email }}</h6>
-            <p>{%- include footer/contacts.html url=page.url legal="email" -%}</p>
+            <p>{%- include footer/contacts.html legal="email" -%}</p>
           </div>
         </div>
       </div>
