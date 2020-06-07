@@ -48,7 +48,7 @@
     {%- endif -%}
   {%- endfor -%}
   {%- if villages -%}
-    {%- for convocation in villages offset:1 limit:6 -%}
+    {%- for convocation in villages limit:6 -%}
       {%- if forloop.first -%}
       <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
       {%- endif -%}
