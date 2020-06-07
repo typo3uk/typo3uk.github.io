@@ -41,7 +41,9 @@
   {%- assign villages = '' | split:'' -%}
   {%- assign pages = site.pages | sort: 'path' | reverse -%}
   {%- for i in pages -%}
-    {%- if i.dir contains include.dir -%}
+    {% assign parts = i.url | split: '/' %}
+    {% assign depth = parts | size %}
+    {%- if i.dir contains include.dir and depth == 4 -%}
       {%- assign villages = villages | push:i -%}
     {%- endif -%}
   {%- endfor -%}
