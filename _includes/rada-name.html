@@ -6,7 +6,7 @@
 {%- if size == 3 -%}
 
   {%- for page in site.pages -%}
-    {%- if page.url contains include.dir -%}
+    {%- if page.url contains dir -%}
 
         {% if isCityTown == true %}
           {%- if page.council.title -%}
@@ -74,10 +74,6 @@
 
 
 {%- elsif size <= 2 -%}
-  {%- if page.legal.name -%}
-    {{ page.legal.name }}
-  {%- else -%}
-    {%- if page.legal.name -%}{{ page.legal.name }}{%- else -%}{{ site.legal.name }}{%- endif -%}
-  {%- endif -%}
+  {%- if page.legal.name -%}{{ page.legal.name }}{%- else -%}{{ site.legal.name }}{%- endif -%}
 {%- else -%}
 {%- endif -%}
