@@ -36,7 +36,7 @@
   {%- assign dir = url | slice: 0, size | join: "/" -%}
 
   {%- for page in site.pages -%}
-    {%- if page.url contains include.dir -%}
+    {%- if page.url contains dir -%}
 
         {% if isCityTown == true %}
           {%- if page.council.title -%}
