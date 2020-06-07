@@ -8,8 +8,13 @@ breadcrumb: Сьомого скликання
 
 <div class="container">
   <div class="row">
+    <div class="col-12 text-center">
+      <h1>{%- include rada/title.html -%}}</h1>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12">
-      <h1>Депутати {{ page.breadcrumb }} - {%- include rada/title.html -%}</h1>
+      <h2>Депутати {{ page.breadcrumb }}</h2>
       <p class="lead">{%- include deputies-list-description.html url=page.url -%}</p>
       {%- include deputies.html -%}
     </div>
