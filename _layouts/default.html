@@ -1,7 +1,6 @@
 ---
 ---
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
-{%- assign url = page.url | split: "/" -%}{%- assign size = url | size | minus: 1 -%}{%- assign dir = url | slice: 0, size | join: "/" -%}
 <!doctype html>
 <html dir="ltr" lang="uk-UA">
   <head>
