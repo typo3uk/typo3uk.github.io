@@ -1,0 +1,26 @@
+---
+layout: decisions
+title: Офіційні рішення Богородчанської районної ради
+navtitle:
+subtitle:
+description:
+pagination:
+  enabled: true
+  category: bohorodchany
+  sort_field: 'date'
+breadcrumb: Рішення
+---
+
+{% include decisions-list.html cat=page.pagination.category %}
+
+{% comment %}
+
+{%- for decisions in site.categories.bohorodchany %}
+  {% unless decisions.url contains "news" %}
+    {{ decisions.title }}<br><br>
+  {% endunless %}
+{%- endfor -%}
+
+{% include decisions-list.html cat=page.pagination.category %}
+
+{% endcomment %}
