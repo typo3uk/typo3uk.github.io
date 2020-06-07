@@ -48,7 +48,7 @@
     {%- endif -%}
   {%- endfor -%}
   {%- if villages -%}
-    {%- for convocation in villages limit:6 -%}
+    {%- for village in villages limit:6 -%}
       {%- if forloop.first -%}
       <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
       {%- endif -%}
@@ -56,13 +56,15 @@
           <div class="card h-100">
             <div class="card-body">
               <h5 class="card-title">
-                <a href="{{ convocation.url }}">
-                  {%- if convocation.navtitle -%}{{ convocation.navtitle }}{%- else -%}{{ convocation.title }}{%- endif -%}
+                <a href="{{ village.url }}">
+                  {%- if village.navtitle -%}{{ village.navtitle }}{%- else -%}{{ village.title }}{%- endif -%}
                 </a>
               </h5>
-              <p class="card-text mb-1">
-                [...]
-              </p>
+              {%- if village.teaser -%}
+                <p class="card-text mb-1">
+                  {{ village.teaser | strip_html | truncate: 110 }}
+                </p>
+              {%- endif -%}
             </div>
           </div>
         </div>
