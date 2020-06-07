@@ -1,6 +1,3 @@
-{%- assign url = page.url | split: "/" -%}
-{%- assign size = url | size | minus: 1 -%}
-{%- assign dir = url | slice: 0, size | join: "/" -%}
 {%- if size == 3 -%}
   {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
 {%- elsif size == 4 -%}
