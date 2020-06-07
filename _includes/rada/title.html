@@ -1,0 +1,23 @@
+{%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
+{%- assign url = page.url | split: "/" -%}
+{%- assign size = url | size | minus: 1 -%}
+{%- assign dir = url | slice: 0, size | join: "/" -%}
+
+{%- if size == 3 -%}
+  {%- include rada/name.html -%}
+{%- elsif size == 4 -%}
+  {%- assign size = url | size | minus: 2 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include rada/name.html -%}
+{%- elsif size == 7 -%}
+  {%- assign size = url | size | minus: 5 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include rada/name.html -%}
+{%- elsif size == 8 -%}
+  {%- assign size = url | size | minus: 6 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include rada/name.html -%}
+{%- elsif size <= 2 -%}
+  {%- if page.legal.name -%}{{ page.legal.name }}{%- else -%}{{ site.legal.name }}{%- endif -%}
+{%- else -%}
+{%- endif -%}
