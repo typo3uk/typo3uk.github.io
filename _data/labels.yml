@@ -37,21 +37,21 @@ about: про
 #
 # News
 #
-news: Новини
+news: новини
 news_all: Усі новини
 news_back_list: Повернутися до спсику новин
 news_list_empty: Новин поки що немає :(
 #
 # Decisions
 #
-decisions: Рішення
+decisions: рішення
 decisions_all: Усі рішення
 decisions_back_list: Повернутися до спсику рішень
 decisions_list_empty: Рішень поки що немає :(
 #
 # Deputies
 #
-deputies: Депутати
+deputies: депутати
 deputies_number: №
 deputies_name: Прізвище ім'я по батькові
 deputies_about: Про депутата

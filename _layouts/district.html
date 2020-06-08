@@ -18,17 +18,17 @@ layout: default
         <ul class="nav nav-tabs" id="districtTab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">
-              {{ site.data.labels.about }}&nbsp;{%- if isCityTown == true -%}{{ site.data.labels.city }}{%- else -%}{{ site.data.labels.district }}{%- endif -%}
+              {{ site.data.labels.about | capitalize }}&nbsp;{%- if isCityTown == true -%}{{ site.data.labels.city }}{%- else -%}{{ site.data.labels.district }}{%- endif -%}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miska }}{% else %}{{ site.data.labels.rayonna }}{% endif %} {{ site.data.labels.rada }}
+              {% if isCityTown == true %}{{ site.data.labels.miska | capitalize }}{% else %}{{ site.data.labels.rayonna | capitalize }}{% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miskyy }}{% else %}{{ site.data.labels.rayonnyy }}{% endif %} {{ site.data.labels.ustriy }}
+              {% if isCityTown == true %}{{ site.data.labels.miskyy | capitalize }}{% else %}{{ site.data.labels.rayonnyy | capitalize }}{% endif %} {{ site.data.labels.ustriy }}
             </a>
           </li>
         </ul>
@@ -62,22 +62,22 @@ layout: default
           </ul>
           <div class="tab-content" id="radaContent">
             <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
-              <h3 class="mt-2 mb-4">{{ site.data.labels.news }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.news | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
               {% include news-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
-              <h3 class="mt-2 mb-4">{{ site.data.labels.decisions }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.decisions | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
               {% include decisions-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
-              <h3 class="mt-2 mb-4">{{ site.data.labels.deputies }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }} {{ site.data.labels.deputies_all_1 }}</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.deputies | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }} {{ site.data.labels.deputies_all_1 }}</h3>
               {%- assign dir = page.dir | append: 'deputies' | append: '/' -%}
               {%- include current-subpages.html dir=dir page="district" -%}
             </div>
           </div>
         </div>
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
-          <h3 class="mt-2 mb-4">{{ site.data.labels.villages_and }} {{ site.data.labels.rayonu }}</h3>
+          <h3 class="mt-2 mb-4">{{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.rayonu }}</h3>
           {%- assign dir = page.dir | append: 'village' | append: '/' -%}
           {%- include current-subpages.html dir=dir page="village" -%}
         </div>
