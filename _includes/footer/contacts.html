@@ -4,6 +4,10 @@
   {%- assign size = url | size | minus: 2 -%}
   {%- assign dir = url | slice: 0, size | join: "/" -%}
   {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
+{%- elsif size == 5 -%}
+  {%- assign size = url | size | minus: 3 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
 {%- elsif size == 7 -%}
   {%- assign size = url | size | minus: 5 -%}
   {%- assign dir = url | slice: 0, size | join: "/" -%}
