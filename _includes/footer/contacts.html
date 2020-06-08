@@ -1,5 +1,5 @@
 {%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
-
+### {{isVillag}} ###<br>
 {%- if size == 3 and isVillage == false -%}
   {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
 {%- elsif size == 4 and isVillage == false -%}
