@@ -20,6 +20,7 @@ footer_developer: >
 #
 # Words
 #
+rad: рад
 rady: ради
 rada: рада
 city: місто
@@ -63,8 +64,9 @@ deputies_list_description: Перелік депутатів місцевої р
 deputies_list_description_year: році
 deputies_list_empty: Списків поки що немає :(
 deputies_back_list: Повернутися до спсику скликань
-
-
+#
+# Villages
+#
 village: cело
 villages: cела
 villages_and: cелиша та села
