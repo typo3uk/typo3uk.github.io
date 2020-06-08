@@ -18,17 +18,17 @@ layout: default
         <ul class="nav nav-tabs" id="districtTab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">
-              Про&nbsp;{%- if isCityTown == true -%}місто{%- else -%}райо́н{%- endif -%}
+              {{ site.data.labels.about }}&nbsp;{%- if isCityTown == true -%}{{ site.data.labels.city }}{%- else -%}{{ site.data.labels.district }}{%- endif -%}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-              {% if isCityTown == true %}Міська{% else %}Райо́нна{% endif %} рада
+              {% if isCityTown == true %}{{ site.data.labels.miska }}{% else %}{{ site.data.labels.rayonna }}{% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-              {% if isCityTown == true %}Міський{% else %}Райо́нний{% endif %} устрій
+              {% if isCityTown == true %}{{ site.data.labels.miskyy }}{% else %}{{ site.data.labels.rayonnyy }}{% endif %} {{ site.data.labels.ustriy }}
             </a>
           </li>
         </ul>
@@ -43,7 +43,7 @@ layout: default
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h2 class="card-title">{% if isCityTown == true %}{{ page.council.title }} міська рада{% else %}{{ page.council.title }} райо́нна рада{% endif %}</h2>
+                  <h2 class="card-title">{% if isCityTown == true %}{{ page.council.title }} {{ site.data.labels.miska }} {{ site.data.labels.rada }}{% else %}{{ page.council.title }} {{ site.data.labels.rayonna }} {{ site.data.labels.rada }}{% endif %}</h2>
                   <p class="card-text">{{ page.council.description }}</p>
                 </div>
               </div>
@@ -51,33 +51,33 @@ layout: default
           </div>
           <ul class="nav nav-tabs" id="radaTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">Новини</a>
+              <a class="nav-link active" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="true">{{ site.data.labels.news }}</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">Рішення</a>
+              <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions }}</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">Депутати</a>
+              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies }}</a>
             </li>
           </ul>
           <div class="tab-content" id="radaContent">
             <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
-              <h3 class="mt-2 mb-4">Новини {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.news }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
               {% include news-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="decisions" role="tabpanel" aria-labelledby="decisions-tab">
-              <h3 class="mt-2 mb-4">Рішення {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.decisions }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }}</h3>
               {% include decisions-last.html cat=cat num="6" %}
             </div>
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
-              <h3 class="mt-2 mb-4">Депутити {{ title | slice: 0, size }}ої{% if isCityTown == true %} міської {% else %} райо́нної {% endif %}ради всіх скликань</h3>
+              <h3 class="mt-2 mb-4">{{ site.data.labels.deputies }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}{% if isCityTown == true %} {{ site.data.labels.miskoyi }} {% else %} {{ site.data.labels.rayónnoyi }} {% endif %}{{ site.data.labels.rady }} {{ site.data.labels.deputies_all_1 }}</h3>
               {%- assign dir = page.dir | append: 'deputies' | append: '/' -%}
               {%- include current-subpages.html dir=dir page="district" -%}
             </div>
           </div>
         </div>
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
-          <h3 class="mt-2 mb-4">Села та селища району</h3>
+          <h3 class="mt-2 mb-4">{{ site.data.labels.villages_and }} {{ site.data.labels.rayonu }}</h3>
           {%- assign dir = page.dir | append: 'village' | append: '/' -%}
           {%- include current-subpages.html dir=dir page="village" -%}
         </div>

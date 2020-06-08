@@ -18,6 +18,23 @@ footer_text_license:
 footer_developer: >
   - Розробник
 #
+# Words
+#
+rady: ради
+rada: рада
+city: місто
+district: райо́н
+rayónnoyi: райо́нної
+rayonna: райо́нна
+rayonnyy: райо́нний
+rayonu: райо́ну
+miskoyi: міської
+miska: міська
+miskyy: міський
+ustriy: устрій
+oyi: ої
+about: про
+#
 # News
 #
 news: Новини
@@ -41,7 +58,14 @@ deputies_about: Про депутата
 deputies_no_data: Дані на даний момент відсутні...
 deputies_no_data_alert: Якщо у вас є ці дані, надішліть нам, а ми їх опублікуємо тут...
 deputies_all: Усі скликання
+deputies_all_1: всіх скликань
 deputies_list_description: Перелік депутатів місцевої ради обраних на чергових місцевих виборах України у
 deputies_list_description_year: році
 deputies_list_empty: Списків поки що немає :(
 deputies_back_list: Повернутися до спсику скликань
+
+
+village: cело
+villages: cела
+villages_and: cелиша та села
+villages_all: Увесь устрій району
