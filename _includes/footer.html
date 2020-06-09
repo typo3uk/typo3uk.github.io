@@ -18,15 +18,13 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-    {% for contact in site.data.contacts %}
-
+    {%- for contact in site.data.contacts -%}
       {%- if page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }}
-      {%- else -%}
-        {{ site.contact.name }}
       {%- endif -%}
-
-    {% endfor %}
+    {%- else -%}
+      {{ site.contact.name }}
+    {%- endfor -%}
 
 
 {% comment %}
