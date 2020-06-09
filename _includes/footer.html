@@ -20,7 +20,7 @@
 
     {% for contact in site.data.contacts %}
 
-      {%- if page.dir contains contact.type and page.dir contains contact.item -%}
+      {%- if page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }}
       {%- else -%}
         {{ site.contact.name }}
