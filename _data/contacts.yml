@@ -1,3 +1,18 @@
+#
+# City
+#
+- type: city
+  item: bohorodchany
+  name: Івано-Франківська міська рада
+  address: 76004, м. Івано-Франківськ, вул. М. Грушевського, 21
+  phone_main: (034) 255 65 15
+  phone_hot:  (034) 255 60 20
+  phone_fax:  (034) 255 60 20
+  email: mvk@mvk.if.ua
+  www: http://www.mvk.if.ua
+#
+# District
+#
 - type: district
   item: bohorodchany
   name: Богородча́нська райо́нна рада
@@ -17,7 +32,21 @@
   phone_fax:  (034) 362 44 14
   email: tysm.rairada@gmail.com
   www: http://www.rada.if.ua/
-
+#
+# Town
+#
+- type: town
+  item: tysmienica
+  name: Тисменицька міська рада
+  address: 77401, м. Тисмениця, вул. Галицька, 32
+  phone_main: (034) 362 44 54
+  phone_hot:  (034) 362 11 16
+  phone_fax:  (034) 362 13 92
+  email: tismenicja@gmail.com
+  www: http://www.rada.if.ua/
+#
+# Village
+#
 - type: village
   item: solotvyn
   name: Солотвинська селищна рада
