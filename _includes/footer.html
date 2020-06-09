@@ -18,16 +18,15 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
+    {%- assign size_url = url | size -%}
     {%- for contact in site.data.contacts -%}
-      {%- if contact -%}
-        {%- if page.url contains contact.type and page.url contains contact.item -%}
-          {{ contact.name }}
-        {%- elsif page.url contains "district" and page.url contains contact.type and page.url contains contact.item -%}
-          {{ contact.name }}
-        {%- endif -%}
-      {%- else -%}
-        {{ site.contact.name }}
+
+      {%- if page.url contains contact.type and page.url contains contact.item -%}
+        {{ contact.name }} == {{size_url}}
+      {%- elsif size_url == 5 and page.url contains contact.type and page.url contains contact.item -%}
+        {{ contact.name }} == {{size_url}}
       {%- endif -%}
+
     {%- endfor -%}
 
 
