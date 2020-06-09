@@ -1,40 +1,26 @@
-{%- if isVillage == false -%}
-
-  {%- if size == 3 -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- elsif size == 4 -%}
-    {%- assign size = url | size | minus: 2 -%}
-    {%- assign dir = url | slice: 0, size | join: "/" -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- elsif size == 5 -%}
-    {%- assign size = url | size | minus: 3 -%}
-    {%- assign dir = url | slice: 0, size | join: "/" -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- elsif size == 7 -%}
-    {%- assign size = url | size | minus: 5 -%}
-    {%- assign dir = url | slice: 0, size | join: "/" -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- elsif size == 8 -%}
-    {%- assign size = url | size | minus: 6 -%}
-    {%- assign dir = url | slice: 0, size | join: "/" -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- elsif size <= 2 -%}
-    {%- if include.legal == "name" -%}
-      {%- include footer/name.html legal=include.legal -%}
-    {%- elsif include.legal == "phone" -%}
-      {%- include footer/phone.html legal=include.legal type=include.type -%}
-    {%- elsif include.legal == "email" -%}
-      {%- include footer/email.html legal=include.legal -%}
-    {%- else -%}
-      {%- if page.legal[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
-    {%- endif -%}
+{%- if size == 3 -%}
+  {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
+{%- elsif size == 4 -%}
+  {%- assign size = url | size | minus: 2 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
+{%- elsif size == 7 -%}
+  {%- assign size = url | size | minus: 5 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
+{%- elsif size == 8 -%}
+  {%- assign size = url | size | minus: 6 -%}
+  {%- assign dir = url | slice: 0, size | join: "/" -%}
+  {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
+{%- elsif size <= 2 -%}
+  {%- if include.legal == "name" -%}
+    {%- include footer/name.html legal=include.legal -%}
+  {%- elsif include.legal == "phone" -%}
+    {%- include footer/phone.html legal=include.legal type=include.type -%}
+  {%- elsif include.legal == "email" -%}
+    {%- include footer/email.html legal=include.legal -%}
   {%- else -%}
+    {%- if page.legal[include.legal] -%}{{ page.legal[include.legal] }}{%- else -%}{{ site.legal[include.legal] }}{%- endif -%}
   {%- endif -%}
-
-{%- elsif isVillage == true -%}
-
-  {%- if size == 3 -%}
-    {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
-  {%- endif -%}
-
+{%- else -%}
 {%- endif -%}

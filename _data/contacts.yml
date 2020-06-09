@@ -1,0 +1,19 @@
+- type: district
+  item: bohorodchany
+  name: Богородча́нська райо́нна рада
+  address: 00000, с.м.т. Богородча́ни, вул. Шевченка, 66
+  phone_main: (034) 712 41 99
+  phone_hot:  (034) 712 41 99
+  phone_fax:  (034) 712 41 99
+  email: rairada@ukrpost.ua
+  www: http://www.rada.if.ua/
+
+- type: district
+  item: tysmenytsia
+  name: Тисменицька райо́нна рада
+  address: 77401, м. Тисмениця, вул. Галицька, 17
+  phone_main: (034) 362 43 36
+  phone_hot:  (034) 362 41 75
+  phone_fax:  (034) 362 44 14
+  email: tysm.rairada@gmail.com
+  www: http://www.rada.if.ua/
