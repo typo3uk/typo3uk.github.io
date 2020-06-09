@@ -21,8 +21,6 @@
     {%- for contact in site.data.contacts -%}
       {%- if page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }}
-      {%- if page.url contains "district" and page.url contains contact.type and page.url contains contact.item -%}
-        {{ contact.name }}
       {%- endif -%}
     {%- endfor -%}
 
