@@ -34,7 +34,7 @@
 {%- elsif isVillage == true -%}
 
   {%- if size == 3 -%}
-    {%- assign size = url | size | minus: 2 -%}
+    {%- assign size = url | size | minus: 0 -%}
     {%- assign dir = url | slice: 0, size | join: "/" -%}
     {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
   {%- endif -%}
