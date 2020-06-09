@@ -21,7 +21,11 @@
     {%- for contact in site.data.contacts -%}
       {%- if page.url contains contact.type and page.url contains contact.item -%}
         {%- if contact.name -%}{{ contact.name }}{%- else -%}{{ site.contact.name }}{%- endif -%}
+      {%- else -%}
+        [...if...else...]
       {%- endif -%}
+    {%- else -%}
+      [...for...else...]
     {%- endfor -%}
 
 
