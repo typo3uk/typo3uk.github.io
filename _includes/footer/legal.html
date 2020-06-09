@@ -1,5 +1,5 @@
 {%- for page in site.pages -%}
-  {%- if page.url contains include.dir -%}
+  {%- if page.url contains include.dir and isVillage == false -%}
     {%- if include.legal == "name" -%}
       {% if isCityTown == true %}
         {%- if page.council.title -%}
