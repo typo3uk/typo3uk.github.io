@@ -23,7 +23,7 @@
       {%- if page.dir contains contact.type and page.dir contains contact.item -%}
         {{ contact.name }}
       {%- else -%}
-        [...]
+        {{ site.contact.name }}
       {%- endif -%}
 
     {% endfor %}
