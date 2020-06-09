@@ -18,11 +18,11 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-    {%- assign size_url = url | size -%}
+
     {%- for contact in site.data.contacts -%}
 
       {%- if page.url contains contact.type and page.url contains contact.item -%}
-        {{ contact.name }} == {{size_url}}
+        {{ contact.name }}
       {%- endif -%}
 
     {%- endfor -%}
