@@ -21,9 +21,9 @@
     {%- assign size_url = url | size -%}
     {%- for contact in site.data.contacts -%}
 
-      {%- if isVillage == false and page.url contains contact.type and page.url contains contact.item -%}
+      {%- if size_url <= 8 and isVillage == false and page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }} == {{size_url}}
-      {%- elsif isVillage == true and page.url contains contact.type and page.url contains contact.item -%}
+      {%- elsif size_url >= 5 and isVillage == true and page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }} == {{size_url}}
       {%- endif -%}
 
