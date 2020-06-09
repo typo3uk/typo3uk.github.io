@@ -19,7 +19,15 @@
             <h5 class="mb-1">
 
 
-    {%- for contact in site.data.contacts -%}
+{%- assign village = '' | split:'' -%}
+{%- for i in site.data.contacts -%}
+  {%- if i.type contains "village" -%}
+    {%- assign village = village | push:i -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+
+    {%- for contact in village -%}
 
       {%- if page.url contains contact.type and page.url contains contact.item -%}
         {{ contact.name }}
