@@ -23,7 +23,7 @@
 {%- for i in site.data.contacts -%}
   {%- if i.type contains "village" -%}
     {%- assign village = village | push:i -%}
-  {%- endunless -%}
+  {%- endif -%}
 {%- endfor -%}
 
 
