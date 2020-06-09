@@ -20,10 +20,8 @@
 
     {%- for contact in site.data.contacts -%}
       {%- if page.url contains contact.type and page.url contains contact.item -%}
-        {{ contact.name }}
+        {%- if contact.name -%}{{ contact.name }}{%- else -%}{{ site.contact.name }}{%- endif -%}
       {%- endif -%}
-    {%- else -%}
-      {{ site.contact.name }}
     {%- endfor -%}
 
 
