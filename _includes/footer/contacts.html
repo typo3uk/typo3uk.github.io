@@ -91,13 +91,13 @@
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
-    {%- elsif contact[include.legal] -%}
+    {%- else -%}
       {{ contact[include.legal] }}
     {%- endif -%}
-  {%- else -%}
-    {{ site.contact[include.legal] }}
   {%- endif -%}
 {%- endfor -%}
+
+### NULL ####
 
 
 {% comment %}
