@@ -45,7 +45,7 @@
 
     {%- for contact in village -%}
 
-      {%- if page.url contains contact.type and page.url contains contact.item -%}
+      {%- if page.url contains contact.type and page.url contains contact.item and page.url | size >= 5 -%}
         {{ contact.name }}
       {%- endif -%}
 
