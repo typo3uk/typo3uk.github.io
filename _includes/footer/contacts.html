@@ -5,6 +5,7 @@
   {%- endif -%}
 {%- endfor -%}
 
+
 {%- assign district = '' | split:'' -%}
 {%- for i in site.data.contacts -%}
   {%- if i.type contains "district" -%}
@@ -18,11 +19,7 @@
 {%- for contact in district -%}
   {%- if page.url contains contact.type and page.url contains contact.item -%}
     {%- if size == 5 and page.url contains "village" -%}
-    {%- elsif include.legal == "phone_main" -%}
-      <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
-    {%- elsif include.legal == "phone_hot" -%}
-      <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
-    {%- elsif include.legal == "phone_fax" -%}
+    {%- elsif include.legal contains "phone" -%}
       <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
     {%- elsif include.legal == "email" -%}
       <a href="mailto:{{ contact[include.legal] }}">{{ contact[include.legal] }}</a>
