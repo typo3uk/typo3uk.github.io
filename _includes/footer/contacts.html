@@ -57,6 +57,11 @@
 
 {%- for contact in village -%}
   {%- if page.url contains contact.type and page.url contains contact.item and size >= 5 -%}
+  {%- elsif include.legal contains "phone" -%}
+    <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
+  {%- elsif include.legal == "email" -%}
+    <a href="mailto:{{ contact[include.legal] }}">{{ contact[include.legal] }}</a>
+  {%- else -%}
     {{ contact[include.legal] }}
   {%- endif -%}
 {%- endfor -%}
