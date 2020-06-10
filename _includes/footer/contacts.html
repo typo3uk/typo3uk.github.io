@@ -94,6 +94,8 @@
     {%- else -%}
       {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
     {%- endif -%}
+  {%- else -%}
+    {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
   {%- endif -%}
 {%- endfor -%}
 
