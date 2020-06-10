@@ -36,11 +36,11 @@
 
 
     {%- for contact in district -%}
-
-      {%- if page.url contains contact.type and page.url contains contact.item -%}
-        {{ contact.name }}
-      {%- endif -%}
-
+      {%- unless page.url contains "village" -%}
+        {%- if page.url contains contact.type and page.url contains contact.item -%}
+          {{ contact.name }}
+        {%- endif -%}
+      {%- endunless -%}
     {%- endfor -%}
 
     {%- for contact in village -%}
