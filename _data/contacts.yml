@@ -4,15 +4,15 @@
 - type: region
   item: ivano-frankivsk
   name: Івано-Франківська обласна рада
-  address: 76004, м. Івано-Франківськ, вул. М. Грушевського, 21
-  phone_main: (034) 000 00 00
-  phone_hot:  (034) 000 00 00
-  phone_fax:  (034) 000 00 00
-  email: info@orada.if.ua
+  address: 76004, м. Івано-Франківськ, вул.&nbsp;М.&nbsp;Грушевського,&nbsp;21
+  phone_main: (034) 255 26 16
+  phone_hot:  (034) 255 26 16
+  phone_fax:  (034) 255 26 16
+  email: orada.if@gmail.com
   www: http://www.orada.if.ua
 
 #
-# City
+# Region / City
 #
 - type: city
   item: stanyslaviv
@@ -48,7 +48,7 @@
   www: немає даних
 
 #
-# Town
+# District / Town
 #
 - type: town
   item: tysmienica
@@ -61,7 +61,7 @@
   www: немає даних
 
 #
-# Village
+# District / Village
 #
 - type: village
   item: solotvyn

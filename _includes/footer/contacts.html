@@ -36,6 +36,12 @@
 {%- assign url = page.url | split: "/" -%}
 {%- assign size = url | size -%}
 
+{%- for contact in region -%}
+  {%- if page.url contains contact.type and page.url contains contact.item -%}
+    {{ contact[include.legal] }}
+  {%- endif -%}
+{%- endfor -%}
+
 {%- for contact in district -%}
   {%- if page.url contains contact.type and page.url contains contact.item -%}
     {%- if size == 5 and page.url contains "village" -%}
