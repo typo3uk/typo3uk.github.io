@@ -1,5 +1,13 @@
+{%- if contact[include.legal] -%}
+  <a href="mailto:{{ contact[include.legal] }}">{{ contact[include.legal] }}</a>
+{%- else -%}
+  <a href="mailto:{{ site.contact[include.legal] }}">{{ site.contact[include.legal] }}</a>
+{%- endif -%}
+
+{% comment %}
 {%- if page.legal[include.legal] -%}
   <a href="mailto:{{ page.legal[include.legal] }}">{{ page.legal[include.legal] }}</a>
 {%- else -%}
   <a href="mailto:{{ site.legal[include.legal] }}">{{ site.legal[include.legal] }}</a>
 {%- endif -%}
+{% endcomment %}

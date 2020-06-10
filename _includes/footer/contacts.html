@@ -46,9 +46,9 @@
   {%- if page.url contains contact.type and page.url contains contact.item -%}
     {%- if size == 5 and page.url contains "village" -%}
     {%- elsif include.legal contains "phone" -%}
-      <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
+      {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
-      <a href="mailto:{{ contact[include.legal] }}">{{ contact[include.legal] }}</a>
+      {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
       {{ contact[include.legal] }}
     {%- endif -%}
@@ -58,9 +58,9 @@
 {%- for contact in village -%}
   {%- if page.url contains contact.type and page.url contains contact.item and size >= 5 -%}
   {%- elsif include.legal contains "phone" -%}
-    <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
+    {%- include footer/phone.html legal=include.legal -%}
   {%- elsif include.legal == "email" -%}
-    <a href="mailto:{{ contact[include.legal] }}">{{ contact[include.legal] }}</a>
+    {%- include footer/email.html legal=include.legal -%}
   {%- else -%}
     {{ contact[include.legal] }}
   {%- endif -%}
