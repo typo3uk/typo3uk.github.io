@@ -91,7 +91,7 @@
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
-    {%- else -%}
+    {%- elsif contact[include.legal] -%}
       {{ contact[include.legal] }}
     {%- endif -%}
   {%- else -%}
