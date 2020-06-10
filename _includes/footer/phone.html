@@ -1,10 +1,13 @@
 {%- if contact[include.legal] -%}
 <a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
-{%- else -%}
-<a href="tel:+38{{ site.contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.contact[include.legal] | replace: " ", "&nbsp;" }}</a>
 {%- endif -%}
 
 {% comment %}
+
+{%- else -%}
+<a href="tel:+38{{ site.contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.contact[include.legal] | replace: " ", "&nbsp;" }}</a>
+
+
 {%- if page.legal[include.legal][include.type] -%}
 <a href="tel:+38{{ page.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
 {%- else -%}
