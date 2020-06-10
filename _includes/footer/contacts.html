@@ -97,8 +97,11 @@
   {%- endif -%}
 {%- endfor -%}
 
-### NULL ####
+{%- if village or town or city or district or region -%}
 
+{%- else -%}
+  ### NULL ####
+{%- endif -%}
 
 {% comment %}
 
