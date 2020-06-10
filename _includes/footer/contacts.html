@@ -46,8 +46,6 @@
       {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
-{%- else -%}
-  {{ site.contact[include.legal] }}
 {%- endfor -%}
 
 {%- for contact in city -%}
@@ -60,8 +58,6 @@
       {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
-{%- else -%}
-  {{ site.contact[include.legal] }}
 {%- endfor -%}
 
 {%- for contact in district -%}
@@ -75,8 +71,6 @@
       {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
-{%- else -%}
-  {{ site.contact[include.legal] }}
 {%- endfor -%}
 
 {%- for contact in town -%}
@@ -89,8 +83,6 @@
       {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
-{%- else -%}
-  {{ site.contact[include.legal] }}
 {%- endfor -%}
 
 {%- for contact in village -%}
@@ -102,11 +94,7 @@
     {%- else -%}
       {{ contact[include.legal] }}
     {%- endif -%}
-  {%- else -%}
-    {{ site.contact[include.legal] }}
   {%- endif -%}
-{%- else -%}
-  {{ site.contact[include.legal] }}
 {%- endfor -%}
 
 
