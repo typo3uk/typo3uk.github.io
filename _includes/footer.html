@@ -18,50 +18,9 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-
-{%- assign village = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "village" -%}
-    {%- assign village = village | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-
-{%- assign district = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "district" -%}
-    {%- assign district = district | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign url_size = url | size -%}
-
-{%- for contact in district -%}
-
-    {%- if page.url contains contact.type and page.url contains contact.item -%}
-      {%- if url_size == 5 and page.url contains "village" -%}
-      {%- else -%}
-        {{ contact.name }}
-      {%- endif -%}
-    {%- endif -%}
-
-{%- endfor -%}
-
-{%- for contact in village -%}
-
-  {%- if page.url contains contact.type and page.url contains contact.item and page.url | size >= 5 -%}
-
-    {{ contact.name }}
-
-  {%- endif -%}
-
-{%- endfor -%}
-
+{%- include footer/contacts.html legal="name" -%}
 
 {% comment %}
-{%- unless page.url | size == 4 -%}
-
-{%- endunless -%}
     {%- include footer/contacts.html legal="name" -%}
 {% endcomment %}
 

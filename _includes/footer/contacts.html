@@ -1,3 +1,42 @@
+{%- assign village = '' | split:'' -%}
+{%- for i in site.data.contacts -%}
+  {%- if i.type contains "village" -%}
+    {%- assign village = village | push:i -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+{%- assign district = '' | split:'' -%}
+{%- for i in site.data.contacts -%}
+  {%- if i.type contains "district" -%}
+    {%- assign district = district | push:i -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign url_size = url | size -%}
+
+{%- for contact in district -%}
+
+  {%- if page.url contains contact.type and page.url contains contact.item -%}
+    {%- if url_size == 5 and page.url contains "village" -%}
+    {%- else -%}
+      {{ contact[include.legal] }}
+    {%- endif -%}
+  {%- endif -%}
+
+{%- endfor -%}
+
+{%- for contact in village -%}
+
+  {%- if page.url contains contact.type and page.url contains contact.item and page.url | size >= 5 -%}
+    {{ contact[include.legal] }}
+  {%- endif -%}
+
+{%- endfor -%}
+
+
+{% comment %}
+
 {%- if size == 3 -%}
   {%- include footer/legal.html dir=dir legal=include.legal type=include.type -%}
 {%- elsif size == 4 -%}
@@ -24,3 +63,5 @@
   {%- endif -%}
 {%- else -%}
 {%- endif -%}
+
+{% endcomment %}
