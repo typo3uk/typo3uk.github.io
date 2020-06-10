@@ -92,7 +92,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {{ contact[include.legal] }}
+      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
