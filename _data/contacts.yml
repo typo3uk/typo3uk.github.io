@@ -1,4 +1,17 @@
 #
+# Region
+#
+- type: region
+  item: ivano-frankivsk
+  name: Івано-Франківська обласна рада
+  address: 76004, м. Івано-Франківськ, вул. М. Грушевського, 21
+  phone_main: (034) 000 00 00
+  phone_hot:  (034) 000 00 00
+  phone_fax:  (034) 000 00 00
+  email: info@orada.if.ua
+  www: http://www.orada.if.ua
+
+#
 # City
 #
 - type: city
@@ -10,6 +23,7 @@
   phone_fax:  (034) 255 60 20
   email: mvk@mvk.if.ua
   www: http://www.mvk.if.ua
+
 #
 # District
 #
