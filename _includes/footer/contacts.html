@@ -57,12 +57,13 @@
 
 {%- for contact in village -%}
   {%- if page.url contains contact.type and page.url contains contact.item and size >= 5 -%}
-  {%- elsif include.legal contains "phone" -%}
-    {%- include footer/phone.html legal=include.legal -%}
-  {%- elsif include.legal == "email" -%}
-    {%- include footer/email.html legal=include.legal -%}
-  {%- else -%}
-    {{ contact[include.legal] }}
+    {%- if include.legal contains "phone" -%}
+      {%- include footer/phone.html legal=include.legal -%}
+    {%- elsif include.legal == "email" -%}
+      {%- include footer/email.html legal=include.legal -%}
+    {%- else -%}
+      {{ contact[include.legal] }}
+    {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
 
