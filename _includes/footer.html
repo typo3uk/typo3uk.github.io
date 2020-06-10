@@ -27,6 +27,22 @@
 {%- endfor -%}
 
 
+{%- assign district = '' | split:'' -%}
+{%- for i in site.data.contacts -%}
+  {%- if i.type contains "district" -%}
+    {%- assign district = district | push:i -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+    {%- for contact in district -%}
+
+      {%- if page.url contains contact.type and page.url contains contact.item -%}
+        {{ contact.name }}
+      {%- endif -%}
+
+    {%- endfor -%}
+
     {%- for contact in village -%}
 
       {%- if page.url contains contact.type and page.url contains contact.item -%}
