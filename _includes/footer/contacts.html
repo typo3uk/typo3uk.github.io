@@ -37,7 +37,7 @@
 {%- assign size = url | size -%}
 
 {%- for contact in region -%}
-  {%- if page.url contains contact.type and page.url contains contact.item -%}
+  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
     {%- if include.legal contains "phone" -%}
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
@@ -49,7 +49,7 @@
 {%- endfor -%}
 
 {%- for contact in city -%}
-  {%- if page.url contains contact.type and page.url contains contact.item -%}
+  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
     {%- if include.legal contains "phone" -%}
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
@@ -61,7 +61,7 @@
 {%- endfor -%}
 
 {%- for contact in district -%}
-  {%- if page.url contains contact.type and page.url contains contact.item -%}
+  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
     {%- if size == 5 and page.url contains "village" -%}
     {%- elsif include.legal contains "phone" -%}
       {%- include footer/phone.html legal=include.legal -%}
@@ -74,7 +74,7 @@
 {%- endfor -%}
 
 {%- for contact in town -%}
-  {%- if page.url contains contact.type and page.url contains contact.item -%}
+  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
     {%- if include.legal contains "phone" -%}
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
@@ -86,7 +86,7 @@
 {%- endfor -%}
 
 {%- for contact in village -%}
-  {%- if page.url contains contact.type and page.url contains contact.item and size >= 5 -%}
+  {%- if page.url and page.url contains contact.type and page.url contains contact.item and size >= 5 -%}
     {%- if include.legal contains "phone" -%}
       {%- include footer/phone.html legal=include.legal -%}
     {%- elsif include.legal == "email" -%}
@@ -97,11 +97,6 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- if village or town or city or district or region -%}
-
-{%- else -%}
-  ### NULL ####
-{%- endif -%}
 
 {% comment %}
 
