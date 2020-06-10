@@ -34,11 +34,12 @@
   {%- endif -%}
 {%- endfor -%}
 
+{%- assign url_size = url | size -%}
 
     {%- for contact in district -%}
 
         {%- if page.url contains contact.type and page.url contains contact.item -%}
-          {%- if page.url | size == 5 -%}
+          {%- if url_size == 5 -%}
           {%- else -%}
             {{ contact.name }}
           {%- endif -%}
