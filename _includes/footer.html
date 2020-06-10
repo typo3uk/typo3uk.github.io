@@ -39,7 +39,7 @@
     {%- for contact in district -%}
 
         {%- if page.url contains contact.type and page.url contains contact.item -%}
-          {%- if url_size == 5 -%}
+          {%- if url_size == 5 and page.url contains "village" -%}
           {%- else -%}
             {{ contact.name }}
           {%- endif -%}
