@@ -22,11 +22,11 @@
             <h5 class="mb-1">
 
 {%- capture name_site -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
-{% if name_site == "X" %}
+{%- if name_site == X -%}
   {{ site.contact.name }}
-{% else %}
+{%- else -%}
   {%- include footer/contacts.html legal="name" -%}
-{% endif %}
+{%- endif -%}
 
 {% comment %}
     {%- include footer/contacts.html legal="name" -%}
