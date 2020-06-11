@@ -23,10 +23,10 @@
 
 {%- capture name -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
 
-{%- if name -%}
-{%- include footer/contacts.html legal="name" -%}
+{%- if name == empty -%}
+{{ site.contact.name }}
 {%- else -%}
-{{site.contact.name}}
+{%- include footer/contacts.html legal="name" -%}
 {%- endif -%}
 
 
