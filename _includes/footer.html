@@ -21,7 +21,7 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-{% unless empty %}
+{% unless include footer/contacts.html legal="name" == empty %}
 {%- include footer/contacts.html legal="name" -%}
 {% else %}
 ### Empty ###
