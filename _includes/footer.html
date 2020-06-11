@@ -22,15 +22,14 @@
             <h5 class="mb-1">
 {%- capture name -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
 
-{%- if name contains "X" -%}
-  {{ site.contact.name }}
-{%- else -%}
+{%- if name != "X" -%}
   {%- include footer/contacts.html legal="name" -%}
+{%- else -%}
+  {{ site.contact.name }}
 {%- endif -%}
 
 <hr>
 
-{%- assign name = name -%}
 {%- if name == "X" -%}
   {{ site.contact.name }}
 {%- else -%}
