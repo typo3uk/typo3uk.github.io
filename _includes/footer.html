@@ -22,6 +22,7 @@
             <h5 class="mb-1">
 
 {%- capture name -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
+name: {{name}}<br>
 {%- if name == "X" -%}
 site.contact.name: {{ site.contact.name }}
 {%- else -%}
