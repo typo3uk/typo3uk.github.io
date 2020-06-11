@@ -21,8 +21,9 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-{%- capture name_site -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
-{%- if name_site == X -%}
+{%- capture name -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
+{%- assign name = name -%}
+{%- if name == "X" -%}
   {{ site.contact.name }}
 {%- else -%}
   {%- include footer/contacts.html legal="name" -%}
