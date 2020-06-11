@@ -20,7 +20,7 @@
           </div>
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
-{%- capture name -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
+{%- capture name -%}X{%- include footer/contacts.html legal="name" | lstrip | strip -%}{%- endcapture -%}
 
 {%- if name != "X" -%}
   {%- include footer/contacts.html legal="name" -%}
