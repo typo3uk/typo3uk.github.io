@@ -23,12 +23,13 @@
 
 {%- capture name -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
 
-{%- if name == empty -%}
+{%- if name == '' -%}
 {{ site.contact.name }}
 {%- else -%}
 {%- include footer/contacts.html legal="name" -%}
 {%- endif -%}
 
+### {{ site.contact.name }} ###
 
 {% comment %}
     {%- include footer/contacts.html legal="name" -%}
