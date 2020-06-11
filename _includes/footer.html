@@ -19,28 +19,7 @@
             {%- include icons/trezub.svg width="27" height="45" -%}
           </div>
           <div class="col-10 pl-sm-0">
-            <h5 class="mb-1">
-{%- capture name -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
-
-{%- if name != "X" -%}
-  {%- include footer/contacts.html legal="name" -%}
-{%- else -%}
-  {{ site.contact.name }}
-{%- endif -%}
-
-<hr>
-
-{%- if name == "X" -%}
-  {{ site.contact.name }}
-{%- else -%}
-  {%- include footer/contacts.html legal="name" -%}
-{%- endif -%}
-
-{% comment %}
-    {%- include footer/contacts.html legal="name" -%}
-{% endcomment %}
-
-            </h5>
+            <h5 class="mb-1">{%- include footer/contacts.html legal="name" -%}</h5>
             <p class="text-muted">{%- include footer/contacts.html legal="address" -%}</p>
           </div>
         </div>
