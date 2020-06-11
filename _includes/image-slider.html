@@ -3,7 +3,6 @@
   {%- for file in site.static_files -%}
     {%- if file.path contains include.folder -%}
       {%- if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' -%}
-        {% comment %}{%- assign number = file.basename | slice: 0 -%}{% endcomment %}
         {%- capture number -%}{%- increment counter -%}{%- endcapture -%}
         {%- assign sizename = file.basename | size -%}
         {%- assign alt = file.basename | slice: 2, sizename -%}
