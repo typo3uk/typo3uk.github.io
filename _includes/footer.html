@@ -21,13 +21,16 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-{% unless include footer/contacts.html legal="name" == empty %}
+{%- capture name -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
+
+{%- if name -%}
 {%- include footer/contacts.html legal="name" -%}
-{% else %}
-### Empty ###
-{% endunless %}
+{%- else -%}
+site.contact.name
+{%- endif -%}
 
 ### {{ page.title[3] }} ###
+
 
 {% comment %}
     {%- include footer/contacts.html legal="name" -%}
