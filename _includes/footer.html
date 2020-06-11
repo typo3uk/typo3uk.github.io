@@ -21,7 +21,11 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
+{% unless empty %}
 {%- include footer/contacts.html legal="name" -%}
+{% else %}
+### Empty ###
+{% endunless %}
 
 {% comment %}
     {%- include footer/contacts.html legal="name" -%}
