@@ -1,13 +1,13 @@
 <div id="carousel{{include.group}}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
   <div class="carousel-inner">
+  {%- capture active -%}{%- increment counter -%}{%- endcapture -%}
   {%- for file in site.static_files -%}
     {%- if file.path contains include.folder -%}
       {%- if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' -%}
-        {%- capture number -%}{%- increment counter -%}{%- endcapture -%}
         {%- assign sizename = file.basename | size -%}
         {%- assign alt = file.basename | slice: 2, sizename -%}
         {%- assign title = alt | replace: '-', ' ' | capitalize -%}
-        <div class="carousel-item px-0{% if number == '0' %} active{% endif %}" data-itemno="{{ number }}">
+        <div class="carousel-item px-0{% if active == '0' %} active{% endif %}" data-itemno="{%- increment counter -%}">
           <a href="{{ file.path | url_decode | relative_url }}" class="lightbox {% increment counter %}" title="{{ title }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
             <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=1100&h=220&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-{{ alt }}" />
           </a>
