@@ -1,0 +1,3 @@
+{%- capture i -%}{%- include footer/contacts.html legal=include.legal -%}{%- endcapture -%}
+{%- assign i = i | strip_newlines -%}
+{%- if i == empty -%}{{ site.contact[include.legal] }}{%- else -%}{%- include footer/contacts.html legal=include.legal -%}{%- endif -%}
