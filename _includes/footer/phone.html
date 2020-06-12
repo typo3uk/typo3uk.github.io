@@ -1,8 +1,4 @@
-{%- if contact[include.legal] -%}
-<a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>
-{%- else -%}
-<span class="text-muted">&nbsp;-&nbsp;дані&nbsp;відсутні</span>
-{%- endif -%}
+{%- if contact[include.legal] -%}<a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>{%- else -%}<span class="text-muted">немає&nbsp;номера</span>{%- endif -%}
 
 {% comment %}
 
