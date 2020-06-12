@@ -10,3 +10,8 @@ council:
   title: Тисменицька
   description: Description Тисменицький райо́н...
 ---
+
+<h2>Вас вітає, {{page.title}}!</h2>
+
+{%- capture gallery -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
+{%- include image-gallery.html folder=gallery cols="4" group="home" -%}
