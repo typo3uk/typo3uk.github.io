@@ -29,22 +29,22 @@
   {%- endif -%}
 {%- endfor -%}
 
-{% comment %}
+{%- if size != 6 -%}
 
-{%- for contact in district -%}
-  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
-    {%- if size == 5 and page.url contains "village" -%}
-    {%- elsif include.legal contains "phone" -%}
-      {%- include footer/phone.html legal=include.legal -%}
-    {%- elsif include.legal == "email" -%}
-      {%- include footer/email.html legal=include.legal -%}
-    {%- else -%}
-      {%- include footer/text.html legal=include.legal -%}
+  {%- for contact in district -%}
+    {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
+      {%- if size == 5 and page.url contains "village" -%}
+      {%- elsif include.legal contains "phone" -%}
+        {%- include footer/phone.html legal=include.legal -%}
+      {%- elsif include.legal == "email" -%}
+        {%- include footer/email.html legal=include.legal -%}
+      {%- else -%}
+        {%- include footer/text.html legal=include.legal -%}
+      {%- endif -%}
     {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
+  {%- endfor -%}
 
-{% endcomment %}
+{%- endif -%}
 
 {%- for contact in town -%}
   {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
