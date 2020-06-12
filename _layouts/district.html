@@ -34,7 +34,12 @@ layout: default
         </ul>
       </nav>
       <div class="tab-content" id="districtContent">
-        <div class="tab-pane pt-3 fade show active" id="district" role="tabpanel" aria-labelledby="district-tab">{{content}}</div>
+        <div class="tab-pane pt-3 fade show active" id="district" role="tabpanel" aria-labelledby="district-tab">
+          <h2>Вас вітає, {{page.title}}!</h2>
+          {%- capture gallery -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
+          {%- include image-gallery.html folder=gallery cols="4" group="home" -%}
+          {{content}}
+        </div>
         <div class="tab-pane pt-3 fade" id="rada" role="tabpanel" aria-labelledby="rada-tab">
           <div class="card border-0 mb-3">
             <div class="row no-gutters">
