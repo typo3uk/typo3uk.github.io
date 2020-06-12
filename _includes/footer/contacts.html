@@ -1,40 +1,9 @@
-{%- assign region = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "region" -%}
-    {%- assign region = region | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign district = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "district" -%}
-    {%- assign district = district | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign city = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "city" -%}
-    {%- assign city = city | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign town = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "town" -%}
-    {%- assign town = town | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign village = '' | split:'' -%}
-{%- for i in site.data.contacts -%}
-  {%- if i.type contains "village" -%}
-    {%- assign village = village | push:i -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign url = page.url | split: "/" -%}
-{%- assign size = url | size -%}
+{%- assign region = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "region" -%}{%- assign region = region | push:i -%}{%- endif -%}{%- endfor -%}
+{%- assign district = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "district" -%}{%- assign district = district | push:i -%}{%- endif -%}{%- endfor -%}
+{%- assign city = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "city" -%}{%- assign city = city | push:i -%}{%- endif -%}{%- endfor -%}
+{%- assign town = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "town" -%}{%- assign town = town | push:i -%}{%- endif -%}{%- endfor -%}
+{%- assign village = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "village" -%}{%- assign village = village | push:i -%}{%- endif -%}{%- endfor -%}
+{%- assign url = page.url | split: "/" -%}{%- assign size = url | size -%}
 
 {%- for contact in region -%}
   {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
@@ -43,7 +12,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
+      {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -55,7 +24,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
+      {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -68,7 +37,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
+      {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -80,7 +49,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
+      {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -92,7 +61,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}{{ site.contact[include.legal] }}{%- endif -%}
+      {{ contact[include.legal] }}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
