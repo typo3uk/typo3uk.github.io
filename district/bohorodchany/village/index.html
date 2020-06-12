@@ -16,7 +16,9 @@ council:
       <div class="row row-cols-1 row-cols-md-2">
         {%- assign ones = site.pages | sort: 'path' | reverse -%}
         {%- for one in ones -%}
-          {%- if one.url contains page.dir -%}
+          {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+          {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+          {%- if page.dir == current and one.url contains page.dir -%}
           <div class="col mb-4">
             <div class="card">
               {%- assign dir = one.dir | append: 'images/' -%}
