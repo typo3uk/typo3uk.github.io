@@ -11,7 +11,7 @@ council:
   description: Description Богородчанський райо́н...
 ---
 
-{%- capture district -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
-{%- include image-gallery.html folder=district cols="4" group="home" -%}
+<h2>Вас вітає, {{page.title}}!</h2>
 
-<h2>Вас вітає, Богородча́нський райо́н!</h2>
+{%- capture gallery -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
+{%- include image-gallery.html folder=gallery cols="4" group="home" -%}
