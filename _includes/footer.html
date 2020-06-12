@@ -18,7 +18,7 @@
             <h5 class="mb-1">
 
               {%- capture i -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
-              {%- assign name = i | strip | strip_newlines -%}
+              {%- assign name = i | strip_newlines -%}
 
               {%- if name == empty -%}
                 {{ site.contact.name }}
