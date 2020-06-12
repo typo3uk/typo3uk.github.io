@@ -20,7 +20,7 @@
               {%- capture i -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
               {%- assign name = i | strip | strip_newlines -%}
 
-              {%- if name == blank -%}
+              {%- if name == empty -%}
                 {{ site.contact.name }}
               {%- else -%}
                 {%- include footer/contacts.html legal="name" -%}
