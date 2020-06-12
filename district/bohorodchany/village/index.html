@@ -13,14 +13,10 @@ council:
   <div class="row">
     <div class="col-12">
       <h1 class="mb-4">Селища та села</h1>
-page.dir: {{page.dir}}<br>
-current: {{current}}<br>
       <div class="row row-cols-1 row-cols-md-2">
         {%- assign ones = site.pages | sort: 'path' | reverse -%}
         {%- for one in ones -%}
-          {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
-          {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-          {%- if "/district/bohorodchany/village/" == current and one.url contains page.dir -%}
+          {%- if one.url contains page.dir -%}
           <div class="col mb-4">
             <div class="card">
               {%- assign dir = one.dir | append: 'images/' -%}
