@@ -17,10 +17,10 @@
           <div class="col-10 pl-sm-0">
             <h5 class="mb-1">
 
-              {%- capture i -%}X{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
+              {%- capture i -%}{%- include footer/contacts.html legal="name" -%}{%- endcapture -%}
               {%- assign name = i | strip | strip_newlines -%}
 
-              {%- if name == "X" -%}
+              {%- if name == blank -%}
                 {{ site.contact.name }}
               {%- else -%}
                 {%- include footer/contacts.html legal="name" -%}
