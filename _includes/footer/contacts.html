@@ -29,6 +29,8 @@
   {%- endif -%}
 {%- endfor -%}
 
+{% comment %}
+
 {%- for contact in district -%}
   {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
     {%- if size == 5 and page.url contains "village" -%}
@@ -41,6 +43,8 @@
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
+
+{% endcomment %}
 
 {%- for contact in town -%}
   {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
