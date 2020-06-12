@@ -24,8 +24,8 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.phone_main }}</h6>
-            <p class="mb-0">{%- include footer/contacts.html legal="phone_main" type="main" -%}</p>
-            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contacts.html legal="phone_fax" type="fax" -%}</p>
+            <p class="mb-0">{%- include footer/contact.html legal="phone_main" -%}</p>
+            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contact.html legal="phone_fax" -%}</p>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.phone_hot }}</h6>
-            <p>{%- include footer/contacts.html legal="phone_hot" type="hot" -%}</p>
+            <p>{%- include footer/contact.html legal="phone_hot" -%}</p>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col">
             <h6 class="mt-1">{{ site.data.labels.email }}</h6>
-            <p>{%- include footer/contacts.html legal="email" -%}</p>
+            <p>{%- include footer/contact.html legal="email" -%}</p>
           </div>
         </div>
       </div>
