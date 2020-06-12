@@ -12,6 +12,4 @@ council:
 ---
 
 <h2 class="mb-4">Вас вітає, {{page.title}}!</h2>
-
-{%- capture gallery -%}{{page.dir}}images/gallery/home/{%- endcapture -%}
-{%- include image-gallery.html folder=gallery cols="4" group="home" -%}
+{%- include image/columns.html dir=page.dir cols="4" group="home" -%}
