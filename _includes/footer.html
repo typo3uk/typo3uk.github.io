@@ -1,1 +1,89 @@
-
+<footer>
+  <div class="container pt-4" style="border-top: 4px solid #2D5CA6;">
+    <div class="row">
+      <div class="col-12">
+        <a class="ml-lg-3" data-toggle="collapse" href="#multiCollapseMap" role="button" aria-expanded="false" aria-controls="multiCollapseMap" data-target=".multi-collapse">
+          <strong>{{ site.data.labels.map_site }}</strong>
+        </a>
+        <div class="container collapse multi-collapse" id="multiCollapseMap">{%- include map/0.html -%}</div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center mt-4">
+      <div class="col-md-6 col-lg-5">
+        <div class="row">
+          <div class="col-2 text-md-right">{%- include icons/trezub.svg width="27" height="45" -%}</div>
+          <div class="col-10 pl-sm-0">
+            <h5 class="mb-1">{%- include footer/contact.html legal="name" -%}</h5>
+            <p class="text-muted">{%- include footer/contact.html legal="address" -%}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="row">
+          <div class="col">
+            <h6 class="mt-1">{{ site.data.labels.phone_main }}</h6>
+            <p class="mb-0">{%- include footer/contact.html legal="phone_main" -%}</p>
+            <p>{{ site.data.labels.phone_fax }}:&nbsp;{%- include footer/contact.html legal="phone_fax" -%}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-2">
+        <div class="row">
+          <div class="col">
+            <h6 class="mt-1">{{ site.data.labels.phone_hot }}</h6>
+            <p>{%- include footer/contact.html legal="phone_hot" -%}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-2">
+        <div class="row">
+          <div class="col">
+            <h6 class="mt-1">{{ site.data.labels.email }}</h6>
+            <p>{%- include footer/contact.html legal="email" -%}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container"><hr class="mt-4 mb-4"></div>
+  <div class="container pb-4">
+      <div class="row mb-4">
+        <div class="col-lg-7 order-2 order-md-1">
+          <div class="row">
+            <div class="col-2 justify-content-center align-self-center d-flex">{%- include icons/gerb-circle.svg width="50" height="50" -%}</div>
+            <div class="col-10 pl-0 text-muted">{{ site.data.labels.footer_text_description }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col-2 justify-content-center align-self-center d-flex">{%- include icons/beta.svg width="50" height="25" -%}</div>
+            <div class="col-10 pl-0 ext-muted">
+              {{ site.data.labels.footer_text_trial }}
+              <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-lg-between mb-4">
+          <div class="col-lg-7 mb-4">
+            <div class="row">
+              <div class="col-2 justify-content-center align-self-center d-flex">{%- include icons/cc.svg width="50" height="50" -%}</div>
+              <div class="col-10 pl-0 text-muted">
+                Увесь вміст доступний за ліцензією <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.uk" class="font-weight-bold" rel="nofollow">Creative Commons Attribution 4.0 International license</a>, якщо не зазначено інше
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-xl-4">
+            <div class="media d-flex align-items-center align-self-center">
+              {%- include icons/t3.svg width="14" height="14" -%}
+              <div class="media-body ml-1">
+                <a href="{{ site.developer.website }}" target="_blank" rel="nofollow">{{ site.developer.name }}</a>
+                <span>{{ site.data.labels.footer_developer }}</span>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</footer>
