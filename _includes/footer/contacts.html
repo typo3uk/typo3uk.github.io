@@ -12,7 +12,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {{ contact[include.legal] }}
+      {%- include footer/text.html legal=include.legal -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -24,7 +24,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {{ contact[include.legal] }}
+      {%- include footer/text.html legal=include.legal -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -37,7 +37,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {{ contact[include.legal] }}
+      {%- include footer/text.html legal=include.legal -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -49,7 +49,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {{ contact[include.legal] }}
+      {%- include footer/text.html legal=include.legal -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -61,7 +61,7 @@
     {%- elsif include.legal == "email" -%}
       {%- include footer/email.html legal=include.legal -%}
     {%- else -%}
-      {%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}<span class="text-muted">&nbsp;немає&nbsp;даних</span>{%- endif -%}
+      {%- include footer/text.html legal=include.legal -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}

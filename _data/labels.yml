@@ -17,6 +17,9 @@ footer_text_trial: >
 footer_text_license:
 footer_developer: >
   - Розробник
+no_data: немає даних
+no_number: немає номера
+no_email: немає пошти
 #
 # Words
 #

@@ -1,14 +1,1 @@
-{%- if contact[include.legal] -%}<a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>{%- else -%}<span class="text-muted">немає&nbsp;номера</span>{%- endif -%}
-
-{% comment %}
-
-{%- else -%}
-<a href="tel:+38{{ site.contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.contact[include.legal] | replace: " ", "&nbsp;" }}</a>
-
-
-{%- if page.legal[include.legal][include.type] -%}
-<a href="tel:+38{{ page.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ page.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
-{%- else -%}
-<a href="tel:+38{{ site.legal[include.legal][include.type] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ site.legal[include.legal][include.type] | replace: " ", "&nbsp;" }}</a>
-{%- endif -%}
-{% endcomment %}
+{%- if contact[include.legal] -%}<a href="tel:+38{{ contact[include.legal] | strip | remove: '(' | remove: ')' | remove: ' ' }}">{{ contact[include.legal] | replace: " ", "&nbsp;" }}</a>{%- else -%}<span class="text-muted">{{ site.data.labels.no_number }}</span>{%- endif -%}

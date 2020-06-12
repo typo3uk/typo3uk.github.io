@@ -1,0 +1,1 @@
+{%- if contact[include.legal] -%}{{ contact[include.legal] }}{%- else -%}<span class="text-muted">{{ site.data.labels.no_data }}</span>{%- endif -%}
