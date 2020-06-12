@@ -29,7 +29,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- if size != 6 or size != 7 -%}
+{%- if size != 6 and size != 7 -%}
   {%- for contact in district -%}
     {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
       {%- if size == 5 and page.url contains "village" -%}
