@@ -45,7 +45,7 @@ layout: default
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h2 class="card-title">{% if isCityTown == true %}{{ page.council.title }} {{ site.data.labels.miska }} {{ site.data.labels.rada }}{% else %}{{ page.council.title }} {{ site.data.labels.rayonna }} {{ site.data.labels.rada }}{% endif %}</h2>
+                  <h2 class="card-title">{{ page.council.title }} {% if isCityTown == true %}{{ site.data.labels.miska }}{% elsif isVillage == true %}{% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna }}{% else %}{{ site.data.labels.silska }}{% endif %}{% else %}{{ site.data.labels.rayonna }}{% endif %} {{ site.data.labels.rada }}</h2>
                   <p class="card-text">{{ page.council.description }}</p>
                 </div>
               </div>
