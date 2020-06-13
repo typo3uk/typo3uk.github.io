@@ -1,5 +1,5 @@
 ---
-title: Writing jekyll post twelve district solotvyn rada
+title: Новина від Солотвинської селищної ради
 date: 2020-06-12
 ---
 
