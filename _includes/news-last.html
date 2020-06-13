@@ -1,6 +1,6 @@
 {%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
 
-{%- assign articles = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.path contains "decisions" and i.path contains "village" -%}{%- assign articles = articles | push:i -%}{%- endunless -%}{%- endfor -%}
+{%- assign articles = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "village" -%}{%- assign articles = articles | push:i -%}{%- endunless -%}{%- endfor -%}
 
 {%- if include.f == "r" -%}
 
