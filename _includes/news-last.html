@@ -1,6 +1,8 @@
 {%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}
 
-{%- for article in news limit:include.num -%}
+{%- assign newsr = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" and i.url contains "village" -%}{%- assign newsr = newsr | push:i -%}{%- endunless -%}{%- endfor -%}
+
+{%- for article in news[include.f] limit:include.num -%}
   {%- if forloop.first -%}
   <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
   {%- endif -%}
