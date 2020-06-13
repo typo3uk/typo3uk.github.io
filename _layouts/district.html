@@ -23,7 +23,7 @@ layout: default
                 {%- if isCityTown == true -%}
                   {{ site.data.labels.city }}
                 {%- elsif isVillage == true -%}
-                  село
+                  село - {{ page.title | split: ' ' | first | downcase }}
                 {%- else -%}
                   {{ site.data.labels.district }}
                 {%- endif -%}
