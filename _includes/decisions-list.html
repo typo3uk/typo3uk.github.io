@@ -1,4 +1,4 @@
-{%- assign decisions = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
+{%- assign decisions = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "village" or i.url contains "news" -%}{%- assign decisions = decisions | push:i -%}{%- endunless -%}{%- endfor -%}
 {%- for decision in decisions -%}
   {%- if forloop.first -%}
   <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
