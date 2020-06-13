@@ -5,7 +5,7 @@
 {%- assign village = '' | split:'' -%}{%- for i in site.data.contacts -%}{%- if i.type contains "village" -%}{%- assign village = village | push:i -%}{%- endif -%}{%- endfor -%}
 {%- assign url = page.url | split: "/" -%}{%- assign size = url | size -%}
 
-{%- if size != 6 -%}
+{%- if size != 8 -%}
   {%- for contact in region -%}
     {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
       {%- if include.legal contains "phone" -%}
