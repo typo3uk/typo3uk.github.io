@@ -28,7 +28,7 @@ layout: default
               {%- elsif isCityTown == true and isVillage == false -%}
                 {{ site.data.labels.city }}
               {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
-                область
+                {{ site.data.labels.oblast }}
               {%- else -%}
                 {{ site.data.labels.district }}
               {%- endif -%}
@@ -42,6 +42,8 @@ layout: default
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
               {% elsif isCityTown == true %}
                 {{ site.data.labels.miska | capitalize }}
+              {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                {{ site.data.labels.oblasna | capitalize }}
               {% else %}
                 {{ site.data.labels.rayonna | capitalize }}
               {% endif %} {{ site.data.labels.rada }}
@@ -55,6 +57,8 @@ layout: default
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}
               {% elsif isCityTown == true %}
                 {{ site.data.labels.miskyy | capitalize }}
+              {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                {{ site.data.labels.oblasnyy | capitalize }}
               {% else %}
                 {{ site.data.labels.rayonnyy | capitalize }}
               {% endif %} {{ site.data.labels.ustriy }}
