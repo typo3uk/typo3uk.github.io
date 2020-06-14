@@ -34,29 +34,29 @@ layout: default
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-              {%- if isCityTown == true and isVillage == true -%}
+              {% if isCityTown == true and isVillage == true %}
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
-              {%- elsif isVillage == true -%}
+              {% elsif isVillage == true %}
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
-              {%- slsif isCityTown == true -%}
+              {% slsif isCityTown == true %}
                 {{ site.data.labels.miska | capitalize }}
-              {%- else -%}
+              {% else %}
                 {{ site.data.labels.rayonna | capitalize }}
-              {%- endif -%}
+              {% endif %}
               &nbsp;{{ site.data.labels.rada }}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-              {%- if isCityTown == true and isVillage == true -%}
+              {% if isCityTown == true and isVillage == true %}
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}
-              {%- elsif isVillage == true -%}
+              {% elsif isVillage == true %}
                 {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}
               {%- if isCityTown == true -%}
                 {{ site.data.labels.miskyy | capitalize }}
-              {%- else -%}
+              {% else %}
                 {{ site.data.labels.rayonnyy | capitalize }}
-              {%- endif -%}
+              {% endif %}
               &nbsp;{{ site.data.labels.ustriy }}
             </a>
           </li>
