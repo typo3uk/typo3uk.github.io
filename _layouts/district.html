@@ -26,6 +26,8 @@ layout: default
                 {{ site.data.labels.city }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
               {%- elsif isVillage == true -%}
                 {{ type }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
+              {%- elsif isCityTown == true and isVillage == true -%}
+                {{ type }}
               {%- else -%}
                 {{ site.data.labels.district }}
               {%- endif -%}
