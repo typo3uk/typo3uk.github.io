@@ -35,9 +35,9 @@ layout: default
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
               {%- if isCityTown == true and isVillage == true -%}
-                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchna | capitalize }}{%- else -%}{{ site.data.labels.silska | capitalize }}{%- endif -%}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
               {%- elsif isVillage == true -%}
-                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchna | capitalize }}{%- else -%}{{ site.data.labels.silska | capitalize }}{%- endif -%}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
               {%- slsif isCityTown == true -%}
                 {{ site.data.labels.miska | capitalize }}
               {%- else -%}
