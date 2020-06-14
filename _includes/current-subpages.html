@@ -40,11 +40,11 @@
 
   {%- assign villages = '' | split:'' -%}
   {%- assign pages = site.pages | sort: 'path' | reverse -%}
+  {%- if isCityTown == true -%}{%- assign nsize = 6 -%}{%- else -%}{%- assign nsize = 5 -%}{%- endif -%}
   {%- for i in pages -%}
     {% assign parts = i.url | split: '/' %}
     {% assign depth = parts | size %}
-    {% assign size = 5 %}
-    {%- if i.dir contains include.dir and depth == 5 -%}
+    {%- if i.dir contains include.dir and depth == nsize -%}
       {%- assign villages = villages | push:i -%}
     {%- endif -%}
   {%- endfor -%}
