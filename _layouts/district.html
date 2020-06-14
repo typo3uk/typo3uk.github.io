@@ -48,7 +48,15 @@ layout: default
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miskyy | capitalize }}{%- elsif isVillage == true -%}{% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}{% else %}{{ site.data.labels.rayonnyy | capitalize }}{% endif %} {{ site.data.labels.ustriy }}
+              {% if isCityTown == true and isVillage == true %}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}
+              {% elsif isVillage == true %}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}
+              {% elsif isCityTown == true %}
+                {{ site.data.labels.miskyy | capitalize }}
+              {% else %}
+                {{ site.data.labels.rayonnyy | capitalize }}
+              {% endif %} {{ site.data.labels.ustriy }}
             </a>
           </li>
         </ul>
