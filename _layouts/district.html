@@ -22,12 +22,12 @@ layout: default
             <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">
               {{ site.data.labels.about | capitalize }}
               &nbsp;
-              {%- if isCityTown == true -%}
-                {{ site.data.labels.city }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
-              {%- elsif isVillage == true -%}
-                {{ type }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
               {%- elsif isCityTown == true and isVillage == true -%}
                 {{ type }}
+              {%- elsif isVillage == true -%}
+                {{ type }}
+              {%- if isCityTown == true and isVillage == false -%}
+                {{ site.data.labels.city }}
               {%- else -%}
                 {{ site.data.labels.district }}
               {%- endif -%}
