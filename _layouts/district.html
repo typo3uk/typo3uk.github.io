@@ -163,15 +163,32 @@ layout: default
         </div>
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
+            У підпорядковані
             {% if isCityTown == true and isVillage == true %}
               {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
             {% elsif isVillage == true %}
               {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
             {% elsif isCityTown == true %}
               {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.mista }}
+            {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+              {{ site.data.labels.oblasnoyi }}
             {% else %}
               {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.rayonu }}
             {% endif %}
+            {{ site.data.labels.rady }
+{% comment %}
+            {% if isCityTown == true and isVillage == true %}
+              {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
+            {% elsif isVillage == true %}
+              {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
+            {% elsif isCityTown == true %}
+              {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.mista }}
+            {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+              {{ site.data.labels.oblasti }}
+            {% else %}
+              {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.rayonu }}
+            {% endif %}
+{% endcomment %}
           </h3>
           {%- assign dir = page.dir | append: 'village' | append: '/' -%}
           {%- include current-subpages.html dir=dir page="village" -%}
