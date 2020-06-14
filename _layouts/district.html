@@ -84,6 +84,8 @@ layout: default
                       {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna }}{% else %}{{ site.data.labels.silska }}{% endif %}
                     {% elsif isCityTown == true %}
                       {{ site.data.labels.miska }}
+                    {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                      {{ site.data.labels.oblasna }}
                     {% else %}
                       {{ site.data.labels.rayonna }}
                     {% endif %} {{ site.data.labels.rada }}
@@ -113,6 +115,8 @@ layout: default
                   {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %}
                 {% elsif isCityTown == true %}
                   {{ site.data.labels.miskoyi }}
+                {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                  {{ site.data.labels.oblasnoyi }}
                 {% else %}
                   {{ site.data.labels.rayonnoyi }}
                 {% endif %}
@@ -128,6 +132,8 @@ layout: default
                   {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %}
                 {% elsif isCityTown == true %}
                   {{ site.data.labels.miskoyi }}
+                {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                  {{ site.data.labels.oblasnoyi }}
                 {% else %}
                   {{ site.data.labels.rayonnoyi }}
                 {% endif %}
@@ -143,6 +149,8 @@ layout: default
                   {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %}
                 {% else isCityTown == true %}
                   {{ site.data.labels.miskoyi }}
+                {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                  {{ site.data.labels.oblasnoyi }}
                 {% else %}
                   {{ site.data.labels.rayonnoyi }}
                 {% endif %}
