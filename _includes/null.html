@@ -1,4 +1,19 @@
 
+
+{% comment %}
+    {% if isCityTown == true and isVillage == true %}
+      {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
+    {% elsif isVillage == true %}
+      {{ site.data.labels.ustriy | capitalize }} {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshcha }}{% else %}{{ site.data.labels.sela }}{% endif %}
+    {% elsif isCityTown == true %}
+      {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.mista }}
+    {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+      {{ site.data.labels.oblasti }}
+    {% else %}
+      {{ site.data.labels.villages_and | capitalize }} {{ site.data.labels.rayonu }}
+    {% endif %}
+{% endcomment %}
+
 {% comment %}
 
 {%- for decisions in site.categories.bohorodchany %}
