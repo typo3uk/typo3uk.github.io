@@ -181,7 +181,7 @@ layout: default
             {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
               {{ site.data.labels.oblasti }} {{ site.data.labels.ta }} {{ site.data.labels.oblasnoyi }}
             {% else %}
-              {{ site.data.labels.rayonnoyi }}
+              {{ site.data.labels.rayonu }} {{ site.data.labels.ta }} {{ site.data.labels.rayonnoyi }}
             {% endif %}
             {{ site.data.labels.rady }}
           </h3>
