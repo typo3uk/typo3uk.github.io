@@ -43,7 +43,7 @@
   {%- for i in pages -%}
     {% assign parts = i.url | split: '/' %}
     {% assign depth = parts | size %}
-    {%- if i.dir contains include.dir and depth == 5 -%}
+    {%- if i.dir contains include.dir and depth == 6 -%}
       {%- assign villages = villages | push:i -%}
     {%- endif -%}
   {%- endfor -%}
