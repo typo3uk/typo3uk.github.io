@@ -49,6 +49,7 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
+          {%- if page.division and page.division != "0" -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
               {% if isCityTown == true and isVillage == true %}
@@ -64,6 +65,7 @@ layout: default
               {% endif %} {{ site.data.labels.ustriy }}
             </a>
           </li>
+          {%- endif -%}
         </ul>
       </nav>
       <div class="tab-content" id="districtContent">
@@ -161,6 +163,7 @@ layout: default
             </div>
           </div>
         </div>
+        {%- if page.division and page.division != "0" -%}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
             {{ site.data.labels.subordinate | capitalize }}
@@ -188,6 +191,7 @@ layout: default
           {%- assign dir = page.dir | append: 'village' | append: '/' -%}
           {%- include current-subpages.html dir=dir page="village" -%}
         </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
