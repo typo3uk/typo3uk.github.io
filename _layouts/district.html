@@ -74,7 +74,7 @@ layout: default
           <div class="card border-0 mb-3">
             <div class="row no-gutters">
               <div class="col-md-4">
-                {%- capture folder -%}{{ page.path }}images/rada{%- endcapture -%}
+                {%- capture folder -%}{{ page.dir }}images/rada{%- endcapture -%}
                 {%- include image-slider.html folder=folder group="rada" width="365" height="250" -%}
               </div>
               <div class="col-md-8">
