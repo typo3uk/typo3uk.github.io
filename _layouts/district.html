@@ -132,10 +132,10 @@ layout: default
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="mt-2 mb-4">{{ site.data.labels.deputies | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}
                 {% if isCityTown == true and isVillage == true %}
-                  {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %} 
+                  {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %}
                 {% elsif isVillage == true %}
                   {% if type == site.data.labels.selishche %}{{ site.data.labels.selyshchnoyi }}{% else %}{{ site.data.labels.silskoyi }}{% endif %}
-                {% if isCityTown == true %}
+                {% else isCityTown == true %}
                   {{ site.data.labels.miskoyi }}
                 {% else %}
                   {{ site.data.labels.rayonnoyi }}
