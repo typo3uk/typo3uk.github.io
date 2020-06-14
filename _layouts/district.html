@@ -23,7 +23,7 @@ layout: default
               {{ site.data.labels.about | capitalize }}
               &nbsp;
               {%- if isCityTown == true -%}
-                {{ site.data.labels.city }}
+                {{ site.data.labels.city }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
               {%- elsif isVillage == true -%}
                 {{ type }} - isVillage: {{isVillage}} - isCityTown: {{isCityTown}}
               {%- else -%}
