@@ -27,6 +27,8 @@ layout: default
                 {{ type }}
               {%- elsif isCityTown == true and isVillage == false -%}
                 {{ site.data.labels.city }}
+              {%- elsif page.url contains "region" and isCityTown == false and isVillage == false -%}
+                область
               {%- else -%}
                 {{ site.data.labels.district }}
               {%- endif -%}
