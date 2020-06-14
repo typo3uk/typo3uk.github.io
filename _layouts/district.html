@@ -35,7 +35,15 @@ layout: default
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miska | capitalize }}{%- elsif isVillage == true -%}{% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}{% else %}{{ site.data.labels.rayonna | capitalize }}{% endif %} {{ site.data.labels.rada }}
+              {% if isCityTown == true and isVillage == true %}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
+              {% elsif isVillage == true %}
+                {% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}
+              {% elsif isCityTown == true %}
+                {{ site.data.labels.miska | capitalize }}
+              {% else %}
+                {{ site.data.labels.rayonna | capitalize }}
+              {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
           <li class="nav-item" role="presentation">
