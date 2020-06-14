@@ -2,7 +2,7 @@
 # Region
 #
 - type: region
-  item: ivano-frankivsk
+  item: ivano-frankivska
   name: Івано-Франківська обласна рада
   address: 76004, м. Івано-Франківськ, вул.&nbsp;М.&nbsp;Грушевського,&nbsp;21
   phone_main: (034) 255 26 16
@@ -15,7 +15,7 @@
 # Region / City
 #
 - type: city
-  item: stanyslaviv
+  item: ivano-frankivsk
   name: Івано-Франківська міська рада
   address: 76004, м. Івано-Франківськ, вул. М. Грушевського, 21
   phone_main: (034) 255 65 15
