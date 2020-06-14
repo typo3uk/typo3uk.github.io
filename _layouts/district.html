@@ -20,8 +20,7 @@ layout: default
         <ul class="nav nav-tabs" id="districtTab" role="tablist">
           <li class="nav-item" role="presentation">
             <a class="nav-link active" id="district-tab" data-toggle="tab" href="#district" role="tab" aria-controls="district" aria-selected="true">
-              {{ site.data.labels.about | capitalize }}
-              &nbsp;
+              {{ site.data.labels.about | capitalize }}&nbsp;
               {%- if isCityTown == true and isVillage == true -%}
                 {{ type }}
               {%- elsif isVillage == true -%}
@@ -35,12 +34,30 @@ layout: default
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="rada-tab" data-toggle="tab" href="#rada" role="tab" aria-controls="rada" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miska | capitalize }}{%- elsif isVillage == true -%}{% if type == site.data.labels.selishche %}{{ site.data.labels.selishchna | capitalize }}{% else %}{{ site.data.labels.silska | capitalize }}{% endif %}{% else %}{{ site.data.labels.rayonna | capitalize }}{% endif %} {{ site.data.labels.rada }}
+              {%- if isCityTown == true and isVillage == true -%}
+                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchna | capitalize }}{%- else -%}{{ site.data.labels.silska | capitalize }}{%- endif -%}
+              {%- elsif isVillage == true -%}
+                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchna | capitalize }}{%- else -%}{{ site.data.labels.silska | capitalize }}{%- endif -%}
+              {%- slsif isCityTown == true -%}
+                {{ site.data.labels.miska | capitalize }}
+              {%- else -%}
+                {{ site.data.labels.rayonna | capitalize }}
+              {%- endif -%}
+              &nbsp;{{ site.data.labels.rada }}
             </a>
           </li>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
-              {% if isCityTown == true %}{{ site.data.labels.miskyy | capitalize }}{%- elsif isVillage == true -%}{% if type == site.data.labels.selishche %}{{ site.data.labels.selishchnyy | capitalize }}{% else %}{{ site.data.labels.silskyy | capitalize }}{% endif %}{% else %}{{ site.data.labels.rayonnyy | capitalize }}{% endif %} {{ site.data.labels.ustriy }}
+              {%- if isCityTown == true and isVillage == true -%}
+                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchnyy | capitalize }}{%- else -%}{{ site.data.labels.silskyy | capitalize }}{%- endif -%}
+              {%- elsif isVillage == true -%}
+                {%- if type == site.data.labels.selishche -%}{{ site.data.labels.selishchnyy | capitalize }}{%- else -%}{{ site.data.labels.silskyy | capitalize }}{%- endif -%}
+              {%- if isCityTown == true -%}
+                {{ site.data.labels.miskyy | capitalize }}
+              {%- else -%}
+                {{ site.data.labels.rayonnyy | capitalize }}
+              {%- endif -%}
+              &nbsp;{{ site.data.labels.ustriy }}
             </a>
           </li>
         </ul>
