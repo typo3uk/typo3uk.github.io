@@ -58,12 +58,12 @@
             <div class="card-body">
               <h5 class="card-title">
                 <a href="{{ village.url }}">
-                  {%- if village.navtitle -%}{{ village.navtitle }}{%- else -%}{{ village.title }}{%- endif -%} - {{isCityTown}}
+                  {%- if village.navtitle -%}{{ village.navtitle }}{%- else -%}{{ village.title }}{%- endif -%}
                 </a>
               </h5>
               {%- if village.teaser -%}
                 <p class="card-text mb-1">
-                  {{ village.teaser | strip_html | truncate: 110 }} - {{isCityTown}}
+                  {{ village.teaser | strip_html | truncate: 110 }}
                 </p>
               {%- endif -%}
             </div>
