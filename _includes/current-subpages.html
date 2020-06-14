@@ -43,7 +43,8 @@
   {%- for i in pages -%}
     {% assign parts = i.url | split: '/' %}
     {% assign depth = parts | size %}
-    {%- if i.dir contains include.dir and depth == 6 -%}
+    {% assign size = 5 %}
+    {%- if i.dir contains include.dir and depth == 5 -%}
       {%- assign villages = villages | push:i -%}
     {%- endif -%}
   {%- endfor -%}
@@ -62,6 +63,7 @@
               </h5>
               {%- if village.teaser -%}
                 <p class="card-text mb-1">
+                  {{isCityTown}}<br>
                   {{ village.teaser | strip_html | truncate: 110 }}
                 </p>
               {%- endif -%}
