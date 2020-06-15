@@ -25,7 +25,7 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
-  <div class="carousel-inner">
+  <div class="carousel-inner {{include.indicator}}">
   {%- endif -%}
   <div class="carousel-item px-0{% if forloop.first %} active{% endif %}" data-itemno="{%- increment counter -%}">
     <a href="{{ file.path | url_decode | relative_url }}" class="lightbox" title="{{ attribute_title }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
