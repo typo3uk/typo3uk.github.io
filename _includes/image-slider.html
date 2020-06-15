@@ -1,4 +1,4 @@
-{%- capture default -%}assets/images/default-{{ include.group }}.png{%- endcapture -%}
+{%- capture default -%}/assets/images/default-{{ include.group }}.png{%- endcapture -%}
 {%- assign files = '' | split:'' -%}
 {%- for i in site.static_files -%}
   {%- if i.path contains include.folder -%}
@@ -14,6 +14,17 @@
 {%- for file in files -%}
   {%- if forloop.first -%}
 <div id="carousel{{ include.group }}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
+  {%- if include.indicator == 1 -%}
+    {%- for indicator in files -%}
+      {%- if forloop.first -%}
+      <ol class="carousel-indicators">
+      {%- endif -%}
+        <li data-target="#carousel{{ include.group }}" data-slide-to="{%- increment counter -%}"{% if forloop.first %} class="active"{% endif %}></li>
+      {%- if forloop.last -%}
+      </ol>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
   <div class="carousel-inner">
   {%- endif -%}
   <div class="carousel-item px-0{% if forloop.first %} active{% endif %}" data-itemno="{%- increment counter -%}">
