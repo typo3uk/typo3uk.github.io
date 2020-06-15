@@ -5,7 +5,6 @@
   {%- endif -%}
   <div class="col mb-4">
     <div class="card h-100">
-      {% comment %}<img src="/images/deputies.png" class="card-img-top" alt="image-news">{% endcomment %}
       <div class="card-body">
         <p class="card-text">
           <small class="text-muted">
@@ -28,7 +27,7 @@
     </div>
   </div>
   {%- endif -%}
-{% else %}
+{%- else -%}
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="alert alert-info" role="alert">{{ site.data.labels.news_list_empty }}</div>
