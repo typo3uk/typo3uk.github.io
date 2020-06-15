@@ -1,3 +1,5 @@
+{% comment %}
+
 {%- for page in site.pages -%}
   {%- if page.url contains include.dir -%}
     {%- if include.legal == "name" -%}
@@ -29,3 +31,5 @@
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
+
+{% endcomment %}

@@ -20,7 +20,7 @@
       <div class="col mb-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Нещодавно додані</h5>
+            <h5 class="card-title">{{ site.data.labels.recently_added }}</h5>
             <div class="card-text">{%- include home/recently.html region="all" -%}</div>
           </div>
         </div>
@@ -46,6 +46,3 @@
   {%- endfor -%}
 </div>
 {%- endif -%}
-
-{%- comment -%}
-{%- endcomment -%}

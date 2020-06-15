@@ -1,3 +1,5 @@
+{% comment %}
+
 {% if isCityTown == true %}
   {%- if page.council.title -%}
     {{ page.council.title }} міська&nbsp;рада
@@ -23,3 +25,5 @@
     {{ site.legal[include.legal] }}
   {%- endif -%}
 {% endif %}
+
+{% endcomment %}

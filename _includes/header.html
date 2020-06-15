@@ -1,6 +1,6 @@
 <header>
   <div class="container pl-3 pt-4 pr-3 pb-0 header-bg">
-    <a class="sr-only sr-only-focusable" href="#page-content"><span>Перейти до основного вмісту</span></a>
+    <a class="sr-only sr-only-focusable" href="#page-content"><span>{{ site.data.labels.skippy_text }}</span></a>
     <div class="row">
       <div class="col-md-12 hidden-lg hidden-md navbar-fixed-top affix-top">
       </div>
@@ -8,17 +8,17 @@
         <a class="main-logo ml-2" data-toggle="modal" data-target="#govModal" href="#govModal" aria-haspopup="true" aria-expanded="false">
           <div class="icon"></div>
           <div class="main-logo_text">
-            <span>gov.ua</span>
-            <span class="light">Державні сайти України</span>
+            <span>{{ site.data.labels.gov_ua }}</span>
+            <span class="light">{{ site.data.labels.gov_ua_name }}</span>
           </div>
         </a>
       </div>
       <div class="col-md-6 text-center">
         <a href="/" class="main-title">
           <div class="icon mt-3 mt-md-0 mt-lg-0">{%- include icons/trezub.svg width="30" height="50" -%}</div>
-          <div class="h1 mt-3">Представни́цькі о́ргани місце́вого самоврядува́ння</div>
-          <div class="light">Єдиний веб-портал представни́цьких&nbsp;органів&nbsp;влади</div>
-          <div class="light">Івано-Франківська область</div>
+          <div class="h1 mt-3">{{ site.data.labels.hat_line_1 }}</div>
+          <div class="light">{{ site.data.labels.hat_line_2 }}</div>
+          <div class="light">{{ site.data.labels.hat_line_3 }}</div>
         </a>
       </div>
       <div class="col-md-3">
@@ -31,11 +31,3 @@
     </div>
   </div>
 </header>
-
-{% comment %}
-
-{% include header/skippy.html %}
-
-{% include header/navbar.html %}
-
-{% endcomment %}
