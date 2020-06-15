@@ -45,5 +45,5 @@
 </div>
   {%- endif -%}
 {%- else -%}
-<img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ default }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-default" />
+<img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ default }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=png&q=50&t=square" alt="image-default" />
 {%- endfor -%}
