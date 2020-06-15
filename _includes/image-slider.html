@@ -1,3 +1,4 @@
+{%- capture default -%}assets/images/default-{{ include.group }}.png{%- endcapture -%}
 {%- assign files = '' | split:'' -%}
 {%- for i in site.static_files -%}
   {%- if i.path contains include.folder -%}
@@ -10,10 +11,9 @@
   {%- endif -%}
 {%- endfor -%}
 
-
 {%- for file in files -%}
   {%- if forloop.first -%}
-<div id="carousel{{include.group}}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
+<div id="carousel{{ include.group }}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
   <div class="carousel-inner">
   {%- endif -%}
   <div class="carousel-item px-0{% if forloop.first %} active{% endif %}" data-itemno="{%- increment counter -%}">
@@ -33,4 +33,6 @@
   </a>
 </div>
   {%- endif -%}
+{%- else -%}
+<img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ default }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-default" />
 {%- endfor -%}
