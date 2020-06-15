@@ -1,4 +1,4 @@
-{{ include.date | date: "%-d" }}
+{{ include.date | date: "%-d" }}&nbsp;
 {%- assign m = include.date | date: "%-m" -%}
 {%- case m -%}
   {%- when '1' -%}січня
@@ -14,4 +14,4 @@
   {%- when '11' -%}листопада
   {%- when '12' -%}грудня
 {%- endcase -%}
-{{ include.date | date: "%Y" }}
+&nbsp;{{ include.date | date: "%Y" }}&nbsp;{{ site.data.labels.roku }}
