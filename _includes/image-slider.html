@@ -2,24 +2,26 @@
 {%- for i in site.static_files -%}
   {%- if i.path contains include.folder -%}
     {%- if i.extname == '.jpg' or i.extname == '.jpeg' or i.extname == '.JPG' or i.extname == '.JPEG' -%}
+      {%- assign sizename = i.basename | size -%}
+      {%- assign attribute_alt = i.basename | slice: 2, sizename -%}
+      {%- assign attribute_title = attribute_alt | replace: '-', ' ' | capitalize -%}
       {%- assign files = files | push:i -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
 
+
+{%- for file in files -%}
+  {%- if forloop.first -%}
 <div id="carousel{{include.group}}" class="carousel carousel-small carousel-fade slide" data-interval="5000" data-wrap="true" data-ride="carousel">
   <div class="carousel-inner">
-  {%- for file in files -%}
-    {%- assign number = file.basename | slice: 0 -%}
-    {%- assign sizename = file.basename | size -%}
-    {%- assign attribute_alt = file.basename | slice: 2, sizename -%}
-    {%- assign attribute_title = attribute_alt | replace: '-', ' ' | capitalize -%}
-    <div class="carousel-item px-0{% if number == '1' %} active{% endif %}" data-itemno="{{ number }}">
-      <a href="{{ file.path | url_decode | relative_url }}" class="lightbox" title="{{ attribute_title }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
-        <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-{{ attribute_alt }}" />
-      </a>
-    </div>
-  {%- endfor -%}
+  {%- endif -%}
+  <div class="carousel-item px-0{% if forloop.first %} active{% endif %}" data-itemno="{%- increment counter -%}">
+    <a href="{{ file.path | url_decode | relative_url }}" class="lightbox" title="{{ attribute_title }}" data-lightbox-width="1100" data-lightbox-height="800" rel="lightbox-group-{{ include.group }}">
+      <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-{{ attribute_alt }}" />
+    </a>
+  </div>
+  {%- if forloop.last -%}
   </div>
   <a class="left carousel-control carousel-control-prev" href="#carousel{{include.group}}" role="button" data-slide="prev">
     <span class="carousel-control-icon carousel-control-prev-icon" aria-hidden="true"></span>
@@ -30,6 +32,9 @@
     <span class="sr-only">{{site.data.labels.next}}</span>
   </a>
 </div>
+  {%- endif -%}
+{%- endfor -%}
+
 
 {% comment %}
 
