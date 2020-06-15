@@ -5,7 +5,7 @@
     {%- if i.extname == '.jpg' or i.extname == '.jpeg' or i.extname == '.JPG' or i.extname == '.JPEG' -%}
       {%- assign sizename = i.basename | size -%}
       {%- assign attribute_alt = i.basename | slice: 2, sizename -%}
-      {%- assign attribute_title = attribute_alt | replace: '-', ' ' | capitalize -%}
+      {%- assign attribute_title = attribute_alt | replace: '_', ' ' | capitalize -%}
       {%- assign files = files | push:i -%}
     {%- endif -%}
   {%- endif -%}
