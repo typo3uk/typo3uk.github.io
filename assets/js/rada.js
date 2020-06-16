@@ -1,16 +1,14 @@
-$(function() {
-  $('#table').bootstrapTable({
-    columns: [{
-      field: 'property',
-      formatter: function (value, row) {
-        return [row.property, row.rooms, row.area].join('+')
-      }
-    }]
-  })
-})
-
-function propertyFormatter(value, row) {
-  return [row.rooms, row.area].join('+')
+function propertyFormatter(key, value) {
+  const title = {
+    'property': 'Квартира',
+    'rooms': 'Кімнат',
+    "area": "Площа"
+  }
+  return [
+    title[property],
+    title[rooms] + value,
+    title[area] + value
+  ].join(', ')
 }
 
 function detailFormatter(index, row) {
