@@ -1,7 +1,7 @@
 function detailFormatter(index, row) {
   var row = ({
       "№": row.id,
-      "Квартира": row.apartmente,
+      "Квартира": row.apartment,
       "Кімнат": row.rooms,
       "Площа": row.area,
       "Ціна": row.price
