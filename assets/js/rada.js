@@ -1,10 +1,10 @@
 function detailFormatter(index, row) {
   var row = ({
-      №: row.id,
-      Квартира: row.apartmente,
-      Кімнат: row.rooms,
-      Площа: row.area,
-      Ціна: row.price
+      "№": row.id,
+      "Квартира": row.apartmente,
+      "Кімнат": row.rooms,
+      "Площа": row.area,
+      "Ціна": row.price
   })
   var html = []
   $.each(row, function (key, value) {
