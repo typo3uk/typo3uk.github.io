@@ -2,127 +2,148 @@
     {
         "id": 0,
         "apartment": "Item 0",
-        "price": "$0",
-        "amount": 3
+        "rooms": 1,
+        "area": 36,
+        "price": "$12000"
     },
     {
         "id": 1,
         "apartment": "Item 1",
-        "price": "$1",
-        "amount": 4
+        "rooms": 3,
+        "area": 69,
+        "price": "$100000"
     },
     {
         "id": 2,
         "apartment": "Item 2",
-        "price": "$2",
-        "amount": 8
+        "rooms": 5,
+        "area": 200,
+        "price": "$200000"
     },
     {
         "id": 3,
         "apartment": "Item 3",
-        "price": "$3",
-        "amount": 2
+        "rooms": 1,
+        "area": 30,
+        "price": "$10000"
     },
     {
         "id": 4,
         "apartment": "Item 4",
-        "price": "$4",
-        "amount": 90
+        "rooms": 2,
+        "area": 90,
+        "price": "$40000"
     },
     {
         "id": 5,
         "apartment": "Item 5",
-        "price": "$5",
-        "amount": 2
+        "rooms": 1,
+        "area": 29,
+        "price": "$15000"
     },
     {
         "id": 6,
         "apartment": "Item 6",
-        "price": "$6",
-        "amount": 3
+        "rooms": 3,
+        "area": 73,
+        "price": "$69000"
     },
     {
         "id": 7,
         "apartment": "Item 7",
-        "price": "$7",
-        "amount": 7
+        "rooms": 2,
+        "area": 70,
+        "price": "$75000"
     },
     {
         "id": 8,
         "apartment": "Item 8",
-        "price": "$8",
-        "amount": 39
+        "rooms": 2,
+        "area": 49,
+        "price": "$80000"
     },
     {
         "id": 9,
         "apartment": "Item 9",
-        "price": "$9",
-        "amount": 78
+        "rooms": 1,
+        "area": 78,
+        "price": "$90000"
     },
     {
         "id": 10,
         "apartment": "Item 10",
-        "price": "$10",
-        "amount": 30
+        "rooms": 3,
+        "area": 130,
+        "price": "$100000"
     },
     {
         "id": 11,
         "apartment": "Item 11",
-        "price": "$11",
-        "amount": 32
+        "rooms": 1,
+        "area": 32,
+        "price": "$16000"
     },
     {
         "id": 12,
         "apartment": "Item 12",
-        "price": "$12",
-        "amount": 12
+        "rooms": 4,
+        "area": 120,
+        "price": "$120000"
     },
     {
         "id": 13,
         "apartment": "Item 13",
-        "price": "$13",
-        "amount": 76
+        "rooms": 1,
+        "area": 36,
+        "price": "$13000"
     },
     {
         "id": 14,
         "apartment": "Item 14",
-        "price": "$14",
-        "amount": 10
+        "rooms": 2,
+        "area": 55,
+        "price": "$19000"
     },
     {
         "id": 15,
         "apartment": "Item 15",
-        "price": "$15",
-        "amount": 9
+        "rooms": 1,
+        "area": 49,
+        "price": "$15000"
     },
     {
         "id": 16,
         "apartment": "Item 16",
-        "price": "$16",
-        "amount": 8
+        "rooms": 3,
+        "area": 80,
+        "price": "$160000"
     },
     {
         "id": 17,
         "apartment": "Item 17",
-        "price": "$17",
-        "amount": 1
+        "rooms": 2,
+        "area": 35,
+        "price": "$17000"
     },
     {
         "id": 18,
         "apartment": "Item 18",
-        "price": "$18",
-        "amount": 99
+        "rooms": 1,
+        "area": 25,
+        "price": "$12000"
     },
     {
         "id": 19,
         "apartment": "Item 19",
-        "price": "$19",
-        "amount": 100
+        "rooms": 1,
+        "area": 39,
+        "price": "$19000"
     },
     {
         "id": 20,
         "apartment": "Item 20",
-        "price": "$20",
-        "amount": 109
+        "rooms": 3,
+        "area": 109,
+        "price": "$30000"
     }
 ]
