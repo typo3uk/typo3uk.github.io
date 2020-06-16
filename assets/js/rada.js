@@ -9,6 +9,10 @@ $(function() {
   })
 })
 
+function propertyFormatter(value, row) {
+  return [row.rooms, row.area].join('+')
+}
+
 function detailFormatter(index, row) {
   var html = []
   const title = {
