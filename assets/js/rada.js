@@ -1,3 +1,29 @@
+function init() {
+  $('#table').bootstrapTable('destroy').bootstrapTable({
+    columns: [
+      {
+        field: 'id',
+        title: 'Номер'
+      },
+      {
+        field: 'apartmente',
+        title: 'Квартира'
+      },
+      {
+        field: 'rooms',
+        title: 'Кімнат'
+      },
+      {
+        field: 'area',
+        title: 'Площа'
+      },
+      {
+        field: 'price',
+        title: 'Ціна'
+      }
+    ]
+  })
+}
 function detailFormatter(index, row) {
   var html = []
   $.each(row, function (key, value) {
