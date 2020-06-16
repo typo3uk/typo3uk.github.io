@@ -5,7 +5,7 @@ function propertyFormatter(index, row) {
     'rooms': 'Кімнат',
     "area": "Площа",
   }
-  $.each(row, function (key, value) {
+  $.each(row.property, row.rooms, row.area, function (key, value) {
     html.push('' + title[key] + ': ' + value + '')
   })
   return html.join('')
