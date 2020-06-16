@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "property": "Item 0",
+        "property": "Квартира",
         "rooms": 1,
         "area": 36,
         "price": "$12000",
@@ -10,7 +10,7 @@
     },
     {
         "id": 1,
-        "property": "Item 1",
+        "property": "Кімната",
         "rooms": 3,
         "area": 69,
         "price": "$100000",
@@ -19,7 +19,7 @@
     },
     {
         "id": 2,
-        "property": "Item 2",
+        "property": "Будинок",
         "rooms": 5,
         "area": 200,
         "price": "$200000",
@@ -28,7 +28,7 @@
     },
     {
         "id": 3,
-        "property": "Item 3",
+        "property": "Гараж",
         "rooms": 1,
         "area": 30,
         "price": "$10000",

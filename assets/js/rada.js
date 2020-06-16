@@ -1,14 +1,14 @@
-function propertyFormatter(key, value) {
+function propertyFormatter(index, row) {
+  var html = []
   const title = {
     'property': 'Квартира',
     'rooms': 'Кімнат',
-    "area": "Площа"
+    "area": "Площа",
   }
-  return [
-    title[property],
-    title[rooms] + value,
-    title[area] + value
-  ].join(', ')
+  $.each(row, function (key, value) {
+    html.push('' + title[key] + ': ' + value + '')
+  })
+  return html.join('')
 }
 
 function detailFormatter(index, row) {
