@@ -5,3 +5,8 @@ function detailFormatter(index, row) {
   })
   return html.join('')
 }
+function priceSorter(a, b) {
+  var aa = a.replace('$', '')
+  var bb = b.replace('$', '')
+  return aa - bb
+}
