@@ -1,3 +1,14 @@
+$(function() {
+  $('#table').bootstrapTable({
+    columns: [{
+      field: 'property',
+      formatter: function (value, row) {
+        return [row.property, row.rooms, row.area].join('+')
+      }
+    }]
+  })
+})
+
 function detailFormatter(index, row) {
   var html = []
   const title = {
