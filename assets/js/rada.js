@@ -1,10 +1,12 @@
 
 function propertyFormatter(value, row, index) {
   // return [row.property, row.rooms, row.area].join(', ')
-  return 'Продається ' + row.property + ', кімнат: ' + row.rooms + ', площа: ' + row.area + ' продавець<a href="javascript:void(0)">...</a>';
+  return 'Продається ' + row.property + ', кімнат: ' + row.rooms + ', площа: ' + row.area + ', <a href="javascript:void(0)">продавець...</a>';
 }
 
 function detailFormatter(index, row) {
+  if (index == first) { first = '<span class="row">'; }
+  else if (index == last) { last = '</span>'; }
   var html = []
   const title = {
     'id': 'ID',
@@ -16,7 +18,7 @@ function detailFormatter(index, row) {
     'phone': 'Телефон'
   }
   $.each(row, function (key, value) {
-    html.push('<span class="col"><b>' + title[key] + ':</b> ' + value + '</span>')
+    html.push(first + '<span class="col"><b>' + title[key] + ':</b> ' + value + '</span>' + last)
   })
   return html.join('')
 }
