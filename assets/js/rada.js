@@ -1,6 +1,7 @@
 
-function propertyFormatter(value, row) {
-  return [row.rooms, row.area].join(', ')
+function propertyFormatter(value, row, index) {
+  // return [row.property, row.rooms, row.area].join(', ')
+  return 'Продається' + row.property + ', Кімнат:' + row.rooms + ', Площа:' + row.rooms;
 }
 
 function detailFormatter(index, row) {
