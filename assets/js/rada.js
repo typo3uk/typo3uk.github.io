@@ -23,7 +23,7 @@ $(function() {
       }
     ]
   })
-}
+};
 
 function detailFormatter(index, row) {
   var html = []
