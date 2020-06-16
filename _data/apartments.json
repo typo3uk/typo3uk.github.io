@@ -4,7 +4,7 @@
         "apartment": "Item 0",
         "rooms": 1,
         "area": 36,
-        "price": "$ <a href="#">12000</a>"
+        "price": "$12000"
     },
     {
         "id": 1,
