@@ -18,7 +18,7 @@ function detailFormatter(index, row) {
     'phone': 'Телефон'
   }
   $.each(row, function (key, value) {
-    html.push(first + '<span class="col"><b>' + title[key] + ':</b> ' + value + '</span>' + last)
+    html.push('' + first + '<span class="col"><b>' + title[key] + ':</b> ' + value + '</span>' + last + '')
   })
   return html.join('')
 }
