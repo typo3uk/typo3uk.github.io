@@ -1,5 +1,6 @@
+
 function propertyFormatter(value, row) {
-  return ['Продається ' row.rooms, value.rooms, value.area row.area '...'].join(', ')
+  return [row.rooms, row.area].join(', ')
 }
 
 function detailFormatter(index, row) {
