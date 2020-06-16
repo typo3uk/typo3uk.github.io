@@ -2,8 +2,9 @@ function detailFormatter(index, row) {
   var html = []
   const title = {
     'id': 'ID',
-    'apartment': 'Квартира',
+    'property': 'Квартира',
     'rooms': 'Кімнат',
+    "area": "Площа",
     'price': 'Ціна',
     'seller': 'Продавець',
     'phone': 'Телефон'

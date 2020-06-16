@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "apartment": "Item 0",
+        "property": "Item 0",
         "rooms": 1,
         "area": 36,
         "price": "$12000",
@@ -10,7 +10,7 @@
     },
     {
         "id": 1,
-        "apartment": "Item 1",
+        "property": "Item 1",
         "rooms": 3,
         "area": 69,
         "price": "$100000",
@@ -19,7 +19,7 @@
     },
     {
         "id": 2,
-        "apartment": "Item 2",
+        "property": "Item 2",
         "rooms": 5,
         "area": 200,
         "price": "$200000",
@@ -28,7 +28,7 @@
     },
     {
         "id": 3,
-        "apartment": "Item 3",
+        "property": "Item 3",
         "rooms": 1,
         "area": 30,
         "price": "$10000",
@@ -37,7 +37,7 @@
     },
     {
         "id": 4,
-        "apartment": "Item 4",
+        "property": "Item 4",
         "rooms": 2,
         "area": 90,
         "price": "$40000",
@@ -46,7 +46,7 @@
     },
     {
         "id": 5,
-        "apartment": "Item 5",
+        "property": "Item 5",
         "rooms": 1,
         "area": 29,
         "price": "$15000",
@@ -55,7 +55,7 @@
     },
     {
         "id": 6,
-        "apartment": "Item 6",
+        "property": "Item 6",
         "rooms": 3,
         "area": 73,
         "price": "$69000",
@@ -64,7 +64,7 @@
     },
     {
         "id": 7,
-        "apartment": "Квартира в центрі Івано-Франківська",
+        "property": "Квартира в центрі Івано-Франківська",
         "rooms": 2,
         "area": 70,
         "price": "$75000",
@@ -73,7 +73,7 @@
     },
     {
         "id": 8,
-        "apartment": "Item 8",
+        "property": "Item 8",
         "rooms": 2,
         "area": 49,
         "price": "$80000",
@@ -82,7 +82,7 @@
     },
     {
         "id": 9,
-        "apartment": "Item 9",
+        "property": "Item 9",
         "rooms": 1,
         "area": 78,
         "price": "$90000",
@@ -91,7 +91,7 @@
     },
     {
         "id": 10,
-        "apartment": "Item 10",
+        "property": "Item 10",
         "rooms": 3,
         "area": 130,
         "price": "$100000",
@@ -100,7 +100,7 @@
     },
     {
         "id": 11,
-        "apartment": "Квартира студія у центрі міста",
+        "property": "Квартира студія у центрі міста",
         "rooms": 1,
         "area": 32,
         "price": "$16000",
@@ -109,7 +109,7 @@
     },
     {
         "id": 12,
-        "apartment": "Item 12",
+        "property": "Item 12",
         "rooms": 4,
         "area": 120,
         "price": "$120000",
@@ -118,7 +118,7 @@
     },
     {
         "id": 13,
-        "apartment": "Однокімнатна на мазлях",
+        "property": "Однокімнатна на мазлях",
         "rooms": 1,
         "area": 36,
         "price": "$13000",
@@ -127,7 +127,7 @@
     },
     {
         "id": 14,
-        "apartment": "Item 14",
+        "property": "Item 14",
         "rooms": 2,
         "area": 55,
         "price": "$19000",
@@ -136,7 +136,7 @@
     },
     {
         "id": 15,
-        "apartment": "Квартира у новобудові",
+        "property": "Квартира у новобудові",
         "rooms": 1,
         "area": 49,
         "price": "$15000",
@@ -145,7 +145,7 @@
     },
     {
         "id": 16,
-        "apartment": "Item 16",
+        "property": "Item 16",
         "rooms": 3,
         "area": 80,
         "price": "$160000",
@@ -154,7 +154,7 @@
     },
     {
         "id": 17,
-        "apartment": "2-х кімнатна квартира на бамі",
+        "property": "2-х кімнатна квартира на бамі",
         "rooms": 2,
         "area": 35,
         "price": "$17000",
@@ -163,7 +163,7 @@
     },
     {
         "id": 18,
-        "apartment": "Кімната у колишньому гуртожитку",
+        "property": "Кімната у колишньому гуртожитку",
         "rooms": 1,
         "area": 25,
         "price": "$12000",
@@ -172,7 +172,7 @@
     },
     {
         "id": 19,
-        "apartment": "Item 19",
+        "property": "Item 19",
         "rooms": 1,
         "area": 39,
         "price": "$19000",
@@ -181,7 +181,7 @@
     },
     {
         "id": 20,
-        "apartment": "Item 20",
+        "property": "Item 20",
         "rooms": 3,
         "area": 109,
         "price": "$30000",
