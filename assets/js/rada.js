@@ -1,5 +1,5 @@
-function init() {
-  $('#table').bootstrapTable('destroy').bootstrapTable({
+$(function() {
+  $table.bootstrapTable({
     columns: [
       {
         field: 'id',
@@ -24,6 +24,7 @@ function init() {
     ]
   })
 }
+
 function detailFormatter(index, row) {
   var html = []
   $.each(row, function (key, value) {
