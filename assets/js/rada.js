@@ -1,14 +1,5 @@
-function propertyFormatter(index, row) {
-  var html = []
-  const title = {
-    'property': 'Квартира',
-    'rooms': 'Кімнат',
-    "area": "Площа",
-  }
-  $.each(row.property, row.rooms, row.area, function (key, value) {
-    html.push('' + title[key] + ': ' + value + '')
-  })
-  return html.join('')
+function propertyFormatter(value, row) {
+  return ['Продається ' row.rooms, value.rooms, value.area row.area '...'].join(', ')
 }
 
 function detailFormatter(index, row) {
