@@ -6,7 +6,7 @@ function propertyFormatter(value, row, index) {
 
 function detailFormatter(index, row) {
   if (index == first) { first = '<span class="row">'; }
-  else if (index == last) { last = '</span>'; }
+  if (index == last) { last = '</span>'; }
   var html = []
   const title = {
     'id': 'ID',
