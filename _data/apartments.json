@@ -50,7 +50,7 @@
     },
     {
         "id": 7,
-        "apartment": "Item 7",
+        "apartment": "Квартира в цетрі Івано-Франківська",
         "rooms": 2,
         "area": 70,
         "price": "$75000"
@@ -78,7 +78,7 @@
     },
     {
         "id": 11,
-        "apartment": "Item 11",
+        "apartment": "Квартира студія у цетрі міста",
         "rooms": 1,
         "area": 32,
         "price": "$16000"
@@ -92,7 +92,7 @@
     },
     {
         "id": 13,
-        "apartment": "Item 13",
+        "apartment": "Однокімнатна на мазлях",
         "rooms": 1,
         "area": 36,
         "price": "$13000"
@@ -106,7 +106,7 @@
     },
     {
         "id": 15,
-        "apartment": "Item 15",
+        "apartment": "Квартира у новобудові",
         "rooms": 1,
         "area": 49,
         "price": "$15000"
@@ -120,14 +120,14 @@
     },
     {
         "id": 17,
-        "apartment": "Item 17",
+        "apartment": "2-х кімнатна квартира на бамі",
         "rooms": 2,
         "area": 35,
         "price": "$17000"
     },
     {
         "id": 18,
-        "apartment": "Item 18",
+        "apartment": "Кімната у колишньому гуртожитку",
         "rooms": 1,
         "area": 25,
         "price": "$12000"
