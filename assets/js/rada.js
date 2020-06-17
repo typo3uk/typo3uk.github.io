@@ -1,3 +1,15 @@
+$(function() {
+  $.extend($.fn.bootstrapTable.defaults, {
+    locale: 'uk-UA',
+    search: true,
+    pagination: true,
+    sidePagination: 'server',
+    showRefresh: true,
+    search: true
+  })
+})
+
+
 $('#phones').bootstrapTable({
   function detailFormatter(index, row) {
     var html = []
