@@ -25,7 +25,8 @@ function detailFormatter(index, row) {
   $.each(row, function (key, value) {
     html.push('<span class="col-4"><b>' + title[key] + ':</b> ' + value + '</span>')
   })
-  return '<span class="row">' + html.join('') + '</span>'
+  // return '<span class="row">' + html.join('') + '</span>'
+  return html.join('')
 }
 function priceSorter(a, b) {
   var aa = a.replace('$', '')
