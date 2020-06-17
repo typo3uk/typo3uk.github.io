@@ -1,8 +1,6 @@
 ---
 ---
 
-{{ page.dir }}
-
 {%- assign back = page.url | split: "/" -%}
 {%- assign size = back | size | minus:1 -%}
 
