@@ -1,8 +1,10 @@
 ---
 layout: null
 ---
-#
-# {{cat}}
-#
+
+{{ page.dir }}
+
+{{cat}}
+
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
