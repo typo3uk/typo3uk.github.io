@@ -55,10 +55,12 @@ layout: default
               <p>{{cat}}</p>
             </a>
           </li>
-
-          {%- assign phones = site.data.ivano-frankivsk-tel -%}
+          {%- assign 09 = cat | append: "-tel" -%}
+          {%- assign phones = site.data[09] -%}
           {%- if phones -%}
+            ### YES ###
           {%- else -%}
+            ### NO ###
           {%- endif -%}
 
           {%- if page.division == 0 -%}{%- else -%}
@@ -178,17 +180,15 @@ layout: default
         </div>
 
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
-          <h3 class="mt-2 mb-4">{{page.dir}}</h3>
-
-        
+          <h3 class="mt-2 mb-4">Телефони</h3>
           {%- include 09.html dir=page.dir -%}
-
         </div>
 
         {%- if phones -%}
         {% else %}
 
         {%- endif -%}
+
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
