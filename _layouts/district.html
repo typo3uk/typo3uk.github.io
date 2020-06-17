@@ -55,8 +55,8 @@ layout: default
               <p>{{cat}}</p>
             </a>
           </li>
-          {%- assign 09 = cat | append: "-tel" -%}
-          {%- assign phones = site.data[09] -%}
+          {%- assign phone = cat | append: "-tel" -%}
+          {%- assign phones = site.data[phone] -%}
           {%- if phones -%}
             ### YES ###
           {%- else -%}
