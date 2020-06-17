@@ -1,7 +1,7 @@
 
 function propertyFormatter(value, row, index) {
   // return [row.property, row.rooms, row.area].join(', ')
-  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат: <strong>' + row.rooms + '</strong>, площа: <strong>' + row.area + '</strong>, <a href="javascript:void(0)">продавець...</a>';
+  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">продавець...</a>';
 }
 
 function detailFormatter(index, row) {
