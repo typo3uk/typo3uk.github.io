@@ -1,3 +1,81 @@
+
+<table
+  id="phones"
+  data-toggle="table"
+  data-search="true"
+  data-detail-view="true"
+  data-detail-view-icon="false"
+  data-detail-view-by-click="true"
+  data-detail-formatter="detailFormatter"
+  data-pagination="true"
+  data-url="json/data5.json">
+  <thead>
+    <tr>
+      <th data-field="column1">Column 1</th>
+      <th data-field="column2">Column 2</th>
+    </tr>
+  </thead>
+</table>
+
+<hr>
+
+<table
+  id="rooms"
+  data-toggle="table"
+  data-search="true"
+  data-detail-view="true"
+  data-detail-view-icon="false"
+  data-detail-view-by-click="true"
+  data-detail-formatter="detailFormatter"
+  data-pagination="true"
+  data-url="json/data1.json">
+  <thead>
+    <tr>
+      <th data-field="id">ID</th>
+      <th data-field="price">Price</th>
+    </tr>
+  </thead>
+</table>
+
+<script>
+  function detailFormatter(index, row) {
+    var html = []
+    const title = {
+      'id': 'ID',
+      'price': 'Price'
+    }
+    $.each(row, function (key, value) {
+      html.push('<p><b>' + title[key] + ':</b> ' + value + '</p>')
+    })
+    return html.join('')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {%- assign dir = page.dir | split: "/" -%}
 {%- assign size = dir | size | minus:1 -%}
 {%- assign cat = back | slice: 0, size | join: "/" -%}

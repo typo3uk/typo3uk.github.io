@@ -1,48 +1,26 @@
-// $(function() {
-//   $.extend($.fn.bootstrapTable.defaults, {
-//     locale: 'uk-UA',
-//     search: true,
-//     pagination: true,
-//     sidePagination: 'server',
-//     showRefresh: true,
-//     search: true
-//   })
-// })
-var $table = $('')
 
-$(function() {
-  $table.bootstrapTable()
-})
-
-
-function detailFormatter(index, row) {
-  if ($table == '#phones') {
-
-    var html = []
-    const title = {
-      'id': 'ID',
-      'division': 'Відділ',
-      'position': 'Посада',
-      "fullname": "Прізвище ім'я по батькові",
-      'room': 'Кабінет',
-      'phones': 'Телефон',
-      'atc': 'Телефон внутрішній'
-    }
-    $.each(row, function (key, value) {
-      html.push('<span class="col-12 col-sm-2 col-md-4"><b>' + title[key] + '</b>: ' + value + '</span>')
-    })
-    return '<span class="row mx-0">' + html.join('') + '</span>'
-
+function phonesDetailFormatter(index, row) {
+  var html = []
+  const title = {
+    'id': 'ID',
+    'division': 'Відділ',
+    'position': 'Посада',
+    "fullname": "Прізвище ім'я по батькові",
+    'room': 'Кабінет',
+    'phones': 'Телефон',
+    'atc': 'Телефон внутрішній'
   }
+  $.each(row, function (key, value) {
+    html.push('<span class="col-12 col-sm-2 col-md-4"><b>' + title[key] + '</b>: ' + value + '</span>')
+  })
+  return '<span class="row mx-0">' + html.join('') + '</span>'
 }
-
-
 
 function propertyFormatter(value, row, index) {
   return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">ще...</a>';
 }
 
-function detailFormatter(index, row) {
+function propertyDetailFormatter(index, row) {
   var html = []
   const title = {
     'id': 'ID',
