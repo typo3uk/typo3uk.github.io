@@ -4,8 +4,8 @@ layout: null
 
 {%- assign back = page.dir | split: "/" -%}
 {%- assign size = back | size | minus:1 -%}
-{{ back | slice: 0, size | join: "/" }}
-
+{%- assign foo = back | slice: 0, size | join: "/" -%}
+{{foo}}
 {% comment %}
 {{ back | slice: 0, size | join: "/" }}
 {%- assign foo = back | split: "/" | last -%}
