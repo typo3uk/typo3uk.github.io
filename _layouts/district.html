@@ -50,7 +50,7 @@ layout: default
             </a>
           </li>
           {% assign phones = site.data[cat]-tel %}
-          {%- if phones > 0 -%}
+          {%- if phones -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">
               <p>{{phones}}</p>
@@ -174,7 +174,7 @@ layout: default
             </div>
           </div>
         </div>
-        {%- if phones > 0 -%}
+        {%- if phones -%}
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
           <h3 class="mt-2 mb-4">
             ...
