@@ -49,16 +49,18 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-          {% assign phones = site.data.ivano-frankivsk-tel %}
-          {%- if phones -%}
+
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">
-              <p>{{phones}}</p>
               <p>{{cat}}</p>
             </a>
           </li>
+
+          {%- assign phones = site.data.ivano-frankivsk-tel -%}
+          {%- if phones -%}
           {%- else -%}
           {%- endif -%}
+
           {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
@@ -174,13 +176,18 @@ layout: default
             </div>
           </div>
         </div>
-        {%- if phones -%}
+
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
           <h3 class="mt-2 mb-4">
-            ...
+            {% for phone in site.data.ivano-frankivsk-tel %}
+              <li>{{ phone.id }}</li>
+            {% endfor %}
           </h3>
         </div>
+
+        {%- if phones -%}
         {% else %}
+
         {%- endif -%}
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
