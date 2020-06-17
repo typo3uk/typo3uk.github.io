@@ -8,7 +8,7 @@ layout: null
 {%- assign size = back | size | minus:1 -%}
 {{ back | slice: 0, size | join: "/" }}
 
-{{ cat }} -
+{%- assign foo = back | split: "/" | last -%}
 
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
