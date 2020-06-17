@@ -7,8 +7,7 @@ function responseHandler(res) {
 }
 
 function propertyFormatter(value, row, index) {
-  // return [row.property, row.rooms, row.area].join(', ')
-  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">продавець...</a>';
+  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">ще...</a>';
 }
 
 function detailFormatter(index, row) {
@@ -26,7 +25,6 @@ function detailFormatter(index, row) {
     html.push('<span class="col-4"><b>' + title[key] + ':</b> ' + value + '</span>')
   })
   return '<span class="row mx-0">' + html.join('') + '</span>'
-  // return html.join('')
 }
 function priceSorter(a, b) {
   var aa = a.replace('$', '')
