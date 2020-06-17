@@ -7,6 +7,8 @@ layout: default
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
 {%- assign type = page.title | split: ' ' | first | downcase -%}
+{%- assign phone = cat | append: "-tel" -%}
+{%- assign phones = site.data[phone] -%}
 <div class="container">
   <div class="row">
     <div class="col-12 px-md-4">
@@ -49,13 +51,14 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-
+          {%- if phones -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">
               <p>Телефони</p>
             </a>
           </li>
-
+          {%- else -%}
+          {%- endif -%}
           {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
@@ -171,21 +174,13 @@ layout: default
             </div>
           </div>
         </div>
-
+        {%- if phones -%}
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
           <h3 class="mt-2 mb-4">Телефоний довідник</h3>
           {%- include 09.html dir=page.dir -%}
-<hr><br>
-          {%- assign phone = cat | append: "-tel" -%}
-          {%- assign phones = site.data[phone] -%}
-          {%- if phones -%}
-            ### YES ###
-          {%- else -%}
-            ### NO ###
-          {%- endif -%}
-
         </div>
-
+        {%- else -%}
+        {%- endif -%}
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
