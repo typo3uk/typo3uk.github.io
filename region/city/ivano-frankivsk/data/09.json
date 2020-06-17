@@ -2,16 +2,15 @@
 layout: null
 ---
 
-{%- assign back = page.url | split: "/" -%}
+{%- assign back = page.dir | split: "/" -%}
 {%- assign size = back | size | minus:1 -%}
+{{ back | slice: 0, size | join: "/" }}
 
 {% comment %}
 {{ back | slice: 0, size | join: "/" }}
-{% endcomment %}
-
 {%- assign foo = back | split: "/" | last -%}
-
 foo: {{foo}}
+{% endcomment %}
 
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
