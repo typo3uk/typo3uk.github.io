@@ -1,4 +1,8 @@
 
+function fullnameFormatter(value, row, index) {
+  return '<strong>' + row.fullname + '</strong> - ' + row.position '';
+}
+
 function phonesDetailFormatter(index, row) {
   var html = []
   const title = {
