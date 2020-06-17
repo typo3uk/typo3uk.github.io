@@ -23,7 +23,7 @@ function detailFormatter(index, row) {
       'id': 'ID',
       'division': 'Відділ',
       'position': 'Посада',
-      "name": "Прізвище ім'я по батькові",
+      "fullname": "Прізвище ім'я по батькові",
       'room': 'Кабінет',
       'phones': 'Телефон',
       'atc': 'Телефон внутрішній'
