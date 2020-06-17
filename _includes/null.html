@@ -1,3 +1,18 @@
+{%- assign dir = page.dir | split: "/" -%}
+{%- assign size = dir | size | minus:1 -%}
+{%- assign cat = back | slice: 0, size | join: "/" -%}
+{%- assign cat = cat | split: "/" | last -%}
+{%- assign phones = cat | append: "-tel" -%}
+{{ site.data[phones] | jsonify }}
+
+{% comment %}
+{{ back | slice: 0, size | join: "/" }}
+{%- assign foo = back | split: "/" | last -%}
+foo: {{foo}}
+{% endcomment %}
+
+
+
 {% comment %}
 <link rel="stylesheet" href="{{ "/assets/css/photoswipe.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "/assets/css/default-skin/default-skin.css" | relative_url }}">
