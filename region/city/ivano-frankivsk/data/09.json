@@ -4,7 +4,11 @@ layout: null
 
 {{ page.dir }}
 
-{{cat}}
+{%- assign back = page.url | split: "/" -%}
+{%- assign size = back | size | minus:1 -%}
+{{ back | slice: 0, size | join: "/" }}
+
+{{ cat }} -
 
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
