@@ -53,11 +53,8 @@ layout: default
           </li>
           {%- if phones -%}
           <li class="nav-item" role="presentation">
-            <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">
-              {{ site.data.labels.phones }}
-            </a>
+            <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">{{ site.data.labels.phones }}</a>
           </li>
-          {%- else -%}
           {%- endif -%}
           {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
@@ -179,7 +176,6 @@ layout: default
           <h3 class="mt-2 mb-4">Телефоний довідник</h3>
           {%- include 09.html dir=page.dir -%}
         </div>
-        {%- else -%}
         {%- endif -%}
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
