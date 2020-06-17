@@ -4,7 +4,7 @@ layout: null
 
 {%- assign back = page.dir | split: "/" -%}
 {%- assign size = back | size | minus:1 -%}
-{%- assign 09 = back | slice: 0, size | join: "/" -%}
-{%- assign cat = 09 | split: "/" | last -%}
+{%- assign pass = back | slice: 0, size | join: "/" -%}
+{%- assign cat = pass | split: "/" | last -%}
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
