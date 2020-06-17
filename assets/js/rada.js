@@ -1,3 +1,6 @@
+$('#table-09').bootstrapTable({
+});
+
 $('#table').bootstrapTable({
 
   function propertyFormatter(value, row, index) {
