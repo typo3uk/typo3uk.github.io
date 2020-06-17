@@ -52,16 +52,9 @@ layout: default
 
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">
-              <p>{{cat}}</p>
+              <p>Телефони</p>
             </a>
           </li>
-          {%- assign phone = cat | append: "-tel" -%}
-          {%- assign phones = site.data[phone] -%}
-          {%- if phones -%}
-            ### YES ###
-          {%- else -%}
-            ### NO ###
-          {%- endif -%}
 
           {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
@@ -180,14 +173,18 @@ layout: default
         </div>
 
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
-          <h3 class="mt-2 mb-4">Телефони</h3>
+          <h3 class="mt-2 mb-4">Телефоний довідник</h3>
           {%- include 09.html dir=page.dir -%}
+<hr><br>
+          {%- assign phone = cat | append: "-tel" -%}
+          {%- assign phones = site.data[phone] -%}
+          {%- if phones -%}
+            ### YES ###
+          {%- else -%}
+            ### NO ###
+          {%- endif -%}
+
         </div>
-
-        {%- if phones -%}
-        {% else %}
-
-        {%- endif -%}
 
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
