@@ -5,9 +5,14 @@
 
 {%- assign back = page.url | split: "/" -%}
 {%- assign size = back | size | minus:1 -%}
+
+{% comment %}
 {{ back | slice: 0, size | join: "/" }}
+{% endcomment %}
 
 {%- assign foo = back | split: "/" | last -%}
+
+foo: {{foo}}
 
 {%- assign phones = cat | append: "-tel" -%}
 {{ site.data[phones] | jsonify }}
