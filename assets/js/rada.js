@@ -1,4 +1,20 @@
-$('#table-09').bootstrapTable({
+$('#phones').bootstrapTable({
+  function detailFormatter(index, row) {
+    var html = []
+    const title = {
+      'id': 'ID',
+      'division': 'Відділ',
+      'position': 'Посада',
+      "name": "Прізвище ім'я по батькові",
+      'room': 'Кабінет',
+      'phones': 'Телефон',
+      'atc': 'Телефон внутрішній'
+    }
+    $.each(row, function (key, value) {
+      html.push('<span class="col-12 col-sm-2 col-md-4"><b>' + title[key] + '</b>: ' + value + '</span>')
+    })
+    return '<span class="row mx-0">' + html.join('') + '</span>'
+  }
 });
 
 $('#table').bootstrapTable({
