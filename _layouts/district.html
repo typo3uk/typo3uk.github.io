@@ -178,15 +178,10 @@ layout: default
         </div>
 
         <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
-          <h3 class="mt-2 mb-4">...</h3>
+          <h3 class="mt-2 mb-4">{{page.dir}}</h3>
 
-            {%- assign phones = cat | append: "-tel" -%}
-            phones: {{phones}}<br>
-            <ul>
-            {% for phone in site.data[phones] %}
-              <li>{{ phone.id }}</li>
-            {% endfor %}
-            </ul>
+        
+          {%- include 09.html dir=page.dir -%}
 
         </div>
 

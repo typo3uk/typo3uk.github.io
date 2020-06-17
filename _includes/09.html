@@ -1,0 +1,21 @@
+
+<table
+  id="table"
+  data-locale="uk-UA"
+  data-toggle="table"
+  data-search="true"
+  data-sort-class="table-active"
+  data-sortable="true"
+  data-detail-view="true"
+  data-detail-view-icon="false"
+  data-detail-view-by-click="true"
+  data-detail-formatter="detailFormatter"
+  data-pagination="true"
+  data-url="{{ include.dir }}data/09.json">
+  <thead>
+    <tr>
+      <th data-field="property" data-title="Власність" data-formatter="propertyFormatter">Property</th>
+      <th data-field="price" data-title="Ціна" data-sortable="true" data-sorter="priceSorter">Price</th>
+    </tr>
+  </thead>
+</table>
