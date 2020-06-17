@@ -21,7 +21,7 @@ function phonesDetailFormatter(index, row) {
 }
 
 function propertyFormatter(value, row, index) {
-  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">ще...</a>';
+  return 'Продається <span class="text-lowercase"><strong>' + row.property + '</strong></span>, кімнат <strong>' + row.rooms + '</strong>, площа <strong>' + row.area + '</strong>, <a href="javascript:void(0)">+</a>';
 }
 
 function propertyDetailFormatter(index, row) {
