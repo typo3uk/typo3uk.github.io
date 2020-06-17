@@ -49,7 +49,17 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-          {%- if page.division == 0 -%}{% else %}
+          {% assign phones = site.data[cat]-tel %}
+          {%- if phones > 0 -%}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
+              <p>{{phones}}</p>
+              <p>{{cat}}</p>
+            </a>
+          </li>
+          {%- else -%}
+          {%- endif -%}
+          {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
               {% if isCityTown == true and isVillage == true %}
