@@ -1,8 +1,12 @@
 ---
 layout: default
+title: Новини веб-порталу представни́цьких органів влади
+pagination:
+  enabled: true
+  category: bohorodchany
+  sort_field: 'date'
+breadcrumb: Новини
 ---
-{%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
-{%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
 <div class="container">
   <div class="row">
     <div class="col-12">
