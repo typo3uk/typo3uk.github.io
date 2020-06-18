@@ -8,8 +8,7 @@ paginator.previous_page_path: {{paginator.previous_page_path}}
 
 {%- assign back = page.dir | split: "/" -%}
 {%- assign size = back | size | minus:2 -%}
-{%- assign dir = back | slice: 0, size | join: "/" -%}
-### {{ dir | append "/" }} ###
+### {{ back | slice: 0, size | join: "/" | append "/" }} ###
 
 <hr>
 
