@@ -66,12 +66,12 @@ defaults:
 exclude:
   - README.md
 
-paginate: 12
+# paginate: 12
 pagination:
   - paginate:
-      path: "/news/page/:num/"
+      path: /news/page/:num/
       per_page: 12
   - paginate:
-      path: "/decisions/page/:num/"
+      path: /decisions/page/:num/
       per_page: 12
 # paginate_path: "/news/page/:num/"
