@@ -3,7 +3,6 @@ layout: default
 title: Новини веб-порталу представни́цьких органів влади
 pagination:
   enabled: true
-  category: bohorodchany
   sort_field: 'date'
 breadcrumb: Новини
 ---
@@ -11,6 +10,7 @@ breadcrumb: Новини
   <div class="row">
     <div class="col-12">
       <h1 class="mb-4">{{ page.title }}</h1>
+      <p class="lead">На сторінці розміщені всі новини всіх представни́цьких органів влади Івано-Франківської області</p>
 
       {%- assign news = '' | split:'' -%}
       {%- for i in site.posts -%}
@@ -44,6 +44,31 @@ breadcrumb: Новини
           </div>
         </div>
       {%- endfor -%}
+
+      <hr>
+
+      {% if paginator.total_pages > 1 %}
+      <div class="row justify-content-between">
+          {% if paginator.previous_page %}
+          <div class="col-md-3 col-5 text-left text-nowrap">
+            <p>&larr; <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Новіші новини</a></p>
+          </div>
+          {% else %}
+          <div class="col-md-3 col-5 text-left text-nowrap">
+            <p>&larr; <span>Новіші новини</span></p>
+          </div>
+          {% endif %}
+          {% if paginator.next_page %}
+          <div class="col-md-3 col-5 text-right text-nowrap">
+            <p><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Старіші новини</a> &rarr;</p>
+          </div>
+          {% else %}
+          <div class="col-md-3 col-4 text-right text-nowrap">
+            <p><span>Старіші новини</span> &rarr;</p>
+          </div>
+          {% endif %}
+      </div>
+      {% endif %}
 
     </div>
   </div>
