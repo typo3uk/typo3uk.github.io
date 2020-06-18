@@ -8,7 +8,7 @@ paginator.previous_page_path: {{paginator.previous_page_path}}
 
 {%- assign back = page.dir | split: "/" -%}
 {%- assign size = back | size | minus:2 -%}
-### {{ back | slice: 0, size | join: "/" | append "/" }} ###
+### {{ back | slice: 0, size | join: "/" }} ###
 
 <hr>
 
@@ -49,7 +49,7 @@ paginator.previous_page_path: {{paginator.previous_page_path}}
                 {% if paginator.previous_page == 1 %}
                     <li class="page-item"><a class="page-link" href="/news/">&laquo;</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.previous_page }}">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a></li>
                 {% endif %}
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
@@ -66,13 +66,13 @@ paginator.previous_page_path: {{paginator.previous_page_path}}
                     {% if paginator.page == i %}
                         <li class="page-item active"><span class="page-link">{{ i }}</span></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="/news/page/{{ i }}">{{ i }}</a></li>
+                        <li class="page-item"><a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', i }}">{{ i }}</a></li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
 
             {% if paginator.next_page %}
-                <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.next_page }}">&raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a></li>
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
             {% endif %}
