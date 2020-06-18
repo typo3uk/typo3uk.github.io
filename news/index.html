@@ -8,7 +8,6 @@ breadcrumb: Новини веб-порталу
   <div class="row">
     <div class="col-12">
       <h1 class="mb-4">{{ page.title }}</h1>
-
       {%- for item in paginator.posts -%}
         {%- if forloop.first -%}
         <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
@@ -17,19 +16,13 @@ breadcrumb: Новини веб-порталу
             <div class="card h-100">
               <div class="card-body">
                 <p class="card-text"><small class="text-muted">{%- include date.html date=item.date -%}</small></p>
-                <h5 class="card-title"><a href="{{ article.url }}">{{ item.title }}</a></h5>
+                <h5 class="card-title"><a href="{{ item.url }}">{{ item.title }}</a></h5>
                 <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               </div>
               <div class="card-footer border-top-0">
                 <small class="text-muted">
-                  {%- assign url = item.url | split: "/" -%}
-                  {%- assign size = url | size | minus: 4 -%}
-                  {%- assign dir = url | slice: 0, size | join: "/" -%}
-                  {%- for page in site.pages -%}
-                    {%- if page.url contains dir -%}
-                      {{ page.title }}
-                    {%- endif -%}
-                  {%- endfor -%}
+                  {%- assign url = item.url | split: "/" -%}{%- assign size = url | size | minus: 4 -%}{%- assign dir = url | slice: 0, size | join: "/" -%}
+                  {%- for page in site.pages -%}{%- if page.url contains dir -%}{{ page.title }}{%- endif -%}{%- endfor -%}
                 </small>
               </div>
             </div>
@@ -46,9 +39,7 @@ breadcrumb: Новини веб-порталу
           </div>
         </div>
       {%- endfor -%}
-
       {%- include pagination.html dir="/news/" page="page/" -%}
-
     </div>
   </div>
 </div>
