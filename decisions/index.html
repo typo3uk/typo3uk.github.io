@@ -12,7 +12,7 @@ breadcrumb: Рішення
 
       {%- assign news = '' | split:'' -%}
       {%- for i in paginator.posts -%}
-        {%- unless i.url contains "news" -%}
+        {%- unless i.url contains "decisions" -%}
           {%- assign news = news | push:i -%}
         {%- endunless -%}
       {%- endfor -%}

@@ -43,16 +43,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-  # - scope:
-  #     path: /*/decisions/
-  #     type: "decisions"
-  #   values:
-  #     layout: "decisions"
-  # - scope:
-  #     path: /*/news/
-  #     type: "news"
-  #   values:
-  #     layout: "news"
+  - scope:
+      path: /*/decisions/
+      type: "decisions"
+    values:
+      layout: "decisions"
+  - scope:
+      path: /*/news/
+      type: "news"
+    values:
+      layout: "news"
   - scope:
       path: "assets/images"
     values:
