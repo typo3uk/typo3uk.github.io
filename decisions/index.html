@@ -1,0 +1,46 @@
+---
+layout: default
+title: Рішення представни́цьких органів влади
+navhide: 1
+breadcrumb: Рішення
+---
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ page.title }}</h1>
+      <p class="lead">На сторінці розміщені всі рішення всіх представницьких органів влади Івано-Франківської області</p>
+
+      {%- assign decisions = '' | split:'' -%}
+      {%- for i in paginator.posts -%}
+        {%- unless i.url contains "news" -%}
+          {%- assign decisions = decisions | push:i -%}
+        {%- endunless -%}
+      {%- endfor -%}
+
+      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+      {%- for decision in decisions -%}
+        <div class="col mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <p class="card-text"><small class="text-muted">{%- include date.html date=decision.date -%}</small></p>
+              <h5 class="card-title"><a href="{{ article.url }}">{{ decision.title }}</a></h5>
+              <p class="card-text">{{ decision.excerpt | strip_html | truncate: 110 }}</p>
+            </div>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="alert alert-info" role="alert">
+              {{ site.data.labels.decisions_list_empty }}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+      </div>
+
+      {%- include pagination.html dir="/decisions/" page="page/" -%}
+
+    </div>
+  </div>
+</div>
