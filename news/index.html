@@ -19,7 +19,7 @@ breadcrumb: Новини веб-порталу
                 <h5 class="card-title"><a href="{{ item.url }}">{{ item.title }}</a></h5>
                 <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               </div>
-              <div class="card-footer border-top-0">
+              <div class="card-footer border-top-0 bg-white">
                 <small class="text-muted">
                   {%- assign url = item.url | split: "/" -%}{%- assign size = url | size | minus: 4 -%}{%- assign dir = url | slice: 0, size | join: "/" -%}
                   {%- for page in site.pages -%}{%- if page.url contains dir -%}{{ page.title }}{%- endif -%}{%- endfor -%}
