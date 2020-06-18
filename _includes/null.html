@@ -1,4 +1,14 @@
 
+
+{%- assign dir = page.dir | split: "/" -%}
+{%- assign size = dir | size | minus:1 -%}
+{%- assign page = dir | slice: 0, size | join: "/" -%}
+{%- assign back = page | split: "/" | last -%}
+{%- assign prev = back | append: "/" -%}
+
+##########################
+
+
 {%- assign news = '' | split:'' -%}
 {%- for i in paginator.posts -%}
   {%- unless i.url contains "decisions" -%}
