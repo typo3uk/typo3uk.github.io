@@ -36,7 +36,7 @@
                 {% if paginator.previous_page == 1 %}
                     <li class="page-item"><a class="page-link" href="/news">&laquo;</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="/news/page{{ paginator.previous_page }}">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.previous_page }}">&laquo;</a></li>
                 {% endif %}
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
@@ -53,13 +53,13 @@
                     {% if paginator.page == i %}
                         <li class="page-item active"><span class="page-link">{{ i }}</span></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="/news/page{{ i }}">{{ i }}</a></li>
+                        <li class="page-item"><a class="page-link" href="/news/page/{{ i }}">{{ i }}</a></li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
 
             {% if paginator.next_page %}
-                <li class="page-item"><a class="page-link" href="/news/page{{ paginator.next_page }}">&raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.next_page }}">&raquo;</a></li>
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
             {% endif %}

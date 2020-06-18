@@ -11,7 +11,8 @@ breadcrumb: Новини веб-порталу
       <p class="lead">На сторінці розміщені всі новини всіх представницьких органів влади Івано-Франківської області</p>
 
       {%- assign news = '' | split:'' -%}
-      {%- for i in paginator.posts -%}
+      {%- assign posts = paginator.posts -%}
+      {%- for i in posts -%}
         {%- unless i.url contains "decisions" -%}
           {%- assign news = news | push:i -%}
         {%- endunless -%}
