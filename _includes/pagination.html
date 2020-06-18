@@ -3,6 +3,14 @@
 site.paginate_path: {{site.paginate_path}}<br>
 paginator.previous_page_path: {{paginator.previous_page_path}}
 
+<br>
+{{page.dir}} <br>
+
+{%- assign back = page.dir | split: "/" -%}
+{%- assign size = back | size | minus:2 -%}
+{%- assign dir = back | slice: 0, size | join: "/" -%}
+### {{ dir | append "/" }} ###
+
 <hr>
 
 
