@@ -7,27 +7,36 @@ breadcrumb: Новини веб-порталу
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>{{ page.title }}</h1>
-      <p class="lead">На сторінці розміщені всі новини всіх представницьких органів влади Івано-Франківської області</p>
+      <h1 class="mb-4">{{ page.title }}</h1>
 
-      {%- assign news = '' | split:'' -%}
-      {%- for i in paginator.posts -%}
-        {%- unless i.url contains "decisions" -%}
-          {%- assign news = news | push:i -%}
-        {%- endunless -%}
-      {%- endfor -%}
-
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
-      {%- for article in paginator.posts -%}
-        <div class="col mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="card-text"><small class="text-muted">{%- include date.html date=article.date -%}</small></p>
-              <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-              <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
+      {%- for item in paginator.posts -%}
+        {%- if forloop.first -%}
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
+        {%- endif -%}
+          <div class="col mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <p class="card-text"><small class="text-muted">{%- include date.html date=item.date -%}</small></p>
+                <h5 class="card-title"><a href="{{ article.url }}">{{ item.title }}</a></h5>
+                <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
+                <p class="card-text">
+                  <small class="text-muted">
+                    {%- assign url = item.url | split: "/" -%}
+                    {%- assign size = url | size | minus: 4 -%}
+                    {%- assign dir = url | slice: 0, size | join: "/" -%}
+                    {%- for page in site.pages -%}
+                      {%- if page.url contains dir -%}
+                        {{ page.title }}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </small>
+                </p>
+              </div>
             </div>
           </div>
+        {%- if forloop.last -%}
         </div>
+        {%- endif -%}
       {%- else -%}
         <div class="row">
           <div class="col-md-6 offset-md-3">
@@ -37,7 +46,6 @@ breadcrumb: Новини веб-порталу
           </div>
         </div>
       {%- endfor -%}
-      </div>
 
       {%- include pagination.html dir="/news/" page="page/" -%}
 
