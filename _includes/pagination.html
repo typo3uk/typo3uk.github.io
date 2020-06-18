@@ -1,7 +1,10 @@
 <hr>
+
 site.paginate_path: {{site.paginate_path}}<br>
-paginator.previous_page_path: {{paginator.previous_page_path}}<br>
-<br>
+paginator.previous_page_path: {{paginator.previous_page_path}}
+
+<hr>
+
 
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
@@ -29,24 +32,17 @@ paginator.previous_page_path: {{paginator.previous_page_path}}<br>
 </div>
 {% endif %}
 
-<hr>
-
-{{page.dir}} <br>
-
-{%- assign back = page.dir | split: "/" -%}
-{%- assign size = back | size | minus:2 -%}
-{%- assign dir = back | slice: 0, size | join: "/" | append "/" -%}
-### {{dir}} ###
 
 <hr>
+
 <div class="section-pagination text-center">
     <nav class="d-table mx-auto">
         <ul class="pagination">
             {% if paginator.previous_page %}
                 {% if paginator.previous_page == 1 %}
-                    <li class="page-item"><a class="page-link" href="/{{ dir }}/">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="/news/">&laquo;</a></li>
                 {% else %}
-                    <li class="page-item"><a class="page-link" href="/{{ dir }}/page/{{ paginator.previous_page }}">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.previous_page }}">&laquo;</a></li>
                 {% endif %}
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
@@ -57,19 +53,19 @@ paginator.previous_page_path: {{paginator.previous_page_path}}<br>
                     {% if paginator.page == i %}
                         <li class="page-item active"><span class="page-link">{{ i }}</span></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="/{{ dir }}/">{{ i }}</a></li>
+                        <li class="page-item"><a class="page-link" href="/news/">{{ i }}</a></li>
                     {% endif %}
                 {% else %}
                     {% if paginator.page == i %}
                         <li class="page-item active"><span class="page-link">{{ i }}</span></li>
                     {% else %}
-                        <li class="page-item"><a class="page-link" href="/{{ dir }}/page/{{ i }}">{{ i }}</a></li>
+                        <li class="page-item"><a class="page-link" href="/news/page/{{ i }}">{{ i }}</a></li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
 
             {% if paginator.next_page %}
-                <li class="page-item"><a class="page-link" href="/{{ dir }}/page/{{ paginator.next_page }}">&raquo;</a></li>
+                <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.next_page }}">&raquo;</a></li>
             {% else %}
                 <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
             {% endif %}
@@ -85,7 +81,7 @@ paginator.previous_page_path: {{paginator.previous_page_path}}<br>
         <ul class="pagination">
             {% if paginator.previous_page %}
                 {% if paginator.previous_page == 1 %}
-                    <li class="page-item"><a class="page-link" href="/news">&laquo;</a></a>
+                    <li class="page-item"><a class="page-link" href="/news">&laquo;</a></li>
                 {% else %}
                     <li class="page-item"><a class="page-link" href="/news/page/{{ paginator.previous_page }}">&laquo;</a></li>
                 {% endif %}
