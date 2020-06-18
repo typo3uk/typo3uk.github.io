@@ -66,5 +66,5 @@ defaults:
 exclude:
   - README.md
 
-paginate: 5
+paginate: 12
 paginate_path: "/news/page:num/"
