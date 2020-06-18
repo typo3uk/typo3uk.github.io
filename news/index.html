@@ -15,6 +15,16 @@ breadcrumb: Новини веб-порталу
         {%- endif -%}
           <div class="col mb-4">
             <div class="card h-100">
+              <div class="card-header">
+                {%- assign url = item.url | split: "/" -%}
+                {%- assign size = url | size | minus: 4 -%}
+                {%- assign dir = url | slice: 0, size | join: "/" -%}
+                {%- for page in site.pages -%}
+                  {%- if page.url contains dir -%}
+                    {{ page.title }}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
               <div class="card-body">
                 <p class="card-text"><small class="text-muted">{%- include date.html date=item.date -%}</small></p>
                 <h5 class="card-title"><a href="{{ article.url }}">{{ item.title }}</a></h5>
