@@ -3,7 +3,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/" == current and one.url contains include.current -%}
+    {%- if "/" == current and one.url contains include.current and one.navhide != 1 -%}
       <div class="col-12">
         <h3 class="mb-4">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</h3>
       </div>
@@ -14,7 +14,7 @@
           {%- if two -%}
             {%- capture slug -%}{{ two.url | split: "/" | last }}{%- endcapture -%}
             {%- capture current -%}{{ two.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-            {%- if one.url == current and two.url contains "city" or two.url contains "town" -%}
+            {%- if one.url == current and two.url contains "city" or two.url contains "town" and two.navhide != 1 -%}
             <div class="col-12">
               <h3 class="mb-4">
                 <a href="{{ two.url }}">

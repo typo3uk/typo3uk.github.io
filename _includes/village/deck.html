@@ -4,7 +4,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if page.dir == current and one.url contains page.dir and navhide != 1 -%}
+    {%- if page.dir == current and one.url contains page.dir and one.navhide != 1 -%}
     <div class="col mb-4">
       <div class="card">
         {%- assign dir = one.dir | append: 'images/' -%}
