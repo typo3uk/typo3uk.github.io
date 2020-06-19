@@ -67,4 +67,4 @@ exclude:
   - README.md
 
 paginate: 3
-paginate_path: "/news/page/:num/"
+paginate_path: "/news/page:num/"
