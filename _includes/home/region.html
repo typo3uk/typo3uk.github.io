@@ -5,7 +5,7 @@
 {%- assign depth = depth | plus:1 -%}
 {%- assign isChildren = false -%}
 {%- for second in secondlevel -%}
-  {%- if second.url contains include.current and second.url != include.current -%}
+  {%- if second.url contains include.current and second.url != include.current and navhide != 1 -%}
     {%- assign isChildren = true -%}
   {%- endif -%}
 {%- endfor -%}
