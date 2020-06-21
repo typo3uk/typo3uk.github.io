@@ -1,4 +1,4 @@
-<div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov">
+<div class="dropdown-menu mt-n2 w-100 border-outline-success" aria-labelledby="navDropGov{{ slug | capitalize }}">
   <div class="container">
     <div class="row w-100">
     {%- assign secondlevel = site.pages | sort: "path" -%}
