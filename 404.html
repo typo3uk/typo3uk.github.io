@@ -5,9 +5,15 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1>Помилка 404</h1>
-      <p><strong>Сторінку не знайдено :(</strong></p>
-      <p>Не вдалося знайти запитувану сторінку.</p>
+      <div class="card bg-dark text-white">
+        {%- assign file = "assets/images/404.jpg" -%}
+        <img src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file | url_decode | relative_url }}&w=1100&h=619&fit=cover&a=attention&output=jpg&q=50&t=square" class="card-img-top" alt="404 error">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Помилка 404</h5>
+          <p class="card-text"><strong>Сторінку не знайдено :(</strong></p>
+          <p class="card-text">Ми довго шукали але не вдалося знайти запитувану сторінку.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
