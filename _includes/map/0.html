@@ -4,7 +4,7 @@
   {%- for one in ones -%}
     {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
     {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-    {%- if "/" == current -%}
+    {%- if "/" == current and one.navhide != 1 -%}
       <div class="col-sm-6 col-md-3">
         <h6>
           <a href="{{ one.url }}">
