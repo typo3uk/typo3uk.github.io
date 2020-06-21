@@ -1,7 +1,35 @@
 @import "../../assets/css/bootstrap-table.min.css";
 
-.table .thead-rada th {
-    color: #fff;
-    background-color: #2D5CA6;
-    border-color: #fff;
+.bootstrap-table {
+  .table .thead-rada th {
+      color: #fff;
+      background-color: #2D5CA6;
+      border-color: #fff;
+  }
+  .pagination-detail {
+    .btn-secondary {
+        color: #fff;
+        background-color: #2D5CA6;
+        border-color: #2D5CA6;
+    }
+    .btn-secondary.focus {
+        color: #fff;
+        background-color: #2D5CA6;
+        border-color: #2D5CA6;
+        box-shadow: 0 0 0 0.2rem rgba(223,199,81,0.5);
+    }
+  }
 }
+
+// .bootstrap-table .pagination-detail .btn-secondary {
+//     color: #fff;
+//     background-color: #2D5CA6;
+//     border-color: #2D5CA6;
+// }
+
+// .bootstrap-table .pagination-detail .btn-secondary:focus, .bootstrap-table .pagination-detail .btn-secondary.focus {
+//     color: #fff;
+//     background-color: #2D5CA6;
+//     border-color: #2D5CA6;
+//     box-shadow: 0 0 0 0.2rem rgba(223,199,81,0.5);
+// }
