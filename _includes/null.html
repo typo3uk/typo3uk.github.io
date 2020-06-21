@@ -63,7 +63,7 @@ https://github.com/mmistakes/minimal-mistakes/tree/master/_includes
     <div class="col mb-4">
       <div class="card h-100">
         <div class="card-body">
-          <p class="card-text"><small class="text-muted">{%- include date.html date=article.date -%}</small></p>
+          <p class="card-text"><span class="small text-muted">{%- include date.html date=article.date -%}</span></p>
           <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
           <p class="card-text">{{ article.excerpt | strip_html | truncate: 110 }}</p>
         </div>
@@ -373,10 +373,10 @@ foo: {{foo}}
     <div class="card h-100">
       <img src="/images/deputies.png" class="card-img-top" alt="image-news">
       <div class="card-body">
-        <p class="card-text"><small class="text-muted">{{ article.date | date: '%-d %B %Y' }}</small></p>
+        <p class="card-text"><span class="small text-muted">{{ article.date | date: '%-d %B %Y' }}</span></p>
         <h5 class="card-title"><a href="{{ article.url }}">{{ article.title }}</a></h5>
         <p class="card-text">{{ article.excerpt | truncate: 110 }}</p>
-        <p class="card-text"><small class="text-muted">{{ article.category }}</small></p>
+        <p class="card-text"><span class="small text-muted">{{ article.category }}</span></p>
       </div>
     </div>
   </div>

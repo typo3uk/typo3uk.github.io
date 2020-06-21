@@ -7,11 +7,11 @@
         <div class="col">
           <div class="card h-100 border-0">
             <div class="card-body px-0 pt-0 pb-1">
-              <p class="card-text mb-1"><small class="text-muted">{%- include date.html date=item.date -%}</small></p>
+              <p class="card-text mb-1"><span class="small text-muted">{%- include date.html date=item.date -%}</span></p>
               <h5 class="card-title mb-1"><a href="{{ item.url }}">{{ item.title }}</a></h5>
               <p class="card-text mb-0">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               <p class="card-text text-right">
-                <small class="text-muted">
+                <span class="small text-muted">
                   {%- assign url = item.url | split: "/" -%}
                   {%- assign size = url | size | minus: 4 -%}
                   {%- assign dir = url | slice: 0, size | join: "/" -%}
@@ -20,7 +20,7 @@
                       {{ page.title }}
                     {%- endif -%}
                   {%- endfor -%}
-                </small>
+                </span>
               </p>
             </div>
           </div>

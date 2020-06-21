@@ -15,15 +15,15 @@ breadcrumb: Новини веб-порталу
           <div class="col mb-4">
             <div class="card h-100">
               <div class="card-body">
-                <p class="card-text"><small class="text-muted">{%- include date.html date=item.date -%}</small></p>
+                <p class="card-text"><span class="small text-muted">{%- include date.html date=item.date -%}</span></p>
                 <h5 class="card-title"><a href="{{ item.url }}">{{ item.title }}</a></h5>
                 <p class="card-text">{{ item.excerpt | strip_html | truncate: 110 }}</p>
               </div>
               <div class="card-footer border-top-0 bg-white">
-                <small class="text-muted">
+                <span class="small text-muted">
                   {%- assign url = item.url | split: "/" -%}{%- assign size = url | size | minus: 4 -%}{%- assign dir = url | slice: 0, size | join: "/" -%}
                   {%- for page in site.pages -%}{%- if page.url contains dir -%}{{ page.title }}{%- endif -%}{%- endfor -%}
-                </small>
+                </span>
               </div>
             </div>
           </div>

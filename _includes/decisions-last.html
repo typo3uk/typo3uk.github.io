@@ -6,7 +6,7 @@
   <div class="col mb-4">
     <div class="card h-100">
       <div class="card-body">
-        <p class="card-text"><small class="text-muted">{%- include date.html date=decision.date -%}</small></p>
+        <p class="card-text"><span class="small text-muted">{%- include date.html date=decision.date -%}</span></p>
         <h5 class="card-title"><a href="{{ decision.url }}">{{ decision.title }}</a></h5>
         <p class="card-text">{{ decision.excerpt | strip_html | truncate: 110 }}</p>
       </div>
