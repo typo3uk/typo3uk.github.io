@@ -6,40 +6,7 @@
       background-color: #2D5CA6;
       border-color: #fff;
   }
-//   .pagination-detail {
-//     .btn-secondary {
-//         color: #fff;
-//         background-color: #2D5CA6;
-//         border-color: #2D5CA6;
-//     }
-//     .btn-secondary.focus {
-//         color: #fff;
-//         background-color: #2D5CA6;
-//         border-color: #2D5CA6;
-//         box-shadow: 0 0 0 0.2rem rgba(223,199,81,0.5);
-//     }
-//     .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show>.btn-secondary.dropdown-toggle {
-//         color: #fff;
-//         background-color: #2D5CA6;
-//         border-color: #2D5CA6;
-//     }
-//   }
+  .fixed-table-container .table thead th .th-inner {
+      white-space: unset;
+  }
 }
-
-
-.bootstrap-table .fixed-table-container .table thead th .th-inner {
-    white-space: unset;
-}
-
-// .bootstrap-table .pagination-detail .btn-secondary {
-//     color: #fff;
-//     background-color: #2D5CA6;
-//     border-color: #2D5CA6;
-// }
-
-// .bootstrap-table .pagination-detail .btn-secondary:focus, .bootstrap-table .pagination-detail .btn-secondary.focus {
-//     color: #fff;
-//     background-color: #2D5CA6;
-//     border-color: #2D5CA6;
-//     box-shadow: 0 0 0 0.2rem rgba(223,199,81,0.5);
-// }
