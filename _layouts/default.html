@@ -11,7 +11,7 @@
     <div id="top"></div>
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
-    <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %} role="main">
+    <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
       {{ content }}
     </main>
     {%- include footer.html -%}
