@@ -3,7 +3,7 @@
 #
 - type: region
   item: ivano-frankivska
-  name: Івано-Франківська обласна рада
+  name: Івано-Франківська обласна&nbsp;рада
   address: 76004, м. Івано-Франківськ, вул.&nbsp;М.&nbsp;Грушевського,&nbsp;21
   phone_main: (034) 255 26 16
   phone_hot:  (034) 255 26 16
@@ -16,8 +16,8 @@
 #
 - type: city
   item: ivano-frankivsk
-  name: Івано-Франківська міська рада
-  address: 76004, м. Івано-Франківськ, вул. М. Грушевського, 21
+  name: Івано-Франківська міська&nbsp;рада
+  address: 76004, м. Івано-Франківськ, вул.&nbsp;М.&nbsp;Грушевського,&nbsp;21
   phone_main: (034) 255 65 15
   phone_hot:  (034) 255 60 20
   phone_fax:  (034) 255 60 20
@@ -29,8 +29,8 @@
 #
 - type: district
   item: bohorodchany
-  name: Богородча́нська райо́нна рада
-  address: 77701, с.м.т. Богородча́ни, вул. Шевченка, 66
+  name: Богородча́нська райо́нна&nbsp;рада
+  address: 77701, с.м.т. Богородча́ни, вул.&nbsp;Шевченка,&nbsp;66
   phone_main: (034) 712 41 99
   phone_hot:  (034) 712 41 99
   phone_fax:  (034) 712 41 99
@@ -39,8 +39,8 @@
 
 - type: district
   item: tysmenytsia
-  name: Тисменицька райо́нна рада
-  address: 77401, м. Тисмениця, вул. Галицька, 17
+  name: Тисменицька райо́нна&nbsp;рада
+  address: 77401, м. Тисмениця, вул.&nbsp;Галицька,&nbsp;17
   phone_main: (034) 362 43 36
   phone_hot:  (034) 362 41 75
   phone_fax:  (034) 362 44 14
@@ -52,8 +52,8 @@
 #
 - type: town
   item: tysmienica
-  name: Тисменицька міська рада
-  address: 77401, м. Тисмениця, вул. Галицька, 32
+  name: Тисменицька міська&nbsp;рада
+  address: 77401, м. Тисмениця, вул.&nbsp;Галицька,&nbsp;32
   phone_main: (034) 362 44 54
   phone_hot:  (034) 362 11 16
   phone_fax:  (034) 362 13 92
@@ -65,8 +65,8 @@
 #
 - type: village
   item: solotvyn
-  name: Солотвинська селищна рада
-  address: 77753, с.м.т. Солотвин, вул. Чорновола, 7
+  name: Солотвинська селищна&nbsp;рада
+  address: 77753, с.м.т. Солотвин, вул.&nbsp;Чорновола,&nbsp;7
   phone_main:
   phone_hot:
   phone_fax:
