@@ -7,8 +7,8 @@ layout: default
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
 {%- assign type = page.title | split: ' ' | first | downcase -%}
-{%- assign phone = cat | append: "-tel" -%}
-{%- assign phones = site.data[phone] -%}
+{%- assign phoner = cat | append: "-rada-tel" -%}
+{%- assign phoners = site.data[phoner] -%}
 <div class="container">
   <div class="row">
     <div class="col-12 px-md-4">
@@ -110,9 +110,9 @@ layout: default
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
             </li>
-            {%- if phones -%}
+            {%- if phoners -%}
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">{{ site.data.labels.phones }}</a>
+              <a class="nav-link" id="phoners-tab" data-toggle="tab" href="#phoners" role="tab" aria-controls="phoners" aria-selected="false">{{ site.data.labels.phones }}</a>
             </li>
             {%- endif -%}
           </ul>
@@ -169,10 +169,10 @@ layout: default
               {%- assign dir = page.dir | append: 'deputies' | append: '/' -%}
               {%- include current-subpages.html dir=dir page="district" -%}
             </div>
-            {%- if phones -%}
-            <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
+            {%- if phoners -%}
+            <div class="tab-pane pt-3 fade" id="phoners" role="tabpanel" aria-labelledby="phoners-tab">
               <h3 class="mt-2 mb-4">Телефоний довідник</h3>
-              {%- include 09.html dir=page.dir -%}
+              {%- include 09-rada.html dir=page.dir -%}
             </div>
             {%- endif -%}
           </div>
