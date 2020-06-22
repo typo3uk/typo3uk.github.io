@@ -12,11 +12,12 @@
   data-detail-formatter="phonesDetailFormatter"
   data-pagination="true"
   data-buttons-class="primary"
+  undefinedText: 'Дані відсутні'
   data-url="{{ include.dir }}data/09-rada.json">
   <thead class="thead-rada">
     <tr>
-      <th data-field="fullname" data-formatter="fullnameFormatter" data-title="Прізвище, ім'я, по&nbsp;батькові">Fullname</th>
-      <th data-field="phones" data-title="Телефон">Phones</th>
+      <th data-field="fullname" data-formatter="fullnameFormatter" data-title="{{ site.data.labels.fullname }}">Fullname</th>
+      <th data-field="phones" data-title="{{ site.data.labels.phone }}">Phones</th>
     </tr>
   </thead>
 </table>

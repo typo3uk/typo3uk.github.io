@@ -28,6 +28,7 @@ no_email: немає пошти
 previous: Попередній
 next: Наступний
 recently_added: Нещодавно додані
+fullname: Прізвище, ім'я, по&nbsp;батькові
 #
 # Words
 #
@@ -104,5 +105,6 @@ villages_list_empty: Устрій поки що не сформовано :(
 #
 # Phones
 #
+phone: Телефон
 phones: Телефони
 phones_09: Телефоний довідник

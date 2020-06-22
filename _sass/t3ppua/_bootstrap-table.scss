@@ -2,12 +2,12 @@
 
 .bootstrap-table {
   .table .thead-rada th {
-      color: #fff;
-      background-color: #2D5CA6;
-      border-color: #fff;
+    color: #fff;
+    background-color: #2D5CA6;
+    border-color: #fff;
   }
   .fixed-table-container .table thead th .th-inner {
-      white-space: unset;
+    white-space: unset;
   }
   .detail-view {
     background-color: #f5f7fa;
@@ -17,7 +17,7 @@
 #phones {
   .bootstrap-table {
     .fixed-table-container .table thead th {
-        vertical-align: top;
+      vertical-align: top;
     }
   }
 }
