@@ -1,6 +1,6 @@
 
 
-$("table").on('collapse-row.bs.table', function (e, row, $element) {
+$(this).on('click-row.bs.table', function (e, row, $element) {
   $('.active').removeClass('active')
   $($element).addClass('active')
 });
