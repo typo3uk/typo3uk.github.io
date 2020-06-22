@@ -51,11 +51,6 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-          {%- if phones -%}
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">{{ site.data.labels.phones }}</a>
-          </li>
-          {%- endif -%}
           {%- if page.division == 0 -%}{%- else -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
@@ -115,6 +110,11 @@ layout: default
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
             </li>
+            {%- if phones -%}
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="phones-tab" data-toggle="tab" href="#phones" role="tab" aria-controls="phones" aria-selected="false">{{ site.data.labels.phones }}</a>
+            </li>
+            {%- endif -%}
           </ul>
           <div class="tab-content" id="radaContent">
             <div class="tab-pane py-3 fade show active" id="news" role="tabpanel" aria-labelledby="news-tab">
@@ -169,14 +169,14 @@ layout: default
               {%- assign dir = page.dir | append: 'deputies' | append: '/' -%}
               {%- include current-subpages.html dir=dir page="district" -%}
             </div>
+            {%- if phones -%}
+            <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
+              <h3 class="mt-2 mb-4">Телефоний довідник</h3>
+              {%- include 09.html dir=page.dir -%}
+            </div>
+            {%- endif -%}
           </div>
         </div>
-        {%- if phones -%}
-        <div class="tab-pane pt-3 fade" id="phones" role="tabpanel" aria-labelledby="phones-tab">
-          <h3 class="mt-2 mb-4">Телефоний довідник</h3>
-          {%- include 09.html dir=page.dir -%}
-        </div>
-        {%- endif -%}
         {%- if page.division == 0 -%}{% else %}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
