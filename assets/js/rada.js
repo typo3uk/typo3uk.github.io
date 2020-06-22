@@ -1,6 +1,6 @@
 
 
-$("table").on('click-row.bs.table', function (e, row, $element) {
+$("table").on('tr', function (e, row, $element) {
   $('.active').removeClass('active')
   $($element).addClass('active')
 });
