@@ -1,32 +1,4 @@
 
-// var $table = $('#table')
-// var $table = document.getElementsByTagName('table')[0].id
-// var $table = document.getElementById("table").id;
-// var $table = table.id
-
-// $("table").delegate("tr", "click", function() {
-//    var $table = $(this).attr('id');
-// });
-var $table = $('#phones')
-var selectedRow = {}
-
-$(function() {
-  $table.on('click-row.bs.table', function (e, row, $element) {
-    selectedRow = row
-    $('.active').removeClass('active')
-    $($element).addClass('active')
-  })
-})
-
-function rowStyle(row) {
-  if (row.id === selectedRow.id) {
-    return {
-      classes: 'active'
-    }
-  }
-  return {}
-}
-
 function fullnameFormatter(value, row, index) {
   return '<strong>' + row.fullname + '</strong> - ' + row.position + '';
 }
