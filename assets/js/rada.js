@@ -1,3 +1,12 @@
+var $table = $('#phones')
+
+$(function() {
+  $table.on('click-row.bs.table', function (e, row, $element) {
+    selectedRow = row
+    $('.active').removeClass('active')
+    $($element).addClass('active')
+  })
+})
 
 function fullnameFormatter(value, row, index) {
   return '<strong>' + row.fullname + '</strong> - ' + row.position + '';
