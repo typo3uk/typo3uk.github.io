@@ -1,8 +1,6 @@
 // var $table = $('#phones')
 
-$("table").delegate("tr", "click", function() {
-   var $table = $(this).attr('id');
-});
+var $table = $(this).attr('id');
 
 $(function() {
   $table.on('click-row.bs.table', function (e, row, $element) {
