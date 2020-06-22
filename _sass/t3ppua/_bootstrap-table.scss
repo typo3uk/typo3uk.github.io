@@ -21,3 +21,9 @@
     }
   }
 }
+
+.bootstrap-table {
+  .fixed-table-container .table thead th {
+    vertical-align: top;
+  }
+}
