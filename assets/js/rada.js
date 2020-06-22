@@ -1,9 +1,8 @@
 // var $table = $('#phones')
 
-var $table = $(this).attr('id');
 
 $(function() {
-  $table.on('click-row.bs.table', function (e, row, $element) {
+  $(this).on('click-row.bs.table', function (e, row, $element) {
     selectedRow = row
     $('.active').removeClass('active')
     $($element).addClass('active')
