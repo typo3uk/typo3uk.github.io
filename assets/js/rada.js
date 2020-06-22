@@ -2,7 +2,12 @@
 // var $table = $('#table')
 // var $table = document.getElementsByTagName('table')[0].id
 // var $table = document.getElementById("table").id;
-var $table = table.id
+
+
+$("table").delegate("tr", "click", function() {
+   var $table = $(this).attr('id');
+});
+// var $table = table.id
 var selectedRow = {}
 
 $(function() {
