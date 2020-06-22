@@ -6,8 +6,15 @@
     background-color: #2D5CA6;
     border-color: #fff;
   }
-  .fixed-table-container .table thead th .th-inner {
-    white-space: unset;
+  .fixed-table-container {
+    .table {
+      thead th .th-inner {
+        white-space: unset;
+      }
+      thead th {
+        vertical-align: top;
+      }
+    }
   }
   .detail-view {
     background-color: #f5f7fa;
@@ -17,13 +24,13 @@
   }
 }
 
-#phones {
-  .bootstrap-table {
-    .fixed-table-container .table thead th {
-      vertical-align: top;
-    }
-  }
-}
+// #phones {
+//   .bootstrap-table {
+//     .fixed-table-container .table thead th {
+//       vertical-align: top;
+//     }
+//   }
+// }
 
 // .bootstrap-table {
 //   .fixed-table-container .table thead th {
