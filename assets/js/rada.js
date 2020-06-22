@@ -4,9 +4,10 @@
 // var $table = document.getElementById("table").id;
 // var $table = table.id
 
-$("table").delegate("tr", "click", function() {
-   var $table = $(this).attr('id');
-});
+// $("table").delegate("tr", "click", function() {
+//    var $table = $(this).attr('id');
+// });
+var $table = $('#phones')
 var selectedRow = {}
 
 $(function() {
