@@ -1,9 +1,11 @@
 
 
-$(this).on('click-row.bs.table', function (e, row, $element) {
-  $('.active').removeClass('active')
-  $($element).addClass('active')
-});
+$(function() {
+  $(this).on('click-row.bs.table', function (e, row, $element) {
+    $('.active').removeClass('active')
+    $($element).addClass('active')
+  })
+})
 
 
 function fullnameFormatter(value, row, index) {
