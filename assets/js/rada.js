@@ -1,7 +1,7 @@
 
 var expandedRow = null;
 $(this).on('expand-row.bs.table', function (event, index) {
-  $('table').bootstrapTable('collapseRow', expandedRow)
+  $(this).bootstrapTable('collapseRow', expandedRow)
   expandedRow = index;
 });
 
