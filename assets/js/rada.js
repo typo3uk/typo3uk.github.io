@@ -1,9 +1,19 @@
 
-
 $(function() {
   $(this).on('click-row.bs.table', function (e, row, $element) {
     $($element).siblings().removeClass('active');
     $($element).addClass('active');
+  })
+})
+
+$(function() {
+  $(this).on('expand-row.bs.table', function (e, index, row, $detail) {
+    $(this).find('.detail-view').each(function () {
+      if (!$(this).is($detail.parent())) {
+        $(this).prev().find('.active').click()
+      }
+    })
+    $detail.html(row.stargazers_count)
   })
 })
 
