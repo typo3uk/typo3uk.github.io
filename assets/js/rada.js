@@ -6,18 +6,6 @@ $(function() {
   })
 })
 
-$(function() {
-  $(this).on('expand-row.bs.table', function (e, index, row, $detail) {
-    $(this).find('.detail-view').each(function () {
-      if (!$(this).is($detail.parent())) {
-        $(this).prev().find('.active').click()
-      }
-    })
-    $detail.html(row.stargazers_count)
-  })
-})
-
-
 function fullnameFormatter(value, row, index) {
   return '<strong>' + row.fullname + '</strong> - ' + row.position + '';
 }
