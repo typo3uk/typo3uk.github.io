@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Person",
+  "type": "object",
+  "required": [
+    "List"
+  ],
+  "properties": {
+    "List": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fullname": {
+            "type": "string",
+            "description": "Прізвище ім'я по батькові",
+            "minLength": 10
+          },
+          "division": {
+            "type": "string",
+            "description": "Відділ"
+          },
+          "position": {
+            "type": "string",
+            "description": "Посада"
+          },
+          "room": {
+            "type": "string",
+            "description": "Кабінет"
+          },
+          "phones": {
+            "type": "string",
+            "description": "Телефон",
+            "minLength": 10
+          },
+          "atc": {
+            "type": "string",
+            "description": "Телефон внутрішній"
+          }
+        }
+      }
+    }
+  }
+}
