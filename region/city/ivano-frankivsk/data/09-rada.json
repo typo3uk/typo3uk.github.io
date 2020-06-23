@@ -7,4 +7,4 @@ layout: null
 {%- assign pass = back | slice: 0, size | join: "/" -%}
 {%- assign cat = pass | split: "/" | last -%}
 {%- assign phoners = cat | append: "-rada-tel" -%}
-{{ site.data[phoners] | jsonify }}
+{{ site.data[phoners] }}
