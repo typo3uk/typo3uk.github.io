@@ -20,6 +20,10 @@
     border: 1px double #2D5CA6;
     background-color: #f5f7fa;
   }
+  .detail-view tr:hover {
+    border: unset;
+    background-color: unset;
+  }
   .table-hover tbody tr:hover {
       color: #2D5CA6;
       border: 1px double #2D5CA6;
