@@ -3,9 +3,11 @@
 $(function() {
   var expandedRow = null;
   $('table').on('expand-row.bs.table', function (event, index) {
-    $('table').bootstrapTable('collapseRow', expandedRow)
+    if (expandedRow !== index) {
+     	$('table').bootstrapTable('collapseRow', expandedRow)
+    }
     expandedRow = index;
-  });
+	});
   $('table').on('click-row.bs.table', function (e, row, $element) {
     $($element).siblings().removeClass('active');
     $($element).addClass('active');
