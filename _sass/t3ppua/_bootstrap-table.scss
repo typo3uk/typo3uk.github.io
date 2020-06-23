@@ -19,8 +19,12 @@
   .detail-view {
     background-color: #f5f7fa;
   }
+  .table-hover tbody tr:hover {
+      padding: 10px;
+      border: 1px double #2D5CA6;
+  }
   .active {
-    color: red;
+    color: #2D5CA6
   }
 }
 
