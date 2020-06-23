@@ -1,12 +1,12 @@
 
-var expandedRow = null;
-$(this).on('expand-row.bs.table', function (event, index) {
-  $(this).bootstrapTable('collapseRow', expandedRow)
-  expandedRow = index;
-});
 
 $(function() {
-  $(this).on('click-row.bs.table', function (e, row, $element) {
+  var expandedRow = null;
+  $('table').on('expand-row.bs.table', function (event, index) {
+    $('table').bootstrapTable('collapseRow', expandedRow)
+    expandedRow = index;
+  });
+  $('table').on('click-row.bs.table', function (e, row, $element) {
     $($element).siblings().removeClass('active');
     $($element).addClass('active');
   })
