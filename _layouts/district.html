@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
+{%- assign pages = site.pages | sort: 'dir' -%}
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
 {%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
-{%- assign isDeputies = false -%}{%- for i in site.pages | sort: 'dir' -%}{%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDeputies = true -%}{%- endif -%}{%- endfor -%}
+{%- assign isDeputies = false -%}{%- for i in pages -%}{%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDeputies = true -%}{%- endif -%}{%- endfor -%}
 {%- assign title = page.council.title -%}
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
@@ -52,9 +53,10 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
+
           {%- assign isDivision = false -%}
 
-          {%- for i in site.pages | sort: 'dir' -%}
+          {%- for i in pages -%}
             {%- if i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}
               {%- assign isDivision = true -%}
             {%- endif -%}
