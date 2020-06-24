@@ -11,29 +11,33 @@ built:
 #
 # Price
 #
-price
+price:
+#
+# Price for square meters
+#
+price_sqmt:
 #
 # Number rooms
 #
-rooms
+rooms:
 #
 # Number square meters in this property (total/) - square meters
 #
-surface
+surface:
 #
 # Number bathrooms in this property
 #
-bathrooms
+bathrooms:
 #
 # The property on this floor
 #
-floor
+floor:
 #
 # Number floors in the building
 #
-floors
+floors:
 #
 # Parking
 #
-parking
+parking:
 ---

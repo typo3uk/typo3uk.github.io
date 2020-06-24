@@ -6,9 +6,12 @@
     <li class="nav-item" role="presentation">
       <a class="nav-link" id="{{ include.region }}-decisions-tab" data-toggle="tab" href="#{{ include.region }}-decisions" role="tab" aria-controls="{{ include.region }}-decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
     </li>
+    {%- include has-children.html where="deputies/" dir=include.url -%}
+    {%- if hasChildren == true -%}
     <li class="nav-item" role="presentation">
       <a class="nav-link" id="{{ include.region }}-deputies-tab" data-toggle="tab" href="#{{ include.region }}-deputies" role="tab" aria-controls="{{ include.region }}-deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
     </li>
+    {%- endif -%}
   </ul>
 </nav>
 <div class="tab-content" id="{{ include.region }}-rada-content">
@@ -19,6 +22,8 @@
     {%- include home/decisions-last.html cat=include.region url=include.url num="3" -%}
   </div>
   <div class="tab-pane pt-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
+{{include.url}}
+<br>
     {%- assign dir = include.url | append: 'deputies' | append: '/' -%}
     {%- include current-subpages.html dir=dir page="home" -%}
   </div>

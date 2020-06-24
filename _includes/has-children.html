@@ -1,5 +1,11 @@
 {%- assign hasChildren = false -%}
+include.dir
+{%- if include.dir -%}
+{%- assign pages = site.pages | sort: 'dir' -%}
+{%- assign here = include.dir -%}
+{%- else -%}
 {%- assign here = page.dir | append: include.where -%}
+{%- endif -%}
 {%- for i in pages -%}
   {%- if i.url contains here and i.url != here -%}
     {%- assign hasChildren = true -%}
