@@ -36,9 +36,7 @@
             <h5 class="card-title">
               <a href="{{ second.url }}">{%- if second.navtitle -%}{{ second.navtitle }}{%- else -%}{{ second.title }}{%- endif -%}</a>
             </h5>
-            <div class="card-text">
-              {%- include home/card.html region=slug url=second.url -%}
-            </div>
+            {%- include home/card.html region=slug url=second.url -%}
           </div>
         </div>
       </div>

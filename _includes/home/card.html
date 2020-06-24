@@ -2,41 +2,43 @@
 {%- include has-decisions.html cat=include.region -%}
 {%- include has-children.html where="deputies/" dir=include.url -%}
 {%- if hasNews == true or hasDecisions == true or hasChildren == true -%}
-<nav>
-  <ul class="nav nav-tabs" id="{{ include.region }}-rada-tab" role="tablist">
+<div class="card-text">
+  <nav>
+    <ul class="nav nav-tabs" id="{{ include.region }}-rada-tab" role="tablist">
+      {%- if hasNews == true -%}
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="{{ include.region }}-news-tab" data-toggle="tab" href="#{{ include.region }}-news" role="tab" aria-controls="{{ include.region }}-news" aria-selected="true">{{ site.data.labels.news | capitalize }}</a>
+      </li>
+      {%- endif -%}
+      {%- if hasDecisions == true -%}
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="{{ include.region }}-decisions-tab" data-toggle="tab" href="#{{ include.region }}-decisions" role="tab" aria-controls="{{ include.region }}-decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
+      </li>
+      {%- endif -%}
+      {%- if hasChildren == true -%}
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="{{ include.region }}-deputies-tab" data-toggle="tab" href="#{{ include.region }}-deputies" role="tab" aria-controls="{{ include.region }}-deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
+      </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+  <div class="tab-content" id="{{ include.region }}-rada-content">
     {%- if hasNews == true -%}
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="{{ include.region }}-news-tab" data-toggle="tab" href="#{{ include.region }}-news" role="tab" aria-controls="{{ include.region }}-news" aria-selected="true">{{ site.data.labels.news | capitalize }}</a>
-    </li>
+    <div class="tab-pane pt-3 fade show active" id="{{ include.region }}-news" role="tabpanel" aria-labelledby="{{ include.region }}-news-tab">
+      {%- include home/news-last.html cat=include.region url=include.url num="3" -%}
+    </div>
     {%- endif -%}
     {%- if hasDecisions == true -%}
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="{{ include.region }}-decisions-tab" data-toggle="tab" href="#{{ include.region }}-decisions" role="tab" aria-controls="{{ include.region }}-decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
-    </li>
+    <div class="tab-pane pt-3 fade" id="{{ include.region }}-decisions" role="tabpanel" aria-labelledby="{{ include.region }}-decisions-tab">
+      {%- include home/decisions-last.html cat=include.region url=include.url num="3" -%}
+    </div>
     {%- endif -%}
     {%- if hasChildren == true -%}
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="{{ include.region }}-deputies-tab" data-toggle="tab" href="#{{ include.region }}-deputies" role="tab" aria-controls="{{ include.region }}-deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
-    </li>
+    <div class="tab-pane pt-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
+      {%- assign dir = include.url | append: 'deputies' | append: '/' -%}
+      {%- include current-subpages.html dir=dir page="home" -%}
+    </div>
     {%- endif -%}
-  </ul>
-</nav>
-<div class="tab-content" id="{{ include.region }}-rada-content">
-  {%- if hasNews == true -%}
-  <div class="tab-pane pt-3 fade show active" id="{{ include.region }}-news" role="tabpanel" aria-labelledby="{{ include.region }}-news-tab">
-    {%- include home/news-last.html cat=include.region url=include.url num="3" -%}
   </div>
-  {%- endif -%}
-  {%- if hasDecisions == true -%}
-  <div class="tab-pane pt-3 fade" id="{{ include.region }}-decisions" role="tabpanel" aria-labelledby="{{ include.region }}-decisions-tab">
-    {%- include home/decisions-last.html cat=include.region url=include.url num="3" -%}
-  </div>
-  {%- endif -%}
-  {%- if hasChildren == true -%}
-  <div class="tab-pane pt-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
-    {%- assign dir = include.url | append: 'deputies' | append: '/' -%}
-    {%- include current-subpages.html dir=dir page="home" -%}
-  </div>
-  {%- endif -%}
 </div>
 {%- endif -%}

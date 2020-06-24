@@ -15,7 +15,7 @@
           <h5 class="card-title">
             <a href="{{ one.url }}">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</a>
           </h5>
-          <div class="card-text">{%- include home/card.html region=slug url=one.url -%}</div>
+          {%- include home/card.html region=slug url=one.url -%}
         </div>
       </div>
     </div>
