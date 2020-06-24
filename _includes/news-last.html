@@ -1,6 +1,5 @@
 {%- if isVillage == false -%}{%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "village" or i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}{% else %}{%- assign news = '' | split:'' -%}{%- for i in site.categories[include.cat] -%}{%- unless i.url contains "decisions" -%}{%- assign news = news | push:i -%}{%- endunless -%}{%- endfor -%}{%- endif -%}
 {%- for article in news limit:include.num -%}
-  {%- assign hasNews = true -%}
   {%- if forloop.first -%}
   <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2">
   {%- endif -%}
@@ -23,7 +22,6 @@
   </div>
   {%- endif -%}
 {%- else -%}
-  {%- assign hasNews = false -%}
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="alert alert-info" role="alert">{{ site.data.labels.news_list_empty }}</div>

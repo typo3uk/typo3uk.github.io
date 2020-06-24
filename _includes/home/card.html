@@ -1,5 +1,6 @@
 <nav>
   <ul class="nav nav-tabs" id="{{ include.region }}-rada-tab" role="tablist">
+    {%- include has-news.html cat=include.region -%}
     <li class="nav-item" role="presentation">
       <a class="nav-link active" id="{{ include.region }}-news-tab" data-toggle="tab" href="#{{ include.region }}-news" role="tab" aria-controls="{{ include.region }}-news" aria-selected="true">{{ site.data.labels.news | capitalize }} - {{hasNews}}</a>
     </li>
