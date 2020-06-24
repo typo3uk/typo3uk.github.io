@@ -111,7 +111,8 @@ layout: default
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
             </li>
-            {%- if isDeputies == true -%}
+            {%- include has-children.html where="deputies/" -%}
+            {%- if hasChildren == true -%}
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
             </li>
@@ -157,7 +158,8 @@ layout: default
               </h3>
               {% include decisions-last.html cat=cat num="6" %}
             </div>
-            {%- if isDeputies == true -%}
+            {%- include has-children.html where="deputies/" -%}
+            {%- if hasChildren == true -%}
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="mt-2 mb-4">{{ site.data.labels.deputies | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}
                 {% if isCityTown == true and isVillage == true %}
