@@ -52,7 +52,8 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-          {%- if page.division == 0 -%}{%- else -%}
+          {%- assign isDivision = false -%}{%- for i in site.pages | sort: 'dir' -%}{%- if i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDivision = true -%}{%- endif -%}{%- endfor -%}
+          {%- if isDivision == true -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
               {% if isCityTown == true and isVillage == true %}
@@ -65,7 +66,7 @@ layout: default
                 {{ site.data.labels.oblasnyy | capitalize }}
               {% else %}
                 {{ site.data.labels.rayonnyy | capitalize }}
-              {% endif %} {{ site.data.labels.ustriy }}
+              {% endif %} {{ site.data.labels.ustriy }} - {{isDivision}}
             </a>
           </li>
           {%- endif -%}
