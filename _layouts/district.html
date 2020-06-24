@@ -108,13 +108,8 @@ layout: default
               <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
             </li>
 
-            {%- assign all = site.pages | sort: 'dir' -%}
-            {%- assign parts = page.dir | split: '/' -%}
-            {%- assign dedir = parts | size -%}
-            {%- assign dedir = dedir | plus:1 -%}
-
             {%- assign isDeputies = false -%}
-            {%- for i in all -%}
+            {%- for i in site.pages | sort: 'dir' -%}
               {%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}
                 {%- assign isDeputies = true -%}
               {%- endif -%}
