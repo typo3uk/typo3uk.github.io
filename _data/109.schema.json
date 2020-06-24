@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "employee": {
+      "$ref": "#/definitions/employee"
+    }
+  },
+  "definitions": {
+    "employee": {
+      "type": "object",
+      "required": [
+        "userName",
+        "dateOfBirth",
+        "language"
+      ],
+      "properties": {
+        "userName": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "language": {
+          "type": "string"
+        },
+        "personalDetails": {
+          "$ref": "#/definitions/personalDetails"
+        },
+        "projectDetails": {
+          "$ref": "#/definitions/projectDetails"
+        }
+      }
+    },
+    "personalDetails": {
+      "type": "object",
+      "properties": {
+        "GeneralDetails": {
+          "$ref": "#/definitions/GeneralDetails"
+        },
+        "Family": {
+          "$ref": "#/definitions/Family"
+        },
+        "Income": {
+          "$ref": "#/definitions/Income"
+        }
+      }
+    },
+    "projectDetails": {
+      "type": "array",
+      "maxItems": 4,
+      "minItems": 1,
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "projects": {
+            "$ref": "#/definitions/projects"
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "maxItems": 4,
+      "minItems": 1,
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          },
+          "projectsAdditional": {
+            "$ref": "#/definitions/projectsAdditional"
+          }
+        }
+      }
+    },
+    "projectsAdditional": {
+      "type": "array",
+      "maxItems": 4,
+      "minItems": 1,
+      "items": {
+        "properties": {
+          "Additional_name": {
+            "type": "string"
+          },
+          "Additional_areacode": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "GeneralDetails": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "number"
+        },
+        "married": {
+          "type": "boolean"
+        },
+        "phone": {
+          "type": "number",
+          "aem:afProperties": {
+            "sling:resourceType": "/libs/fd/af/components/guidetelephone",
+            "guideNodeClass": "guideTelephone"
+          }
+        },
+        "address": {
+          "type": "string"
+        }
+      }
+    },
+    "Family": {
+      "type": "object",
+      "properties": {
+        "spouse": {
+          "$ref": "#/definitions/spouse"
+        },
+        "kids": {
+          "$ref": "#/definitions/kids"
+        }
+      }
+    },
+    "Income": {
+      "type": "object",
+      "properties": {
+        "monthly": {
+          "type": "number"
+        },
+        "yearly": {
+          "type": "number"
+        }
+      }
+    },
+    "spouse": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "Income": {
+          "$ref": "#/definitions/Income"
+        }
+      }
+    },
+    "kids": {
+      "type": "array",
+      "maxItems": 4,
+      "minItems": 1,
+      "items": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

@@ -107,8 +107,21 @@ layout: default
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
             </li>
+
+            {% assign all = site.pages | sort: 'dir' %}
+            {% assign parts = page.dir | split: '/' %}
+            {% assign dedir = parts | size %}
+            {% assign dedir = dedir | plus:1 %}
+
+            {% assign isChildren = false %}
+            {% for i in all %}
+              {% if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir %}
+                {% assign isChildren = true %}
+              {% endif %}
+            {% endfor %}
+
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
+              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }} - {{isChildren}}</a>
             </li>
             {%- if phoners -%}
             <li class="nav-item" role="presentation">
