@@ -54,9 +54,7 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-
           {%- include has-children.html where="village/" -%}
-
           {%- if hasChildren == true -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
@@ -70,7 +68,7 @@ layout: default
                 {{ site.data.labels.oblasnyy | capitalize }}
               {% else %}
                 {{ site.data.labels.rayonnyy | capitalize }}
-              {% endif %} {{ site.data.labels.ustriy }} - {{isDivision}}
+              {% endif %} {{ site.data.labels.ustriy }}
             </a>
           </li>
           {%- endif -%}
@@ -187,7 +185,8 @@ layout: default
             {%- endif -%}
           </div>
         </div>
-        {%- if isDivision == true -%}
+        {%- include has-children.html where="village/" -%}
+        {%- if hasChildren == true -%}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
             {{ site.data.labels.subordinate | capitalize }}
