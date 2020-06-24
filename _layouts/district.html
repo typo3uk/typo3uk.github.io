@@ -108,21 +108,23 @@ layout: default
               <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
             </li>
 
-            {% assign all = site.pages | sort: 'dir' %}
-            {% assign parts = page.dir | split: '/' %}
-            {% assign dedir = parts | size %}
-            {% assign dedir = dedir | plus:1 %}
+            {%- assign all = site.pages | sort: 'dir' -%}
+            {%- assign parts = page.dir | split: '/' -%}
+            {%- assign dedir = parts | size -%}
+            {%- assign dedir = dedir | plus:1 -%}
 
-            {% assign isChildren = false %}
-            {% for i in all %}
-              {% if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir %}
-                {% assign isChildren = true %}
-              {% endif %}
-            {% endfor %}
+            {%- assign isDeputies = false -%}
+            {%- for i in all -%}
+              {%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}
+                {%- assign isDeputies = true -%}
+              {%- endif -%}
+            {%- endfor -%}
 
+            {%- if isDeputies == true -%}
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }} - {{isChildren}}</a>
+              <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
             </li>
+            {%- endif -%}
             {%- if phoners -%}
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="phoners-tab" data-toggle="tab" href="#phoners" role="tab" aria-controls="phoners" aria-selected="false">{{ site.data.labels.phones }}</a>
@@ -164,6 +166,7 @@ layout: default
               </h3>
               {% include decisions-last.html cat=cat num="6" %}
             </div>
+            {%- if isDeputies == true -%}
             <div class="tab-pane py-3 fade" id="deputies" role="tabpanel" aria-labelledby="deputies-tab">
               <h3 class="mt-2 mb-4">{{ site.data.labels.deputies | capitalize }} {{ title | slice: 0, size }}{{ site.data.labels.oyi }}
                 {% if isCityTown == true and isVillage == true %}
@@ -182,6 +185,7 @@ layout: default
               {%- assign dir = page.dir | append: 'deputies' | append: '/' -%}
               {%- include current-subpages.html dir=dir page="district" -%}
             </div>
+            {%- endif -%}
             {%- if phoners -%}
             <div class="tab-pane pt-3 fade" id="phoners" role="tabpanel" aria-labelledby="phoners-tab">
               <h3 class="mt-2 mb-4">{{ site.data.labels.phones_09 }}</h3>
