@@ -1,10 +1,23 @@
-real eastate
+Real Estate
 ---
-type
+#
+# Type property
+#
+type:
+#
+# Year built
+#
+built:
+#
+# Price
+#
 price
+#
+# Number rooms
+#
 rooms
 #
-# Number square meters in this property (total/)
+# Number square meters in this property (total/) - square meters
 #
 surface
 #
@@ -19,4 +32,8 @@ floor
 # Number floors in the building
 #
 floors
+#
+# Parking
+#
+parking
 ---

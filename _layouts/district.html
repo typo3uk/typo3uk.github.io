@@ -57,7 +57,7 @@ layout: default
           {%- assign isDivision = false -%}
 
           {%- for i in pages -%}
-            {%- if i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}
+            {%- if i.url contains cat and i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}
               {%- assign isDivision = true -%}
             {%- endif -%}
           {%- endfor -%}
