@@ -3,7 +3,20 @@ real eastate
 type
 price
 rooms
+#
+# Number square meters in this property (total/)
+#
 surface
+#
+# Number bathrooms in this property
+#
 bathrooms
+#
+# The property on this floor
+#
 floor
+#
+# Number floors in the building
+#
+floors
 ---

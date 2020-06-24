@@ -52,7 +52,14 @@ layout: default
               {% endif %} {{ site.data.labels.rada }}
             </a>
           </li>
-          {%- assign isDivision = false -%}{%- for i in site.pages | sort: 'dir' -%}{%- if i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDivision = true -%}{%- endif -%}{%- endfor -%}
+          {%- assign isDivision = false -%}
+
+          {%- for i in site.pages | sort: 'dir' -%}
+            {%- if i.url contains "village" and i.url contains page.dir and i.url != page.dir -%}
+              {%- assign isDivision = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+
           {%- if isDivision == true -%}
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="division-tab" data-toggle="tab" href="#division" role="tab" aria-controls="division" aria-selected="false">
@@ -183,7 +190,7 @@ layout: default
             {%- endif -%}
           </div>
         </div>
-        {%- if page.division == 0 -%}{% else %}
+        {%- if isDivision == true -%}
         <div class="tab-pane pt-3 fade" id="division" role="tabpanel" aria-labelledby="division-tab">
           <h3 class="mt-2 mb-4">
             {{ site.data.labels.subordinate | capitalize }}
