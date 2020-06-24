@@ -4,12 +4,12 @@ layout: default
 {%- assign pages = site.pages | sort: 'dir' -%}
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
 {%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
-{%- include has-news.html cat=include.region -%}
-{%- include has-decisions.html cat=include.region -%}
 {%- assign title = page.council.title -%}
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
 {%- assign type = page.title | split: ' ' | first | downcase -%}
+{%- include has-news.html cat=cat -%}
+{%- include has-decisions.html cat=cat -%}
 {%- assign phoner = cat | append: "-rada-tel" -%}
 {%- assign phoners = site.data[phoner] -%}
 <div class="container">
