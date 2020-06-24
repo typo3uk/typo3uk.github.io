@@ -26,4 +26,7 @@
 //
 @import "photoswipe";
 @import "responsive-tabs";
+
+{%- if page.table == 1 -%}
 @import "bootstrap-table";
+{%- endif -%}
