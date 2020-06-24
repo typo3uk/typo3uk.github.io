@@ -3,6 +3,7 @@ layout: default
 ---
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
 {%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
+{%- assign isDeputies = false -%}{%- for i in site.pages | sort: 'dir' -%}{%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDeputies = true -%}{%- endif -%}{%- endfor -%}
 {%- assign title = page.council.title -%}
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
@@ -107,14 +108,6 @@ layout: default
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="decisions-tab" data-toggle="tab" href="#decisions" role="tab" aria-controls="decisions" aria-selected="false">{{ site.data.labels.decisions | capitalize }}</a>
             </li>
-
-            {%- assign isDeputies = false -%}
-            {%- for i in site.pages | sort: 'dir' -%}
-              {%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}
-                {%- assign isDeputies = true -%}
-              {%- endif -%}
-            {%- endfor -%}
-
             {%- if isDeputies == true -%}
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="deputies-tab" data-toggle="tab" href="#deputies" role="tab" aria-controls="deputies" aria-selected="false">{{ site.data.labels.deputies | capitalize }}</a>
