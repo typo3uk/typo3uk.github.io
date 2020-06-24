@@ -1,0 +1,7 @@
+{%- assign hasChildren = false -%}
+{%- assign here = page.dir | append: include.where -%}
+{%- for i in pages -%}
+  {%- if i.url contains here and i.url != here -%}
+    {%- assign hasChildren = true -%}
+  {%- endif -%}
+{%- endfor -%}
