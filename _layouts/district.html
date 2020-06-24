@@ -4,7 +4,6 @@ layout: default
 {%- assign pages = site.pages | sort: 'dir' -%}
 {%- if page.url contains "city" or page.url contains "town" -%}{%- assign isCityTown = true -%}{%- else -%}{%- assign isCityTown = false -%}{%- endif -%}
 {%- if page.url contains "village" -%}{%- assign isVillage = true -%}{%- else -%}{%- assign isVillage = false -%}{%- endif -%}
-{%- assign isDeputies = false -%}{%- for i in pages -%}{%- if i.url contains "deputies" and i.url contains page.dir and i.url != page.dir -%}{%- assign isDeputies = true -%}{%- endif -%}{%- endfor -%}
 {%- assign title = page.council.title -%}
 {%- assign size = title | size | minus: 1 -%}
 {%- assign cat = page.dir | split: '/' | last -%}
@@ -16,7 +15,6 @@ layout: default
     <div class="col-12 px-md-4">
       <h1>{{ page.title }}</h1>
       <p class="lead">{{ page.teaser }}</p>
-      <p> {%- assign villageDir = page.dir | append: "village/" -%} villageDir: {{ villageDir }}</p>
     </div>
   </div>
   <div class="row">
