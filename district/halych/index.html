@@ -5,9 +5,3 @@ subtitle:
 description:
 breadcrumb:
 ---
-
-{%- assign pages = site.pages | sort: "path" | reverse | where_exp: "item", "item.url contains '/bohorodchany/news/'" -%}
-
-{% for item in pages | sort: "path" %}
-- {{ item.title }}<br/>
-{% endfor %}

@@ -1,3 +1,4 @@
+{%- if page.table == 1 -%}
 @import "../../assets/css/bootstrap-table.min.css";
 
 .bootstrap-table {
@@ -44,3 +45,4 @@
     border-radius: unset;
   }
 }
+{%- endif -%}
