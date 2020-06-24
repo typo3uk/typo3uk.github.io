@@ -21,10 +21,11 @@
   <div class="tab-pane pt-3 fade" id="{{ include.region }}-decisions" role="tabpanel" aria-labelledby="{{ include.region }}-decisions-tab">
     {%- include home/decisions-last.html cat=include.region url=include.url num="3" -%}
   </div>
+  {%- include has-children.html where="deputies/" dir=include.url -%}
+  {%- if hasChildren == true -%}
   <div class="tab-pane pt-3 fade" id="{{ include.region }}-deputies" role="tabpanel" aria-labelledby="{{ include.region }}-deputies-tab">
-{{include.url}}
-<br>
     {%- assign dir = include.url | append: 'deputies' | append: '/' -%}
     {%- include current-subpages.html dir=dir page="home" -%}
   </div>
+  {%- endif -%}
 </div>
