@@ -1,13 +1,13 @@
 {%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 
 
-{%- assign ones = site.pages | sort: 'path' | reverse -%}
+{%- assign ones = site.pages | sort: 'dir' | reverse -%}
 {%- for one in ones -%}
   {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
   {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if page.dir == current and one.url contains page.dir and one.navhide != 1 -%}
+  {%- if here == current and one.url contains here and one.navhide != 1 -%}
     <a href="{{ one.url }}">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</a>
-  {%- endif -%}
+  {%- endif -%}ty
 {%- endfor -%}
 
 

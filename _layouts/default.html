@@ -24,18 +24,3 @@
     {%- include scripts.html -%}
   </body>
 </html>
-
-{% comment %}
-{{ content }}
-<br>
-{%- if page.content | strip_newlines == '' -%}
-  {%- assign isEmpty = true -%}
-{%- else -%}
-  {{ content }}
-  {%- assign isEmpty = false -%}
-{%- endif -%}
-###{{ isEmpty }}###
-<br>
-{%- capture result -%}{{ content }}{%- endcapture -%}
-{%- include info-visitors.html -%}
-{% endcomment %}
