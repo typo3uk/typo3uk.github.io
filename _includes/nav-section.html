@@ -1,20 +1,9 @@
 {%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 
-{% comment %}
 {%- if here | append: "/news/" == page.dir or here | append: "/decisions/" == page.dir or here | append: "/deputies/" == page.dir -%}
   {%- assign isActive = true -%}
 {%- endif -%}
-{% endcomment %}
 
-{%- capture active -%}
-{%- if here | append: "/news/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- if here | append: "/decisions/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- if here | append: "/deputies/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- endcapture -%}
-
-={{active}}=
-
-<hr>
 <div class="row mb-4">
   <div class="col-auto ml-auto">
     <div class="list-group list-group-horizontal section">
@@ -36,3 +25,12 @@
     </div>
   </div>
 </div>
+
+
+{% comment %}
+{%- capture active -%}
+{%- if here | append: "/news/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- if here | append: "/decisions/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- if here | append: "/deputies/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- endcapture -%}
+{% endcomment %}
