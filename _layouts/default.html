@@ -12,7 +12,11 @@
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
-      {{ content }}
+      {%- if content -%}
+        {{ content }}
+      {%- else -%}
+        {%- include info-visitors.html -%}
+      {%- endif -%}
     </main>
     {%- include footer.html -%}
     {%- include scroll-top.html -%}
