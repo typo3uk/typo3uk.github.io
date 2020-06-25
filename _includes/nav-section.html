@@ -12,18 +12,27 @@
 {%- if here | append: "/deputies/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
 {%- endcapture -%}
 
+={{active}}=
 
-isActive: ={{ isActive }}=
-
-<br>
-here : {{ here | append: "/news/" }} == {{ page.dir }}
 <hr>
 <div class="row mb-4">
   <div class="col-auto ml-auto">
     <div class="list-group list-group-horizontal section">
-      <a href="{{ here | append: "/news/" }}" class="list-group-item list-group-item-action active">Новини</a>
-      <a href="{{ here | append: "/decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
-      <a href="{{ here | append: "/deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Новини</span>
+      {%- else -%}
+        <a href="{{ here | append: "/news/" }}" class="list-group-item list-group-item-action">Новини</a>
+      {%- endif -%}
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Рішення</span>
+      {%- else -%}
+        <a href="{{ here | append: "/decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
+      {%- endif -%}
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Депутати</span>
+      {%- else -%}
+        <a href="{{ here | append: "/deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
+      {%- endif -%}
     </div>
   </div>
 </div>
