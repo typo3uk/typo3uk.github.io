@@ -12,14 +12,12 @@
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
-      <br>
-      {%- if page.content | strip_newlines == '' -%}
-        {%- assign isEmpty = true -%}
+      {%- assign content = page.content | strip_newlines -%}
+      {%- if content == "" -%}
+        {%- include info-visitors.html -%}
       {%- else -%}
         {{ content }}
-        {%- assign isEmpty = false -%}
       {%- endif -%}
-      ###{{ isEmpty }}###
     </main>
     {%- include footer.html -%}
     {%- include scroll-top.html -%}
@@ -29,6 +27,14 @@
 
 {% comment %}
 {{ content }}
+<br>
+{%- if page.content | strip_newlines == '' -%}
+  {%- assign isEmpty = true -%}
+{%- else -%}
+  {{ content }}
+  {%- assign isEmpty = false -%}
+{%- endif -%}
+###{{ isEmpty }}###
 <br>
 {%- capture result -%}{{ content }}{%- endcapture -%}
 {%- include info-visitors.html -%}

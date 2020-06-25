@@ -1,5 +1,11 @@
 {%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 
+
+
+
+
+{% comment %}
+
 {%- if here | append: "/news/" == page.dir or here | append: "/decisions/" == page.dir or here | append: "/deputies/" == page.dir -%}
   {%- assign isActive = true -%}
 {%- endif -%}
@@ -27,7 +33,6 @@
 </div>
 
 
-{% comment %}
 {%- capture active -%}
 {%- if here | append: "/news/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
 {%- if here | append: "/decisions/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
