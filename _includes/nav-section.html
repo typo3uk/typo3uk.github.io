@@ -1,4 +1,7 @@
-{{ page.dir }}
+{%- assign back = page.dir | split: "/" -%}
+{%- assign size = back | size | minus:1 -%}
+{%- assign here = back | slice: 0, size -%}
+### {{ here }} ###
 <br>
 <div class="row">
   <div class="col-auto ml-auto">
