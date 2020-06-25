@@ -7,12 +7,22 @@ page.dir: {{page.dir}}
   {%- assign isActive = true -%}
 {%- endif -%}
 
+
+{%- capture isActive -%}
+{%- if here | append: "/news/" == page.dir -%}1{%- endif -%}
+{%- if here | append: "/decisions/" == page.dir -%}1{%- endif -%}
+{%- if here | append: "/deputies/" == page.dir -%}1{%- endif -%}
+{%- endcapture -%}
+
+
 isActive: {{ isActive }}
+
+
 
 <br>
 <div class="row">
   <div class="col-auto ml-auto">
-    <div class="list-group list-group-horizontal">
+    <div class="list-group list-group-horizontal section">
       <a href="{{ here | append: "/news/" }}" class="list-group-item list-group-item-action active">новини</a>
       <a href="{{ here | append: "/decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
       <a href="{{ here | append: "/deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
