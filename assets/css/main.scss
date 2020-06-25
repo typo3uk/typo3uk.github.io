@@ -7,9 +7,9 @@
 //
 // Import from _scss/...
 //
-
+@import "t3ppua/bootstrap-table";
 {% if page.table == 1 %}
 
-@import "t3ppua/bootstrap-table";
+
 
 {% endif %}
