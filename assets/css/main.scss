@@ -4,7 +4,12 @@
 // Import from _scss/_base.scss
 //
 @import "t3ppua/base";
+//
+// Import from _scss/...
+//
 
-{%- if page.table == 1 -%}
+{% if page.table == 1 %}
+
 @import "t3ppua/bootstrap-table";
-{%- endif -%}
+
+{% endif %}
