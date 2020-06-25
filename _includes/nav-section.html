@@ -1,14 +1,12 @@
-{%- assign back = page.dir | split: "/" -%}
-{%- assign size = back | size | minus:1 -%}
-{%- assign here = back | slice: 0, size -%}
+{%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 ### {{ here }} ###
 <br>
 <div class="row">
   <div class="col-auto ml-auto">
     <div class="list-group list-group-horizontal">
-      <a href="#" class="list-group-item list-group-item-action active">новини</a>
-      <a href="#" class="list-group-item list-group-item-action">Рішення</a>
-      <a href="#" class="list-group-item list-group-item-action">Депутати</a>
+      <a href="{{ here | append: "news/" }}" class="list-group-item list-group-item-action active">новини</a>
+      <a href="{{ here | append: "decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
+      <a href="{{ here | append: "deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
     </div>
   </div>
 </div>
