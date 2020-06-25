@@ -19,8 +19,7 @@ $link-hover-color:            darken($link-color, 15%) !default;
 $link-alternate-color:        #ffffff !default;
 $link-alternate-hover-color:  darken($link-alternate-color, 15%) !default;
 
-// $font-family-sans:            -apple-system, "Source Sans Pro", 'Open Sans', sans-serif !default;
-$font-family-sans:            "Source Sans Pro", 'Open Sans', sans-serif !default;
+$font-family-sans:            -apple-system, "Source Sans Pro", 'Open Sans', sans-serif !default;
 $font-family-base:            $font-family-sans !default;
 
 $font-weight-light:           300 !default;
