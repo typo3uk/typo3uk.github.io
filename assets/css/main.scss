@@ -4,3 +4,6 @@
 // Import from _scss/_base.scss
 //
 @import "t3ppua/base";
+
+{%- if page.table == 1 -%}
+{%- endif -%}
