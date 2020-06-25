@@ -7,6 +7,7 @@ layout: default
   <div class="row">
     <div class="col-12">
       <h1 class="mb-4">{{ page.title }}</h1>
+      {%- include nav-section.html -%}
       {{content}}
       {% include decisions-list.html cat=page.pagination.category %}
     </div>
