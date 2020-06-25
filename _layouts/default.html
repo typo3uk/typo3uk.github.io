@@ -14,7 +14,7 @@
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
       ### Conetnet Empty ###
       <br>
-      {%- if page.content | strip_newlines == '' -%}
+      {%- if content | strip_newlines == '' -%}
         {%- include info-visitors.html -%}
       {%- else -%}
         {{ content }}
