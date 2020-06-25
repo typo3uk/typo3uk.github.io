@@ -42,24 +42,12 @@ $grid-gutter-width:           30px !default;
 //
 $input-bg:                    #eef0f3 !default;
 
-// $grid-breakpoints: (
-//   xx: 0,
-//   xs: 375px,
-//   sm: 576px,
-//   md: 768px,
-//   lg: 992px,
-//   xl: 1200px
-// ) !default;
-
 //
 // Fonts
 //
-// $font-size-base:               1rem !default;
-// $h1-font-size:                 $font-size-base * 2 !default;
-// $h2-font-size:                 $font-size-base * 1.75 !default;
-// $h3-font-size:                 $font-size-base * 1.5 !default;
-// $h4-font-size:                 $font-size-base * 1.25 !default;
-// $h5-font-size:                 $font-size-base * 1 !default;
-// $h6-font-size:                 $font-size-base * .85 !default;
-
-//
+$font-size-h1: 40 !default;
+$font-size-h2: 32 !default;
+$font-size-h3: 28 !default;
+$font-size-h4: 24 !default;
+$font-size-h5: 20 !default;
+$font-size-h6: 16 !default;

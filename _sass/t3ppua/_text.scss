@@ -1,23 +1,7 @@
 //
 // Headline Scaling
 //
-// @each $breakpoint in map-keys($headline-scaling) {
-//     @include media-breakpoint-up($breakpoint) {
-//         $scaling: map-get($headline-scaling, $breakpoint);
-//         h1,
-//         .h1 { font-size: $h1-font-size * $scaling; }
-//         h2,
-//         .h2 { font-size: $h2-font-size * $scaling; }
-//         h3,
-//         .h3 { font-size: $h3-font-size * $scaling; }
-//         h4,
-//         .h4 { font-size: $h4-font-size * $scaling; }
-//         h5,
-//         .h5 { font-size: $h5-font-size * $scaling; }
-//         h6,
-//         .h6 { font-size: $h6-font-size * $scaling; }
-//     }
-// }
+
 
 //
 // Responsive Weight
