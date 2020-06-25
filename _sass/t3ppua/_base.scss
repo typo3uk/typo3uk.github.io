@@ -1,31 +1,26 @@
-// ---
-// ---
 //
 // Variables
 //
-// @import "variables";
-
+@import "variables";
 //
 // Import needed Bootstrap Files
 //
 @import "../bootstrap/bootstrap";
-
 //
 // Components
 //
-// @import "fonts";
-// @import "header";
-// @import "navbar";
-// @import "form";
-// @import "breadcrumb";
-// @import "nav-tabs";
-// @import "text";
-// @import "carousel";
-// @import "misc";
+@import "fonts";
+@import "header";
+@import "navbar";
+@import "form";
+@import "breadcrumb";
+@import "nav-tabs";
+@import "text";
+@import "carousel";
+@import "misc";
 //
-// //
-// // Plugins
-// //
-// @import "photoswipe";
-// @import "responsive-tabs";
-// @import "bootstrap-table";
+// Plugins
+//
+@import "photoswipe";
+@import "responsive-tabs";
+@import "bootstrap-table";
