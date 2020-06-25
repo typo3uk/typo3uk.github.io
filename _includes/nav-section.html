@@ -1,13 +1,10 @@
 {%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 
-page.dir: {{page.dir}}
-<br>
 {% comment %}
 {%- if here | append: "/news/" == page.dir or here | append: "/decisions/" == page.dir or here | append: "/deputies/" == page.dir -%}
   {%- assign isActive = true -%}
 {%- endif -%}
 {% endcomment %}
-
 
 {%- capture isActive -%}
 {%- if here | append: "/news/" == page.dir -%}1{%- endif -%}
@@ -15,10 +12,7 @@ page.dir: {{page.dir}}
 {%- if here | append: "/deputies/" == page.dir -%}1{%- endif -%}
 {%- endcapture -%}
 
-
 isActive: ={{ isActive }}=
-
-
 
 <br>
 <div class="row">
