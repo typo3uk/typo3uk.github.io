@@ -43,11 +43,6 @@ $grid-gutter-width:           30px !default;
 $input-bg:                    #eef0f3 !default;
 
 //
-// Fonts Header
+// Responsive font sizes
 //
-$font-size-h1: 40 !default;
-$font-size-h2: 32 !default;
-$font-size-h3: 28 !default;
-$font-size-h4: 24 !default;
-$font-size-h5: 20 !default;
-$font-size-h6: 16 !default;
+$enable-responsive-font-sizes:  true !default;
