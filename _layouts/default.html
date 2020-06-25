@@ -12,7 +12,7 @@
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
-      {%- assign isContent = page.content | strip_newlines -%}
+      {%- assign isContent = content | strip_newlines -%}
       {%- if isContent == "" -%}
         {%- include info-visitors.html -%}
       {%- else -%}
