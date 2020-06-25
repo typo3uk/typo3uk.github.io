@@ -14,18 +14,20 @@
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
       {{ content }}
       <br>
-      {%- capture result -%}{{ content }}{%- endcapture -%}
-      <br>
-      {%- if result | strip_newlines == '' -%}
-        {%- include info-visitors.html -%}
+      {%- if content | strip_newlines == '' -%}
+        {%- assign isEmpty = true -%}
       {%- else -%}
-        ### Start ###<br>
-          {{ content }}
-        ### End ###<br>
+        {%- assign isEmpty = false -%}
       {%- endif -%}
+      ###{{ isEmpty }}###
     </main>
     {%- include footer.html -%}
     {%- include scroll-top.html -%}
     {%- include scripts.html -%}
   </body>
 </html>
+{% comment %}
+<br>
+{%- capture result -%}{{ content }}{%- endcapture -%}
+{%- include info-visitors.html -%}
+{% endcomment %}
