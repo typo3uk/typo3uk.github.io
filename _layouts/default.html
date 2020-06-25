@@ -12,11 +12,11 @@
     {%- include header.html -%}
     {%- include breadcrumb.html -%}
     <main id="content"{% if page.url == "/" %} class="my-4"{% else %} class="mb-4"{% endif %}>
-      {{ content }}
       <br>
-      {%- if content | strip_newlines == '' -%}
+      {%- if page.content | strip_newlines == '' -%}
         {%- assign isEmpty = true -%}
       {%- else -%}
+        {{ content }}
         {%- assign isEmpty = false -%}
       {%- endif -%}
       ###{{ isEmpty }}###
@@ -26,7 +26,9 @@
     {%- include scripts.html -%}
   </body>
 </html>
+
 {% comment %}
+{{ content }}
 <br>
 {%- capture result -%}{{ content }}{%- endcapture -%}
 {%- include info-visitors.html -%}
