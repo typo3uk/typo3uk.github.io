@@ -6,4 +6,5 @@
 @import "t3ppua/base";
 
 {%- if page.table == 1 -%}
+@import "t3ppua/bootstrap-table";
 {%- endif -%}
