@@ -28,7 +28,7 @@
   <div class="carousel-inner">
   {%- endif -%}
   <div class="carousel-item px-0{% if forloop.first %} active{% endif %}" data-itemno="{%- increment counter -%}">
-    <a href="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=800&h=600&fit=cover&a=attention&output=jpg&q=50&t=square" class="lightbox" title="{{ attribute_title }}" data-lightbox-width="800" data-lightbox-height="600" rel="lightbox-group-{{ include.group }}">
+    <a href="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w=1024&h=768&fit=cover&a=attention&output=jpg&q=50&t=square" class="lightbox" title="{{ attribute_title }}" data-lightbox-width="1024" data-lightbox-height="768" rel="lightbox-group-{{ include.group }}">
       <img class="d-block w-100" loading="lazy" src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | url_decode | relative_url }}&w={{ include.width }}&h={{ include.height }}&fit=cover&a=attention&output=jpg&q=50&t=square" alt="image-{{ attribute_alt }}" />
     </a>
   </div>
