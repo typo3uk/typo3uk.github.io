@@ -2,22 +2,24 @@
 {%- assign ones = site.pages | sort: 'dir' | reverse -%}
 <div class="row mb-4">
   <div class="col-auto ml-auto">
-    <div class="list-group list-group-horizontal-sm section">
+    <ul class="list-group list-group-horizontal-sm section">
     {%- for one in ones -%}
       {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
       {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
       {%- if here == current and one.url contains here and one.navhide != 1 -%}
-        {%- if one.url == page.url -%}
-        <span class="list-group-item list-group-item-action active">
-          {%- if one.breadcrumb -%}{{ one.breadcrumb }}{%- elsif one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
-        </span>
-        {%- else -%}
-        <a href="{{ one.url }}" class="list-group-item list-group-item-action">
-          {%- if one.navtitle -%}{{ one.navtitle }}{%- elsif one.breadcrumb -%}{{ one.breadcrumb }}{%- else -%}{{ one.title }}{%- endif -%}
-        </a>
-        {%- endif -%}
+      <li class="list-group-item">
+          {%- if one.url == page.url -%}
+          <span>
+            {%- if one.breadcrumb -%}{{ one.breadcrumb }}{%- elsif one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+          </span>
+          {%- else -%}
+          <a href="{{ one.url }}" class="action">
+            {%- if one.navtitle -%}{{ one.navtitle }}{%- elsif one.breadcrumb -%}{{ one.breadcrumb }}{%- else -%}{{ one.title }}{%- endif -%}
+          </a>
+          {%- endif -%}
+      </li>
       {%- endif -%}
     {%- endfor -%}
-    </div>
+    </ul>
   </div>
 </div>
