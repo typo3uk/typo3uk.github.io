@@ -1,14 +1,23 @@
-{%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
-
-{{here}}<br>
-
+{%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" | append: "/" -%}
 {%- assign ones = site.pages | sort: 'dir' | reverse -%}
-{%- for one in ones -%}
-  {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
-  {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if "/region/city/ivano-frankivsk/" == current and one.url contains "/region/city/ivano-frankivsk/" and one.navhide != 1 -%}
-    <a href="{{ one.url }}">
-      {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
-    </a><br>
-  {%- endif -%}
-{%- endfor -%}
+<div class="row mb-4">
+  <div class="col-auto ml-auto">
+    <div class="list-group list-group-horizontal section">
+    {%- for one in ones -%}
+      {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
+      {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+      {%- if here == current and one.url contains here and one.navhide != 1 -%}
+        {%- if one.url == page.url -%}
+        <span class="list-group-item list-group-item-action active">
+          {%- if one.breadcrumb -%}{{ one.breadcrumb }}{%- elsif one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+        </span>
+        {%- else -%}
+        <a href="{{ one.url }}" class="list-group-item list-group-item-action">
+          {%- if one.breadcrumb -%}{{ one.breadcrumb }}{%- elsif one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+        </a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</div>
