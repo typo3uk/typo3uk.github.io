@@ -1,52 +1,14 @@
 {%- assign back = page.dir | split: "/" -%}{%- assign size = back | size | minus:1 -%}{%- assign here = back | slice: 0, size | join: "/" -%}
 
+{{here}}<br>
 
 {%- assign ones = site.pages | sort: 'dir' | reverse -%}
 {%- for one in ones -%}
   {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
   {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
   {%- if "/region/city/ivano-frankivsk/" == current and one.url contains "/region/city/ivano-frankivsk/" and one.navhide != 1 -%}
-    <a href="{{ one.url }}">{{ one.title }}</a><br>
-  {%- endif -%}ty
+    <a href="{{ one.url }}">
+      {%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}
+    </a><br>
+  {%- endif -%}
 {%- endfor -%}
-
-
-
-{% comment %}
-
-{%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-
-
-{%- if here | append: "/news/" == page.dir or here | append: "/decisions/" == page.dir or here | append: "/deputies/" == page.dir -%}
-  {%- assign isActive = true -%}
-{%- endif -%}
-
-<div class="row mb-4">
-  <div class="col-auto ml-auto">
-    <div class="list-group list-group-horizontal section">
-      {%- if isActive == true -%}
-        <span class="list-group-item list-group-item-action active">Новини</span>
-      {%- else -%}
-        <a href="{{ here | append: "/news/" }}" class="list-group-item list-group-item-action">Новини</a>
-      {%- endif -%}
-      {%- if isActive == true -%}
-        <span class="list-group-item list-group-item-action active">Рішення</span>
-      {%- else -%}
-        <a href="{{ here | append: "/decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
-      {%- endif -%}
-      {%- if isActive == true -%}
-        <span class="list-group-item list-group-item-action active">Депутати</span>
-      {%- else -%}
-        <a href="{{ here | append: "/deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
-      {%- endif -%}
-    </div>
-  </div>
-</div>
-
-
-{%- capture active -%}
-{%- if here | append: "/news/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- if here | append: "/decisions/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- if here | append: "/deputies/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
-{%- endcapture -%}
-{% endcomment %}

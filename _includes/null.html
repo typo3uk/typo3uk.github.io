@@ -3,6 +3,49 @@ https://github.com/mmistakes/minimal-mistakes/tree/master/_includes
 
 {%- include pagination.html dir="/news/" page="page/" -%}
 
+
+
+{% comment %}
+
+{%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
+
+
+{%- if here | append: "/news/" == page.dir or here | append: "/decisions/" == page.dir or here | append: "/deputies/" == page.dir -%}
+  {%- assign isActive = true -%}
+{%- endif -%}
+
+<div class="row mb-4">
+  <div class="col-auto ml-auto">
+    <div class="list-group list-group-horizontal section">
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Новини</span>
+      {%- else -%}
+        <a href="{{ here | append: "/news/" }}" class="list-group-item list-group-item-action">Новини</a>
+      {%- endif -%}
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Рішення</span>
+      {%- else -%}
+        <a href="{{ here | append: "/decisions/" }}" class="list-group-item list-group-item-action">Рішення</a>
+      {%- endif -%}
+      {%- if isActive == true -%}
+        <span class="list-group-item list-group-item-action active">Депутати</span>
+      {%- else -%}
+        <a href="{{ here | append: "/deputies/" }}" class="list-group-item list-group-item-action">Депутати</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+
+{%- capture active -%}
+{%- if here | append: "/news/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- if here | append: "/decisions/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- if here | append: "/deputies/" == page.dir -%}{%- assign isActive = true -%}{%- endif -%}
+{%- endcapture -%}
+{% endcomment %}
+
+###########################
+
 {% comment %}
 <div class="section-pagination text-center">
   <nav class="d-table mx-auto">
