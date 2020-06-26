@@ -5,8 +5,8 @@
 {%- for one in ones -%}
   {%- capture slug -%}{{ one.url | split: "/" | last }}{%- endcapture -%}
   {%- capture current -%}{{ one.url | remove: slug | remove: "//" | append: "/" }}{%- endcapture -%}
-  {%- if here == current and one.url contains here and one.navhide != 1 -%}
-    <a href="{{ one.url }}">{%- if one.navtitle -%}{{ one.navtitle }}{%- else -%}{{ one.title }}{%- endif -%}</a>
+  {%- if "/region/city/ivano-frankivsk/" == current and one.url contains "/region/city/ivano-frankivsk/" and one.navhide != 1 -%}
+    <a href="{{ one.url }}">{{ one.title }}</a><br>
   {%- endif -%}ty
 {%- endfor -%}
 
