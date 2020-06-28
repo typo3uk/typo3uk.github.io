@@ -19,17 +19,19 @@
   {%- endfor -%}
 {%- endif -%}
 
-{%- for contact in city -%}
-  {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
-    {%- if include.legal contains "phone" -%}
-      {%- include footer/phone.html legal=include.legal -%}
-    {%- elsif include.legal == "email" -%}
-      {%- include footer/email.html legal=include.legal -%}
-    {%- else -%}
-      {%- include footer/text.html legal=include.legal -%}
+{%- if size != 6 -%}
+  {%- for contact in city -%}
+    {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
+      {%- if include.legal contains "phone" -%}
+        {%- include footer/phone.html legal=include.legal -%}
+      {%- elsif include.legal == "email" -%}
+        {%- include footer/email.html legal=include.legal -%}
+      {%- else -%}
+        {%- include footer/text.html legal=include.legal -%}
+      {%- endif -%}
     {%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
 
 {%- if size != 6 and size != 7 and size != 10 -%}
   {%- for contact in district -%}
@@ -69,17 +71,3 @@
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
-
-{%- if page.url contains "city" and size >= 6 -%}
-  {%- for contact in village -%}
-    {%- if page.url and page.url contains contact.type and page.url contains contact.item -%}
-      {%- if include.legal contains "phone" -%}
-        {%- include footer/phone.html legal=include.legal -%}
-      {%- elsif include.legal == "email" -%}
-        {%- include footer/email.html legal=include.legal -%}
-      {%- else -%}
-        {%- include footer/text.html legal=include.legal -%}
-      {%- endif -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
