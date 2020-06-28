@@ -25,6 +25,59 @@
   www: http://www.mvk.if.ua
 
 #
+# City / Village
+#
+- type: village
+  item: vovchynets
+  name: Вовчинецька сільська&nbsp;рада
+  address: 76491, c. Вовчинець, вул.&nbsp;Вовчинецька,&nbsp;39
+  phone_main: (034) 256 16 31
+  phone_hot:  (034) 256 16 31
+  phone_fax:  (034) 256 16 31
+  email: vovchunec@ukr.net
+  www: http://vovchynets.org.ua
+
+- type: village
+  item: uhornyky
+  name: Угорницька сільська&nbsp;рада
+  address: 76492, c. Угорники, вул.&nbsp;Просвіти,&nbsp;4
+  phone_main: (034) 255 42 43
+  phone_hot:  (034) 278 76 48
+  phone_fax:  (034) 278 76 48
+  email: ygornuku@ukr.net
+  www: немає даних
+
+- type: village
+  item: mykytyntsi
+  name: Микитинецька сільська&nbsp;рада
+  address: 76494, c. Микитинці, вул.&nbsp;Грицишина,&nbsp;10
+  phone_main: (034) 278 72 73
+  phone_hot:  (034) 278 72 73
+  phone_fax:  (034) 278 72 73
+  email: mykytynci@gmail.com
+  www: немає даних
+
+- type: village
+  item: krykhivtsi
+  name: Крихівецька сільська&nbsp;рада
+  address: 76493, c. Крихівці, площа&nbsp;Двір,&nbsp;1
+  phone_main: (034) 275 35 75
+  phone_hot:  (034) 275 35 75
+  phone_fax:  (034) 275 35 75
+  email: ruxivrada@ukr.net
+  www: https://krykhivtsi.if.ua/
+
+- type: village
+  item: khryplyn
+  name: Хриплинська сільська&nbsp;рада
+  address: 76495, c. Хриплин, вул.&nbsp;Берегова,&nbsp;4-B
+  phone_main: (034) 278 74 58
+  phone_hot:  (034) 258 77 29
+  phone_fax:  (034) 258 77 71
+  email: rada@khryplyn.if.ua
+  www: http://khryplyn.if.ua
+
+#
 # District
 #
 - type: district
